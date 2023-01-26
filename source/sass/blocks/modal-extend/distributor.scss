@@ -1,0 +1,113 @@
+// Variables
+$distributor-t: $color-default-white;
+$distributor-t-bg: rgba($color-dodger-blue, 0.8);
+$distributor-bg: $color-default-white;
+$distributor-bc: $color-default-white;
+$distributor-bs--320: vc(3);
+$distributor-bs--1024: vc(8);
+$distributor-br--320: vc(12);
+$distributor-br--1024: vc(30);
+
+.distributor {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    max-width: vc(290);
+
+    @include desktop {
+      max-width: vc(680);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: vc(132);
+    border-radius: $distributor-br--320;
+    box-shadow: inset 0 0 0 $distributor-bs--320 $distributor-bc;
+    overflow: hidden;
+
+    @include desktop {
+      min-height: vc(355);
+      border-radius: $distributor-br--1024;
+      box-shadow: inset 0 0 0 $distributor-bs--1024 $distributor-bc;
+    }
+  }
+
+  &__img-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: $distributor-br--320;
+    overflow: hidden;
+
+    @include desktop {
+      border-radius: $distributor-br--1024;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      max-height: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    z-index: 5;
+    margin: auto 0 0;
+    padding: vc(15) vc(15) vc(10);
+    min-height: vc(48);
+
+    @include desktop {
+      padding-top: vc(18);
+      min-height: vc(50);
+    }
+  }
+
+  &__footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 128%;
+    height: vc(120);
+    background-color: $distributor-t-bg;
+    border: $distributor-bs--320 solid $distributor-bc;
+    border-radius: 50%;
+    transition: top $trans-300;
+
+    @include desktop {
+      border-width: $distributor-bs--1024;
+    }
+  }
+
+  &__link:hover &__footer::before,
+  &__link:focus &__footer::before {
+    top: vc(-5);
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    font-size: vc(16);
+    line-height: 1.4;
+    text-align: center;
+    color: $distributor-t;
+
+    @include desktop {
+      font-size: vc(30);
+      line-height: 1.2;
+    }
+  }
+}

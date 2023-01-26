@@ -1,0 +1,9 @@
+mixin service-description(key)
+  .service__description
+    p.service__text!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    .service__gallery
+      a(href=`img/service/g${key + 1}-1.jpg` data-fslightbox="gallery")
+        img(src=`img/service/g${key + 1}-1.jpg`).service__image
+      a(href=`img/service/g${key + 1}-2.jpg` data-fslightbox="gallery")
+        img(src=`img/service/g${key + 1}-2.jpg`).service__image
+    p.service__text!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

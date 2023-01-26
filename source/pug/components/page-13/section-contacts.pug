@@ -1,0 +1,115 @@
+-
+  const CONTACTS = [
+    {
+      subtitle: "Отделы продаж",
+      subtitleMod: "one",
+      items: [
+        {
+          name: "Департамент оптовых продаж и дистрибуции ООО&nbsp;«ТД&nbsp;БХК»",
+          href: "#",
+        },
+        {
+          name: "Отдел розничных продаж ООО&nbsp;«ТД&nbsp;БХК» Белгородской области",
+          href: "#",
+        },
+        {
+          name: "Отдел розничных продаж г.&nbsp;Воронеж, Липецк, Курск ООО&nbsp;«ТД&nbsp;БХК»",
+          href: "#",
+        },
+        {
+          name: "Департамент сетевых продаж ООО&nbsp;«ТД&nbsp;БХК»",
+          href: "#",
+        },
+      ],
+    },
+    {
+      subtitle: "Администрация",
+      subtitleMod: "two",
+      items: [
+        {
+          name: "Приемная генерального директора",
+          href: "#",
+        },
+        {
+          name: "Дирекция фабрики мороженого",
+          href: "#",
+        },
+        {
+          name: "Коммерческая дирекция",
+          href: "#",
+        },
+        {
+          name: "Финансовая дирекция",
+          href: "#",
+        },
+        {
+          name: "Департамент персонала",
+          href: "#",
+        },
+        {
+          name: "Техническая дирекция",
+          href: "#",
+        },
+        {
+          name: "Отдел маркетинга",
+          href: "#",
+        },
+      ],
+    },
+    {
+      subtitle: "Снабжение",
+      subtitleMod: "three",
+      items: [
+        {
+          name: "Отдел закупок ООО&nbsp;«ТД&nbsp;БХК»",
+          href: "#",
+        },
+        {
+          name: "Отдел закупок сырья и ингредиентов АО&nbsp;«БХК»",
+          href: "#",
+        },
+      ],
+    },
+    {
+      subtitle: "Маркетинг",
+      subtitleMod: "four",
+      items: [
+        {
+          name: "Группа производственного маркетинга и&nbsp;инноваций АО&nbsp;«БЕЛГОРОДСКИЙ ХЛАДОКОМБИНАТ»",
+          href: "#",
+        },
+        {
+          name: "Департамент маркетинга и рекламы ООО&nbsp;ТД&nbsp;«БЕЛГОРОДСКИЙ ХЛАДОКОМБИНАТ»",
+          href: "#",
+        },
+      ],
+    },
+  ];
+
+mixin sectionContactsSubtitle(name, mods)
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' section-contacts__subtitle--' + modsList[i].trim();
+      }
+    }
+  h2.section-contacts__subtitle(class=allMods)&attributes(attributes)
+    span!=name
+
+mixin section-contacts(data, mods)
+  section.section-contacts(class=allMods)&attributes(attributes)
+    .container
+      h1.section-contacts__headline.headline!= "Контакты"
+      .section-contacts__articles
+        each article in CONTACTS
+          article.section-contacts__article
+            +sectionContactsSubtitle(article.subtitle, article.subtitleMod)
+            ul.section-contacts__items
+              each link in article.items
+                li.section-contacts__item
+                  a.section-contacts__link(href=link.href, data-open-modal="modal-trade")!=link.name
+

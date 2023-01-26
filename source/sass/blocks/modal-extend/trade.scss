@@ -1,0 +1,158 @@
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &--trade {
+    #{$block-name}__content {
+      max-width: vc(645);
+      padding: vc(55) vc(25) vc(35);
+      font-weight: 500;
+      font-size: vc(14);
+      line-height: 1.4;
+      font-family: $ff-geometria;
+      text-align: left;
+      border: vc(4) solid $color-default-white;
+      border-radius: vc(30);
+
+      @include tablet {
+        padding: vc(50) vc(65);
+        font-size: vc(16);
+        border-radius: vc(40);
+      }
+
+      @include desktop {
+        max-width: vc(1520);
+        padding: vc(110) vc(110) vc(135);
+        border-width: vc(10);
+      }
+    }
+
+    #{$block-name}__items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: vc(40);
+
+      @include desktop {
+        display: grid;
+        grid-template-columns: minmax(vc(275), vc(380)) minmax(vc(275), vc(380)) minmax(
+            vc(275),
+            vc(380)
+          );
+
+        gap: vc(55);
+
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    #{$block-name}__item {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 100%;
+      width: 100%;
+      gap: vc(25);
+
+      @include desktop {
+        display: grid;
+        grid-template-rows: minmax(vc(95), auto) minmax(vc(75), auto) minmax(
+            vc(75),
+            auto
+          );
+        gap: vc(45);
+        width: auto;
+      }
+    }
+
+    #{$block-name}__item > * {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    #{$block-name}__headline {
+      margin: 0 0 vc(40);
+      font-weight: 700;
+      font-size: vc(24);
+      line-height: 1.2;
+      font-family: $ff-geometria;
+      @include stroke(4, $color-default-white);
+
+      @include tablet {
+        font-size: vc(26);
+        @include stroke(5, $color-default-white);
+      }
+
+      @include desktop {
+        margin-bottom: vc(45);
+        font-size: vc(30);
+        @include stroke(6, $color-default-white);
+      }
+    }
+
+    #{$block-name}__subtitle {
+      margin: 0 0 vc(10);
+      font-weight: 700;
+      font-size: vc(18);
+      line-height: 1.3;
+      font-family: $ff-geometria;
+
+      @include tablet {
+        font-size: vc(20);
+      }
+
+      @include desktop {
+        margin-bottom: vc(15);
+      }
+    }
+
+    #{$block-name}__subtitle--small {
+      @include tablet {
+        margin-bottom: vc(15);
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        margin-bottom: vc(12);
+        font-size: vc(18);
+      }
+    }
+
+    #{$block-name}__link {
+      display: block;
+      padding-left: vc(25);
+      font-size: inherit;
+      color: $color-arapawa;
+      transition: color $trans-300;
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: auto vc(24);
+
+      @include desktop {
+        font-size: vc(18);
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: vc(14);
+
+        @include tablet {
+          margin-bottom: vc(8);
+        }
+      }
+
+      @include hover-focus {
+        color: $color-pumpkin;
+      }
+
+      &[href*="tel"] {
+        background-image: url(../img/modals/icon-phone.svg);
+      }
+
+      &[href*="mailto"] {
+        background-image: url(../img/modals/icon-mailto.svg);
+      }
+    }
+
+    #{$block-name}__content p {
+      margin: 0;
+    }
+  }
+}

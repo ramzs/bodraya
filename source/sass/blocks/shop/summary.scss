@@ -1,0 +1,337 @@
+.summary {
+  background-color: $color-pattens-blue-6;
+  border-radius: vc(20);
+  padding: vc(20) vc(10);
+
+  &__head {
+    border-radius: vc(15);
+    padding: vc(25) vc(20);
+    background-color: $color-default-white;
+    grid-template: 1fr / vc(123) vc(156) vc(87) vc(122) 1fr 1fr;
+    margin-bottom: vc(40);
+    display: none;
+
+    .summary__text {
+      @include tablet {
+        align-self: flex-end;
+        text-align: right;
+
+        &:nth-child(1) {
+          align-self: flex-start;
+          text-align: left;
+        }
+      }
+
+      @include desktop {
+        align-self: flex-end;
+        text-align: left;
+      }
+    }
+
+    @include tablet {
+      display: grid;
+    }
+
+    @include desktop {
+      padding: vc(25) vc(40);
+      grid-template: 1fr / vc(423) vc(321) vc(269) vc(326) 1fr;
+      margin-bottom: vc(32);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: vc(18);
+    color: $color-arapawa;
+
+    &--title {
+      font-size: vc(18);
+      line-height: vc(23);
+    }
+
+    &--bold {
+      font-weight: 700;
+      font-size: vc(18);
+      line-height: vc(23);
+    }
+
+    @include tablet {
+      font-size: vc(16);
+      line-height: vc(20);
+
+      &--title {
+        font-size: vc(16);
+        line-height: vc(20);
+      }
+    }
+
+    @include desktop {
+      &--bold {
+        font-size: vc(20);
+        line-height: vc(25);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: vc(20);
+
+    @include tablet {
+      gap: vc(32);
+    }
+  }
+
+  &__product {
+    position: relative;
+    display: grid;
+    grid-template-columns: vc(70) 1fr vc(99);
+    grid-template-rows: vc(38) vc(38) 1fr;
+    grid-template-areas:
+      "img text text"
+      "img price price"
+      "sum sum count";
+    gap: vc(10) vc(10);
+    padding: 0 0 vc(8);
+    border-bottom: vc(1) solid $color-default-white;
+
+    &-image {
+      grid-area: img;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background-color: $color-default-white;
+      border-radius: vc(12);
+      height: vc(76);
+
+      img {
+        width: vc(70);
+        height: vc(70);
+      }
+
+      @include tablet {
+        height: auto;
+      }
+
+      @include desktop {
+        border-radius: vc(15);
+        margin-right: vc(21);
+        padding: vc(14) vc(8);
+
+        img {
+          width: vc(72);
+          height: vc(72);
+        }
+      }
+    }
+
+    &-text {
+      grid-area: text;
+      align-self: center;
+      margin-top: vc(15);
+
+      @include tablet {
+        margin-left: vc(10);
+        margin-top: 0;
+        justify-self: flex-end;
+      }
+
+      @include desktop {
+        margin: 0;
+        justify-self: flex-start;
+      }
+    }
+
+    &-count {
+      grid-area: count;
+
+      @include tablet {
+        justify-self: flex-end;
+      }
+
+      @include desktop {
+        justify-self: flex-start;
+      }
+    }
+
+    &-price {
+      grid-area: price;
+      margin-top: vc(-10);
+
+      .summary__text {
+        font-weight: 700;
+        display: flex;
+        gap: vc(10);
+
+        &::before {
+          content: "Цена:";
+        }
+      }
+
+      @include tablet {
+        margin-top: 0;
+        justify-self: flex-end;
+
+        .summary__text {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      @include desktop {
+        justify-self: flex-start;
+      }
+    }
+
+    &-sum {
+      grid-area: sum;
+
+      .summary__text {
+        display: flex;
+        gap: vc(10);
+
+        &::before {
+          content: "Сумма:";
+        }
+      }
+
+      @include tablet {
+        justify-self: flex-end;
+
+        .summary__text {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      @include desktop {
+        justify-self: flex-start;
+      }
+    }
+
+    &-delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      grid-area: del;
+
+      button {
+        border: none;
+        outline: none;
+        background-color: $color-default-white;
+        padding: vc(3);
+        border-radius: vc(3);
+        cursor: pointer;
+      }
+
+      img {
+        width: vc(9);
+        height: vc(9);
+      }
+
+      @include tablet {
+        position: relative;
+        justify-self: flex-end;
+
+        button {
+          padding: vc(7);
+          border-radius: vc(6);
+        }
+
+        img {
+          width: vc(18);
+          height: vc(18);
+        }
+      }
+
+      @include desktop {
+        justify-self: flex-start;
+
+        button {
+          padding: vc(9);
+        }
+
+        img {
+          width: vc(20);
+          height: vc(20);
+        }
+      }
+    }
+
+    @include tablet {
+      padding: 0 0 vc(32);
+      grid-template-columns: vc(72) vc(98) vc(132) vc(108) vc(114) vc(70);
+      grid-template-rows: 1fr;
+      grid-template-areas: "img text count price sum del";
+      align-items: center;
+      gap: 0;
+    }
+
+    @include desktop {
+      grid-template-columns: vc(109) vc(354) vc(321) vc(269) vc(326) 1fr;
+      grid-template-rows: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__footer {
+    margin-top: vc(20);
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: flex-end;
+    gap: vc(15);
+
+    @include tablet {
+      margin-top: vc(36);
+      margin-right: vc(60);
+      gap: vc(50);
+    }
+
+    @include desktop {
+      justify-content: space-between;
+      margin-top: vc(32);
+      width: vc(373);
+    }
+  }
+
+  &__total {
+    margin: 0;
+    font-family: $ff-geometria;
+    font-weight: 700;
+    font-size: vc(20);
+    line-height: vc(25);
+    color: $color-arapawa;
+
+    &--sum {
+      font-weight: 700;
+    }
+
+    @include tablet {
+      font-size: vc(18);
+      line-height: vc(23);
+    }
+
+    @include desktop {
+      font-weight: 700;
+      font-size: vc(30);
+      line-height: vc(38);
+    }
+  }
+
+  @include tablet {
+    border-radius: vc(30);
+    padding: vc(33) vc(24);
+  }
+
+  @include desktop {
+    padding: vc(48) vc(40);
+  }
+}

@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "service__page"
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "service-3.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  include ../components/data
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +page(2, navServices, currentUrl)
+
+block modals

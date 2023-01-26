@@ -1,0 +1,39 @@
+.main-bottom {
+  &__wrapper {
+    position: relative;
+    min-height: vc(885);
+    overflow: hidden;
+  }
+
+  &__wrapper::before {
+    @include tablet {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: vc(-40);
+      display: block;
+      padding-bottom: 150vh;
+      clip-path: url(#svgClipMainIntro);
+      background: $color-pattens-blue-2;
+    }
+
+    @include desktop {
+      padding-bottom: 75vw;
+    }
+  }
+
+  &__form {
+    margin-top: vc(30);
+    margin-bottom: vc(80);
+
+    @include tablet {
+      margin-top: vc(45);
+    }
+
+    @include desktop {
+      margin-top: vc(310);
+      margin-bottom: vc(230);
+    }
+  }
+}

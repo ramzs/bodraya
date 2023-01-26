@@ -1,0 +1,114 @@
+.shop-page {
+  &__section {
+    position: relative;
+    overflow: hidden;
+    padding: vc(18) 0 vc(40);
+
+    @include tablet {
+      padding: vc(30) 0 vc(80);
+    }
+
+    @include desktop {
+      padding: vc(100) 0 vc(150);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-arapawa;
+    font-size: vc(24);
+    font-weight: 700;
+    font-family: $ff-geometria;
+    line-height: 1.15;
+
+    &--bracket {
+      &::after {
+        content: "";
+        display: inline-block;
+        margin-left: vc(10);
+        width: vc(15);
+        height: vc(35);
+        background-image: url(../img/svg/headline-bracket.svg);
+        background-size: vc(18);
+        background-repeat: no-repeat;
+        background-position: center top;
+
+        @include tablet {
+          margin-left: vc(5);
+          width: vc(40);
+          height: vc(75);
+          background-size: vc(40);
+        }
+
+        @include desktop {
+          margin-left: vc(15);
+          height: vc(70);
+        }
+      }
+    }
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      font-size: vc(40);
+
+      @include stroke(8, $color-default-white);
+    }
+
+    @include desktop {
+      font-size: vc(70);
+
+      @include stroke(11, $color-default-white);
+    }
+  }
+
+  &__description {
+    font-family: $ff-geometria;
+    font-weight: 300;
+    font-size: vc(16);
+    line-height: vc(20);
+    color: $color-arapawa;
+
+    a {
+      color: $color-arapawa;
+      text-decoration: underline;
+      transition: color $trans-default;
+
+      &:hover {
+        color: $color-pumpkin;
+      }
+    }
+
+    @include tablet {
+      font-size: vc(18);
+      line-height: vc(23);
+    }
+
+    @include desktop {
+      font-size: vc(20);
+      line-height: vc(25);
+    }
+  }
+
+  &__box {
+    margin-top: vc(20);
+    background: $color-pattens-blue-6;
+    padding: vc(35) vc(10);
+    border-radius: vc(30);
+    border: vc(5) solid $color-default-white;
+
+    &--light {
+      background: rgba($color-pattens-blue-6, 0.3);
+    }
+
+    @include tablet {
+      margin-top: vc(40);
+      padding: vc(60) vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(54);
+      padding: vc(77) vc(52);
+    }
+  }
+}

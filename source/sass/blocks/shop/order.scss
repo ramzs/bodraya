@@ -1,0 +1,73 @@
+.order {
+  &__section {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: vc(390);
+
+    @include tablet {
+      padding-bottom: vc(600);
+    }
+
+    @include desktop {
+      padding-top: vc(90);
+    }
+  }
+
+  &__head {
+    position: relative;
+    z-index: 2;
+    max-width: vc(916);
+  }
+
+  &__title {
+    margin-bottom: vc(21);
+
+    @include tablet {
+      margin-bottom: vc(38);
+    }
+
+    @include desktop {
+      margin-bottom: vc(54);
+    }
+  }
+
+  &__text {
+    margin-bottom: vc(27);
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: 170%;
+    color: $color-arapawa;
+
+    @include tablet {
+      margin-bottom: vc(30);
+      font-size: vc(18);
+    }
+
+    @include desktop {
+      margin-bottom: vc(42);
+      font-size: vc(25);
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    max-width: none;
+    bottom: vc(32);
+    left: vc(12);
+    width: vc(346);
+
+    @include tablet {
+      bottom: vc(30);
+      left: vc(88);
+      width: vc(617);
+    }
+
+    @include desktop {
+      bottom: auto;
+      left: auto;
+      top: vc(20);
+      right: vc(120);
+    }
+  }
+}

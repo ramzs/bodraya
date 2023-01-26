@@ -1,0 +1,125 @@
+.section-article {
+  &__headline {
+    margin: vc(40) 0 vc(20);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(55);
+      margin-bottom: vc(30);
+      font-size: vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+      margin-bottom: vc(35);
+      font-size: vc(56);
+    }
+  }
+
+  &__date {
+    margin: vc(20) 0 vc(30);
+    font-weight: 500;
+    font-size: vc(18);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+
+    @include tablet {
+      margin: vc(30) 0 vc(60);
+      font-size: vc(20);
+    }
+
+    @include desktop {
+      margin: vc(35) 0 vc(80);
+      font-size: vc(35);
+    }
+  }
+
+  &__content {
+    margin-bottom: vc(60);
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: 1.3;
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+
+    @include tablet {
+      margin-bottom: vc(80);
+      font-size: vc(16);
+      line-height: 1.25;
+    }
+
+    @include desktop {
+      margin-bottom: vc(150);
+      font-size: vc(25);
+      line-height: 1.2;
+    }
+  }
+
+  &__content .intro {
+    @include tablet {
+      font-size: vc(18);
+    }
+
+    @include desktop {
+      font-size: vc(30);
+    }
+  }
+
+  &__content p {
+    margin: 0;
+  }
+
+  &__content p:not(:last-of-type) {
+    margin-bottom: vc(15);
+
+    @include tablet {
+      margin-bottom: vc(20);
+    }
+
+    @include desktop {
+      margin-bottom: vc(30);
+    }
+  }
+
+  &__content img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border: vc(8) solid $color-default-white;
+    border-radius: vc(30);
+
+    @include desktop {
+      max-width: vc(710);
+      width: vc(710);
+    }
+  }
+
+  &__content .columns {
+    margin: vc(30) 0;
+    display: grid;
+    gap: vc(30);
+
+    @include tablet {
+      margin: vc(60) 0;
+      gap: vc(60);
+    }
+
+    @include desktop {
+      gap: vc(35);
+      grid-template-columns: auto auto;
+    }
+  }
+
+  &__content .columns > .column {
+    max-width: 100%;
+    width: 100%;
+  }
+}

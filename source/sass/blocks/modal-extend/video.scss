@@ -1,0 +1,60 @@
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &--video {
+    #{$block-name}__content {
+      max-width: vc(295);
+      padding: vc(25) vc(20);
+      text-align: left;
+      border: vc(4) solid $color-default-white;
+      border-radius: vc(30);
+
+      @include tablet {
+        max-width: vc(645);
+        padding: vc(40);
+        border-width: vc(5);
+        border-radius: vc(40);
+      }
+
+      @include desktop {
+        max-width: vc(1650);
+        padding: vc(64) vc(110);
+      }
+    }
+
+    #{$block-name}__close-btn {
+      top: vc(14);
+      right: vc(14);
+
+      @include tablet {
+        top: vc(28);
+        right: vc(28);
+      }
+
+      @include desktop {
+        top: vc(20);
+        right: vc(20);
+      }
+    }
+
+    #{$block-name}__headline {
+      margin: 0 0 vc(15);
+      font-weight: 700;
+      font-size: vc(24);
+      line-height: 1.15;
+      font-family: $ff-geometria;
+      @include stroke(4, $color-default-white);
+
+      @include tablet {
+        margin-bottom: vc(30);
+        font-size: vc(40);
+        @include stroke(8, $color-default-white);
+      }
+
+      @include desktop {
+        margin-bottom: vc(45);
+        font-size: vc(55);
+      }
+    }
+  }
+}

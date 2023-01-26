@@ -1,0 +1,100 @@
+.link-download {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    gap: vc(10);
+    color: $color-arapawa;
+    cursor: pointer;
+    transition: color $trans-300;
+
+    @include hover-focus {
+      #{$block-name}__name {
+        color: $color-pumpkin;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    max-width: vc(40);
+    width: 100%;
+    height: vc(40);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include tablet {
+      max-width: vc(65);
+      height: vc(65);
+    }
+  }
+
+  &--pdf &__icon {
+    background-image: url("../img/decoration-buttons/link-download-pdf.png");
+
+    @include retina {
+      background-image: url("../img/decoration-buttons/link-download-pdf@2x.png");
+    }
+  }
+
+  &--word &__icon {
+    background-image: url("../img/decoration-buttons/link-download-word.png");
+
+    @include retina {
+      background-image: url("../img/decoration-buttons/link-download-word@2x.png");
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100% - vc(50));
+    width: 100%;
+    gap: vc(5);
+    font-weight: 500;
+    line-height: 1.4;
+    font-family: $ff-geometria;
+
+    @include tablet {
+      max-width: calc(100% - vc(80));
+      gap: vc(8);
+    }
+  }
+
+  &__tags,
+  &__copy {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    font-size: vc(12);
+
+    @include tablet {
+      font-size: vc(14);
+    }
+
+    @include desktop {
+      font-size: vc(16);
+    }
+  }
+
+  &__name {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    font-size: vc(16);
+    transition: color $trans-300;
+
+    @include tablet {
+      font-size: vc(24);
+    }
+
+    @include desktop {
+      font-size: vc(26);
+    }
+  }
+}

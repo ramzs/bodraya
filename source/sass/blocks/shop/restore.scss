@@ -1,0 +1,65 @@
+.shop-restore {
+
+  .shop-page__title {
+    @include desktop {
+      font-size: vc(40);
+
+      @include stroke(8, $color-default-white);
+    }
+  }
+
+  .shop-page__box {
+    width: 100%;
+
+    @include desktop {
+      width: vc(810);
+    }
+  }
+
+  &__info {
+    font-family: $ff-geometria;
+    font-weight: 300;
+    font-size: vc(16);
+    line-height: vc(22);
+
+    b {
+      font-weight: 500;
+    }
+
+    @include tablet {
+      font-size: vc(18);
+      line-height: vc(25);
+    }
+
+    @include desktop {
+      font-size: vc(25);
+      line-height: vc(35);
+    }
+  }
+
+  .form {
+    margin-top: vc(30);
+
+    @include desktop {
+      margin-top: vc(40);
+    }
+  }
+
+  &__send-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: vc(35);
+
+    .button {
+      width: 100%;
+
+      @include tablet {
+        width: auto;
+      }
+    }
+
+    @include desktop {
+      margin-top: vc(45);
+    }
+  }
+}

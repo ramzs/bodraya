@@ -1,0 +1,46 @@
+mixin distributor(data, mods)
+  //- Принимает:
+  //- data {
+  //-   url:       {string},  - адрес для ссылки
+  //-   picture:   {path, image, format, width, height, altText},  - картинки блока
+  //-   name:      {string},  - название
+  //- }
+  //- mods {string}       - модификаторы
+
+  //- Вызов:
+        +card({
+          url: 'good01',
+          picture: {
+            path: 'img/',
+            image: 'demo-distributor',
+            format: 'jpg',
+            width: '455',
+            height: '455',
+          },
+          name: 'Пломбир шоколадный',
+        }, 'mod')
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' distributor--' + modsList[i].trim();
+      }
+    }
+
+    var url     = data.url;
+    var name    = data.name;
+    var path    = data.picture.path;
+    var image   = data.picture.image;
+    var format  = data.picture.format;
+    var width   = data.picture.width;
+    var height  = data.picture.height;
+
+  article.distributor(class=allMods)&attributes(attributes)
+    a.distributor__link.distributor__inner(href=url)
+      .distributor__img-wrap
+        +picture(path, image, format, width, height, altText)
+      .distributor__footer
+        h3.distributor__title!= name

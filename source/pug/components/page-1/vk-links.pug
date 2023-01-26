@@ -1,0 +1,24 @@
+mixin vk-links()
+  aside.vk-links
+    h3.vk-links__headline.headline!= "Мы ВКонтакте"
+    .vk-links__wrapper
+      ul.vk-links__items
+        li.vk-links__item
+          a.vk-links__link(href="#")
+            +picture("content/vk", "1", "jpg", 345, 345, "VK пост #1")
+            span.visually-hidden!= "VK пост"
+        li.vk-links__item
+          a.vk-links__link(href="#")
+            +picture("content/vk", "2", "jpg", 345, 345, "VK пост #2")
+            span.visually-hidden!= "VK пост"
+        li.vk-links__item
+          a.vk-links__link(href="#")
+            +picture("content/vk", "3", "jpg", 345, 345, "VK пост #3")
+            span.visually-hidden!= "VK пост"
+        li.vk-links__item
+          a.vk-links__link(href="#")
+            +picture("content/vk", "4", "jpg", 345, 345, "VK пост #4")
+            span.visually-hidden!= "VK пост"
+
+      .vk-links__actions
+        +button({text: "Подписаться"}).button--blue.vk-links__action

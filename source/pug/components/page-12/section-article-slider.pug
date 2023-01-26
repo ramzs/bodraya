@@ -1,0 +1,14 @@
+mixin section-article-slider(data, mods)
+  section.section-article-slider
+    .section-article-slider__wrapper(data-slider-container="article-slider-container")
+      +btn-prev({text: "Сюда"})(data-btn-prev).btn-navigation--big
+      +btn-next({text: "Туда"})(data-btn-next).btn-navigation--big
+      .section-article-slider__swiper-wrapper
+        .swiper(data-article-slider, data-delay="750", data-speed="7000")
+          .swiper-wrapper
+            - let N = 0;
+              while N < 10
+                .swiper-slide.section-article-slider__slide
+                  .section-article-slider__item
+                    +picture("news", "page-article", "jpg", 710, 735, "История в фактах из жизни легендарного мороженого")
+                - N++;

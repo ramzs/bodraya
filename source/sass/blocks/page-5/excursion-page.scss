@@ -1,0 +1,29 @@
+.excursion-page {
+  &,
+  &__content {
+    overflow: hidden;
+  }
+
+  &__headline {
+    margin: vc(40) 0 vc(30);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(25);
+      margin-bottom: vc(75);
+      font-size: vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(75);
+      margin-bottom: vc(110);
+      font-size: vc(70);
+    }
+  }
+}

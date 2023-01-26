@@ -1,0 +1,132 @@
+.section-news {
+  &__headline {
+    margin: vc(40) 0 vc(40);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    color: $color-arapawa;
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(55);
+      font-size: vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+      margin-bottom: vc(75);
+      font-size: vc(56);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-rows: auto;
+    margin: 0;
+    padding: 0;
+    gap: vc(30);
+    list-style: none;
+
+    @include tablet {
+      grid-template-columns: repeat(2, auto);
+      column-gap: vc(20);
+      row-gap: vc(30);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, auto);
+      column-gap: vc(50);
+      row-gap: vc(75);
+    }
+  }
+
+  &__actions {
+    position: relative;
+    z-index: 5;
+    margin: vc(65) 0;
+    text-align: center;
+
+    @include tablet {
+      margin: vc(70) 0;
+    }
+
+    @include desktop {
+      margin: vc(135) 0 vc(190);
+    }
+  }
+
+  &__action {
+    position: relative;
+    display: block;
+    max-width: vc(195);
+    width: 100%;
+    margin: 0 auto;
+    padding: vc(20) vc(35) vc(15) vc(15);
+    font-weight: 700;
+    font-size: vc(14);
+    line-height: 1.35;
+    text-align: center;
+    color: $color-default-white;
+    background-color: transparent;
+    background-image: url(../img/decoration-buttons/catalog-more-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: none;
+    cursor: pointer;
+
+    transition: color $trans-300;
+
+    @include tablet {
+      max-width: vc(220);
+      padding: vc(30) vc(50) vc(20) vc(40);
+      font-size: vc(16);
+
+      background-image: url(../img/decoration-buttons/catalog-more-md.svg);
+    }
+
+    @include desktop {
+      max-width: vc(250);
+      padding: vc(30) vc(60) vc(20) vc(40);
+      font-size: vc(18);
+      background-image: url(../img/decoration-buttons/catalog-more-lg.svg);
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+
+      &::before {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-20);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(74);
+      height: vc(74);
+      background-image: url(../img/decoration-buttons/catalog-more-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include tablet {
+        right: vc(-25);
+        width: vc(85);
+        height: vc(85);
+      }
+
+      @include desktop {
+        width: vc(100);
+        height: vc(100);
+      }
+    }
+  }
+}

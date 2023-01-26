@@ -1,0 +1,17 @@
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 vc(15);
+
+  @include tablet {
+    padding-right: vc(50);
+    padding-left: vc(50);
+  }
+
+  @include desktop {
+    max-width: vc(1600);
+    padding-right: vc(40);
+    padding-left: vc(40);
+  }
+}

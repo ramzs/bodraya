@@ -1,0 +1,285 @@
+.stack-products {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    margin-bottom: vc(65);
+
+    @include tablet {
+      margin-bottom: vc(110);
+    }
+
+    @include desktop {
+      margin-bottom: vc(275);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    background-color: $color-alice-blue-1;
+    border-radius: vc(30);
+    box-shadow: 0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    overflow: hidden;
+
+    @include tablet {
+      border-radius: vc(40);
+    }
+  }
+
+  &__wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/stack-products-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: vc(1600) auto;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.04;
+
+    @include retina {
+      background-image: url("../img/stack-products-bg@2x.jpg");
+    }
+  }
+
+  &__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 vc(2) $color-default-white,
+      0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    border-radius: vc(30);
+    pointer-events: none;
+    user-select: none;
+
+    @include tablet {
+      border-radius: vc(40);
+      box-shadow: inset 0 0 0 vc(5) $color-default-white,
+        0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    }
+
+    @include desktop {
+      box-shadow: inset 0 0 0 vc(11) $color-default-white,
+        0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    }
+  }
+
+  &__header {
+    padding-top: 0;
+    padding-bottom: vc(35);
+
+    @include tablet {
+      padding-top: vc(15);
+      padding-bottom: vc(95);
+    }
+
+    @include desktop {
+      padding-top: vc(65);
+      padding-bottom: vc(110);
+    }
+  }
+
+  &__headline {
+    margin: 0;
+    display: inline-block;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.15;
+    color: $color-arapawa;
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      font-size: vc(40);
+    }
+
+    @include desktop {
+      font-size: vc(56);
+      @include stroke(11, $color-default-white);
+    }
+  }
+
+  &__headline::after {
+    content: "";
+    display: inline-block;
+    margin-left: vc(10);
+    width: vc(15);
+    height: vc(35);
+    background-image: url(../img/svg/headline-bracket.svg);
+    background-size: vc(18);
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    @include tablet {
+      margin-left: vc(5);
+      width: vc(40);
+      height: vc(75);
+      background-size: vc(40);
+    }
+
+    @include desktop {
+      margin-left: vc(15);
+      height: vc(70);
+    }
+  }
+
+  &__tabs {
+    position: relative;
+    padding: vc(40) vc(15) vc(25);
+
+    @include tablet {
+      margin-bottom: vc(-5);
+      padding: vc(55) vc(40) vc(0);
+    }
+
+    @include desktop {
+      margin-bottom: vc(-10);
+      padding: vc(40) vc(90) vc(0);
+    }
+  }
+
+  &__tabs--runner &__controls {
+    display: flex;
+    margin-right: vc(-15);
+    margin-left: vc(-15);
+    padding: 0 vc(15) vc(40);
+    gap: vc(30);
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    align-items: center;
+
+    @include tablet {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0 0 vc(45);
+      gap: vc(55);
+    }
+
+    @include desktop {
+      padding-bottom: vc(70);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__control {
+    display: block;
+    padding: 0;
+    font-weight: 700;
+    font-size: vc(16);
+    line-height: 1.2;
+    color: $color-arapawa;
+    background: none;
+    border: none;
+    white-space: nowrap;
+    text-shadow: 0 0 0 rgba(34, 73, 109, 0);
+    transition: color $trans-300, text-shadow $trans-300;
+    cursor: pointer;
+
+    @include tablet {
+      font-size: vc(24);
+    }
+
+    @include desktop {
+    }
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        text-shadow: 0 vc(4) vc(10) rgba(34, 73, 109, 0.04);
+      }
+    }
+
+    &.focus-visible:focus {
+      text-shadow: 0 vc(4) vc(10) rgba(34, 73, 109, 0.04);
+    }
+  }
+
+  &__control.is-active {
+    color: $color-pumpkin;
+    text-shadow: 0 vc(4) vc(10) rgba(34, 73, 109, 0.04);
+    cursor: default;
+  }
+
+  &__swiper-scrollbar {
+    margin-bottom: 25px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__element {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .swiper {
+    & {
+      margin-right: vc(-15);
+      margin-left: vc(-15);
+      padding-right: vc(15);
+      padding-left: vc(15);
+      padding-bottom: vc(15);
+    }
+
+    .swiper-slide {
+      width: vc(155);
+      padding-right: vc(5);
+      padding-left: vc(5);
+    }
+
+    &:not(.swiper-initialized) {
+      @include tablet {
+        margin-right: vc(-10);
+        margin-left: vc(-10);
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @include desktop {
+        margin-right: calc(vc(-65) / 2);
+        margin-left: calc(vc(-65) / 2);
+      }
+    }
+
+    &:not(.swiper-initialized) .swiper-wrapper {
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &:not(.swiper-initialized) .swiper-slide {
+      @include tablet {
+        padding-right: vc(10);
+        padding-left: vc(10);
+        padding-bottom: vc(40);
+        max-width: calc(100% / 3);
+        width: 100%;
+      }
+
+      @include desktop {
+        max-width: calc(100% / 6);
+        padding-right: calc(vc(65) / 2);
+        padding-left: calc(vc(65) / 2);
+        padding-bottom: vc(45);
+      }
+    }
+  }
+}

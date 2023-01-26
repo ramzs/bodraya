@@ -1,0 +1,18 @@
+section.shop-page__section
+  .container
+    p.shop-page__title Восстановление пароля
+    .shop-page__box(data-form-validate, data-callback="restore")
+      p.shop-restore__info
+        b Введите ваш E-Mail.
+        br
+        | Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.
+      form.form(method="post")
+        +custom-input({
+          inputName: "user-login-mail",
+          inputPlaceholder: "yourmail@example.ru*",
+          inputType: "email",
+          iconName: "form-mail.svg"
+        })(data-validate-type="email", data-on-input-validate data-message-base="Поле обязательно к заполнению", data-required)
+        .shop-restore__send-btn
+          +button({text: "Восстановить пароль"}).button__primary
+

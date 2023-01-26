@@ -1,0 +1,23 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--blue";
+  - const hasHeader = true;
+  - const headerMods = "fixed";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const currentUrl = "page-1.html"; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +main-banner(mainBannerData)
+    +main-intro()
+    +main-features()
+    +main-bestsellers()
+    +main-map()
+    +main-excursion()
+    +main-bottom()
+block modals

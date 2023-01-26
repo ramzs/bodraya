@@ -1,0 +1,230 @@
+.main-contact-us {
+  position: relative;
+
+  &__headline {
+    margin: 0 0 vc(10);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    text-align: center;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      font-size: vc(40);
+      text-align: left;
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin-bottom: vc(30);
+      font-size: vc(55);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: vc(40) vc(10);
+    background-color: $color-pattens-blue-8;
+    border-radius: vc(30);
+    box-shadow: 0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    overflow: hidden;
+
+    @include tablet {
+      padding: vc(55) vc(40) vc(50);
+      border-radius: vc(40);
+    }
+
+    @include desktop {
+      padding: vc(85) vc(105) vc(50);
+    }
+  }
+
+  &__wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/stack-products-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: vc(1600) auto;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.04;
+
+    @include retina {
+      background-image: url("../img/stack-products-bg@2x.jpg");
+    }
+  }
+
+  &__wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 vc(2) $color-default-white,
+      0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    border-radius: vc(30);
+    pointer-events: none;
+    user-select: none;
+
+    @include tablet {
+      border-radius: vc(40);
+      box-shadow: inset 0 0 0 vc(5) $color-default-white,
+        0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    }
+
+    @include desktop {
+      box-shadow: inset 0 0 0 vc(11) $color-default-white,
+        0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
+    }
+  }
+
+  &__form {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    gap: vc(20);
+
+    @include desktop {
+      max-width: vc(770);
+    }
+  }
+
+  &__row {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    gap: vc(20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, calc((100% - vc(20)) / 2));
+      column-gap: vc(20);
+      row-gap: vc(25);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, calc((100% - vc(30)) / 2));
+      column-gap: vc(30);
+      row-gap: vc(20);
+    }
+  }
+
+  &__row--wide {
+    @include tablet {
+      grid-template-columns: auto;
+    }
+
+    @include desktop {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__actions {
+    margin-top: vc(-20);
+    padding: 0 vc(30);
+    text-align: center;
+
+    @include tablet {
+      padding: 0;
+      margin-top: vc(-45);
+      text-align: right;
+    }
+
+    @include desktop {
+      margin-top: vc(-55);
+    }
+  }
+
+  &__action {
+    max-width: 100%;
+    width: 100%;
+
+    @include tablet {
+      max-width: vc(215);
+    }
+  }
+
+  textarea {
+    min-height: vc(250);
+
+    @include tablet {
+      min-height: vc(145);
+    }
+  }
+
+  &__copy {
+    margin: 0;
+    font-size: vc(14);
+    line-height: 1.35;
+    text-align: center;
+    color: $color-arapawa;
+    opacity: 0.4;
+
+    @include desktop {
+      margin-top: vc(-10);
+      text-align: right;
+    }
+  }
+
+  &__decoration {
+    @include desktop {
+      position: absolute;
+      top: calc(50% - vc(70));
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: block;
+      width: vc(715);
+      height: vc(885);
+      background-image: url(../img/decoration/main-contact-us.png);
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: contain;
+
+      @include retina {
+        background-image: url(../img/decoration/main-contact-us@2x.png);
+      }
+    }
+  }
+
+  .custom-select {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+
+    &__button {
+      min-height: vc(68);
+      background-color: $color-default-white;
+      border-radius: vc(52);
+      border: none;
+    }
+
+    &__placeholder {
+      transform: translateY(-50%);
+      padding: vc(22) vc(20);
+      color: $color-arapawa;
+      opacity: 0.7;
+    }
+
+    &__icon {
+      display: block;
+      width: vc(46);
+      height: vc(46);
+      margin-right: vc(12);
+      border-radius: 50%;
+      background: #f5f5f5;
+      clip-path: none;
+    }
+  }
+}

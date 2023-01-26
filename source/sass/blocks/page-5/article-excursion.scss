@@ -1,0 +1,859 @@
+.article-excursion {
+  & {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+  }
+
+  &__headline {
+    margin: 0 0 vc(15);
+    font-weight: 700;
+    font-size: vc(16);
+    line-height: 1.25;
+
+    @include tablet {
+      margin-bottom: vc(20);
+      font-size: vc(18);
+    }
+
+    @include desktop {
+      margin-bottom: vc(30);
+      font-size: vc(36);
+    }
+  }
+
+  &__content {
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: 1.3;
+
+    @include tablet {
+      font-size: vc(16);
+    }
+
+    @include desktop {
+      font-size: vc(18);
+    }
+  }
+
+  &__content p {
+    margin: 0;
+  }
+
+  &__content p:not(:last-of-type) {
+    margin-bottom: vc(20);
+  }
+
+  &__headline--big {
+    font-size: vc(20);
+    @include stroke(5, $color-default-white);
+
+    @include tablet {
+      font-size: vc(24);
+      @include stroke(8, $color-default-white);
+    }
+
+    @include desktop {
+      font-size: vc(50);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__image--border {
+    border-radius: vc(20);
+    border: vc(5) solid $color-default-white;
+
+    @include desktop {
+      border-radius: vc(40);
+      border: vc(8) solid $color-default-white;
+    }
+  }
+
+  &__actions {
+    position: relative;
+    z-index: 5;
+    margin: vc(30) 0 vc(55);
+    text-align: center;
+
+    @include tablet {
+      margin: vc(50) 0 vc(65);
+    }
+
+    @include desktop {
+      margin: vc(65) 0 vc(385);
+    }
+  }
+
+  &__action {
+    position: relative;
+    display: block;
+    max-width: vc(215);
+    width: 100%;
+    margin: 0 auto;
+    padding: vc(20) vc(35) vc(15) vc(15);
+    font-weight: 700;
+    font-size: vc(14);
+    line-height: 1.35;
+    text-align: center;
+    color: $color-default-white;
+    background-color: transparent;
+    background-image: url(../img/decoration-buttons/catalog-more-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: none;
+    cursor: pointer;
+
+    transition: color $trans-300;
+
+    @include tablet {
+      max-width: vc(220);
+      font-size: vc(16);
+
+      background-image: url(../img/decoration-buttons/catalog-more-md.svg);
+    }
+
+    @include desktop {
+      margin: 0;
+      max-width: vc(335);
+      padding: vc(30) vc(60) vc(20) vc(40);
+      font-size: vc(18);
+      background-image: url(../img/decoration-buttons/catalog-more-lg.svg);
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+
+      &::before {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-50);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(125);
+      height: vc(125);
+      background-image: url(../img/decoration-buttons/excursion-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include desktop {
+        width: vc(140);
+        height: vc(140);
+      }
+
+      @include retina {
+        background-image: url(../img/decoration-buttons/excursion-icon@2x.png);
+      }
+    }
+  }
+
+  &__links {
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: vc(70);
+    }
+
+    @include desktop {
+      gap: vc(100);
+      justify-content: center;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding-right: vc(50);
+    font-weight: 400;
+    font-size: vc(18);
+    line-height: 1.3;
+    color: $color-arapawa;
+    transition: color $trans-300;
+    background-repeat: no-repeat;
+    background-image: url(../img/decoration-buttons/link-download.png);
+    background-size: auto vc(45);
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    @include tablet {
+      font-size: vc(25);
+    }
+
+    @include desktop {
+      padding-right: vc(100);
+      font-size: vc(30);
+      background-size: auto vc(75);
+    }
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/link-download@2x.png);
+    }
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: vc(25);
+
+      @include tablet {
+        margin: 0;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: vc(20);
+
+    @include tablet {
+      grid-template: "content image";
+      grid-template-columns: vc(280) calc(100% - vc(305));
+      gap: vc(25);
+    }
+
+    @include desktop {
+      // grid-template-columns: vc(540) calc(100% - vc(580));
+      grid-template-columns: vc(400) calc(100% - vc(425));
+    }
+  }
+
+  &__grid--reverse {
+    @include tablet {
+      grid-template: "image content";
+      grid-template-columns: calc(100% - vc(270)) vc(245);
+    }
+
+    @include desktop {
+      grid-template-columns: calc(100% - vc(540)) vc(400);
+    }
+  }
+
+  &__grid > &__content {
+    @include tablet {
+      grid-area: content;
+    }
+  }
+
+  &__grid > &__image-wrapper {
+    @include tablet {
+      grid-area: image;
+    }
+  }
+
+  &__grid > &__actions {
+    @include tablet {
+      grid-area: actions;
+    }
+  }
+
+  &__grid > &__links {
+    @include tablet {
+      grid-area: links;
+    }
+  }
+
+  &--six &__grid {
+    @include tablet {
+      grid-template: "image" "content" "actions" "links";
+      grid-template-columns: 100%;
+    }
+
+    @include desktop {
+      grid-template: "image content" "image actions" "links links";
+      grid-template-columns: vc(620) calc(100% - vc(620 + 425));
+      gap: vc(425);
+      row-gap: 0;
+    }
+  }
+
+  &--intro &__headline {
+    margin-top: vc(45);
+    margin-bottom: vc(35);
+
+    @include tablet {
+      margin-top: vc(105);
+      margin-bottom: vc(50);
+    }
+
+    @include desktop {
+      margin-top: vc(190);
+      margin-bottom: vc(15);
+    }
+  }
+
+  &--one &__headline {
+    @include tablet {
+      margin-top: vc(75);
+    }
+
+    @include desktop {
+      margin-top: vc(200);
+    }
+  }
+
+  &--two &__headline {
+    margin-top: vc(15);
+
+    @include tablet {
+      margin-top: vc(70);
+    }
+
+    @include desktop {
+      margin-top: vc(225);
+    }
+  }
+
+  &--three &__headline {
+    margin-top: vc(10);
+
+    @include tablet {
+      margin-top: vc(135);
+    }
+
+    @include desktop {
+      margin-top: vc(290);
+    }
+  }
+
+  &--four &__headline {
+    @include tablet {
+      margin-top: vc(60);
+    }
+
+    @include desktop {
+      margin-top: vc(280);
+    }
+  }
+
+  &--five &__headline {
+    margin-top: vc(65);
+
+    @include tablet {
+      margin-top: vc(245);
+    }
+
+    @include desktop {
+      margin-top: vc(355);
+    }
+  }
+
+  &--six &__headline {
+    margin-top: vc(35);
+
+    @include tablet {
+      margin-top: vc(25);
+    }
+
+    @include desktop {
+      margin-top: vc(155);
+    }
+  }
+
+  &--three &__content p {
+    @include desktop {
+      max-width: vc(280);
+    }
+  }
+
+  &--four &__content {
+    @include desktop {
+      margin-left: vc(-40);
+    }
+  }
+
+  &--four &__content p {
+    @include desktop {
+      max-width: vc(320);
+    }
+  }
+
+  &--six &__content {
+    @include tablet {
+      max-width: vc(280);
+    }
+
+    @include desktop {
+      max-width: vc(405);
+    }
+  }
+
+  &--one &__image-wrapper {
+    padding-top: vc(15);
+    padding-left: vc(15);
+    padding-bottom: vc(30);
+
+    @include tablet {
+      padding-left: vc(60);
+    }
+  }
+
+  &--two &__image-wrapper {
+    display: none;
+  }
+
+  &--three &__image-wrapper {
+    display: none;
+
+    @include desktop {
+      position: relative;
+      z-index: -1;
+      margin: vc(25) auto;
+    }
+  }
+
+  &--four &__image-wrapper {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &--five &__image-wrapper {
+    display: none;
+  }
+
+  &--six &__image-wrapper {
+    @include tablet {
+      max-width: vc(390);
+    }
+
+    @include desktop {
+      margin-top: vc(135);
+      max-width: 100%;
+    }
+  }
+
+  &--one &__image {
+    margin-left: auto;
+  }
+
+  &--one > &__wrapper {
+    min-height: vc(405);
+
+    @include tablet {
+      min-height: vc(360);
+    }
+
+    @include desktop {
+      min-height: vc(655);
+    }
+  }
+
+  &--two > &__wrapper {
+    min-height: vc(530);
+
+    @include tablet {
+      min-height: vc(385);
+    }
+
+    @include desktop {
+      min-height: vc(710);
+    }
+  }
+
+  &--three > &__wrapper {
+    min-height: vc(495);
+
+    @include tablet {
+      min-height: vc(515);
+    }
+
+    @include desktop {
+      min-height: vc(870);
+    }
+  }
+
+  &--four > &__wrapper {
+    min-height: vc(390);
+
+    @include desktop {
+      min-height: vc(950);
+    }
+  }
+
+  &--five > &__wrapper {
+    min-height: vc(525);
+
+    @include tablet {
+      min-height: vc(595);
+    }
+
+    @include desktop {
+      min-height: vc(1000);
+    }
+  }
+
+  &--six > &__wrapper {
+    min-height: vc(675);
+
+    @include desktop {
+      min-height: vc(1065);
+    }
+  }
+
+  &__decoration {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &--one &__decoration--footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    height: vc(150);
+    background-image: url(../img/decoration/excursion-bottom-1-lg.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
+
+    @include tablet {
+      height: vc(375);
+      background-image: url(../img/decoration/excursion-bottom-1-md.png);
+    }
+
+    @include desktop {
+      bottom: vc(-150);
+      height: vc(850);
+      background-image: url(../img/decoration/excursion-bottom-1-lg.png);
+    }
+
+    @include retina {
+      height: vc(660);
+      background-image: url(../img/decoration/excursion-bottom-1-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-1-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-1-lg@2x.png);
+      }
+    }
+  }
+
+  &--two &__decoration--header {
+    position: absolute;
+    top: vc(-35);
+    right: 0;
+    left: 0;
+    display: block;
+    height: 100vh;
+    clip-path: url(#svgClipExcursionArticle2);
+    background: linear-gradient(180deg, #c1e0fe 10.55%, #dceeff 100%);
+
+    @include desktop {
+      height: 100vw;
+      top: vc(-135);
+    }
+  }
+
+  &--two &__decoration--footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: vc(0);
+    display: block;
+    height: vc(425);
+    background-image: url(../img/decoration/excursion-bottom-2-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom left;
+
+    @include tablet {
+      height: vc(370);
+      background-image: url(../img/decoration/excursion-bottom-2-md.png) !important;
+    }
+
+    @include desktop {
+      bottom: calc(-130 * var(--width-multiplier));
+      height: vc(1055);
+      background-image: url(../img/decoration/excursion-bottom-2-lg.png) !important;
+      background-size: 100% auto;
+      background-position: bottom;
+    }
+
+    @include retina {
+      background-image: url(../img/decoration/excursion-bottom-2-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-2-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-2-lg@2x.png) !important;
+      }
+    }
+  }
+
+  &--three &__decoration--header {
+    position: absolute;
+    top: vc(-20);
+    right: 0;
+    left: 0;
+    display: block;
+    height: 100vh;
+    clip-path: url(#svgClipExcursionArticle3);
+    background: $color-alice-blue-1;
+
+    @include desktop {
+      top: vc(-50);
+      height: 100vw;
+    }
+  }
+
+  &--three &__decoration--footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: vc(70);
+    display: block;
+    height: vc(245);
+    background-image: url(../img/decoration/excursion-bottom-3-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    @include tablet {
+      height: vc(445);
+      background-image: url(../img/decoration/excursion-bottom-3-md.png) !important;
+    }
+
+    @include desktop {
+      bottom: vc(50);
+      height: vc(825);
+      background-image: url(../img/decoration/excursion-bottom-3-lg.png) !important;
+      background-size: 100% auto;
+      background-position: bottom;
+    }
+
+    @include retina {
+      background-image: url(../img/decoration/excursion-bottom-3-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-3-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-3-lg@2x.png) !important;
+      }
+    }
+  }
+
+  &--four &__decoration--header {
+    position: absolute;
+    top: vc(-100);
+    right: 0;
+    left: 0;
+    display: block;
+    height: 100vh;
+    clip-path: url(#svgClipExcursionArticle4);
+    background: linear-gradient(180deg, #c1e0fe 4%, #dceeff 100%);
+
+    @include desktop {
+      top: vc(-150);
+      height: 100vw;
+    }
+  }
+
+  &--four &__decoration--footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: vc(-20);
+    display: block;
+    height: vc(660);
+    background-image: url(../img/decoration/excursion-bottom-4-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    @include tablet {
+      background-image: url(../img/decoration/excursion-bottom-4-md.png) !important;
+    }
+
+    @include desktop {
+      bottom: vc(-45);
+      height: vc(1185);
+      background-image: url(../img/decoration/excursion-bottom-4-lg.png) !important;
+      background-size: 100% auto;
+      background-position: bottom;
+    }
+
+    @include retina {
+      background-image: url(../img/decoration/excursion-bottom-4-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-4-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-4-lg@2x.png) !important;
+      }
+    }
+  }
+
+  &--five &__decoration--header {
+    position: absolute;
+    top: vc(-10);
+    right: 0;
+    left: 0;
+    display: block;
+    height: 100vh;
+    clip-path: url(#svgClipExcursionArticle3);
+    background: linear-gradient(180deg, #ffffff 14.14%, #fafafa 79.31%);
+
+    @include desktop {
+      top: vc(-50);
+      height: 100vw;
+    }
+  }
+
+  &--five &__decoration--footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: vc(50);
+    display: block;
+    height: vc(285);
+    background-image: url(../img/decoration/excursion-bottom-5-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    @include tablet {
+      height: vc(445);
+      background-image: url(../img/decoration/excursion-bottom-5-md.png) !important;
+    }
+
+    @include desktop {
+      height: vc(875);
+      background-image: url(../img/decoration/excursion-bottom-5-lg.png) !important;
+      background-size: 100% auto;
+      background-position: bottom;
+    }
+
+    @include retina {
+      background-image: url(../img/decoration/excursion-bottom-5-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-5-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-5-lg@2x.png) !important;
+      }
+    }
+  }
+
+  &--six &__decoration--header {
+    position: absolute;
+    top: vc(-80);
+    right: 0;
+    left: 0;
+    display: block;
+    height: 100vh;
+    clip-path: url(#svgClipExcursionArticle6);
+    background-color: $color-alice-blue-1;
+
+    @include desktop {
+      top: vc(-190);
+      height: 100vw;
+    }
+  }
+
+  &--six &__decoration--center {
+    position: absolute;
+    top: vc(-5);
+    right: 0;
+    left: 0;
+    z-index: 5;
+    display: block;
+    height: vc(350);
+    background-image: url(../img/decoration/excursion-bottom-6-2-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    @include tablet {
+      top: vc(55);
+      height: vc(450);
+      background-image: url(../img/decoration/excursion-bottom-6-2-md.png) !important;
+    }
+
+    @include desktop {
+      background-image: url(../img/decoration/excursion-bottom-6-2.png) !important;
+      background-size: 100% auto;
+      background-position: bottom;
+    }
+
+    @include retina {
+      background-image: url(../img/decoration/excursion-bottom-6-2-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-6-2-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-6-2@2x.png) !important;
+      }
+    }
+  }
+
+  &--six &__decoration--footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: vc(0);
+    display: block;
+    height: vc(275);
+    background-image: url(../img/decoration/excursion-bottom-6-sm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+
+    @include tablet {
+      height: vc(240);
+      background-image: url(../img/decoration/excursion-bottom-6-md.png) !important;
+    }
+
+    @include desktop {
+      background-image: url(../img/decoration/excursion-bottom-6.png) !important;
+      background-size: 100% auto;
+      background-position: bottom;
+    }
+
+    @include retina {
+      background-image: url(../img/decoration/excursion-bottom-6-sm@2x.png);
+
+      @include tablet {
+        background-image: url(../img/decoration/excursion-bottom-6-md@2x.png) !important;
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration/excursion-bottom-6@2x.png) !important;
+      }
+    }
+  }
+}

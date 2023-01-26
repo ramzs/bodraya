@@ -1,0 +1,68 @@
+mixin btn(options = {})
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+  #{tag}.btn(href=href, target=target, rel=rel, type=type)&attributes(attributes)!=text
+
+mixin btn-skew(options = {})
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+  #{tag}.btn-skew(href=href, target=target, rel=rel, type=type)&attributes(attributes)
+    span.btn-skew__body!=text
+    span.btn-skew__icon
+
+mixin btn-prev(options = {})
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+  #{tag}.btn-navigation.btn-navigation--prev(href=href, target=target, rel=rel, type=type, aria-label=text)&attributes(attributes)
+    span.visually-hidden!= text
+    +icon("arrow-left", 28)
+
+mixin btn-next(options = {})
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+
+  #{tag}.btn-navigation.btn-navigation--next(href=href, target=target, rel=rel, type=type, aria-label=text)&attributes(attributes)
+    span.visually-hidden!= text
+    +icon("arrow-right", 28)
+
+
+mixin button(options = {}, mods)
+  -
+    let allMods = '';
+    if (typeof(mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' button--' + modsList[i].trim();
+      }
+    }
+  - const tag = options.href ? "a" : "button";
+  - const href = options.href || false;
+  - const text = options.text || "";
+  - const type = options.type || tag === "button" ? options.type || "button" : false;
+  - const target = options.isExternal ? "_blank" : false;
+  - const rel = options.isExternal ? "nofollow noopener noreferrer" : false;
+  - const icon = options.icon || false
+
+  #{tag}.button(href=href, target=target, rel=rel, type=type, class=allMods)&attributes(attributes)
+    span.button__body!=text
+    if(!!icon)
+      span.button__icon

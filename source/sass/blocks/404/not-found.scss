@@ -1,0 +1,143 @@
+.not-found {
+  &__page {
+    overflow: hidden;
+  }
+
+  &__section {
+    position: relative;
+    margin: vc(50) 0 vc(30);
+
+    @include tablet {
+      margin: vc(86) 0 vc(175);
+    }
+
+    @include desktop {
+      margin: vc(175) 0 vc(140);
+    }
+  }
+
+  &__head {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    @include tablet {
+      margin: 0 auto;
+      width: vc(565);
+    }
+
+    @include desktop {
+      margin: 0;
+    }
+  }
+
+  &__subtitle,
+  &__title,
+  &__text,
+  &__description {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    line-height: 1;
+    text-align: center;
+
+    @include desktop {
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: vc(20);
+    align-self: flex-end;
+
+    @include tablet {
+      font-size: vc(40);
+    }
+  }
+
+  &__title {
+    margin: vc(20) 0 vc(7);
+    font-weight: 800;
+    font-size: vc(122);
+    display: flex;
+    gap: vc(5);
+
+    &-zero {
+      width: vc(122);
+      max-width: none;
+      object-fit: contain;
+      transform: translateY(vc(-20));
+
+      @include tablet {
+        width: vc(250);
+      }
+    }
+
+    @include tablet {
+      margin: vc(20) 0 vc(15);
+      font-size: vc(250);
+      gap: vc(5);
+    }
+  }
+
+  &__text {
+    margin: 0 0 vc(13);
+    font-weight: 500;
+    font-size: vc(18);
+
+    @include tablet {
+      margin: 0 0 vc(22);
+      font-size: vc(37);
+    }
+  }
+
+  &__description {
+    margin: 0 0 vc(20);
+    font-weight: 300;
+    font-size: vc(12);
+
+    @include tablet {
+      margin: 0 0 vc(50);
+      font-size: vc(20);
+    }
+
+    @include desktop {
+      margin: 0 0 vc(75);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    display: none;
+    z-index: 0;
+    right: vc(-490);
+    bottom: vc(-460);
+    width: vc(1602);
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    z-index: 0;
+    width: vc(565);
+    top: vc(-90);
+    left: vc(-160);
+
+    @include tablet {
+      width: vc(515);
+      top: vc(-55);
+      left: vc(-210);
+    }
+
+    @include desktop {
+      width: vc(565);
+      top: vc(-90);
+      left: vc(-160);
+    }
+  }
+}

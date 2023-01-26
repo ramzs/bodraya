@@ -1,0 +1,21 @@
+mixin social-links(mods)
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social-links--' + modsList[i].trim();
+      }
+    }
+
+  ul.social-links(class=allMods)&attributes(attributes)
+    li
+      a.social-links__link(hre="#", title="Наша группа в ВК", rel="noopener nofollow", target="_blank")
+        span.sr-only!= "Наша группа в ВК"
+        +icon("vk", 28, 28).icon
+    li
+      a.social-links__link(hre="#", title="Наш канал на YouTube", rel="noopener nofollow", target="_blank")
+        span.sr-only!= "Наш канал на YouTube"
+        +icon("yt", 28, 28).icon

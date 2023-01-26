@@ -1,0 +1,78 @@
+.sub-links {
+  $block-name: &; // #{$block-name}__element
+
+  &__wrapper {
+    position: relative;
+    padding: 0 vc(50);
+    max-width: 100%;
+    width: 100%;
+    background-color: $color-default-white;
+    border-radius: vc(200);
+    box-shadow: 0 vc(4) vc(19) rgba(40, 46, 102, 0.03);
+  }
+
+  &__item {
+    width: auto;
+  }
+
+  &__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: vc(35);
+    height: vc(35);
+    border-radius: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    transition: background-color $trans-300;
+
+    @include hover-focus {
+      background-color: rgba($color: $color-pumpkin, $alpha: 0.15);
+    }
+  }
+
+  &__control[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &__control--prev {
+    left: vc(20);
+    background-image: url(../img/svg/sub-link-prev.svg);
+  }
+
+  &__control--next {
+    right: vc(20);
+    background-image: url(../img/svg/sub-link-next.svg);
+  }
+
+  .swiper {
+    margin-right: vc(-50) / 2;
+    margin-left: vc(-50) / 2;
+    padding-right: vc(50) / 2;
+    padding-left: vc(50) / 2;
+  }
+}
+
+.sub-link {
+  display: block;
+  padding: vc(20) calc(vc(45) / 2);
+  font-weight: 400;
+  font-size: vc(16);
+  color: $color-arapawa;
+
+  transition: color $trans-300;
+
+  @include hover-focus {
+    color: $color-pumpkin;
+  }
+
+  &.is-active {
+    color: $color-pumpkin;
+  }
+}

@@ -1,0 +1,27 @@
+mixin header(headerMods, currentUrl)
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(headerMods) !== 'undefined' && headerMods) {
+      var modsList = headerMods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-header--' + modsList[i].trim();
+      }
+    }
+
+  header.page-header(class=allMods)&attributes(attributes)
+    .page-header__grid
+      +logo(currentUrl).page-header__logo
+
+      .page-header__menu-toggle-wrp
+        button.page-header__menu-toggle.btn-reset(type="button", aria-pressed="false" data-menu-btn)
+          span.caps-12.page-header__toggle-title!= "Меню"
+      +sub-links(menuSubLinks, currentUrl).page-header__sub-links
+      +social-links().social-links--tiny.page-header__social-links
+      a.page-header__link-phone.link(href="tel:88002001959")!= "8-800-200-19-59"
+      a.page-header__link-store.link(href="#")!= "Интернет-магазин"
+
+    .page-header__menu-wrapper
+      .page-header__menu-overlay(data-page-overlay)
+      +main-nav(currentUrl)

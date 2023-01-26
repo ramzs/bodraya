@@ -1,0 +1,69 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+@mixin active {
+  &.focus-visible:active {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      @content;
+    }
+  }
+
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {Style}           - text-shadow
+///
+///
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}
+
+// Mobile first
+
+@mixin max-tablet {
+  // change the values for the situation
+  @media (max-width: (743 * 1px)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  // change the values for the situation
+  @media (min-width: (744 * 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: (1024 * 1px)) {
+    @content;
+  }
+}

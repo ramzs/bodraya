@@ -1,0 +1,143 @@
+mixin main-nav(currentUrl)
+  -
+    const menuLinksLeft = [
+      {
+        href: "index.html",
+        text: "Продукция"
+      },
+      {
+        href: "#",
+        text: "Экскурсии"
+      },
+      {
+        href: "#",
+        text: "Контакты"
+      },
+      {
+        href: "#",
+        text: "Новости"
+      },
+      {
+        href: "#",
+        text: "Вакансии"
+      },
+    ];
+
+    const menuLinksRight = [
+      {
+        text: "О компании",
+        links: [
+          {
+            href: "#",
+            text: "История компании"
+          },
+          {
+            href: "#",
+            text: "Производство мороженого"
+          },
+          {
+            href: "#",
+            text: "О молоке"
+          },
+          {
+            href: "#",
+            text: "Награды, сертификаты, благодарности"
+          },
+          {
+            href: "#",
+            text: "Политика и цели в области качества"
+          },
+          {
+            href: "#",
+            text: "Юридическая информация"
+          },
+        ]
+      },
+      {
+        text: "Аренда и услуги",
+        links: [
+          {
+            href: "#",
+            text: "Складская обработка товара"
+          },
+          {
+            href: "#",
+            text: "Оказание транспортных услуг"
+          },
+          {
+            href: "#",
+            text: "Продажа морозильного б/у оборудования"
+          },
+          {
+            href: "#",
+            text: "Продажа б/у оборудования и автотранспорта"
+          },
+          {
+            href: "#",
+            text: "Низкотемпературные склады"
+          },
+          {
+            href: "#",
+            text: "Офисы, нежилые помещения"
+          },
+          {
+            href: "#",
+            text: "Земельные участки"
+          },
+        ]
+      },
+      {
+        text: "Акционерам",
+        links: [
+          {
+            href: "#",
+            text: "Основная информация"
+          },
+          {
+            href: "#",
+            text: "Банковские реквизиты"
+          },
+          {
+            href: "#",
+            text: "Документы"
+          },
+        ]
+      },
+    ];
+
+  nav.main-nav
+    .main-nav__wrapper
+      .main-nav__header-grid
+        +logo(currentUrl).main-nav__logo
+        a.main-nav__link-phone.link(href="tel:88002001959")!= "8-800-200-19-59"
+        button.main-nav__action-closed(data-menu-btn-close, aria-label="Закрыть меню")
+          span.visually-hidden!= "Закрыть меню"
+        +social-links().main-nav__social-links
+        a.main-nav__link-store.link(href="#")!= "Интернет-магазин"
+      .main-nav__main-grid
+        .main-nav__col.main-nav__col--shrink
+          ul.main-nav__list
+            each link in menuLinksLeft
+              - const activeState = currentUrl === link.href
+              li.main-nav__item.main-nav__item--large
+                if(activeState)
+                  span.main-nav__link.main-nav__link--darken.is-active=link.text
+                else
+                  a.main-nav__link.main-nav__link--darken(href=link.href)=link.text
+
+        .main-nav__col.main-nav__col--wide
+          .accordion(data-accordion="parent", data-single, data-destroy="(max-width: 576px)")
+            each band in menuLinksRight
+              .accordion__element(data-accordion="element")
+                button.accordion__button(type="button", data-accordion="button")!= band.text
+                .accordion__content(data-accordion="content")
+                  .accordion__wrapper
+
+                    ul.main-nav__list
+                      each link in band.links
+                        - const activeState = currentUrl === link.href
+                        li.main-nav__item
+                          if(activeState)
+                            span.main-nav__link.is-active=link.text
+                          else
+                            a.main-nav__link(href=link.href)=link.text

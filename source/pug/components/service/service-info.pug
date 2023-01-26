@@ -1,0 +1,21 @@
+mixin service-info(key, data)
+  .service__info
+    img(src=`img/service/${key + 1}.png`).service__image
+    .service__box
+      h2.service__title!=data[key].title
+      p.service__name!= "Курбанов Магомед Магомедович"
+      .contact
+        .contact__item
+          img(src="img/svg/icon-phone.svg").contact__icon
+          .contact__info
+            span.contact__text Телефон:
+            br
+            a(href="tel:+79103233285").contact__link!= "+7(910) 323-32-85;"
+            br
+            a(href="tel:+74722217887").contact__link!= "+7(4722) 21-78-87"
+        .contact__item
+          img(src="img/svg/icon-mail.svg").contact__icon
+          .contact__info
+            span.contact__text!= "Почта:&nbsp;"
+            |
+            a(href="mailto:kurbanov@belhlado.ru").contact__link!= "kurbanov@belhlado.ru"

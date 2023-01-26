@@ -1,0 +1,304 @@
+$color-navigation-bg: $color-default-white;
+$color-navigation-cn: $color-pumpkin;
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  padding: vc(32) vc(35) vc(25);
+  min-width: vc(120);
+  width: auto;
+  font-weight: 700;
+  font-size: vc(14);
+  font-family: $ff-myriad-pro;
+  line-height: 1.4;
+  text-align: center;
+  // color: $btn-text;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &--primary {
+    background-color: transparent;
+
+    &::before {
+      background-color: $btn-bg-primary;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+}
+
+.btn-skew {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    min-width: vc(50);
+    max-width: 100%;
+    width: auto;
+    font-weight: 700;
+    font-size: vc(14);
+    font-family: $ff-myriad-pro;
+    line-height: 1.4;
+    text-align: center;
+    color: $color-default-white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color $trans-300;
+
+    @include tablet {
+      min-width: vc(65);
+    }
+
+    @include desktop {
+      min-width: vc(70);
+      font-size: vc(18);
+    }
+
+    @include hover-focus {
+      background-color: transparent;
+
+      #{$block-name}__body::before {
+        background-color: rgba($color: $color-pumpkin, $alpha: 0.9);
+      }
+    }
+  }
+
+  &__body {
+    display: inherit;
+    padding: vc(20) vc(10) vc(15);
+
+    @include tablet {
+      padding: vc(28) vc(15) vc(15);
+    }
+
+    @include desktop {
+      padding: vc(30) vc(25) vc(18);
+    }
+  }
+
+  &__body::before,
+  &__body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 100%;
+    clip-path: url(#svgClipBtnSkewSm);
+    transition: background-color $trans-300;
+
+    @include tablet {
+      clip-path: url(#svgClipBtnSkewMd);
+    }
+
+    @include desktop {
+      clip-path: url(#svgClipBtnSkewLg);
+    }
+  }
+
+  &__body::before {
+    background-color: $color-pumpkin;
+  }
+
+  &__body::after {
+    content: none;
+  }
+}
+
+.btn-navigation {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: vc(10);
+  width: vc(32);
+  height: vc(35);
+  font-size: vc(12);
+  line-height: 1;
+  text-align: center;
+  color: $color-navigation-cn;
+  background-color: $color-navigation-bg;
+  border: none;
+  transition: color $trans-300, background-color $trans-300;
+
+  cursor: pointer;
+  filter: drop-shadow(0 vc(5) vc(12) rgba(40, 46, 102, 0.07));
+
+  @include hover-focus {
+    color: $color-navigation-bg;
+    background-color: $color-navigation-cn;
+  }
+
+  &--prev {
+    clip-path: url(#svgClipBtnPrev);
+  }
+
+  &--next {
+    clip-path: url(#svgClipBtnNext);
+  }
+
+  &--big {
+    @include desktop {
+      width: vc(64);
+      height: vc(72);
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.75;
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// https://qna.habr.com/q/551457?ysclid=ld3nstv523179493251
+.button {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    border: none;
+    padding: vc(15) vc(44) vc(15) vc(28);
+    line-height: 1;
+    font-weight: 700;
+    font-size: vc(16);
+    text-align: center;
+    border-radius: 0 vc(6) vc(6) vc(6);
+    transition: color $trans-300, background-color $trans-300;
+    z-index: 1;
+
+    @include desktop {
+      padding: vc(15) vc(65) vc(22);
+      font-size: vc(20);
+      border-radius: 0 vc(12) vc(12) vc(12);
+    }
+
+    @include hover-focus {
+      #{$block-name}__icon {
+        transform: translateY(-55%) scale(0.8);
+      }
+    }
+  }
+
+  &::after {
+    top: vc(-6);
+    left: 0;
+    content: "";
+    position: absolute;
+    border-radius: vc(6) vc(6) 0 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    transform: rotateZ(2deg) skewX(2deg);
+    transition: background $trans-300;
+
+    @include desktop {
+      top: vc(-12);
+      border-radius: vc(12) vc(12) 0 0;
+    }
+  }
+
+  &--reverse {
+    border-radius: vc(6);
+
+    &::after {
+      transform: rotateZ(-2deg) skewX(-2deg);
+    }
+
+    @include desktop {
+      border-radius: vc(12);
+    }
+  }
+
+  &--primary,
+  &__primary {
+    background-color: $color-navigation-cn;
+    color: $color-default-white;
+
+    &::after {
+      background-color: $color-navigation-cn;
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+    }
+  }
+
+  &--white,
+  &__white {
+    background-color: $color-default-white;
+    color: $color-navigation-cn;
+
+    &::after {
+      background-color: $color-default-white;
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-navigation-cn, $alpha: 0.75);
+    }
+  }
+
+  &--blue {
+    background-color: $color-havelock-blue;
+    color: $color-default-white;
+
+    &::after {
+      background-color: $color-havelock-blue;
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+    }
+  }
+
+  &__icon {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: vc(-20);
+    transform: translateY(-55%);
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    transition: transform $trans-300;
+    transform-origin: center;
+  }
+
+  &--ice-cream-cone > &__icon {
+    display: block;
+    width: vc(74);
+    height: vc(74);
+    background-image: url(../img/decoration-buttons/catalog-more-icon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @include tablet {
+      right: vc(-25);
+      width: vc(85);
+      height: vc(85);
+    }
+
+    @include desktop {
+      width: vc(100);
+      height: vc(100);
+    }
+  }
+}

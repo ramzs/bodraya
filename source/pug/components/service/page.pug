@@ -1,0 +1,9 @@
+mixin page(key, nav, currentUrl)
+  section.service__head
+    .container
+      +service-head
+  section.service__body
+    .container
+      +serviceNav(nav, currentUrl)
+      +service-info(key, data.service)
+      +service-description(key, data.service)

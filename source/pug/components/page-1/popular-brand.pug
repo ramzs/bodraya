@@ -1,0 +1,18 @@
+mixin popular-brand(props)
+  -
+    if(typeof(props) === 'undefined') { var props = {}; }
+    var allMods = '';
+    if(typeof(props.mods) !== 'undefined' && props.mods) {
+      var modsList = props.mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' popular-brand--' + modsList[i].trim();
+      }
+    }
+
+  article.popular-brand(class=allMods)&attributes(attributes)
+    .popular-brand__inner
+      aside.popular-brand__aside
+        - const {path, image, format, width, height, alt} = props.slide
+        +picture(path, image, format, width, height, alt)
+      h3.popular-brand__headline
+        a(href="#", title=alt)!= alt

@@ -1,0 +1,127 @@
+-
+  const productsData = [
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-1',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-2',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-3',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-1',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-2',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-3',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-1',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-2',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-3',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Пломбир шоколадный',
+      copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+    },
+  ];
+
+mixin catalog-products(products)
+  section.catalog-products
+    .catalog-products__wrapper
+      span.catalog-products__decoration-header.catalog-products__decoration-header--one
+      span.catalog-products__decoration-header.catalog-products__decoration-header--two
+      span.catalog-products__decoration-header.catalog-products__decoration-header--three
+      span.catalog-products__decoration-footer
+      .container
+        .catalog-products__grid
+          each product in products
+            .catalog-products__item
+              +card(product)
+
+        .catalog-products__actions
+          button.catalog-products__action(aria-label="Показать еще")!= "Показать еще"

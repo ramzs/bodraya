@@ -1,0 +1,33 @@
+mixin main-features(props)
+  aside.main-features
+    .main-features__wrapper
+      .main-features__inner.container
+        ul.main-features__items
+          li.main-features__item
+            p.main-features__article
+              span.main-features__icon.main-features__icon--pallets
+              span.main-features__article-name!= "Производительность фабрики"
+              span.main-features__article-count!= "90 тонн в сутки"
+
+          li.main-features__item
+            p.main-features__article
+              span.main-features__icon.main-features__icon--cold
+              span.main-features__article-name!= "Низкотемпературный склад"
+              span.main-features__article-count!= "7500 паллетомест"
+
+          li.main-features__item
+            p.main-features__article
+              span.main-features__icon.main-features__icon--truck
+              span.main-features__article-name!= "Парк автомобилей"
+              span.main-features__article-count!= "70 единиц"
+
+          li.main-features__item
+            p.main-features__article
+              span.main-features__icon.main-features__icon--snowflake
+              span.main-features__article-name!= "Морозильное оборудование"
+              span.main-features__article-count!= "> 10 000 единиц"
+
+        .main-features__actions
+          +button({text: "Читать о производстве", type: "submit"}).button--primary.main-features__action
+
+      span.main-features__decoration.main-features__decoration--footer

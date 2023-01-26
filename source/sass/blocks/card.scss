@@ -1,0 +1,225 @@
+$distributor-br--320: vc(12);
+$distributor-br--1024: vc(40);
+
+$btn-bg: $color-default-white;
+$btn-cn: $color-pumpkin;
+
+.card {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    position: relative;
+    max-width: vc(460);
+    // padding-top: vc(65);
+    transition: filter $trans-600;
+
+    @include hover-focus {
+      filter: drop-shadow(0 vc(35) vc(32) rgba(43, 69, 94, 0.06))
+        drop-shadow(vc(10) vc(5) vc(25) rgba(24, 176, 229, 0.6));
+
+      &::before {
+        background-color: rgba($color: $color-alice-blue-4, $alpha: 0.75);
+      }
+
+      #{$block-name}__figure {
+        filter: drop-shadow(0 vc(4) vc(10) rgba(135, 195, 255, 0.8));
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    height: vc(245);
+    background-color: transparent;
+    background-image: linear-gradient(
+      172.48deg,
+      #ffffff 5.83%,
+      rgba(255, 255, 255, 0) 126.15%
+    );
+    clip-path: url(#svgClipCardSm);
+
+    transition: background-color $trans-600;
+
+    @include tablet {
+      height: vc(355);
+      clip-path: url(#svgClipCardLg);
+    }
+
+    @include desktop {
+      height: vc(700);
+      padding-bottom: 152%;
+    }
+  }
+
+  &__aside {
+    display: block;
+    padding: 0 0 vc(10);
+
+    @include tablet {
+      padding: 0 vc(25) vc(15);
+    }
+
+    @include desktop {
+      padding: 0 vc(35) vc(35);
+    }
+  }
+
+  &__figure {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 100%;
+    transition: filter $trans-600;
+  }
+
+  &__figure img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &__header {
+    display: block;
+    padding: 0 vc(10) vc(5);
+    font-weight: 700;
+    font-size: vc(12);
+    line-height: 1.2;
+
+    @include tablet {
+      padding: 0 vc(25) vc(15);
+      font-size: vc(18);
+    }
+
+    @include desktop {
+      font-size: vc(30);
+      padding: 0 vc(35) vc(20);
+    }
+  }
+
+  &__body {
+    height: vc(40);
+    padding: 0 vc(10) vc(5);
+    font-weight: 500;
+    font-size: vc(10);
+    line-height: 1.3;
+    font-family: $ff-geometria;
+    overflow: hidden;
+
+    @include tablet {
+      padding-right: vc(25);
+      padding-left: vc(25);
+      font-size: vc(14);
+    }
+
+    @include desktop {
+      height: vc(65);
+      padding: 0 vc(75) 0 vc(35);
+      font-size: vc(18);
+    }
+  }
+
+  &__footer {
+    margin: 0;
+    padding: vc(5) vc(10) vc(10);
+
+    @include tablet {
+      padding: vc(20) vc(20) vc(25);
+    }
+
+    @include desktop {
+      padding: vc(35);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: inherit;
+  }
+
+  &__copy {
+    display: -webkit-box;
+    margin: 0;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @include desktop {
+      -webkit-line-clamp: 3;
+    }
+  }
+
+  &__actions {
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__action {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding: vc(15) vc(10) vc(10);
+    font-weight: 700;
+    font-size: vc(14);
+    line-height: 1.35;
+    text-align: center;
+    color: $color-pumpkin;
+    background-image: url(../img/decoration-buttons/card-sm.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    transition: color $trans-300, background-image $trans-300;
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/card-sm@2x.png);
+    }
+
+    @include tablet {
+      padding: vc(20) vc(25) vc(15);
+      font-size: vc(18);
+    }
+
+    @include desktop {
+      padding: vc(28) vc(25) vc(28);
+      font-size: vc(26);
+
+      background-image: url(../img/decoration-buttons/card-lg.png);
+
+      @include retina {
+        background-image: url(../img/decoration-buttons/card-lg@2x.png);
+      }
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+
+      background-image: url(../img/decoration-buttons/card-is-active-sm.png);
+
+      @include retina {
+        background-image: url(../img/decoration-buttons/card-is-active-sm@2x.png);
+      }
+
+      @include desktop {
+        background-image: url(../img/decoration-buttons/card-is-active-lg.png);
+
+        @include retina {
+          background-image: url(../img/decoration-buttons/card-is-active-lg@2x.png);
+        }
+      }
+    }
+  }
+}

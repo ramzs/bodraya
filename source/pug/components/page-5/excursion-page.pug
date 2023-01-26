@@ -1,0 +1,97 @@
+mixin excursion-page()
+  section.excursion-page
+    .container
+      h1.excursion-page__headline.headline!= "Приходите в гости к&nbsp;Бодрой&nbsp;Корове"
+      +video('sQRmvMQeQW8', 'Мороженое Бодрая Корова').excursion-intro__video
+
+    .excursion-page__content
+      article.article-excursion.article-excursion--intro
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            h3.article-excursion__headline.article-excursion__headline--big!= "Этапы экскурсии"
+
+      article.article-excursion.article-excursion--one
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            .article-excursion__grid
+              .article-excursion__content
+                h3.article-excursion__headline!= "История мороженого"
+                p!= "Посетим музей предприятия и посмотрим интересный фильм о нем. "
+                p!= "Поучаствуем в викторине и пойдем знакомиться с самим производством."
+              .article-excursion__image-wrapper
+                +picture("excursion", "article-image-1", "png", 672, 450, "Фабрика").article-excursion__image.article-excursion__image--border
+          span.article-excursion__decoration.article-excursion__decoration--footer
+
+
+      article.article-excursion.article-excursion--two
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            .article-excursion__grid.article-excursion__grid--reverse
+              .article-excursion__content
+                h3.article-excursion__headline!= "Из молока в пломбир"
+                p!= "На первом этаже готовится и созревает смесь для будущего мороженого."
+                p!= "Узнаем о том, как именно из обычного молока получается такая вкуснятина."
+              .article-excursion__image-wrapper
+                +picture("excursion", "article-image-2-1", "png", 779, 1109, "Пломбир")
+          span.article-excursion__decoration.article-excursion__decoration--header
+          span.article-excursion__decoration.article-excursion__decoration--footer
+
+
+      article.article-excursion.article-excursion--three
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            .article-excursion__grid
+              .article-excursion__content
+                h3.article-excursion__headline!= "Фасовка и заморозка"
+                p!= "На втором этаже рождаются любимые всеми стаканчики, брикеты, ванночки и эскимо."
+                p!= "Понаблюдаем, как взбитая сладкая смесь отсаживается в формы и превращается в холодное мороженое."
+              .article-excursion__image-wrapper
+                +picture("excursion", "article-image-3-2", "png", 861, 557, "Пломбир")
+          span.article-excursion__decoration.article-excursion__decoration--header
+          span.article-excursion__decoration.article-excursion__decoration--footer
+
+
+      article.article-excursion.article-excursion--four
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            .article-excursion__grid.article-excursion__grid--reverse
+              .article-excursion__content
+                h3.article-excursion__headline!= "Вафли и глазурь"
+                p!= "Третий этаж покажет нам сладкие оболочки для мороженого."
+                p!= "Посмотрим, как выпекаются вафли и плавится шоколадная глазурь."
+              .article-excursion__image-wrapper
+                +picture("excursion", "article-image-4", "png", 1120, 966, "Пломбир")
+          span.article-excursion__decoration.article-excursion__decoration--header
+          span.article-excursion__decoration.article-excursion__decoration--footer
+
+      article.article-excursion.article-excursion--five
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            .article-excursion__grid
+              .article-excursion__content
+                h3.article-excursion__headline!= "Научная работа"
+                p!= "Лаборатория откроет свои двери и поделится научными тайнами."
+                p!= "Увидим, как работают микробиологи, чтобы допускать на фабрику мороженого только лучшее сырье и контролировать все этапы производства."
+          span.article-excursion__decoration.article-excursion__decoration--header
+          span.article-excursion__decoration.article-excursion__decoration--footer
+
+
+      article.article-excursion.article-excursion--six
+        .article-excursion__wrapper
+          .container.article-excursion__inner
+            .article-excursion__grid.article-excursion__grid--reverse
+              .article-excursion__image-wrapper
+                +picture("excursion", "article-image-6-1", "png", 620, 413, "Пломбир").article-excursion__image.article-excursion__image--border
+              .article-excursion__content
+                h3.article-excursion__headline!= "Вкусное угощение"
+                p!= "После того, как мы узнали всё о холодном лакомстве, нужно получить награду."
+                p!= "Поедим мягкое мороженое в дегустационном зале фабрики."
+              .article-excursion__actions
+                button.article-excursion__action(aria-label="Оставить заявку")!= "Оставить заявку"
+              .article-excursion__links
+                a(href="#").article-excursion__link!= "Виды экскурсий"
+                a(href="#").article-excursion__link!= "Правила посещения"
+          span.article-excursion__decoration.article-excursion__decoration--header
+          span.article-excursion__decoration.article-excursion__decoration--center
+          span.article-excursion__decoration.article-excursion__decoration--footer
+

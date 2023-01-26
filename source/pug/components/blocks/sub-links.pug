@@ -1,0 +1,80 @@
+-
+  const menuSubLinks = [
+    {
+      href: "page-1.html",
+      text: "Бодрая корова"
+    },
+    {
+      href: "#",
+      text: "По рецептуре 1948 "
+    },
+    {
+      href: "#",
+      text: "Три молока"
+    },
+    {
+      href: "#",
+      text: "Настоящий пломбир 15%"
+    },
+    {
+      href: "#",
+      text: "ГОСТ"
+    },
+    {
+      href: "#",
+      text: "Ice Jam"
+    },
+    {
+      href: "#",
+      text: "Вертушка"
+    },
+    {
+      href: "#",
+      text: "Степ/Левушка"
+    },
+    {
+      href: "#",
+      text: "Парфе"
+    },
+    {
+      href: "#",
+      text: "Лакомый кусочек"
+    },
+    {
+      href: "#",
+      text: "Бумеранг"
+    },
+    {
+      href: "#",
+      text: "ГОСТ"
+    },
+    {
+      href: "#",
+      text: "Ё-айс"
+    },
+    {
+      href: "#",
+      text: "Мороженое из Белого города"
+    },
+    {
+      href: "#",
+      text: "Прочее"
+    }
+  ];
+
+mixin sub-links(links, currentUrl)
+  .sub-links&attributes(attributes)
+    .sub-links__wrapper(data-slider-container)
+      span.sub-links__control.sub-links__control--prev(data-btn-prev)
+      span.sub-links__control.sub-links__control--next(data-btn-next)
+      .swiper(data-sub-links-slider)
+        .swiper-wrapper
+          each link in links
+            - const activeState = currentUrl === link.href
+            .swiper-slide.sub-links__item
+              if(activeState)
+                span.sub-link.is-active=link.text
+              else
+                a.sub-link(href=link.href)!= link.text
+
+

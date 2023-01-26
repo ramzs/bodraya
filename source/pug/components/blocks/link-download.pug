@@ -1,0 +1,29 @@
+
+mixin link-download(data, mods)
+  //- Принимает:
+  //- data {
+  //-   href:       {string},       - адрес для ссылки
+  //-   key:        {string}
+  //-   tagsCopy:   {string}
+  //-   name:       {string},       - название
+  //-   copy:       {string},       - описание
+  //- },
+  //- mods {string}                 - модификаторы
+  -
+    let allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' link-download--' + modsList[i].trim();
+      }
+    };
+
+    const {url, key, tagsCopy, name, copy} = data;
+
+  a.link-download(id=key, href=href, class=allMods)&attributes(attributes)
+    span.link-download__icon
+    span.link-download__body
+      span.link-download__tags!=tagsCopy
+      span.link-download__name!=name
+      span.link-download__copy!=copy

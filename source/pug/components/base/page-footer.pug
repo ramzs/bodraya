@@ -1,0 +1,139 @@
+mixin footer(footerMods, currentUrl)
+
+  -
+    const footerNav = [
+      {
+        header: "Продукция",
+        links: [
+          {
+            href: "#",
+            text: "Бодрая корова",
+          },
+          {
+            href: "#",
+            text: "Три молока",
+          },
+          {
+            href: "#",
+            text: "Настоящий пломбир&nbsp;12%",
+          },
+          {
+            href: "#",
+            text: "Мороженое из Белого города",
+          },
+          {
+            href: "#",
+            text: "ICE Jam",
+          },
+          {
+            href: "#",
+            text: "Степ",
+          },
+          {
+            href: "#",
+            text: "ГОСТ",
+          },
+          {
+            href: "#",
+            text: "Прочее",
+          },
+        ]
+      },
+      {
+        header: "О компании",
+        links: [
+          {
+            href: "#",
+            text: "История комбината",
+          },
+          {
+            href: "#",
+            text: "Производство мороженого",
+          },
+          {
+            href: "#",
+            text: "О молоке",
+          },
+          {
+            href: "#",
+            text: "Наши награды",
+          },
+          {
+            href: "#",
+            text: "Политика и цели в&nbsp;области качества",
+          },
+          {
+            href: "#",
+            text: "Юридическая информация",
+          },
+        ]
+      },
+      {
+        header: "Для клиента",
+        links: [
+          {
+            href: "#",
+            text: "Акционерам",
+          },
+          {
+            href: "#",
+            text: "Аренда и услуги",
+          },
+          {
+            href: "#",
+            text: "Новости",
+          },
+          {
+            href: "#",
+            text: "Контакты",
+          },
+          {
+            href: "#",
+            text: "Вакансии",
+          },
+        ]
+      }
+    ]
+
+
+  footer.page-footer(class=footerMods)&attributes(attributes)
+    .container
+      .page-footer__inner
+        .page-footer__row
+
+          .page-footer__col.page-footer__col--shrink
+            ul.page-footer__main-stack
+              li.page-footer__item.page-footer__item--logo
+                +logo(currentUrl).page-footer__logo
+              li.page-footer__item.page-footer__item--phone
+                .page-footer__phone-wrap
+                  .page-footer__phone
+                    a.page-footer__phone-link.page-footer__link.page-footer__link--phone(href="tel:88002001959")!= "8-800-200-19-59"
+                    span.page-footer__phone-desc!= "Бесплатная горячая линия"
+              li.page-footer__item.page-footer__item--social-links
+                +social-links('big').page-footer__social-links
+
+          .page-footer__col.page-footer__col--wide.page-footer__col--space-between
+            .page-footer__row
+
+              each item in footerNav
+
+                .page-footer__col.page-footer__col--links
+                  .page-footer__wrap-links
+                    h3.page-footer__header(title!=item.header)!=item.header
+                    ul.page-footer__list
+                      each link in item.links
+                        li(itemprop="name")
+                          if (item.href === currentUrl)
+                            a.page-footer__link.is-active(href=link.href)!=link.text
+                          else
+                            a.page-footer__link(href=link.href)!=link.text
+
+        .page-footer__bottom(role="contentinfo")
+          .page-footer__row
+            .page-footer__col.page-footer__col--big
+              a.page-footer__link.page-footer__link--wayward(href="#")!= "АО «Белогородский хладокомбинат»"
+            .page-footer__col.page-footer__col--big
+              a.page-footer__link.page-footer__link--wayward(href="#")!= "Политика конфиденциальности"
+            .page-footer__col.page-footer__col--big
+              a.page-footer__link.page-footer__link--wayward(href="https://bp-oblako.ru/", target="_blank")!= "Сайт создан в веб-студии «Облако»"

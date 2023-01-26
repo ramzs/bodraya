@@ -1,0 +1,205 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Список страниц"
+
+block main
+  style.
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .logo {
+      display: block;
+      max-width: 115px;
+      width: 100%;
+      height: auto;
+    }
+
+    p {
+      margin: 0 0 7px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      color: rgb(10, 10, 175);
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+    }
+
+  -
+    const pages = [
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Главная — page-1.html",
+        src: "page-1.html"
+      },
+      {
+        name: "Продукция / Бренды / Виды смеси — page-2.html",
+        src: "page-2.html"
+      },
+      {
+        name: "Экскурсии — page-5.html",
+        src: "page-5.html"
+      },
+      {
+        name: "Документы — page-10.html",
+        src: "page-10.html"
+      },
+      {
+        name: "Новости — page-11.html",
+        src: "page-11.html"
+      },
+      {
+        name: "Страница отдельной новости — page-12.html",
+        src: "page-12.html"
+      },
+      {
+        name: "Контакты — page-13.html",
+        src: "page-13.html"
+      },
+      {
+        name: "Аренда и услуги:",
+        src: "#",
+        links: [
+          {
+            name: "service-1.html",
+            src: "service-1.html"
+          },
+          {
+            name: "service-2.html",
+            src: "service-2.html"
+          },
+          {
+            name: "service-3.html",
+            src: "service-3.html"
+          },
+          {
+            name: "service-4.html",
+            src: "service-4.html"
+          },
+          {
+            name: "lease-1.html",
+            src: "lease-1.html"
+          },
+          {
+            name: "lease-2-1.html",
+            src: "lease-2-1.html"
+          },
+          {
+            name: "lease-2-2.html",
+            src: "lease-2-2.html"
+          },
+          {
+            name: "lease-3.html",
+            src: "lease-3.html"
+          },
+        ],
+      }, {
+        name: "404 — 404.html",
+        src: "404.html"
+      }, {
+        name: "product-tabs — product-tabs.html",
+        src: "product-tabs.html"
+      }, {
+        name: "Корзина пуста — shop-empty-basket.html",
+        src: "shop-empty-basket.html"
+      }, {
+        name: "Заказ оформлен — shop-order.html",
+        src: "shop-order.html"
+      }, {
+        name: "login-register — shop-login-register.html",
+        src: "shop-login-register.html"
+      }, {
+        name: "Восстановление пароля — shop-restore.html",
+        src: "shop-restore.html"
+      }, {
+        name: "личный кабинет — shop-cabinet-1.html",
+        src: "shop-cabinet-1.html"
+      }, {
+        name: "basket — shop-basket.html",
+        src: "shop-basket.html"
+      }, {
+        name: "Оформление заказа - shop-order-registration.html",
+        src: "shop-order-registration.html"
+      }, {
+        name: "Политика - politics.html",
+        src: "politics.html"
+      }
+    ];
+
+  main
+    .container
+      +img("", "logo", "png", 115, 110, "Логотип проекта").logo
+      h1!= "Список страниц"
+      ol
+        each page in pages
+          li
+            if (page.links)
+              p!= page.name
+              ol
+                each link in page.links
+                  li
+                    a(href=link.src)!=link.name
+            else
+              a(href=page.src)!=page.name
+
+      h2!= "Модалки"
+      ol
+        li
+          a(href="#", data-open-modal="modal-distributors")!= "Давайте работать вместе!"
+        li
+          a(href="#", data-open-modal="modal-thanks")!= "Спасибо за заявку"
+        li
+          a(href="#", data-open-modal="modal-video")!= "Склад (шаблон заголовка)"
+        li
+          a(href="#", data-open-modal="modal-trade")!= "Департамент оптовых продаж и дистрибуции"
+        li
+          a(href="#", data-open-modal="modal-added")!= "Товар успешно добавлен в корзину"
+
+block modals
+  +modal("modal--distributors")(data-modal="modal-distributors")
+    +modal-distributors()
+  +modal("modal--thanks")(data-modal="modal-thanks")
+    +modal-thanks()
+  +modal("modal--video")(data-modal="modal-video")
+    +modal-video()
+  +modal("modal--trade")(data-modal="modal-trade")
+    +modal-trade()
+  +modal("modal--added")(data-modal="modal-added")
+    +modal-added()

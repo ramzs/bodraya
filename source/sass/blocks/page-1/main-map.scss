@@ -1,0 +1,241 @@
+.main-map {
+  &__wrapper {
+    margin-bottom: vc(60);
+
+    @include tablet {
+      margin-bottom: vc(70);
+    }
+
+    @include desktop {
+      margin-bottom: vc(175);
+    }
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__headline {
+    margin: vc(40) 0 vc(30);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    text-align: center;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(75);
+      margin-bottom: vc(30);
+      font-size: vc(40);
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin-top: vc(200);
+      margin-bottom: vc(50);
+      font-size: vc(58);
+      text-align: left;
+    }
+  }
+
+  &__content-box {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding: vc(15) vc(50);
+    color: $color-arapawa;
+    background-color: $color-alice-blue-2;
+    border: vc(1) solid #ffffff;
+    border-radius: vc(15);
+
+    @include tablet {
+      position: absolute;
+      top: vc(115);
+      right: vc(20);
+      max-width: vc(140);
+      padding: vc(15) vc(10);
+      text-align: center;
+    }
+
+    @include desktop {
+      right: vc(35);
+      padding: vc(35) vc(40);
+      max-width: vc(240);
+      border-width: vc(3);
+      border-radius: vc(30);
+    }
+  }
+
+  &__content-stats {
+    margin-top: vc(60);
+    position: relative;
+    display: inline-block;
+    padding: vc(15) vc(20);
+    font-weight: 700;
+    font-size: vc(12);
+    line-height: 1.2;
+    color: $color-arapawa;
+    background-color: $color-alice-blue-2;
+    border-radius: vc(10);
+    border: vc(1) solid #ffffff;
+
+    @include tablet {
+      padding: vc(25) vc(30);
+      font-size: vc(15);
+    }
+
+    @include desktop {
+      margin-top: vc(180);
+      padding: vc(55) vc(65);
+      font-size: vc(33);
+      border-width: vc(3);
+      border-radius: vc(30);
+    }
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  &__content-box-title {
+    display: block;
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-size: vc(16);
+    line-height: 1.2;
+    color: $color-arapawa;
+
+    @include desktop {
+      font-size: vc(33);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 0;
+    column-gap: vc(20);
+    grid-template-columns: auto auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    opacity: 0.7;
+
+    @include tablet {
+      grid-template-columns: auto;
+    }
+
+    @include desktop {
+      font-size: vc(20);
+    }
+  }
+
+  &__content-stats-decoration {
+    position: absolute;
+    top: vc(-40);
+    right: vc(-40);
+    display: block;
+    width: vc(76);
+    height: vc(76);
+    background-image: url(../img/svg/main-quote-2.svg);
+    background-position: center;
+    background-size: auto 100%;
+
+    @include tablet {
+      top: vc(-55);
+      right: vc(-55);
+      width: vc(100);
+      height: vc(100);
+    }
+
+    @include desktop {
+      top: vc(-105);
+      right: vc(-105);
+      width: vc(180);
+      height: vc(180);
+    }
+  }
+
+  &__slide,
+  &__map-svg {
+    display: block;
+    width: vc(990);
+    height: auto;
+
+    @include tablet {
+      width: vc(1620);
+    }
+
+    @include desktop {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__map-box {
+    @include tablet {
+      margin-top: vc(-50);
+    }
+    @include desktop {
+      margin-top: vc(-100);
+    }
+  }
+
+  &__map-svg path:not(.is-active) {
+    fill: $color-pattens-blue-7;
+  }
+
+  &__map-svg path.is-active {
+    fill: $color-pumpkin;
+    cursor: pointer;
+  }
+
+  &__tooltip {
+    position: fixed;
+    z-index: 10;
+    display: block;
+    max-width: vc(200);
+    padding: vc(15);
+    font-weight: 500;
+    font-size: vc(18);
+    line-height: 1.2;
+    color: $color-arapawa;
+    border-radius: vc(10);
+    background-color: #ffffff;
+    user-select: none;
+    pointer-events: none;
+
+    &.is-hide,
+    &:not(.is-active) {
+      opacity: 0;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: vc(20);
+    justify-content: center;
+    margin-top: vc(25);
+    text-align: center;
+  }
+
+  &__action {
+    max-width: calc(50% - vc(10));
+    padding-right: vc(10);
+    padding-left: vc(10);
+    font-size: vc(14);
+  }
+
+  &__swiper-scrollbar {
+    margin-top: vc(20);
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

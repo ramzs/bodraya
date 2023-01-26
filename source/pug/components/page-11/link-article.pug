@@ -1,0 +1,43 @@
+mixin link-article(data, mods)
+  //- Принимает:
+  //- data {
+  //-   date:       {string},  - название
+  //-   name:       {string},  - название
+  //-   url:        {string},  - адрес для ссылки
+  //-   image: {
+  //-     path:     {string},
+  //-     image:    {string},
+  //-     format:   {string},
+  //-     width:    {number},
+  //-     height:   {number},
+  //-     altText:  {string},
+  //-   },
+  //-   sale:       {string}, - показать метку
+  //- }
+  //- mods {string}       - модификаторы
+
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' link-article--' + modsList[i].trim();
+      }
+    }
+
+    const date    = data.date;
+    const name    = data.name;
+    const url     = data.url;
+    const newSale = (data.sale !== 'undefined' && data.sale) ? '<span class="link-article__sale">' + data.sale + '&thinsp;%</span>' : '';
+    const { path, format, image, width, height, altText} = data.image;
+
+  a.link-article(class=allMods, href=url)&attributes(attributes)
+    span.link-article__wrapper
+      != newSale
+      span.link-article__image-wrapper
+        +picture(path, image, format, width, height, altText)
+      span.link-article__content
+        span.link-article__date!= date
+        span.link-article__title!= name

@@ -1,0 +1,66 @@
+section.shop-page__section
+  .container
+    .login__grid
+      .login__item
+        p.shop-page__title.login__title Вход в магазин
+        .shop-page__box.shop-page__box--light(data-form-validate, data-callback="login")
+          form.form(method="post")
+            +custom-input({
+              inputName: "user-login-mail",
+              inputPlaceholder: "Электронная почта*",
+              inputType: "email",
+              iconName: "form-mail.svg"
+            })(data-validate-type="email", data-on-input-validate data-message-base="Поле обязательно к заполнению", data-required)
+            +custom-input({
+              inputName: "user-login-password",
+              inputPlaceholder: "Пароль*",
+              inputType: "password",
+              iconName: "form-lock.svg"
+            })(data-validate-type="password", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+            +custom-toggle({
+              inputLabel: "Запомнить меня",
+              inputName: "user-login",
+              inputValue: "user-login-1",
+              inputChecked: false,
+              inputType: "radio"
+            })(data-validate-type="radio", data-message-base="Поле обязательно к заполнению")
+            .login__row
+              +button({text: "Войти", type: "submit"}).button__primary.login__login-btn
+              a(href="#").login__registration-link Забыли пароль?
+      .login__item
+        p.shop-page__title.login__title Регистрация нового покупателя
+        .shop-page__box(data-form-validate, data-callback="register")
+          p.shop-page__description Зарегистрировавшись, Вы принимаете #[br] #[a(href="#") соглашение на обработку персональных данных]
+          form.form(method="post")
+            +custom-input({
+              inputName: "user-register-fio",
+              inputPlaceholder: "ФИО*",
+              iconName: "form-user.svg"
+            })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+            +custom-input({
+              inputName: "user-register-email",
+              inputPlaceholder: "Электронная почта*",
+              inputType: "email",
+              iconName: "form-mail.svg"
+            })(data-validate-type="email", data-on-input-validate data-message-base="Поле обязательно к заполнению", data-required)
+            +custom-input({
+              inputType: "tel",
+              inputPlaceholder: "Телефон*",
+              inputName: "user-register-phone",
+              iconName: "form-phone.svg"
+            })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+            +custom-input({
+              inputName: "user-login-password",
+              inputPlaceholder: "Пароль*",
+              inputType: "password",
+              iconName: "form-lock.svg"
+            })(data-validate-type="password", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required).login__password-space
+            +custom-input({
+              inputName: "user-login-password",
+              inputPlaceholder: "Подтверждение пароля*",
+              inputType: "password",
+              iconName: "form-lock.svg"
+            })(data-validate-type="password", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+            .login__password-generate
+              +button({text: "Сгенерировать пароль"}).button__white
+            +button({text: "Зарегистрировать меня", type: "submit"}).button__primary.login__registration

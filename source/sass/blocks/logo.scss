@@ -1,0 +1,16 @@
+.logo {
+  max-width: vc(165);
+
+  &__image-wrap {
+    display: block;
+    max-width: 100%;
+    width: auto;
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}

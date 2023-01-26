@@ -1,0 +1,142 @@
+.page-info {
+  &__section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-documents {
+    &__controls {
+      margin: 0 0 vc(56);
+
+      @include tablet {
+        margin: vc(35) 0 vc(68);
+      }
+
+      @include desktop {
+        margin: vc(60) 0 vc(120);
+      }
+    }
+
+    &__slide {
+      padding-right: vc(9);
+      height: auto;
+
+      @include desktop {
+        padding-right: vc(26);
+      }
+    }
+
+    &__control {
+      padding: vc(16);
+      width: vc(200);
+      height: 100%;
+
+      @include tablet {
+        padding: vc(16) vc(20);
+      }
+
+      @include desktop {
+        padding-top: vc(10);
+        padding-bottom: vc(10);
+        width: vc(232);
+      }
+    }
+
+    &__swiper-scrollbar {
+      @include tablet {
+        display: block;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $ff-myriad-pro;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: vc(29);
+    color: $color-arapawa;
+    margin: 0 0 vc(29);
+
+    @include stroke(5, $color-default-white);
+
+    @include tablet {
+      margin: 0 0 vc(48);
+      font-size: vc(40);
+      line-height: vc(48);
+
+      @include stroke(8, $color-default-white);
+    }
+
+    @include desktop {
+      margin: 0 0 vc(67);
+      font-size: vc(56);
+      line-height: vc(67);
+
+      @include stroke(11, $color-default-white);
+    }
+  }
+
+  &__subtitle {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: vc(20);
+
+    @include tablet {
+      font-size: vc(20);
+      line-height: vc(25);
+    }
+
+    @include tablet {
+      font-size: vc(36);
+      line-height: vc(45);
+    }
+  }
+
+  &__text-box {
+    margin-bottom: vc(40);
+
+    @include tablet {
+      margin-bottom: vc(60);
+    }
+
+    @include desktop {
+      margin-bottom: vc(96);
+    }
+  }
+
+  &__text,
+  &__ul li {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: vc(18);
+    margin-bottom: vc(18);
+
+    &--light {
+      font-weight: 300;
+    }
+
+    @include tablet {
+      font-size: vc(16);
+      line-height: vc(20);
+      margin-bottom: vc(20);
+    }
+
+    @include tablet {
+      font-size: vc(30);
+      line-height: vc(38);
+      margin-bottom: vc(38);
+    }
+  }
+
+  &__ul {
+    padding-inline-start: vc(46);
+  }
+}

@@ -1,0 +1,122 @@
+.main-excursion {
+  &__headline {
+    margin: vc(15) 0 vc(15);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    text-align: center;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(35);
+      margin-bottom: vc(35);
+      font-size: vc(40);
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin: vc(25) 0 vc(65);
+      padding-right: vc(90);
+      font-size: vc(55);
+      text-align: left;
+
+      text-indent: vc(-90);
+    }
+  }
+
+  &__content > p {
+    margin: 0;
+    color: $color-arapawa;
+    font-size: vc(16);
+    opacity: 0.7;
+
+    @include tablet {
+      font-size: vc(20);
+    }
+  }
+
+  &__content > p:not(:last-of-type) {
+    margin-bottom: vc(15);
+
+    @include tablet {
+      margin-bottom: vc(20);
+    }
+  }
+
+  &__content b {
+    font-size: vc(18);
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      font-size: vc(18);
+    }
+  }
+
+  &__actions {
+    margin-top: vc(20);
+    text-align: center;
+
+    @include tablet {
+      margin-top: vc(25);
+    }
+
+    @include desktop {
+      margin-top: vc(50);
+      text-align: left;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: vc(45);
+
+    @include desktop {
+      grid-template-columns: repeat(2, calc((100% - vc(45)) / 2));
+    }
+  }
+
+  &__pictures {
+    position: relative;
+
+    @include tablet {
+      padding-right: vc(100);
+    }
+
+    @include desktop {
+      padding-right: vc(130);
+    }
+  }
+
+  &__picture {
+    border: vc(2) solid #ffffff;
+    border-radius: vc(20);
+    overflow: hidden;
+  }
+
+  &__picture--2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(vc(30));
+    max-width: vc(185);
+
+    @include tablet {
+      transform: translateY(vc(35));
+      max-width: vc(280);
+    }
+
+    @include desktop {
+      max-width: vc(335);
+    }
+  }
+
+  &__picture img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}

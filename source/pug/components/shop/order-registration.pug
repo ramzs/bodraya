@@ -1,0 +1,76 @@
+-
+  const poins = [
+    {address: "ул. Щорса 64, &quot;Сити-Молл&quot;, &quot;Оранжевый остров&quot;, ИП Андросов Е.В. (время работы 07:00 - 21:00)"},
+    {address: "остановка Щорса, детская поликлинника №4, &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н. (время работы 07:00 - 20:00)"},
+    {address: "бульвар Юности 19, (3-я гимназия), &quot;Оранжевый остров&quot;, ИП Андросов Е.В.(время работы 07:00 - 20:00)"},
+    {address: "ул.Королева 5, гипермаркет &quot;Линия&quot;, &quot;Оранжевый остров&quot;, ИП Андросов Е.В. (время работы 07:00 - 21:00)"},
+    {address: "ул.Костюкова, 38т, остановка &quot;Технологическая академия&quot;, &quot;Оранжевый остров&quot;, ИП Андросов Е.В. (время работы 07:00 - 21:00)"},
+    {address: "ул.Щорса, 8л остановка &quot;Водстрой&quot;, &quot;Оранжевый остров&quot;, ИП Маслов И.В. (время работы 07:00 - 21:00)"},
+    {address: "ул. Победы 147а, паркинг ТЦ Меркурий, ИП Лебеденко В.Н. (время работы 07:00 - 21:00)"},
+    {address: "ул.Преображенская, 106, район старого &quot;Дома Быта&quot;, &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н. (время работы 07:00 - 21:00)"},
+    {address: "проспект Славы, р-н МФЦ, ост,Донец, &quot;Оранжевый остров&quot;, ИП Андросов Е.В (время работы 07:00 - 19:00, выходной: воскресенье)"},
+    {address: "ул. Преображенская, к-тр Победа, кафе &quot;Оранжевый остров&quot;, ИП Лебеденко В,Д. (время работы 09:00 - 21:00)"},
+    {address: "ж\д вокзал, остановочный комплекс &quot;Ж\д Вокзал&quot;, напротив ТЦ &quot;Вокзальный&quot; &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н. (время работы 07:00 - 22:00)"},
+    {address: "ул. Попова, у-г Белгород, &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н (время работы 07:00 - 21:00)"},
+    {address: "пр-т, Б.Хмельницкого, остановка Мичурина, индустриальный колледж, &quot;Оранжевый остров&quot;, ИП Андросов Е.В (время работы 07:00 - 20:00)"},
+    {address: "пр-т Б.Хмельницкого, остановка &quot;Автовокзал&quot;, &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н, (время работы 07:00 - 21:00)"},
+    {address: "пр-т Б. Хмельницкого, остановка &quot;Студенческая&quot;, &quot;Оранжевый остров&quot;, ИП Маслов И.В. (время работы 07:00 - 19:00, выходной: суббота, воскресенье)"},
+    {address: "ул. Садовая, остановка Кооперативный университет, &quot;Оранжевый остров&quot;, ИП Маслов И.В. (время работы 07:00 - 19:00)"},
+    {address: "ул. 50-летия Белгородской области - Народная, &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н. (время работы 07:00 - 21:00)"},
+    {address: "ул.Королева, район парка &quot;Южный&quot;, &quot;Оранжевый остров&quot;, ИП Лебеденко В.Д. (время работы 08:00 - 21:00)"},
+    {address: "ул.Победы, парк Победы, рядом с диорамой, кафе &quot;Оранжевый остров&quot;, ИП Лебеденко В.Н. (время работы 08:00 - 21:00)"},
+    {address: "ул.Дзгоева 1, территория Белгородского хладокомбината, (время работы 08.30-17.30 (пн-чт), 8.30.-16.15 (пт)"}
+  ]
+section.shop-page__section.shop-order-registration__section
+  .container(data-form-validate, data-callback="login")
+    form.form
+      .shop-order-registration__head
+        h1.shop-page__title Оформление заказа
+        p.shop-page__description ВНИМАНИЕ! Заказ принимается в работу только после 100% оплаты! Внимание!Заказ необходимо забрать в течении 3 календарных дней после доставки
+      .shop-order-registration__body
+        p.shop-order-registration__lead Товары в заказе
+        +shop-summary().shop-order-registration__summary
+      .shop-order-registration__buyer
+        p.shop-order-registration__lead Покупатель:
+        .shop-order-registration__buyer-inputs
+          +custom-input({
+            inputName: "user-register-fio",
+            inputPlaceholder: "ФИО*",
+            iconName: "form-user.svg"
+          })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+          +custom-input({
+            inputType: "tel",
+            inputPlaceholder: "Телефон*",
+            inputName: "user-register-phone",
+            iconName: "form-phone.svg"
+          })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+          +custom-input({
+            inputName: "user-register-email",
+            inputPlaceholder: "Электронная почта*",
+            inputType: "email",
+            iconName: "form-mail.svg"
+          })(data-validate-type="email", data-on-input-validate data-message-base="Поле обязательно к заполнению", data-required)
+      .shop-order-registration__points
+        p.shop-order-registration__lead Пункты выдачи
+        .shop-order-registration__points-row
+          each item, key in poins
+            +custom-toggle({
+              inputLabel: item.address,
+              inputName: "point",
+              inputValue: `point-${key}`,
+              inputChecked: false,
+              inputType: "radio"
+            })(data-validate-type="radio", data-message-base="Поле обязательно к заполнению")
+
+      .shop-order-registration__payment
+        p.shop-order-registration__lead Оплата
+        +custom-toggle({
+          inputLabel: "Онлайн оплата банковской картой",
+          inputName: "payment",
+          inputValue: "payment-1",
+          inputChecked: true,
+          inputType: "radio"
+        })(data-validate-type="radio", data-message-base="Поле обязательно к заполнению")
+      .shop-order-registration__send
+        p Нажимая на кнопку «Оформить заказ» вы соглашаетесь с политикой конфиденциальности компании
+        +button({text: "Оформить заказ", type: "submit"}).button__primary.shop-order-registration__button

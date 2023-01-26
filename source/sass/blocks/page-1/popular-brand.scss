@@ -1,0 +1,161 @@
+.popular-brand {
+  $block-name: &; // #{$block-name}__element
+
+  .swiper-slide-visible & {
+    filter: drop-shadow(0 vc(35) vc(32) rgba(43, 69, 94, 0.06));
+  }
+
+  @include hover-focus {
+    #{$block-name}__inner::after {
+      transform: translate(-50%, -2.5%);
+    }
+
+    #{$block-name}__aside img {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: block;
+    border-radius: vc(15);
+    overflow: hidden;
+
+    @include desktop {
+      border-radius: vc(40);
+    }
+  }
+
+  &__inner::before {
+    content: "";
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    display: block;
+    max-width: 100%;
+    margin-top: vc(65);
+    padding-bottom: 118%;
+    background-color: $color-summer-sky;
+    clip-path: url(#svgClipCardTastyBrands);
+
+    @include desktop {
+      margin-top: vc(140);
+    }
+  }
+
+  &__inner::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 78%;
+    z-index: 10;
+    transform: translateX(-50%);
+    width: 264%;
+    padding-bottom: 100%;
+    background-color: $color-summer-sky-extend;
+    border-radius: 100%;
+    transition: transform $trans-300;
+
+    @include desktop {
+      top: 78%;
+    }
+  }
+
+  &__aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 108%;
+  }
+
+  &__aside img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+    transition: transform $trans-300;
+  }
+
+  &__headline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding: vc(25) vc(15) vc(15);
+    margin: 0;
+    font-weight: 700;
+    font-size: vc(15);
+    line-height: 1.15;
+    font-family: $ff-myriad-pro;
+    text-align: center;
+
+    @include tablet {
+    }
+
+    @include desktop {
+      padding: vc(65) vc(20) vc(45);
+      font-size: vc(32);
+    }
+  }
+
+  &__headline,
+  &__headline a {
+    color: $color-default-white;
+    transition: color $trans-300;
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+    }
+  }
+
+  &__headline a::before {
+    content: "";
+    position: absolute;
+    top: -400%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &--blue {
+    #{$block-name}__inner::before {
+      background-color: $color-curious-blue;
+    }
+
+    #{$block-name}__inner::after {
+      background-color: $color-cobalt;
+    }
+  }
+
+  &--mango {
+    #{$block-name}__inner::before {
+      background-color: $color-mango-tango;
+    }
+
+    #{$block-name}__inner::after {
+      background-color: $color-carrot-orange;
+    }
+  }
+
+  &--sky {
+    #{$block-name}__inner::before {
+      background-color: $color-summer-sky;
+    }
+
+    #{$block-name}__inner::after {
+      background-color: $color-summer-sky-extend;
+    }
+  }
+}

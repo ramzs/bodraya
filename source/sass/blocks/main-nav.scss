@@ -1,0 +1,380 @@
+.main-nav {
+  $root: &;
+
+  /**
+  * 1. Анимация
+  */
+
+  & {
+    position: relative;
+    z-index: 200;
+    transform: translateX(103%);
+    width: calc(100vw - vc(15));
+    height: 100%;
+    background-color: $color-alice-blue-1;
+    pointer-events: auto;
+    border-radius: vc(15) 0 0 vc(15);
+    will-change: transform;
+
+    @include tablet {
+      width: vc(590);
+    }
+
+    @include desktop {
+      transform: translateX(-103%);
+      width: vc(1010);
+      border-radius: 0 vc(15) vc(15) 0;
+    }
+  }
+
+  .is-menu-visible & {
+    transform: translateX(0);
+  }
+
+  .is-menu-animated & {
+    transition: transform $trans-600;
+  }
+
+  .is-menu-visible.is-menu-animated & {
+    transition: transform $trans-1000;
+  }
+
+  /**
+  * 2. Сетка и обёртки
+  */
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: vc(30) vc(15);
+    gap: vc(40);
+
+    @include tablet {
+      padding: vc(30) vc(45) vc(35);
+      gap: vc(60);
+    }
+
+    @include desktop {
+      padding: vc(20) vc(55) vc(25);
+      gap: vc(55);
+    }
+  }
+
+  &__header-grid {
+    flex-grow: 0;
+
+    display: grid;
+    grid-template-areas:
+      "logo link-phone link-phone  action-closed"
+      "social-links social-links link-store link-store";
+    // grid-template-columns: repeat(auto-fill, vc(275));
+    grid-template-rows: repeat(auto-fill, vc(60));
+    grid-row-gap: vc(20);
+    grid-column-gap: vc(10);
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+
+    @include tablet {
+      grid-template-areas:
+        "logo link-phone  link-store  action-closed"
+        "logo social-links link-store action-closed";
+      grid-template-rows: repeat(auto-fill, vc(20)) repeat(auto-fill, vc(20));
+      grid-row-gap: vc(10);
+      grid-column-gap: vc(20);
+    }
+
+    @include desktop {
+      grid-template-areas: "action-closed logo social-links link-phone";
+      grid-template-columns:
+        vc(235) vc(95) calc(100% - 3 * vc(30) - vc(235) - vc(95) - vc(125))
+        vc(125);
+      grid-template-rows: repeat(auto-fill, vc(90));
+      grid-column-gap: vc(30);
+    }
+  }
+
+  &__main-grid {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: vc(-15);
+    padding-right: vc(15);
+    gap: vc(20);
+    overflow-y: auto;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: stretch;
+      margin-right: 0;
+      padding-right: 0;
+      gap: vc(50);
+      overflow: hidden;
+    }
+
+    @include desktop {
+      gap: vc(55);
+    }
+  }
+
+  &__main-grid &__col {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__main-grid &__col--shrink {
+    @include tablet {
+      max-width: vc(150);
+      overflow-y: auto;
+    }
+
+    @include desktop {
+      max-width: vc(210);
+    }
+  }
+
+  &__main-grid &__col--wide {
+    @include tablet {
+      max-width: calc(100% - vc(150) - vc(50));
+      margin-right: vc(-45);
+      padding-right: vc(45);
+      overflow-y: auto;
+    }
+
+    @include desktop {
+      max-width: calc(100% - vc(210) - vc(55));
+    }
+  }
+
+  /**
+  * 3. Элементы
+  */
+
+  &__logo {
+    grid-area: logo;
+
+    max-width: vc(60);
+
+    @include tablet {
+      max-width: vc(90);
+    }
+  }
+
+  &__link-phone {
+    grid-area: link-phone;
+
+    font-weight: 400;
+    font-size: vc(18);
+    white-space: nowrap;
+    color: $color-arapawa;
+    text-align: center;
+    text-shadow: 0 vc(1) vc(4) rgba(34, 73, 109, 0.04);
+
+    transition: color $trans-300;
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+  }
+
+  &__action-closed {
+    grid-area: action-closed;
+
+    display: block;
+    width: vc(35);
+    height: vc(35);
+    background-color: $color-default-white;
+    background-image: url(../img/svg/mm-arrow-mobile.svg);
+    background-size: vc(28) auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    @include tablet {
+      width: vc(45);
+      height: vc(45);
+      background-image: url(../img/svg/mm-arrow-tablet.svg);
+    }
+
+    @include desktop {
+      background-image: url(../img/svg/mm-arrow-desktop.svg);
+    }
+  }
+
+  &__social-links {
+    grid-area: social-links;
+
+    @include desktop {
+      margin-left: auto;
+      width: auto;
+    }
+  }
+
+  &__link-store {
+    grid-area: link-store;
+
+    display: inline-flex;
+    max-width: vc(160);
+    width: 100%;
+    padding: vc(14) vc(15) vc(8);
+    font-weight: 700;
+    font-size: vc(14);
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+    color: $color-default-white;
+    background-color: transparent;
+    background-image: url(../img/decoration-buttons/header-store-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: none;
+    cursor: pointer;
+
+    transition: color $trans-300;
+
+    @include tablet {
+      min-width: vc(180);
+      padding: vc(15) vc(20) vc(10);
+      font-size: vc(16);
+
+      background-image: url(../img/decoration-buttons/header-store-md.svg);
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+    }
+  }
+
+  &__list {
+    display: block;
+    margin: 0 0 vc(20);
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: 1.4;
+    font-family: $ff-geometria;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin: 0 0 vc(10);
+
+      @include desktop {
+        margin: 0 0 vc(12);
+      }
+    }
+  }
+
+  &__item--large {
+    font-size: vc(20);
+    line-height: 1.2;
+
+    &:not(:last-child) {
+      margin: 0 0 vc(20);
+
+      @include tablet {
+        margin-bottom: vc(35);
+      }
+
+      @include desktop {
+        margin-bottom: vc(32);
+      }
+    }
+  }
+
+  &__link {
+    color: rgba($color: $color-arapawa, $alpha: 0.5);
+    transition: color $trans-300;
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+
+    &--darken {
+      color: $color-arapawa;
+    }
+  }
+
+  .accordion {
+    .main-nav__list {
+      padding-top: vc(10);
+      margin-bottom: 0;
+    }
+
+    &__element:not(:last-child) {
+      margin: 0 0 vc(20);
+
+      @include tablet {
+        margin-bottom: vc(40);
+      }
+
+      @include desktop {
+        margin-bottom: vc(55);
+      }
+    }
+
+    &__button {
+      position: relative;
+      max-width: 100%;
+      width: 100%;
+      padding: 0 vc(25) 0 0;
+      font-weight: 500;
+      font-size: vc(20);
+      line-height: 1.2;
+      font-family: $ff-geometria;
+      text-align: left;
+      color: $color-arapawa;
+      border: none;
+      background-color: transparent;
+      transition: color $trans-300;
+      overflow: hidden;
+
+      @include hover-focus {
+        color: $color-pumpkin;
+      }
+
+      @include tablet {
+        color: $color-arapawa !important;
+      }
+    }
+
+    &__button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      display: block;
+      width: vc(20);
+      height: vc(20);
+      background-image: url("../img/svg/arrow-down.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: transform $trans-300;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .is-active .accordion__button::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

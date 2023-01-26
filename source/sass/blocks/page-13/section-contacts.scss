@@ -1,0 +1,139 @@
+.section-contacts {
+  &__headline {
+    margin: vc(40) 0 vc(65);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(55);
+      margin-bottom: vc(70);
+      font-size: vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+      margin-bottom: vc(125);
+      font-size: vc(56);
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-default-white;
+    text-align: center;
+    filter: drop-shadow(0 vc(3) vc(7) rgba(34, 73, 109, 0.1));
+
+    &--one::before {
+      background-image: url(../img/decoration/one-contacts.svg);
+    }
+
+    &--two::before {
+      background-image: url(../img/decoration/two-contacts.svg);
+    }
+
+    &--three::before {
+      background-image: url(../img/decoration/three-contacts.svg);
+    }
+
+    &--four::before {
+      background-image: url(../img/decoration/four-contacts.svg);
+    }
+
+    > span {
+      position: relative;
+    }
+  }
+
+  &__subtitle::before {
+    content: "";
+    position: absolute;
+    top: vc(-35);
+    right: 0;
+    bottom: vc(-35);
+    left: 0;
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include desktop {
+      top: vc(-45);
+      right: 0;
+      bottom: vc(-45);
+      left: vc(-30);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding-left: vc(25);
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    transition: color $trans-300;
+    background-image: url(../img/decoration/pin-contacts.svg);
+    background-position: left top vc(2);
+    background-repeat: no-repeat;
+    background-size: vc(15) auto;
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+  }
+
+  &__articles {
+    display: grid;
+    margin-bottom: vc(60);
+    gap: vc(90);
+    align-items: flex-start;
+
+    @include tablet {
+      margin-bottom: vc(60);
+      grid-template-columns: repeat(2, calc((100% - vc(25) * 1) / 2));
+      column-gap: vc(25);
+      row-gap: vc(100);
+    }
+
+    @include desktop {
+      margin-bottom: vc(150);
+      grid-template-columns: repeat(4, calc((100% - vc(100) * 3) / 4));
+      gap: vc(100);
+    }
+  }
+
+  &__articles > &__article {
+    display: grid;
+    gap: vc(60);
+
+    @include tablet {
+      gap: vc(65);
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: vc(25);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include tablet {
+      gap: vc(30);
+    }
+  }
+}

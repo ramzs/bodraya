@@ -1,0 +1,90 @@
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &--thanks {
+    #{$block-name}__content {
+      max-width: vc(645);
+      padding: vc(80) vc(25) vc(85);
+      text-align: center;
+      border: vc(4) solid $color-default-white;
+      background-image: url("../img/modals/thanks-sm.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: bottom;
+
+      @include retina {
+        background-image: url("../img/modals/thanks-sm@2x.png");
+
+        @include tablet {
+          background-image: url("../img/modals/thanks-md@2x.png");
+        }
+
+        @include desktop {
+          background-image: url("../img/modals/thanks-lg@2x.png");
+        }
+      }
+
+      @include tablet {
+        padding: vc(120) vc(55) vc(105);
+        background-image: url("../img/modals/thanks-md.png");
+        border-radius: vc(30);
+      }
+
+      @include desktop {
+        max-width: vc(790);
+        padding: vc(110) vc(125) vc(135);
+        background-image: url("../img/modals/thanks-lg.png");
+        border-width: vc(8);
+      }
+    }
+
+    #{$block-name}__close-btn {
+      top: vc(14);
+      right: vc(14);
+
+      @include tablet {
+        top: vc(28);
+        right: vc(28);
+      }
+
+      @include desktop {
+        top: vc(20);
+        right: vc(20);
+      }
+    }
+
+    #{$block-name}__headline {
+      margin: 0 0 vc(20);
+      font-weight: 700;
+      font-size: vc(24);
+      line-height: 1.2;
+      font-family: $ff-geometria;
+
+      @include stroke(4, $color-default-white);
+
+      @include tablet {
+        font-size: vc(40);
+      }
+
+      @include desktop {
+        margin-bottom: vc(35);
+        @include stroke(8, $color-default-white);
+      }
+    }
+
+    #{$block-name}__description {
+      font-weight: 700;
+      font-size: vc(16);
+      line-height: 1.3;
+      font-family: $ff-geometria;
+
+      @include tablet {
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        font-size: vc(25);
+      }
+    }
+  }
+}

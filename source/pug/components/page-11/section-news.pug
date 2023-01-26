@@ -1,0 +1,25 @@
+mixin section-news(data, mods)
+  section.section-news
+    .container
+      h1.section-news__headline.headline!= "Новости"
+      - let N = 0;
+      ul.section-news__items
+        while N < 18
+          li.section-news__item
+            +link-article({
+              date: "25 апреля 2022",
+              name: "История в фактах из жизни легендарного мороженого «Труффальдино...",
+              url: "#",
+              image: {
+                path: "news",
+                image: 'article',
+                format: "jpg",
+                width: 475,
+                height: 475,
+                altText: "История в фактах из жизни легендарного мороженого «Труффальдино...",
+              },
+            })
+          - N++;
+
+      .section-news__actions
+        button.section-news__action(aria-label="Показать еще")!= "Показать еще"

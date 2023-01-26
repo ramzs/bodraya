@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Продукция / Бренды / Виды смеси" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--blue"
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "page-2.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +stack-products(stackProductsData)
+    +catalog-products(productsData)
+
+block modals

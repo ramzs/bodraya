@@ -1,0 +1,98 @@
+-
+  const navServices = [
+    {
+      name: "Складская <br/> обработка товара",
+      src: "service-1.html",
+      mods:  "service-1",
+    },
+    {
+      name: "Продажа морозильного <br/> б/у оборудования",
+      src: "service-2.html",
+      mods:  "service-2",
+    },
+    {
+      name: "Оказание транспортных услуг",
+      src: "service-3.html",
+      mods:  "service-3",
+    },
+    {
+      name: "Продажа б/у оборудования и&nbsp;автотранспорта",
+      src: "service-4.html",
+      mods:  "service-4",
+    },
+    {
+      name: "Прочее",
+      src: "service-5.html",
+      mods:  "service-5",
+    },
+  ];
+
+  const navLeases = [
+    {
+      name: "Земельные участки",
+      src: "lease-1.html",
+      mods:  "lease-1",
+      links: [],
+    },
+    {
+      name: "Низкотемпературные склады",
+      src: "lease-2",
+      mods:  "lease-2",
+      links: [
+        {
+          name: "Ответственное хранение низкотемпературных продуктов",
+          src: "lease-2-1.html",
+          mods:  "small",
+        },
+        {
+          name: "Аренда низкотемпературных складов",
+          src: "lease-2-2.html",
+          mods:  "small",
+        },
+      ],
+    },
+    {
+      name: "Офисы, нежилые помещения",
+      src: "lease-3.html",
+      mods:  "lease-3",
+    },
+    {
+      name: "Прочее",
+      src: "#",
+      mods:  "lease-4",
+    },
+  ];
+
+mixin serviceLink(link, currentUrl)
+  - const activeState = currentUrl === link.src || currentUrl.indexOf(link.src) !== -1;
+  - const { mods, links} = link;
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' service-nav__link--' + modsList[i].trim();
+      }
+    }
+
+  if(activeState)
+    .service-nav__link.is-active(class=allMods)!= link.name
+    if(typeof(links) !== 'undefined' && links)
+      .service-nav__links
+        each link in links
+          +serviceLink(link, currentUrl)
+  else
+    a.service-nav__link(class=allMods, href=link.src)!= link.name
+
+mixin serviceNav(links, currentUrl)
+  .service-nav
+    .service-nav__wrapper(data-service-nav-container)
+      .swiper(data-service-nav-slider)
+        .service-nav__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+        .swiper-wrapper
+          each link in links
+            .swiper-slide.service-nav__slide
+              +serviceLink(link, currentUrl)
+

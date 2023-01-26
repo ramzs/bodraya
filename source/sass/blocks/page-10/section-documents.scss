@@ -1,0 +1,243 @@
+.section-documents {
+  &__items {
+    display: grid;
+    grid-template-rows: auto;
+    margin: 0;
+    padding: 0;
+    gap: vc(20);
+    list-style: none;
+
+    @include tablet {
+      gap: vc(35);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, auto);
+      row-gap: vc(70);
+      column-gap: vc(200);
+    }
+  }
+
+  &__article:not(:last-of-type) {
+    margin-bottom: vc(40);
+
+    @include tablet {
+      margin-bottom: vc(90);
+    }
+
+    @include desktop {
+      margin-bottom: vc(135);
+    }
+  }
+
+  &__headline {
+    margin: vc(40) 0 vc(40);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(55);
+      font-size: vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+      margin-bottom: vc(75);
+      padding-left: vc(125);
+      font-size: vc(56);
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 vc(30);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.25;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+
+    @include stroke(5, $color-default-white);
+
+    @include tablet {
+      margin-bottom: vc(35);
+      font-size: vc(40);
+
+      @include stroke(8, $color-default-white);
+    }
+
+    @include desktop {
+      margin-bottom: vc(70);
+      font-size: vc(55);
+    }
+  }
+
+  &__actions {
+    position: relative;
+    z-index: 5;
+    margin-top: vc(65);
+    margin-bottom: vc(85);
+    text-align: center;
+
+    @include tablet {
+      margin-top: vc(100);
+      margin-bottom: vc(110);
+    }
+
+    @include desktop {
+      margin-top: vc(120);
+      margin-bottom: vc(165);
+    }
+  }
+
+  &__action {
+    position: relative;
+    display: block;
+    max-width: vc(205);
+    width: 100%;
+    margin: 0 auto;
+    padding: vc(20) vc(35) vc(15) vc(15);
+    font-weight: 700;
+    font-size: vc(16);
+    line-height: 1.35;
+    text-align: center;
+    color: $color-default-white;
+    background-color: transparent;
+    background-image: url(../img/decoration-buttons/catalog-more-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: none;
+    cursor: pointer;
+
+    transition: color $trans-300;
+
+    @include tablet {
+      max-width: vc(370);
+      padding: vc(40) vc(50) vc(25) vc(40);
+      font-size: vc(24);
+      background-image: url(../img/decoration-buttons/catalog-more-md.svg);
+    }
+
+    @include desktop {
+      padding: vc(40) vc(60) vc(25) vc(40);
+      font-size: vc(24);
+      background-image: url(../img/decoration-buttons/catalog-more-lg.svg);
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+
+      &::before {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-40);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(105);
+      height: vc(105);
+      background-image: url(../img/decoration-buttons/catalog-more-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include tablet {
+        right: vc(-45);
+        width: vc(135);
+        height: vc(135);
+      }
+    }
+  }
+
+  &__controls {
+    margin-bottom: vc(40);
+
+    @include tablet {
+      margin-bottom: vc(90);
+    }
+
+    @include desktop {
+      margin-bottom: vc(120);
+    }
+  }
+
+  &__control {
+    display: inline-block;
+    padding: vc(20);
+    min-width: vc(120);
+    width: auto;
+    font-weight: 500;
+    font-size: vc(14);
+    font-family: $ff-geometria;
+    line-height: 1.4;
+    text-align: center;
+    color: $color-arapawa;
+    background-color: $color-pattens-blue-4;
+    border: none;
+    border-radius: vc(15);
+    cursor: pointer;
+    transition: color $trans-300, background-color $trans-300;
+
+    @include tablet {
+      padding: vc(25) vc(20);
+      font-size: vc(20);
+      line-height: 1;
+    }
+
+    @include desktop {
+      padding: vc(35) vc(30);
+    }
+
+    &:not(.is-active) {
+      @include hover-focus {
+        color: $color-default-white;
+        background-color: $color-pumpkin;
+      }
+    }
+
+    &.is-active {
+      color: $color-default-white;
+      background-color: $color-pumpkin;
+      user-select: none;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &__slide {
+    width: auto;
+    padding-right: vc(20);
+  }
+
+  &__swiper-scrollbar {
+    margin-top: vc(20);
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  .swiper:not(.swiper-initialized) {
+    .swiper-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: vc(20);
+    }
+
+    .swiper-slide {
+      padding: 0;
+    }
+  }
+}

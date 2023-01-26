@@ -1,0 +1,559 @@
+.main-banner {
+  $block-name: &; // #{$block-name}__element
+
+  .swiper-slide {
+    will-change: transform;
+  }
+
+  &__wrapper {
+    position: relative;
+    height: vc(880);
+    filter: drop-shadow(0 vc(4) vc(8) rgba(0, 0, 0, 0.04));
+    overflow: hidden;
+
+    @include tablet {
+      height: vc(960);
+    }
+
+    @include desktop {
+      height: vc(1010);
+    }
+  }
+
+  &__layer-background {
+    position: relative;
+    height: vc(800);
+    clip-path: url(#svgClipMainBannerSm);
+    background-color: $color-pattens-blue-1;
+
+    @include tablet {
+      height: vc(950);
+    }
+
+    @include desktop {
+      height: vc(1920);
+      clip-path: url(#svgClipMainBanner);
+    }
+  }
+
+  &__layer-background > .swiper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__layer-foreground {
+    position: absolute;
+    left: 0;
+    bottom: vc(20);
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    user-select: none;
+    pointer-events: none;
+
+    @include desktop {
+      bottom: vc(170);
+    }
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    max-width: vc(330);
+
+    @include tablet {
+      max-width: inherit;
+    }
+  }
+
+  &__desc {
+    order: 0;
+    align-self: center;
+    margin-bottom: 0;
+    width: vc(120);
+    padding: 0 vc(30) vc(50) 0;
+    font-size: vc(14);
+    line-height: 1.2;
+    color: rgba($color: $color-arapawa, $alpha: 0.5);
+    background-image: url("../img/svg/flip-arrow-sm.svg");
+    background-size: vc(31) auto;
+    background-repeat: no-repeat;
+    background-position: right 0 bottom 0;
+
+    @include tablet {
+      order: inherit;
+      margin-bottom: vc(20);
+      padding: vc(60) vc(15) vc(60) 0;
+      font-size: vc(18);
+      background-image: url("../img/svg/flip-arrow-md.svg");
+      background-size: vc(90) auto;
+      background-position: right vc(10) bottom;
+    }
+
+    @include desktop {
+      width: vc(185);
+    }
+  }
+
+  &__pagination {
+    order: 2;
+    max-width: 100%;
+    width: 100%;
+    pointer-events: all;
+
+    @include tablet {
+      order: inherit;
+    }
+  }
+
+  &__controls {
+    order: 1;
+    pointer-events: all;
+    max-width: calc(100% - vc(120));
+    padding-top: vc(50);
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      order: inherit;
+      width: auto;
+      padding-top: 0;
+      margin-left: vc(45);
+      padding-bottom: vc(75);
+    }
+
+    @include desktop {
+      margin-left: vc(60);
+    }
+  }
+
+  &__controls-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: vc(10);
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+}
+
+.main-banner-item {
+  $block-name: &; // #{$block-name}__element
+
+  transform: translate3d(0, 0, 0);
+
+  &__wrapper {
+    position: relative;
+    height: vc(800);
+    overflow: hidden;
+
+    @include tablet {
+      height: vc(950);
+    }
+
+    @include desktop {
+      height: vc(1010);
+    }
+  }
+
+  &__wrapper > .container {
+    @include desktop {
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+    }
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    max-width: 100%;
+    padding-top: vc(185);
+    padding-right: vc(60);
+    padding-bottom: vc(250);
+
+    @include tablet {
+      max-width: vc(675);
+    }
+
+    @include desktop {
+      padding-top: vc(150);
+      padding-right: 0;
+      padding-bottom: vc(475);
+    }
+  }
+
+  &__group {
+    position: relative;
+    max-width: 100%;
+    padding-right: vc(60);
+
+    @include tablet {
+      max-width: calc(100% - vc(110));
+      padding-right: vc(110);
+    }
+  }
+
+  &__headline {
+    margin: 0 0 vc(40);
+    font-weight: 700;
+    font-size: vc(40);
+    line-height: 1.2;
+    color: $color-arapawa;
+    transform: translateY(vc(-40));
+    opacity: 0;
+    transition: transform $trans-300, opacity $trans-300;
+    will-change: transform, opacity;
+
+    @include tablet {
+      transform: translateY(vc(-75));
+      font-size: vc(70);
+      letter-spacing: -0.015em;
+    }
+
+    @include desktop {
+      margin-bottom: vc(40);
+      font-size: vc(70);
+    }
+
+    .is-active & {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform $trans-1000, opacity $trans-1000;
+      will-change: transform, opacity;
+    }
+  }
+
+  &__headline > span {
+    position: relative;
+    display: inline-block;
+    color: $color-pumpkin;
+  }
+
+  &__headline > span::after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 0.65em);
+    right: vc(-20);
+    left: vc(-10);
+    transform: translateY(-50%);
+    display: block;
+    padding-bottom: 100%;
+    background-color: currentColor;
+    clip-path: url(#svgClipUnderline);
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: vc(16);
+    line-height: 1.4;
+    color: rgba($color: $color-arapawa, $alpha: 0.8);
+    transform: translateY(vc(25));
+    opacity: 0;
+    transition: transform $trans-300, opacity $trans-300;
+    will-change: transform, opacity;
+
+    @include tablet {
+      font-size: vc(20);
+    }
+
+    @include desktop {
+      font-size: vc(23);
+    }
+
+    .is-active & {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform $trans-1000, opacity $trans-1000;
+      transition-delay: 0.3s;
+      will-change: transform, opacity;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: vc(-35);
+    right: vc(-60);
+    transform: translateY(-50%) scale(155%);
+    transform-origin: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: vc(67);
+    height: vc(67);
+    border-radius: 50%;
+    background-color: $color-default-white;
+    background-image: url(../img/svg/banner-play.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 vc(7) vc(18) vc(-4) rgba(43, 69, 94, 0.15);
+    opacity: 0;
+    transition: box-shadow $trans-300, transform $trans-300, opacity $trans-300;
+    will-change: box-shadow, transform, opacity;
+
+    @include tablet {
+      top: 50%;
+      right: 0;
+    }
+
+    @include hover-focus {
+      box-shadow: 0 vc(5) vc(12) vc(-5) rgba(43, 69, 94, 0.1);
+    }
+
+    .is-active & {
+      transform: translateY(-50%);
+      opacity: 1;
+      transition: transform $trans-1000, opacity $trans-1000;
+      transition-delay: 0.35s;
+      will-change: transform, opacity;
+    }
+  }
+}
+
+.main-banner-pagination {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    max-width: vc(330);
+  }
+
+  &__slide {
+    padding: 0 vc(10) vc(15);
+    transition: opacity $trans-300;
+    will-change: opacity;
+  }
+
+  &__slide:not(.swiper-slide-visible) {
+    opacity: 0;
+  }
+
+  &__slide.is-active > * {
+    transform-origin: center bottom;
+    transform: scale(1.25);
+    box-shadow: 0 vc(7) vc(14) vc(-3) rgba(43, 69, 94, 0.09);
+    user-select: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &__slide.swiper-slide-prev.is-active > * {
+    transform-origin: right vc(-10) bottom;
+  }
+
+  &__slide.swiper-slide-next.is-active > * {
+    transform-origin: left vc(-10) bottom;
+  }
+
+  &__slide:not(.is-active) > * {
+    @include hover-focus {
+      transform: translateY(vc(-7));
+
+      img {
+        transform: translate(-50%, -50%) rotate(-5deg);
+      }
+    }
+  }
+
+  .swiper {
+    margin-right: vc(-15);
+    margin-left: vc(-15);
+    padding: 0 vc(15);
+  }
+
+  .swiper-wrapper {
+    padding-top: vc(55);
+    padding-bottom: vc(20);
+  }
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 125%;
+  height: 100%;
+  background-size: 100% auto;
+  background-repeat: repeat-x;
+  background-position: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.main-banner-bullet {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: vc(90);
+  min-width: vc(75);
+  width: 100%;
+  transition: transform $trans-300, opacity $trans-300;
+  will-change: transform, opacity;
+
+  &__btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    padding: vc(15) vc(10) vc(10);
+    text-align: center;
+    width: 100%;
+    padding-bottom: 174%;
+    border: vc(1) solid $color-default-white;
+    background-color: currentColor;
+    box-shadow: 0 vc(7) vc(14) vc(-3) rgba(43, 69, 94, 0.09);
+    border-radius: vc(10);
+    transition: transform $trans-300;
+    will-change: transform;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+    transition: transform $trans-300;
+    will-change: transform;
+    transform-origin: center;
+    user-select: none;
+  }
+}
+
+.main-banner-image {
+  $block-name: &; // #{$block-name}__element
+
+  & {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: vc(550);
+
+    @include tablet {
+      top: 0;
+      bottom: inherit;
+      width: vc(1024);
+    }
+
+    @include desktop {
+      position: relative;
+      top: inherit;
+      width: vc(1040);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    padding-bottom: 100%;
+  }
+
+  &__inner img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__base-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+  &__foreground-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
+
+.is-active .main-banner-image__background-image,
+.swiper-slide-active .main-banner-image__background-image {
+  animation: fade-in 2s ease 1;
+  will-change: opacity;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.is-active .main-banner-image__base-image,
+.swiper-slide-active .main-banner-image__base-image {
+  animation: bounce-in 2s ease 1;
+  will-change: opacity, transform;
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.is-active .main-banner-image__foreground-image,
+.swiper-slide-active .main-banner-image__foreground-image {
+  animation: bounce-in 3s ease 1;
+  will-change: opacity, transform;
+}

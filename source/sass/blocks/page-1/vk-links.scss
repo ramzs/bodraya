@@ -1,0 +1,84 @@
+.vk-links {
+  position: relative;
+  &__headline {
+    margin: 0 0 vc(40);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    text-align: center;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-bottom: vc(60);
+      font-size: vc(40);
+      text-align: left;
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin-bottom: vc(95);
+      font-size: vc(55);
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: vc(30);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include tablet {
+      grid-template-columns: repeat(2, calc((100% - vc(20)) / 2));
+      column-gap: vc(20);
+      row-gap: vc(50);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, calc((100% - vc(50) * 3) / 4));
+      column-gap: vc(50);
+    }
+  }
+
+  &__actions {
+    margin: vc(40) 0 vc(35);
+    text-align: center;
+
+    @include tablet {
+      margin: vc(55) 0 vc(90);
+    }
+
+    @include desktop {
+      margin: vc(80) 0 vc(175);
+      text-align: left;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    border-radius: vc(28);
+    cursor: pointer;
+    transition: opacity $trans-300;
+
+    @include hover-focus {
+      opacity: 0.85;
+    }
+  }
+
+  &__link img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,111 @@
+.politics {
+  &__statement {
+    position: relative;
+    z-index: 1;
+    margin: vc(60) 0;
+    display: flex;
+    align-items: center;
+
+    &-box {
+      margin: 0 auto;
+      padding: vc(32) vc(12);
+      background: $color-pattens-blue-7;
+      border: vc(8) solid $color-default-white;
+      border-radius: vc(30);
+      max-width: vc(1120);
+
+      @include tablet {
+        padding: vc(32);
+      }
+
+      @include desktop {
+        padding: vc(36) vc(50);
+      }
+    }
+
+    &-title {
+      text-align: center;
+      color: $color-arapawa;
+      font-family: $ff-geometria;
+      font-weight: 700;
+      font-size: vc(30);
+      line-height: vc(38);
+      margin: 0 0 vc(30);
+
+      @include stroke(4, $color-default-white);
+
+
+      @include desktop {
+        margin: 0 0 vc(55);
+
+        @include stroke(6, $color-default-white);
+      }
+    }
+
+    &-text {
+      color: $color-arapawa;
+      font-family: $ff-geometria;
+      font-weight: 500;
+      font-size: vc(14);
+      line-height: vc(18);
+      margin: 0 0 vc(18);
+
+      @include desktop {
+        font-size: vc(26);
+        line-height: vc(33);
+        margin: 0 0 vc(33);
+      }
+    }
+
+    &-decor {
+      position: absolute;
+
+      &--1 {
+        bottom: vc(-61);
+        left: vc(-158);
+        width: vc(280);
+        height: vc(322);
+        z-index: -1;
+
+        @include tablet {
+          bottom: vc(-30);
+          left: vc(-135);
+          width: vc(240);
+          height: vc(276);
+        }
+
+        @include desktop {
+          bottom: vc(-90);
+          left: vc(-115);
+          width: vc(512);
+          height: vc(588);
+        }
+      }
+
+      &--2 {
+        top: vc(-57);
+        right: vc(-55);
+        width: vc(130);
+        height: vc(136);
+
+        @include tablet {
+          top: vc(-65);
+          right: vc(-44);
+          width: vc(135);
+          height: vc(141);
+        }
+
+        @include desktop {
+          top: vc(-95);
+          right: vc(45);
+          width: vc(268);
+          height: vc(280);
+        }
+      }
+    }
+
+    @include desktop {
+      margin: vc(122) 0;
+    }
+  }
+}

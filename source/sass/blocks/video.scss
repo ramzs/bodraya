@@ -1,0 +1,97 @@
+.video {
+  & {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background-color: #000000;
+    border-radius: vc(12);
+    overflow: hidden;
+
+    @include tablet {
+      border-radius: vc(30);
+    }
+  }
+
+  /* Enabled */
+
+  &--enabled {
+    cursor: pointer;
+  }
+
+  &--enabled &__button {
+    display: block;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 27, 41, 0.6);
+      transition: all 0.25s ease-in-out;
+    }
+  }
+
+  &:hover &__link::before,
+  &:focus-within &__link::before {
+    background: rgba(26, 27, 41, 0.3);
+  }
+
+  &__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 15;
+    display: none;
+    padding: 0;
+    font-size: vc(100);
+    border: none;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: font-size $trans-300;
+
+    @include desktop {
+      font-size: vc(240);
+    }
+  }
+
+  &__button svg {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
+
+  &:hover &__button,
+  &__button:focus &__button {
+    font-size: vc(120);
+
+    @include desktop {
+      font-size: vc(280);
+    }
+  }
+}

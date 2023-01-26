@@ -1,0 +1,236 @@
+.shop-order-registration {
+  &__section {
+    padding-bottom: vc(60);
+  }
+
+  &__head {
+    max-width: vc(840);
+  }
+
+  &__body {
+    margin-top: vc(40);
+
+    @include tablet {
+      margin-top: vc(67);
+    }
+
+    @include desktop {
+      margin-top: vc(120);
+    }
+  }
+
+  &__lead {
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    font-weight: 700;
+    font-size: vc(20);
+    line-height: vc(25);
+    margin-top: 0;
+    margin-bottom: vc(20);
+
+    @include tablet {
+      margin-bottom: vc(30);
+      font-size: vc(24);
+      line-height: vc(30);
+    }
+
+    @include desktop {
+      margin-bottom: vc(47);
+      font-size: vc(36);
+      line-height: vc(45);
+    }
+  }
+
+  &__buyer {
+    margin-top: vc(60);
+
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: vc(20);
+    }
+
+    @include tablet {
+      margin-top: vc(84);
+    }
+
+    @include tablet {
+      margin-top: vc(120);
+      max-width: vc(872);
+    }
+  }
+
+  &__points {
+    margin-top: vc(50);
+
+    &-row {
+      display: flex;
+      flex-direction: column;
+      gap: vc(10);
+    }
+
+    .form__checkbox {
+      label {
+        padding-left: vc(38);
+      }
+
+      &-label {
+        font-family: $ff-geometria;
+        font-weight: 500;
+        font-size: vc(12);
+        line-height: 120%;
+
+        @include tablet {
+          font-size: vc(19);
+        }
+
+        @include desktop {
+          line-height: 190%;
+        }
+      }
+
+      &-icon {
+        width: vc(23);
+        height: vc(23);
+
+        &::before {
+          width: vc(13);
+          height: vc(13);
+        }
+      }
+    }
+
+    @include tablet {
+      margin-top: vc(105);
+
+      &-row {
+        gap: vc(30);
+      }
+    }
+
+    @include desktop {
+      margin-top: vc(120);
+
+      &-row {
+        gap: vc(0);
+      }
+    }
+  }
+
+  &__payment {
+    margin-top: vc(40);
+
+    .form__checkbox {
+      label {
+        padding-left: vc(38);
+      }
+
+      &-label {
+        font-family: $ff-geometria;
+        font-weight: 500;
+        font-size: vc(12);
+        line-height: 120%;
+
+        @include tablet {
+          font-size: vc(18);
+          line-height: vc(23);
+        }
+
+        @include desktop {
+          font-size: vc(30);
+          line-height: vc(38);
+        }
+      }
+
+      &-icon {
+        width: vc(23);
+        height: vc(23);
+
+        &::before {
+          width: vc(13);
+          height: vc(13);
+        }
+      }
+    }
+
+    @include tablet {
+      margin-top: vc(150);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+    }
+  }
+
+  &__send {
+    max-width: vc(843);
+    margin-left: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+
+    p {
+      margin: 0;
+      color: $color-arapawa;
+      font-family: $ff-geometria;
+      font-weight: 500;
+      font-size: vc(14);
+      line-height: vc(18);
+      text-align: center;
+
+      @include tablet {
+        font-size: vc(15);
+        line-height: vc(19);
+        text-align: right;
+      }
+    }
+
+    @include tablet {
+      gap: vc(30);
+    }
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    margin: vc(45) 0 vc(30);
+    flex-shrink: 0;
+    width: vc(215);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-20);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(90);
+      height: vc(120);
+      background-image: url(../img/decoration-buttons/excursion-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include tablet {
+        right: vc(-25);
+      }
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+
+      &::before {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+
+    @include tablet {
+      width: vc(335);
+    }
+  }
+}

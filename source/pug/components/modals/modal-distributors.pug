@@ -1,0 +1,122 @@
+-
+  const cityItems = [
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'city-1',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Ставрополь',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'city-2',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Москва',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'city-3',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Владивосток',
+    },
+  ];
+
+  const countryItems = [
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'country-1',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Китай',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'country-2',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Узбекистан',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'country-3',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Монголия',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'content/distributors',
+        image: 'country-4',
+        format: 'jpg',
+        width: 681,
+        height: 334,
+      },
+      name: 'Армения',
+    },
+  ];
+
+mixin modal-distributors()
+  header.modal__header
+    h3.modal__headline!= "Давайте работать вместе!"
+    p.modal__subtitle!= "Мы ищем дистрибьюторов в <b>городах России</b>:"
+    ul.modal__items
+      each city in cityItems
+        li.modal__item
+          +distributor(city)
+    p.modal__subtitle
+      b!= "И странах:"
+    ul.modal__items
+      each country in countryItems
+        li.modal__item
+          +distributor(country)
+    p.modal__subtitle
+      b!= "Напишите нам:"
+    .modal__form(data-form-validate, data-callback="base")
+      form(method="post").modal__form-inner
+        +custom-input({
+          inputPlaceholder: "Введите ваше имя",
+          inputName: "user-name-1",
+          iconName: "form-user.svg",
+        })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+        +custom-input({
+          inputType: "tel",
+          inputPlaceholder: "Введите ваш телефон",
+          inputName: "user-phone",
+          iconName: "form-phone.svg"
+        })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+        +custom-input({
+          inputType: "email",
+          inputPlaceholder: "Введите ваш email",
+          inputName: "user-email",
+          iconName: "form-mail.svg",
+        })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+        .modal__actions
+          +button({text: "Стать дистрибьютором", type: "submit", icon: true}, 'primary, ice-cream-cone').modal__action
+      .modal__copy!= "Нажимая на кнопку «Стать дистрибьютором», вы соглашаетесь с политикой конфиденциальности компании"

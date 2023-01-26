@@ -1,0 +1,106 @@
+.main-intro {
+  &__grid {
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(2, calc((100% - vc(205)) / 2));
+      gap: vc(205);
+    }
+  }
+
+  &__headline {
+    margin: vc(100) 0 vc(35);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(25);
+      margin-bottom: vc(45);
+      font-size: vc(40);
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin: vc(150) 0 vc(40);
+      font-size: vc(70);
+    }
+  }
+
+  &__download {
+    display: inline-block;
+    min-height: vc(20);
+    padding-left: vc(25);
+    font-weight: 700;
+    font-size: vc(24);
+    background-image: url(../img/svg/main-download.svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+    @include stroke(4, $color-default-white);
+    transition: opacity $trans-300;
+
+    @include tablet {
+      padding-left: vc(45);
+      min-height: vc(30);
+    }
+
+    @include hover-focus {
+      opacity: 0.75;
+    }
+  }
+
+  &__quote {
+    position: relative;
+    margin: vc(30) 0 vc(10);
+    padding: vc(70) vc(20) vc(20);
+    display: block;
+    font-size: vc(16);
+    line-height: 1.4;
+    color: $color-arapawa;
+    background-color: $color-alice-blue-2;
+    background-image: url(../img/svg/main-quote-1.svg);
+    background-repeat: no-repeat;
+    background-position: top left vc(25);
+    background-size: auto vc(47);
+    border-radius: vc(30);
+
+    @include tablet {
+      margin: vc(75) 0 vc(35);
+      padding: vc(50) vc(55) vc(20) vc(75);
+      font-size: vc(20);
+      background-position: top vc(13) left vc(23);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+      margin-bottom: vc(195);
+    }
+  }
+
+  &__quote-decoration {
+    position: absolute;
+    top: vc(-64);
+    right: vc(-25);
+    display: block;
+    width: vc(128);
+    height: vc(128);
+    background-image: url(../img/svg/main-quote-2.svg);
+    background-position: center;
+    background-size: auto 100%;
+
+    @include tablet {
+      top: vc(-125);
+      right: vc(-45);
+      width: vc(210);
+      height: vc(210);
+    }
+
+    @include desktop {
+      top: vc(-105);
+      right: vc(-85);
+    }
+  }
+}

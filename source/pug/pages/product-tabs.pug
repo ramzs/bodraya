@@ -1,0 +1,17 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--blue"
+  - const hasHeader = true
+  - const headerMods = "fixed"
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "product-tabs.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    include ../components/product-tabs/intro
+block modals

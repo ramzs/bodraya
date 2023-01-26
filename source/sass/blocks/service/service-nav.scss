@@ -1,0 +1,287 @@
+.service-nav {
+  $block-name: &; // #{$block-name}__element
+
+  .swiper {
+    margin-right: vc(-15);
+    margin-left: vc(-15);
+    padding-right: vc(15);
+    padding-left: vc(15);
+
+    @include tablet {
+      margin-right: vc(-55);
+      margin-left: vc(-55);
+      padding-right: vc(55);
+      padding-left: vc(55);
+    }
+  }
+
+  .swiper:not(.swiper-initialized) .swiper-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: vc(35);
+  }
+
+  &__swiper-scrollbar {
+    margin-bottom: vc(15);
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__slide {
+    max-width: vc(150);
+    padding: 0;
+
+    @include tablet {
+      max-width: vc(230);
+    }
+
+    @include desktop {
+      max-width: vc(280);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: vc(230);
+    width: 100%;
+    min-height: vc(150);
+    padding: vc(25) vc(20);
+    font-weight: 700;
+    font-size: vc(12);
+    line-height: 1.2;
+    text-align: center;
+    word-wrap: break-word;
+    color: $color-arapawa;
+    @include stroke(2, $color-default-white);
+
+    @include tablet {
+      min-height: vc(220);
+      font-size: vc(18);
+      line-height: 1.75;
+      @include stroke(4, $color-default-white);
+    }
+
+    @include desktop {
+      justify-content: flex-start;
+      min-height: vc(320);
+      max-width: 100%;
+      width: 100%;
+      padding: vc(45) vc(15) vc(15);
+      font-size: vc(25);
+      @include stroke(5, $color-default-white);
+    }
+  }
+
+  &__link::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: vc(45);
+    margin-bottom: vc(10);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+
+    @include tablet {
+      height: vc(70);
+    }
+
+    @include desktop {
+      height: vc(100);
+      margin-bottom: vc(25);
+    }
+  }
+
+  &__link--service-1::before {
+    background-image: url(../img/decoration-buttons/service-1.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/service-1@2x.png);
+    }
+  }
+
+  &__link--service-2::before {
+    background-image: url(../img/decoration-buttons/service-2.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/service-2@2x.png);
+    }
+  }
+
+  &__link--service-3::before {
+    background-image: url(../img/decoration-buttons/service-3.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/service-3@2x.png);
+    }
+  }
+
+  &__link--service-4::before {
+    background-image: url(../img/decoration-buttons/service-4.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/service-4@2x.png);
+    }
+  }
+
+  &__link--service-5::before {
+    background-image: url(../img/decoration-buttons/service-5.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/service-5@2x.png);
+    }
+  }
+
+  &__link--lease-1::before {
+    background-image: url(../img/decoration-buttons/lease-1.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/lease-1@2x.png);
+    }
+  }
+
+  &__link--lease-2::before {
+    background-image: url(../img/decoration-buttons/lease-2.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/lease-2@2x.png);
+    }
+  }
+
+  &__link--lease-3::before {
+    background-image: url(../img/decoration-buttons/lease-3.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/lease-3@2x.png);
+    }
+  }
+
+  &__link--lease-4::before {
+    background-image: url(../img/decoration-buttons/lease-4.png);
+
+    @include retina {
+      background-image: url(../img/decoration-buttons/lease-4@2x.png);
+    }
+  }
+
+  &__link--small {
+    min-height: vc(120);
+    height: auto;
+    width: vc(170);
+    padding: vc(40) vc(15);
+    font-size: vc(12);
+
+    @include tablet {
+      min-height: vc(120);
+      height: auto;
+      width: vc(170);
+      padding: vc(25) vc(15);
+      font-size: vc(14);
+    }
+
+    @include desktop {
+      min-height: vc(185);
+      height: auto;
+      width: vc(265);
+      padding: vc(50) vc(25);
+      font-size: vc(18);
+    }
+  }
+
+  &__link--small::before {
+    display: none;
+  }
+
+  &__link--small::after {
+    height: 100% !important;
+
+    @include tablet {
+      height: 100% !important;
+    }
+
+    @include desktop {
+      height: 100% !important;
+    }
+  }
+
+  &__link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include desktop {
+      width: vc(330);
+      height: vc(330);
+    }
+  }
+
+  &__link.is-active::after {
+    background-image: url(../img/svg/service-active-tablet.svg);
+  }
+
+  &__link--small.is-active::after {
+    background-image: url(../img/svg/service-active-small.svg);
+  }
+
+  &__link--service-1.is-active::after {
+    @include desktop {
+      background-image: url(../img/svg/service-active-desktop-1.svg);
+    }
+  }
+
+  &__link--service-2.is-active::after {
+    @include desktop {
+      background-image: url(../img/svg/service-active-desktop-2.svg);
+    }
+  }
+
+  &__link--service-3.is-active::after {
+    @include desktop {
+      background-image: url(../img/svg/service-active-desktop-3.svg);
+    }
+  }
+
+  &__link--service-4.is-active::after {
+    @include desktop {
+      background-image: url(../img/svg/service-active-desktop-4.svg);
+    }
+  }
+
+  &__link--service-5.is-active::after {
+    @include desktop {
+      background-image: url(../img/svg/service-active-desktop-5.svg);
+    }
+  }
+
+  &__link > span {
+    white-space: nowrap;
+  }
+
+  &__links {
+    display: flex;
+    gap: vc(80);
+    margin-top: vc(-20);
+    margin-right: vc(-80);
+    margin-left: vc(-80);
+
+    @include desktop {
+      margin-top: vc(-25);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.slider-popular-brands {
+  $block-name: &; // #{$block-name}__element
+
+  &__wrapper {
+    position: relative;
+    margin: vc(30) 0 vc(40);
+    padding-right: vc(40);
+    padding-left: vc(40);
+
+    @include tablet {
+      margin: vc(60) 0 vc(75);
+      padding: 0 calc(vc(45) - vc(15) / 2);
+    }
+
+    @include desktop {
+      margin: vc(80) calc(vc(-120) / 2) vc(0);
+      padding: 0 vc(80);
+    }
+  }
+
+  &__wrapper .btn-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.btn-navigation--prev {
+      left: 0;
+
+      @include desktop {
+        left: vc(-45);
+      }
+    }
+
+    &.btn-navigation--next {
+      right: 0;
+
+      @include desktop {
+        right: vc(-45);
+      }
+    }
+  }
+
+  &__slide {
+    padding: 0 vc(15) vc(15);
+    opacity: 1;
+    transition: opacity $trans-600, transform $trans-600;
+
+    @include tablet {
+      padding: 0 calc(vc(15) / 2) vc(15);
+    }
+
+    @include desktop {
+      padding: 0 vc(20) vc(185);
+    }
+  }
+}

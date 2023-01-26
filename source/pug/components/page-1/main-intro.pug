@@ -1,0 +1,12 @@
+mixin main-intro(props)
+  section.main-intro
+    .container
+      .main-intro__grid
+        .main-intro__col
+          h2.main-intro__headline.headline!= "Вкусные бренды"
+          a(href="#").main-intro__download!= "Скачать каталог"
+        .main-intro__col
+          .main-intro__quote
+            p!= "В нашем мороженом используется только натуральное молоко, именно поэтому оно дарит прилив сил и энергии!"
+            span.main-intro__quote-decoration
+    +slider-popular-brands(tastyBrandsData).main-intro__slider

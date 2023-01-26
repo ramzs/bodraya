@@ -1,0 +1,49 @@
+mixin main-contact-us()
+  aside.main-contact-us
+    span.main-contact-us__decoration
+    .main-contact-us__wrapper(data-form-validate, data-callback="base")
+      form(method="post").main-contact-us__form
+        h3.main-contact-us__headline.headline!= "Напишите нам!"
+        .main-contact-us__row
+          .main-contact-us__col
+            +custom-select({
+              optionsList: [
+                {text: "Тема 1", value: "id-1"},
+                {text: "Тема 2", value: "id-2"},
+                {text: "Тема 3", value: "id-3"},
+              ],
+              placeholder: "Выберите тему:",
+            })("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
+          .main-contact-us__col
+            +custom-input({
+              inputPlaceholder: "Введите ваше имя",
+              inputName: "user-name-1",
+              iconName: "form-user.svg",
+            })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+        .main-contact-us__row
+          .main-contact-us__col
+            +custom-input({
+              inputType: "tel",
+              inputPlaceholder: "Введите ваш телефон",
+              inputName: "user-phone",
+              iconName: "form-phone.svg"
+            })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+          .main-contact-us__col
+            +custom-input({
+              inputType: "email",
+              inputPlaceholder: "Введите ваш email",
+              inputName: "user-email",
+              iconName: "form-mail.svg",
+            })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+        .main-contact-us__row.main-contact-us__row--wide
+          .main-contact-us__col
+            .main-contact-us__actions-wrapper
+              +custom-textarea({
+                inputPlaceholder: "Напишите сообщение...",
+                inputName: "user-info"
+              })(data-validate-type="text")
+              .main-contact-us__actions
+                +button({text: "Отправить", type: "submit"}).button--primary.main-contact-us__action
+        .main-contact-us__row.main-contact-us__row--wide
+          .main-contact-us__col
+            p.main-contact-us__copy!= "Нажимая кнопку «Отправить» вы соглашаетесь с политикой конфиденциальности"

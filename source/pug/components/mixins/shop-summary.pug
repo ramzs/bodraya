@@ -1,0 +1,53 @@
+mixin shop-summary()
+  .summary&attributes(attributes)
+    .summary__head
+      p.summary__text Товар
+      p.summary__text Количество
+      p.summary__text Цена
+      p.summary__text Сумма
+    .summary__body
+      .summary__product
+        .summary__product-image
+          +img("shop/basket", "product-1", "png")
+        p.summary__product-text.summary__text.summary__text--title Вишневая девятка
+        .summary__product-count
+          +field-num({
+            val: '1',
+            attrs: {
+              name: 'quantity',
+              max: '10',
+              min: '1',
+              step: '1',
+            }
+          })
+        .summary__product-price
+          p.summary__text 800 руб.
+        .summary__product-sum
+          p.summary__text.summary__text--bold 800 руб.
+        .summary__product-delete
+          button
+            img(src="img/svg/close.svg")
+      .summary__product
+        .summary__product-image
+          +img("shop/basket", "product-1", "png")
+        p.summary__product-text.summary__text.summary__text--title Вишневая девятка
+        .summary__product-count
+          +field-num({
+            val: '1',
+            attrs: {
+              name: 'quantity',
+              max: '10',
+              min: '1',
+              step: '1',
+            }
+          })
+        .summary__product-price
+          p.summary__text 800 руб.
+        .summary__product-sum
+          p.summary__text.summary__text--bold 800 руб.
+        .summary__product-delete
+          button
+            img(src="img/svg/close.svg")
+    .summary__footer
+      p.summary__total Всего:
+      p.summary__total.summary__total--sum 1600 руб.

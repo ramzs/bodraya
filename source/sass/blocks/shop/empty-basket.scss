@@ -1,0 +1,149 @@
+.empty-basket {
+  &__section {
+    padding: 0 0 vc(280);
+
+    @include tablet {
+      margin-top: vc(-10);
+      padding: vc(0) 0 vc(520);
+    }
+
+    @include desktop {
+      padding: vc(75) 0 vc(580);
+    }
+  }
+
+  &__head {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: vc(21);
+
+    @include tablet {
+      margin-bottom: vc(52);
+    }
+
+    @include desktop {
+      margin-bottom: vc(36);
+    }
+  }
+
+  &__text {
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    font-weight: 300;
+    font-size: vc(16);
+    line-height: vc(20);
+    margin-bottom: vc(38);
+
+
+    @include tablet {
+      margin-bottom: vc(70);
+      font-size: vc(24);
+      line-height: vc(30);
+    }
+
+    @include desktop {
+      font-size: vc(30);
+      line-height: vc(38);
+    }
+  }
+
+  &__button {
+    .button {
+      width: vc(196);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: vc(-20);
+        transform: translateY(-50%);
+        display: block;
+        width: vc(74);
+        height: vc(74);
+        background-image: url(../img/decoration-buttons/catalog-more-icon.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        transition: transform $trans-300;
+
+        @include tablet {
+          right: vc(-25);
+          width: vc(85);
+          height: vc(85);
+        }
+
+        @include desktop {
+          width: vc(100);
+          height: vc(100);
+        }
+      }
+
+      @include hover-focus {
+        color: rgba($color: $color-default-white, $alpha: 0.75);
+
+        &::before {
+          transform: translateY(-50%) scale(0.95);
+        }
+      }
+
+      @include tablet {
+        width: vc(216);
+      }
+
+      @include desktop {
+        width: vc(335);
+      }
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    max-width: none;
+
+    &--1 {
+      bottom: vc(-70);
+      right: vc(-133);
+      width: vc(436);
+      height: vc(403);
+
+      @include tablet {
+        bottom: vc(60);
+        right: vc(-149);
+        width: vc(786);
+        height: vc(727);
+      }
+
+      @include desktop {
+        bottom: vc(-265);
+        right: 0;
+        width: vc(1269);
+        height: vc(1174);
+      }
+    }
+
+    &--2 {
+      right: vc(-71);
+      bottom: vc(-18);
+      width: vc(261);
+      height: vc(318);
+
+      @include tablet {
+        right: vc(-28);
+        bottom: vc(158);
+        width: vc(468);
+        height: vc(570);
+      }
+
+      @include desktop {
+        right: vc(205);
+        bottom: vc(-100);
+        width: vc(753);
+        height: vc(916);
+      }
+    }
+  }
+}

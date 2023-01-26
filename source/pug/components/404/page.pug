@@ -1,0 +1,14 @@
+section.not-found__section
+  +img("404", "404", "png").not-found__bg
+  img(src="img/404/decoration-01.svg" alt="").not-found__decoration
+  .container
+    .not-found__head
+      small.not-found__subtitle Oops,
+      h1.not-found__title
+        span 4
+        +img("404", "zero", "png").not-found__title-zero
+        span 4
+      p.not-found__text Страница не найдена
+      p.not-found__description Кажется, вы потерялись
+      .not-found__button
+        +button({text: "Вернуться на главную", href: "#"}).button__primary

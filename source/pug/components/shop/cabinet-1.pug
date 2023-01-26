@@ -1,0 +1,62 @@
+-
+  const cabinetNav = [
+    {
+      name: "Личные данные",
+      href: "#",
+      isActive: true,
+    }, {
+      name: "История заказов",
+      href: "#",
+      isActive: false,
+    }, {
+      name: "Выйти",
+      href: "#",
+      isActive: false,
+    },
+  ]
+section.shop-page__section.shop-cabinet__section
+  .container
+    h1.shop-page__title.shop-cabinet__title Личный кабинет
+
+    aside.section-documents__controls(data-documents-nav-container)
+      .swiper(data-documents-nav-slider)
+        .swiper-wrapper
+          each link in cabinetNav
+            .swiper-slide.section-documents__slide
+              - const isActive = link.isActive ? 'is-active' : '';
+              button.section-documents__control(class=isActive, id=link.href)!=link.name
+        .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+
+    .shop-page__box
+      .shop-cabinet__form(data-form-validate, data-callback="cabinet-1")
+        form.form(method="post")
+          +custom-input({
+            inputName: "user-login-mail",
+            inputPlaceholder: "Электронная почта*",
+            inputType: "email",
+            iconName: "form-mail.svg",
+            inputButton: "Изменить Email",
+          })(data-validate-type="email", data-on-input-validate data-message-base="Поле обязательно к заполнению", data-required)
+      .shop-cabinet__form(data-form-validate, data-callback="cabinet-1")
+        form.form(method="post")
+          +custom-input({
+            inputName: "user-register-fio",
+            inputPlaceholder: "ФИО*",
+            iconName: "form-user.svg"
+          })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+          +custom-input({
+            inputType: "tel",
+            inputPlaceholder: "Телефон*",
+            inputName: "user-register-phone",
+            iconName: "form-phone.svg"
+          })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+          .shop-cabinet__select
+            p Предпочитаемый пункт выдачи
+            select(data-validate-type="select").form__select
+              option ул. Щорса 64
+              option ул. Щорса 64
+              option ул. Щорса 64
+              option ул. Щорса 64
+          .shop-cabinet__buttons
+            +button({text: "Изменить пароль", type: "submit"}).button__white.button--reverse
+            +button({text: "Сохранить профиль", type: "submit"}).button__primary

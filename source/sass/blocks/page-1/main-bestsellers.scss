@@ -1,0 +1,123 @@
+.main-bestsellers {
+  &__headline {
+    margin: vc(30) 0 vc(40);
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.2;
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    text-align: center;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin-top: vc(50);
+      margin-bottom: vc(40);
+      font-size: vc(40);
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin: vc(135) 0 vc(60);
+      font-size: vc(58);
+      text-align: left;
+    }
+  }
+
+  &__image-box {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 49.056603773584906%;
+    border: vc(2) solid #ffffff;
+    border-radius: vc(20);
+    overflow: hidden;
+
+    @include tablet {
+      padding-bottom: 48.91304347826087%;
+    }
+
+    @include desktop {
+      border-width: vc(6);
+      border-radius: vc(63);
+    }
+  }
+
+  &__image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__actions {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: vc(15);
+    text-align: center;
+
+    @include tablet {
+      padding: vc(35);
+      text-align: left;
+    }
+
+    @include desktop {
+      padding: vc(165) vc(240);
+    }
+  }
+
+  &__action {
+    padding-right: vc(15);
+    padding-left: vc(15);
+  }
+
+  &__swiper-wrapper {
+    position: relative;
+    padding: 0 vc(10);
+
+    @include tablet {
+      padding: 0 vc(45);
+    }
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__swiper-wrapper .btn-navigation {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+
+    &.btn-navigation--prev {
+      left: vc(-10);
+
+      @include tablet {
+        left: vc(0);
+      }
+
+      @include desktop {
+        left: vc(-110);
+      }
+    }
+
+    &.btn-navigation--next {
+      right: vc(-10);
+
+      @include tablet {
+        right: vc(0);
+      }
+
+      @include desktop {
+        right: vc(-110);
+      }
+    }
+  }
+}

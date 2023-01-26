@@ -1,0 +1,71 @@
+mixin card(data, mods)
+  //- Принимает:
+  //- data {
+  //-   url:       {string},  - адрес для ссылки
+  //-   picture:   {path, image, format, width, height, altText},  - картинки товара
+  //-   name:      {string},  - название
+  //-   copy:     {string},  - описание
+  //-   price:     {number},  - цена
+  //-   weight:    {number},  - вес
+  //- }
+  //- mods {string}       - модификаторы
+
+  //- Вызов:
+        +card({
+          url: 'good01',
+          picture: {
+            path: 'img/',
+            image: 'demo-product',
+            format: 'jpg',
+            width: '455',
+            height: '455',
+          },
+          name: 'Пломбир шоколадный',
+          copy: 'Шоколадный пломбир, в состав которого входят только натуральные продукты: цельное молоко...',
+          price: '620',
+          weight: '1300',
+        }, 'mod')
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' card--' + modsList[i].trim();
+      }
+    }
+
+    var price = '' + data.price;
+    var price = price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&thinsp;') + ' ₽';
+    var weight = '' + data.weight;
+    var weight = weight.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&thinsp;') + ' г.';
+    var url     = data.url;
+    var name    = data.name;
+    var copy   = data.copy;
+    var path    = data.picture.path;
+    var image   = data.picture.image;
+    var format  = data.picture.format;
+    var width   = data.picture.width;
+    var height  = data.picture.height;
+    var altText = data.name;
+
+  article.card(class=allMods)&attributes(attributes)
+    aside.card__aside
+      a.card__figure(href=url)
+        +picture(path, image, format, width, height, altText)
+    .card__header
+      h3.card__title
+        a(href=data.url)!= name
+    .card__body
+      if (copy !== 'undefined' && copy)
+        p.card__copy!= copy
+      if (data.price !== 'undefined' && data.price)
+        .card__band
+          p.card__price
+            span!= 'Цена:'
+            span!= price
+          p.card__weight!= weight
+    footer.card__footer
+      .card__actions
+        a.card__action(href="#", aria-label="Подробнее")!= "Подробнее"

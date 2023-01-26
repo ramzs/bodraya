@@ -1,0 +1,111 @@
+.link-article {
+  $block-name: &; // #{$block-name}__element
+
+  &__wrapper {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    background-color: $color-alice-blue-1;
+    box-shadow: 0 vc(4) vc(10) rgba(135, 195, 255, 0.3);
+    border-radius: vc(40);
+    overflow: hidden;
+    transition: box-shadow $trans-300;
+
+    @include hover-focus {
+      box-shadow: vc(5) vc(5) vc(10) #8cd3f0;
+    }
+  }
+
+  &__wrapper::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  &__wrapper::after {
+    content: "";
+    position: absolute;
+    top: calc(100% - vc(125));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: block;
+    width: 265%;
+    padding-bottom: 265%;
+    border-radius: 50%;
+    background-color: $color-pattens-blue-3;
+
+    @include desktop {
+      top: calc(100% - vc(140));
+    }
+  }
+
+  &__image-wrapper {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+    min-height: vc(125);
+    padding: vc(15) vc(20);
+    text-align: center;
+    color: $color-cobalt;
+
+    @include tablet {
+      padding: vc(15) vc(40);
+    }
+
+    @include desktop {
+      min-height: vc(140);
+      padding: vc(25) vc(90) vc(15);
+    }
+  }
+
+  &__date {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 vc(5);
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: 1.4;
+
+    @include desktop {
+      margin-bottom: vc(10);
+    }
+  }
+
+  &__title {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    font-weight: 700;
+    font-size: vc(18);
+    line-height: 1.2;
+  }
+}

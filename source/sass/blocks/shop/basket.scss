@@ -1,0 +1,81 @@
+.shop-basket {
+  &__summary {
+    margin-top: vc(30);
+
+    @include tablet {
+      margin-top: vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(80);
+    }
+  }
+
+  .shop-page__description {
+    margin: vc(20) 0 0;
+
+    @include tablet {
+      margin: vc(38) 0 0;
+    }
+
+    @include desktop {
+      margin: vc(25) 0 0;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    margin: vc(40) auto 0;
+    width: vc(202);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-20);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(74);
+      height: vc(74);
+      background-image: url(../img/decoration-buttons/catalog-more-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include tablet {
+        right: vc(-25);
+        width: vc(85);
+        height: vc(85);
+      }
+
+      @include desktop {
+        width: vc(100);
+        height: vc(100);
+      }
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+
+      &::before {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+
+    @include tablet {
+      margin-top: vc(52);
+      width: vc(215);
+    }
+
+    @include desktop {
+      margin: vc(92) 0 0 auto;
+      width: vc(335);
+    }
+  }
+}

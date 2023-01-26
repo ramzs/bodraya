@@ -1,0 +1,181 @@
+.shop-cabinet {
+  .section-documents {
+    &__controls {
+      margin: vc(30) 0;
+
+      @include tablet {
+        margin: vc(60) 0 vc(40);
+      }
+
+      @include desktop {
+        margin: vc(60) 0 vc(80);
+      }
+    }
+
+    &__slide {
+      padding-right: vc(9);
+      height: auto;
+
+      @include desktop {
+        padding-right: vc(46);
+      }
+    }
+
+    &__control {
+      width: vc(160);
+      height: 100%;
+
+      &.is-active {
+        background: $color-pale-cornflower-blue;
+        color: $color-arapawa;
+      }
+
+      @include hover-focus {
+        background: $color-pale-cornflower-blue;
+        color: $color-arapawa;
+      }
+
+      @include tablet {
+        width: vc(200);
+      }
+
+      @include desktop {
+        width: vc(300);
+      }
+    }
+  }
+
+  .shop-page__box {
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: vc(15);
+
+      &__input {
+        @include max-tablet {
+          .button {
+            padding: 0;
+            top: 50%;
+            right: vc(15);
+            transform: translateY(-50%);
+            overflow: hidden;
+            width: vc(46);
+            height: vc(46);
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: vc(0);
+              transform: translateY(-50%);
+              display: block;
+              width: vc(46);
+              height: vc(46);
+              background-image: url(../img/form/form-change-btn.svg);
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              transition: transform $trans-300;
+            }
+          }
+        }
+      }
+
+      @include tablet {
+        gap: vc(20);
+      }
+
+      @include desktop {
+        gap: vc(30);
+      }
+    }
+
+    @include desktop {
+      width: vc(992);
+    }
+  }
+
+  &__form {
+    margin-bottom: vc(15);
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include tablet {
+      margin-bottom: vc(20);
+    }
+
+    @include desktop {
+      margin-bottom: vc(30);
+    }
+  }
+
+  &__section {
+    padding: vc(18) 0 vc(40);
+
+    @include tablet {
+      padding: vc(30) 0 vc(80);
+    }
+
+    @include desktop {
+      padding: vc(100) 0 vc(150);
+    }
+  }
+
+  &__title {
+    @include desktop {
+      font-size: vc(40);
+
+      @include stroke(8, $color-default-white);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: vc(25);
+
+    .button {
+      width: vc(240);
+    }
+
+    @include tablet {
+      flex-direction: row;
+      gap: vc(22);
+
+      .button {
+        width: vc(320);
+      }
+    }
+  }
+
+  &__select {
+    margin: vc(30) 0 vc(20);
+
+    p {
+      margin: 0 0 vc(15);
+      font-family: $ff-geometria;
+      font-weight: 500;
+      font-size: vc(16);
+      line-height: vc(20);
+      color: $color-arapawa;
+
+      @include desktop {
+        margin: 0 0 vc(20);
+        font-size: vc(20);
+        line-height: vc(25);
+      }
+    }
+
+    @include tablet {
+      margin: vc(10) 0 vc(20);
+    }
+
+    @include desktop {
+      margin: vc(20) 0 vc(40);
+    }
+  }
+}

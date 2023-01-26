@@ -1,0 +1,26 @@
+mixin main-bestsellers(props)
+  article.main-bestsellers
+    .main-bestsellers__wrapper
+      .container
+        h2.main-bestsellers__headline.headline!= "Новинки и хиты продаж"
+        .main-bestsellers__wrapper(data-slider-container)
+          .main-bestsellers__swiper-wrapper
+            +btn-prev({text: "Сюда"})(data-btn-prev).btn-navigation--big
+            +btn-next({text: "Туда"})(data-btn-next).btn-navigation--big
+            .swiper(data-slider-main-bestsellers, data-delay="750", data-speed="7000")
+              .swiper-wrapper
+                .main-bestsellers__slide.swiper-slide
+                  .main-bestsellers__image-box
+                    +picture("slides", "new-1", "jpg", 1558, 759, "Пломбир")
+                    .main-bestsellers__actions
+                      +button({text: "Читать о производстве", type: "submit"}).button--primary.main-bestsellers__action
+                .main-bestsellers__slide.swiper-slide
+                  .main-bestsellers__image-box
+                    +picture("slides", "new-1", "jpg", 1558, 759, "Пломбир")
+                    .main-bestsellers__actions
+                      +button({text: "Читать о производстве", type: "submit"}).button--primary.main-bestsellers__action
+                .main-bestsellers__slide.swiper-slide
+                  .main-bestsellers__image-box
+                    +picture("slides", "new-1", "jpg", 1558, 759, "Пломбир")
+                    .main-bestsellers__actions
+                      +button({text: "Читать о производстве", type: "submit"}).button--primary.main-bestsellers__action

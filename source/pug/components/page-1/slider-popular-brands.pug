@@ -1,0 +1,60 @@
+-
+  const tastyBrandsData = {
+    slides: [
+      {
+        path: "slides/tasty-brands",
+        image: "1",
+        format: "png",
+        width: 480,
+        height: 520,
+        alt: "Труффальдино",
+        mods: "blue",
+      },
+      {
+        path: "slides/tasty-brands",
+        image: "2",
+        format: "png",
+        width: 480,
+        height: 520,
+        alt: "Бодрая корова",
+        mods: "mango",
+      },
+      {
+        path: "slides/tasty-brands",
+        image: "3",
+        format: "png",
+        width: 480,
+        height: 520,
+        alt: "По рецептуре 1948 г.",
+        mods: "sky",
+      },
+    ],
+  };
+
+mixin slider-popular-brands(data, mods)
+  -
+    if(typeof(props) === 'undefined') { var props = {}; }
+    var allMods = '';
+    if(typeof(props.mods) !== 'undefined' && props.mods) {
+      var modsList = props.mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' slider-popular-brands--' + modsList[i].trim();
+      }
+    }
+
+  aside.slider-popular-brands(class=allMods)&attributes(attributes)
+    .container
+      .slider-popular-brands__wrapper(data-slider-container="slider-popular-brands")
+        +btn-prev({text: "Сюда"})(data-btn-prev).btn-navigation--big
+        +btn-next({text: "Туда"})(data-btn-next).btn-navigation--big
+        .slider-popular-brands__swiper-wrapper
+          .swiper(data-slider-popular-brands, data-delay="750", data-speed="7000")
+            .swiper-wrapper
+              each slide in data.slides
+                .swiper-slide.slider-popular-brands__slide
+                  +popular-brand({
+                    slide,
+                    mods: slide.mods,
+                  })
+
+

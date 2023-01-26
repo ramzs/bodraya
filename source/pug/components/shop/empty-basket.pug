@@ -1,0 +1,9 @@
+section.shop-page__section.empty-basket__section
+  img(src="img/shop/basket/basket-dekor-1.svg" alt="").empty-basket__decoration.empty-basket__decoration--1
+  +img("shop/basket", "basket-dekor-2", "png").empty-basket__decoration.empty-basket__decoration--2
+  .container
+    .empty-basket__head
+      h1.shop-page__title.shop-page__title--bracket.empty-basket__title Корзина
+      p.empty-basket__text Ваша корзина пуста
+      .empty-basket__button
+        +button({text: "В каталог", href: "#"}).button__primary

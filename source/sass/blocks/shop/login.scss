@@ -1,0 +1,143 @@
+.login {
+  &__title {
+    @include desktop {
+      font-size: vc(40);
+
+      @include stroke(8, $color-default-white);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    gap: vc(60);
+
+    @include desktop {
+      grid-template: 1fr / 1fr 1fr;
+      gap: vc(70);
+    }
+  }
+
+  .shop-page__description {
+    margin: 0 0 vc(30);
+  }
+
+  .shop-page__box {
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: vc(18);
+
+      &__checkbox {
+        margin: vc(12) 0 vc(22);
+        width: auto;
+
+        @include desktop {
+          margin: vc(22) 0 vc(80);
+        }
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: vc(20);
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__password-space {
+    margin-top: vc(10);
+
+    @include tablet {
+      margin-top: vc(34);
+    }
+
+    @include desktop {
+      margin-top: vc(50);
+    }
+  }
+
+  &__password-generate {
+    padding: vc(22) 0 vc(30);
+
+    .button {
+      width: 100%;
+
+      @include tablet {
+        width: auto;
+      }
+    }
+
+    @include tablet {
+      padding: vc(48) 0 vc(38);
+    }
+
+    @include desktop {
+      padding: vc(50) 0 vc(90);
+    }
+  }
+
+  &__registration {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-20);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(74);
+      height: vc(74);
+      background-image: url(../img/decoration-buttons/btn-registration.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include tablet {
+        width: vc(85);
+        height: vc(85);
+      }
+
+      @include desktop {
+        width: vc(100);
+        height: vc(100);
+      }
+    }
+
+    @include tablet {
+      width: vc(427);
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__login-btn {
+    width: vc(240);
+
+    @include desktop {
+      width: vc(370);
+    }
+  }
+
+  &__registration-link {
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+    font-weight: 500;
+    font-size: vc(18);
+    line-height: vc(23);
+
+    @include desktop {
+      font-size: vc(20);
+      line-height: vc(25);
+    }
+  }
+}

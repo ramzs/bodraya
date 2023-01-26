@@ -1,0 +1,109 @@
+$field-padding-vertical: vc(6);
+$border-radius: vc(5);
+
+@mixin field-help-text {
+  display: block;
+  padding-top: 0.4em;
+  font-size: $fz-default;
+  line-height: 1.2em;
+  color: $text-color-muted;
+
+  &:empty {
+    // stylelint-disable-line
+    display: none;
+  }
+}
+
+.field-num {
+  $block-name: &; // #{$block-name}__element
+
+  display: block;
+
+  &__name {
+  }
+
+  &__input-wrap {
+    display: block;
+  }
+
+  &__input-and-buttons {
+    position: relative;
+    display: block;
+    width: vc(100);
+
+    @include desktop {
+      width: vc(200);
+    }
+  }
+
+  &__input {
+    background: $color-pattens-blue-6;
+    border: vc(1) solid $color-default-white;
+    padding: $field-padding-vertical vc(45);
+    border-radius: vc(5);
+    text-align: center;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: vc(20);
+    width: 100%;
+    color: $color-arapawa;
+
+    #{$block-name}:not(#{$block-name}--disabled) button:focus ~ & {
+      // stylelint-disable-line
+      @include hover-focus {
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    cursor: pointer;
+    top: vc(0);
+    bottom: vc(0);
+    width: vc(32);
+    border: none;
+    padding: 0;
+    color: $color-arapawa;
+    height: 100%;
+    background: $color-default-white;
+    background-size: vc(14) vc(14);
+
+    &--plus {
+      border-radius: 0 vc(5) vc(5) 0;
+      right: vc(0);
+      // background: svg-load('../field-num/bg-img/plus.svg') center no-repeat;
+    }
+
+    &--minus {
+      border-radius: vc(5) 0 0 vc(5);
+      left: vc(0);
+      // background: svg-load('../field-num/bg-img/minus.svg') center no-repeat;
+    }
+
+    #{$block-name}--disabled & {
+      cursor: not-allowed;
+    }
+
+    @include desktop {
+      width: vc(45);
+    }
+  }
+
+  &__help-text {
+    @include field-help-text;
+  }
+
+  &--error {
+    #{$block-name}__name,
+    #{$block-name}__input,
+    #{$block-name}__help-text {
+      color: $color-danger;
+    }
+
+    #{$block-name}__input {
+      border-color: $color-danger;
+      background-color: lighten($color-danger, 35%);
+    }
+  }
+}

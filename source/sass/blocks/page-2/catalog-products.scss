@@ -1,0 +1,242 @@
+.catalog-products {
+  $block-name: &; // #{$block-name}__element
+
+  /**
+  * 1. Сетка
+  */
+
+  &__grid {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-right: calc(vc(20) / -2);
+    margin-left: calc(vc(20) / -2);
+    margin-bottom: vc(60);
+    padding-top: vc(30);
+
+    @include tablet {
+      margin-bottom: vc(40);
+    }
+
+    @include desktop {
+      padding-top: vc(70);
+      margin-right: calc(vc(75) / -2);
+      margin-left: calc(vc(75) / -2);
+      margin-bottom: vc(-55);
+    }
+  }
+
+  &__grid > &__item {
+    max-width: calc(100% / 2);
+    width: 100%;
+    padding-right: calc(vc(20) / 2);
+    padding-left: calc(vc(20) / 2);
+    padding-bottom: vc(10);
+
+    @include tablet {
+      max-width: calc(100% / 3);
+    }
+
+    @include desktop {
+      padding-right: calc(vc(75) / 2);
+      padding-left: calc(vc(75) / 2);
+      padding-bottom: vc(130);
+    }
+  }
+
+  /**
+  * 2. Базовые элементы
+  */
+
+  &__wrapper {
+    position: relative;
+    margin-top: vc(25);
+    padding-bottom: vc(65);
+    margin-bottom: vc(-65);
+    background-color: $color-pattens-blue-2;
+
+    @include tablet {
+      margin-top: vc(70);
+    }
+
+    @include desktop {
+      margin-top: vc(135);
+    }
+  }
+
+  &__actions {
+    position: relative;
+    z-index: 5;
+    padding-bottom: vc(90);
+    text-align: center;
+
+    @include tablet {
+      padding-bottom: vc(55);
+    }
+
+    @include desktop {
+      padding-bottom: vc(190);
+    }
+  }
+
+  &__action {
+    position: relative;
+    display: block;
+    max-width: vc(195);
+    width: 100%;
+    margin: 0 auto;
+    padding: vc(20) vc(35) vc(15) vc(15);
+    font-weight: 700;
+    font-size: vc(14);
+    line-height: 1.35;
+    text-align: center;
+    color: $color-default-white;
+    background-color: transparent;
+    background-image: url(../img/decoration-buttons/catalog-more-sm.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: none;
+    cursor: pointer;
+
+    transition: color $trans-300;
+
+    @include tablet {
+      max-width: vc(220);
+      padding: vc(30) vc(50) vc(20) vc(40);
+      font-size: vc(16);
+
+      background-image: url(../img/decoration-buttons/catalog-more-md.svg);
+    }
+
+    @include desktop {
+      max-width: vc(250);
+      padding: vc(30) vc(60) vc(20) vc(40);
+      font-size: vc(18);
+      background-image: url(../img/decoration-buttons/catalog-more-lg.svg);
+    }
+
+    @include hover-focus {
+      color: rgba($color: $color-default-white, $alpha: 0.75);
+
+      &::before {
+        transform: translateY(-50%) scale(0.95);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: vc(-20);
+      transform: translateY(-50%);
+      display: block;
+      width: vc(74);
+      height: vc(74);
+      background-image: url(../img/decoration-buttons/catalog-more-icon.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transition: transform $trans-300;
+
+      @include tablet {
+        right: vc(-25);
+        width: vc(85);
+        height: vc(85);
+      }
+
+      @include desktop {
+        width: vc(100);
+        height: vc(100);
+      }
+    }
+  }
+
+  /**
+  * 3. Декоративные элементы
+  */
+
+  &__decoration-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-bottom: 100%;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__decoration-header--one {
+    top: vc(-25);
+    z-index: 0;
+    background-color: $color-solitude;
+    background-image: linear-gradient(
+      180deg,
+      #ddedff 0%,
+      rgba(238, 246, 255, 0) 25%
+    );
+    clip-path: url(#svgClipCatalogDecorationHeaderLayer1Lg);
+
+    @include tablet {
+      top: vc(-70);
+    }
+
+    @include desktop {
+      top: vc(-135);
+    }
+  }
+
+  &__decoration-header--two {
+    top: vc(-10);
+    z-index: 1;
+    backdrop-filter: blur(10);
+    background-color: rgba($color: $color-pattens-blue-2, $alpha: 0.7);
+    clip-path: url(#svgClipCatalogDecorationHeaderLayer2Lg);
+
+    @include tablet {
+      top: vc(-55);
+    }
+
+    @include desktop {
+      top: vc(-120);
+    }
+  }
+
+  &__decoration-header--three {
+    top: vc(20);
+    z-index: 2;
+    background-color: $color-pattens-blue-2;
+    clip-path: url(#svgClipCatalogDecorationHeaderLayer3Lg);
+
+    @include tablet {
+      top: vc(-35);
+    }
+
+    @include desktop {
+      top: vc(-100);
+    }
+  }
+
+  &__decoration-footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: vc(800);
+    background-image: url("../img/decoration/catalog-decoration-footer.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    user-select: none;
+    pointer-events: none;
+
+    @mixin retina {
+      background-image: url("../img/decoration/catalog-decoration-footer@2x.png");
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.swiper .swiper-scrollbar.swiper-scrollbar--custom {
+  & {
+    box-sizing: border-box;
+    position: relative;
+    bottom: inherit;
+    height: vc(18);
+    border-radius: vc(40);
+    background-color: $color-pattens-blue-3;
+    overflow: hidden;
+  }
+
+  .swiper-scrollbar-drag {
+    box-sizing: border-box;
+    max-height: 100%;
+    height: vc(18);
+    background: linear-gradient(
+      172.48deg,
+      #ffffff 5.83%,
+      rgba(255, 255, 255, 0) 126.15%
+    );
+    border: vc(3) solid $color-pattens-blue-3;
+    border-radius: vc(18);
+  }
+}

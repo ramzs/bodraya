@@ -1,0 +1,256 @@
+.main-features {
+  $block-name: &; // #{$block-name}__element
+
+  &__wrapper {
+    position: relative;
+    min-height: vc(885);
+    overflow: hidden;
+  }
+
+  &__inner {
+    position: relative;
+    margin-top: vc(35);
+    margin-bottom: vc(65);
+    background: url(image.png),
+      linear-gradient(180deg, #7bbaff 0%, rgba(75, 161, 255, 0) 107.56%);
+
+    @include tablet {
+      margin-top: vc(85);
+      margin-bottom: vc(100);
+    }
+
+    @include desktop {
+      margin-top: vc(240);
+      margin-bottom: vc(200);
+      background: none;
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: vc(60);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include tablet {
+      grid-template-columns: repeat(2, calc((100% - vc(90)) / 2));
+      column-gap: vc(90);
+      row-gap: vc(45);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, calc((100% - vc(35) * 3) / 4));
+      column-gap: vc(35);
+      row-gap: vc(25);
+    }
+  }
+
+  &__actions {
+    margin-top: vc(65);
+    text-align: center;
+
+    @include tablet {
+      margin-top: vc(30);
+    }
+
+    @include desktop {
+      margin-top: vc(75);
+    }
+  }
+
+  &__article {
+    position: relative;
+    z-index: 5;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__article-name {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    font-weight: 700;
+    font-size: vc(18);
+    line-height: 1.35;
+    white-space: nowrap;
+    color: $color-arapawa;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      font-size: vc(20);
+    }
+
+    @include desktop {
+      font-size: vc(25);
+    }
+  }
+
+  &__article-count {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    width: auto;
+    margin: 0 auto;
+    padding: vc(20) vc(25) vc(25);
+    font-weight: 700;
+    font-size: vc(18);
+    line-height: 1.35;
+    color: $color-default-white;
+
+    @include desktop {
+      font-size: vc(22);
+    }
+  }
+
+  &__article-count::before {
+    content: "";
+    position: absolute;
+    top: vc(-5);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% auto;
+
+    filter: drop-shadow(0 vc(3) vc(7) rgba(34, 73, 109, 0.1));
+  }
+
+  &__icon--cold ~ &__article-count::before {
+    background-image: url(../img/decoration/main-cold.svg);
+  }
+
+  &__icon--truck ~ &__article-count::before {
+    background-image: url(../img/decoration/main-truck.svg);
+  }
+
+  &__icon--snowflake ~ &__article-count::before {
+    background-image: url(../img/decoration/main-snowflake.svg);
+  }
+
+  &__icon--pallets ~ &__article-count::before {
+    background-image: url(../img/decoration/main-pallets.svg);
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: vc(25);
+    max-width: 100%;
+    width: 100%;
+    height: vc(145);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+
+    @include tablet {
+    }
+
+    @include desktop {
+      margin-bottom: vc(25);
+    }
+  }
+
+  &__icon--pallets {
+    background-image: url(../img/decoration/main-pallets.png);
+
+    @include retina {
+      background-image: url(../img/decoration/main-pallets@2x.png);
+    }
+
+    @include hover-focus {
+      background-image: url(../img/decoration/main-pallets.gif);
+      background-size: auto 96.55172413793103%;
+    }
+  }
+
+  &__icon--cold {
+    background-image: url(../img/decoration/main-cold.png);
+
+    @include retina {
+      background-image: url(../img/decoration/main-cold@2x.png);
+    }
+
+    @include hover-focus {
+      background-image: url(../img/decoration/main-cold.gif);
+      background-size: auto 95.86206896551724%;
+    }
+  }
+
+  &__icon--truck {
+    background-image: url(../img/decoration/main-truck.png);
+
+    @include retina {
+      background-image: url(../img/decoration/main-truck@2x.png);
+    }
+
+    @include hover-focus {
+      background-image: url(../img/decoration/main-truck.gif);
+      background-size: auto 119.3103448275862%;
+    }
+  }
+
+  &__icon--snowflake {
+    background-image: url(../img/decoration/main-snowflake.png);
+
+    @include retina {
+      background-image: url(../img/decoration/main-snowflake@2x.png);
+    }
+
+    @include hover-focus {
+      background-image: url(../img/decoration/main-snowflake.gif);
+      background-size: auto 100%;
+    }
+  }
+
+  &__wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    padding-bottom: 100vw;
+    clip-path: url(#svgClipMainIntro);
+    background: linear-gradient(
+      180deg,
+      #7bbaff 0%,
+      #7bbaff 35%,
+      rgba(75, 161, 255, 0) 101.73%
+    );
+    filter: drop-shadow(0 vc(6) vc(12) rgba(40, 46, 102, 0.08));
+
+    @include desktop {
+      background: linear-gradient(
+        180deg,
+        #7bbaff 0%,
+        rgba(75, 161, 255, 0) 101.73%
+      );
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__decoration--footer {
+    padding-bottom: 100vw;
+    background-image: url(../img/decoration/main-features-footer.png);
+    background-repeat: no-repeat;
+    background-position: bottom vc(-5) center;
+    background-size: 100% auto;
+
+    @include retina {
+      background-image: url(../img/decoration/main-features-footer@2x.png);
+    }
+  }
+}

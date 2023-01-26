@@ -1,0 +1,74 @@
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &--added {
+    #{$block-name}__content {
+      max-width: vc(295);
+      padding: vc(54) vc(12) vc(54) vc(100);
+      text-align: left;
+      border: vc(4) solid $color-default-white;
+      background-image: url("../img/modals/added-sm.png");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: bottom center;
+      border-radius: vc(30);
+
+      @include retina {
+        background-image: url("../img/modals/added-sm@2x.png");
+
+        @include tablet {
+          background-image: url("../img/modals/added-md@2x.png");
+        }
+
+        @include retina {
+          background-image: url("../img/modals/added-lg@2x.png");
+        }
+      }
+
+      @include tablet {
+        max-width: vc(645);
+        padding: vc(168) vc(75) vc(168) vc(300);
+        border-width: vc(8);
+        border-radius: vc(40);
+        background-image: url("../img/modals/added-md.png");
+      }
+
+      @include desktop {
+        max-width: vc(715);
+        padding: vc(187) vc(85) vc(187) vc(340);
+        background-image: url("../img/modals/added-lg.png");
+      }
+    }
+
+    #{$block-name}__close-btn {
+      top: vc(14);
+      right: vc(14);
+
+      @include tablet {
+        top: vc(28);
+        right: vc(28);
+      }
+
+      @include desktop {
+        top: vc(20);
+        right: vc(20);
+      }
+    }
+
+    #{$block-name}__headline {
+      margin: 0;
+      font-weight: 700;
+      font-size: vc(18);
+      line-height: 1.3;
+      font-family: $ff-geometria;
+
+      @include tablet {
+        font-size: vc(25);
+      }
+
+      @include desktop {
+        margin-bottom: vc(35);
+      }
+    }
+  }
+}

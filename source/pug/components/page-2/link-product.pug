@@ -1,0 +1,40 @@
+mixin link-product(data, mods)
+  //- Принимает:
+  //- data {
+  //-   name:       {string},  - название
+  //-   url:        {string},  - адрес для ссылки
+  //-   image: {
+  //-     path:     {string},
+  //-     image:    {string},
+  //-     format:   {string},
+  //-     width:    {number},
+  //-     height:   {number},
+  //-     altText:  {string},
+  //-   },
+  //-   sale:       {string}, - показать метку
+  //- }
+  //- mods {string}       - модификаторы
+
+  -
+    // список модификаторов
+    var allMods = '';
+
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' link-product--' + modsList[i].trim();
+      }
+    }
+
+    const name    = data.name;
+    const url     = data.url;
+    const newSale = (data.sale !== 'undefined' && data.sale) ? '<span class="link-product__sale">' + data.sale + '&thinsp;%</span>' : '';
+    const { path, format, image, width, height, altText} = data.image;
+
+  a.link-product(class=allMods, href=url)&attributes(attributes)
+    span.link-product__wrapper
+      != newSale
+      span.link-product__image-wrapper
+        +picture(path, image, format, width, height, altText)
+      span.link-product__title-wrapper
+        span.link-product__title!= name
