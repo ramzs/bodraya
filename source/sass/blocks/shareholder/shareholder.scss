@@ -1,0 +1,88 @@
+.shareholder {
+  &__section {
+    margin-bottom: vc(80);
+
+    @include tablet {
+      margin-bottom: vc(100);
+    }
+
+    @include desktop {
+      margin-bottom: vc(150);
+    }
+  }
+
+  &__lists {
+    margin: vc(30) 0;
+
+    @include desktop {
+      margin: vc(21) 0 vc(74);
+    }
+  }
+
+  &__buttons {
+    margin-top: vc(34);
+    display: flex;
+    gap: vc(22);
+
+    .button {
+      width: vc(134);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: vc(14);
+
+      @include tablet {
+        white-space: nowrap;
+        font-size: vc(16);
+        width: vc(278);
+      }
+
+      @include desktop {
+        font-size: vc(18);
+        width: vc(305);
+      }
+    }
+
+    @include tablet {
+      margin-top: vc(65);
+    }
+
+    @include desktop {
+      margin-top: vc(85);
+    }
+  }
+}
+
+.shareholder-2 {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: vc(80);
+
+    @include desktop {
+      flex-direction: row;
+      gap: vc(205);
+    }
+  }
+
+  &__col {
+    &--1 {
+      @include desktop {
+        max-width: vc(437);
+      }
+    }
+
+    &--2 {
+      @include desktop {
+        max-width: vc(524);
+      }
+    }
+  }
+
+  .page-info__text {
+    @include tablet {
+      font-size: vc(20);
+      line-height: vc(25);
+    }
+  }
+}

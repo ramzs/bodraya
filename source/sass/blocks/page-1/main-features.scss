@@ -11,8 +11,7 @@
     position: relative;
     margin-top: vc(35);
     margin-bottom: vc(65);
-    background: url(image.png),
-      linear-gradient(180deg, #7bbaff 0%, rgba(75, 161, 255, 0) 107.56%);
+    background: linear-gradient(180deg, #7bbaff 0%, rgba(75, 161, 255, 0) 107.56%);
 
     @include tablet {
       margin-top: vc(85);

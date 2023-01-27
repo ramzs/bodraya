@@ -1,0 +1,9 @@
+mixin section-catalog()
+  section.section-catalog
+    .section-catalog__wrapper
+      .container
+        h1.section-catalog__headline.headline!= "Продукция"
+
+      +stack-products(stackProductsData).section-catalog__stack-products
+      +catalog-products(productsData).section-catalog__catalog-products
+

@@ -1,0 +1,118 @@
+.manager-contacts {
+  &__box {
+    position: relative;
+    display: block;
+    padding: vc(35) vc(25) vc(210);
+    border: vc(3) solid #ffffff;
+    border-radius: vc(30);
+
+    @include tablet {
+      padding: vc(20) vc(55);
+    }
+
+    @include desktop {
+      padding: vc(50) vc(85) vc(40);
+    }
+  }
+
+  &__content {
+    max-width: vc(245);
+
+    @include desktop {
+      max-width: vc(780);
+    }
+  }
+
+  &__headline {
+    margin: 0 0 vc(10);
+    display: block;
+    font-weight: 700;
+    font-size: vc(18);
+    font-family: $ff-geometria;
+    line-height: 1.15;
+    color: $color-pumpkin;
+    @include stroke(4, $color-default-white);
+
+    @include desktop {
+      margin-bottom: vc(35);
+      font-size: vc(36);
+    }
+  }
+
+  &__items {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: vc(35);
+    padding-left: vc(40);
+    font-weight: 500;
+    font-size: vc(18);
+    line-height: 1.15;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto vc(24);
+
+    transition: color $trans-300;
+
+    @include desktop {
+      font-size: vc(24);
+    }
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+
+    &[href*="tel"] {
+      background-image: url(../img/svg/manager-contacts-phone.svg);
+    }
+
+    &[href*="mailto"] {
+      background-image: url(../img/svg/manager-contacts-email.svg);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: vc(-20);
+    bottom: vc(-20);
+    left: vc(-20);
+    display: block;
+    height: vc(210);
+
+    @include tablet {
+      right: 0;
+      bottom: 0;
+      left: inherit;
+      max-width: vc(310);
+      width: 100%;
+      height: vc(185);
+    }
+
+    @include desktop {
+      top: 50%;
+      right: vc(-50);
+      transform: translateY(-50%);
+      bottom: inherit;
+      max-width: vc(690);
+      height: vc(490);
+    }
+  }
+
+  &__image img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+}

@@ -1,0 +1,190 @@
+-
+  const productsDataExtend = [
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+    {
+      url: '#',
+      picture: {
+        path: 'catalog',
+        image: 'article-4',
+        format: 'png',
+        width: 390,
+        height: 390,
+      },
+      name: 'Вишневая девятка',
+      copy: 'Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.',
+      price: '620',
+      weight: '1300',
+    },
+  ];
+
+mixin catalog-products-extend(products)
+  section.catalog-products&attributes(attributes)
+    .catalog-products__wrapper
+      .container
+        .catalog-products__grid
+          each product in products
+            .catalog-products__item
+              +card(product, "big")
+
+        .catalog-products__actions
+          button.catalog-products__action(aria-label="Показать еще")!= "Показать еще"
+
+      span.catalog-products__decoration.catalog-products__decoration--header.catalog-products__decoration--header-1
+      span.catalog-products__decoration.catalog-products__decoration--header.catalog-products__decoration--header-2
+      span.catalog-products__decoration.catalog-products__decoration--header.catalog-products__decoration--header-3
+      span.catalog-products__decoration-wrapper
+        span.catalog-products__decoration.catalog-products__decoration--berry.catalog-products__decoration--berry-6
+        span.catalog-products__decoration.catalog-products__decoration--berry.catalog-products__decoration--berry-7

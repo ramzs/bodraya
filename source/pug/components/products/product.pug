@@ -1,0 +1,44 @@
+img(src="img/products/decor-2.svg" alt="").products__decor.products__decor--2
+section.products__section
+  .container
+    .products__header
+      p.shop-page__title.shop-page__title--bracket Интернет-магазин
+      a(href="#").products__basket
+        img(src="img/svg/basket.svg" alt="")
+    form.products__body
+      .products__image
+        img(src="img/products/decor-1.png" alt="").products__decor.products__decor--1
+        img(src="img/products/bricet.png" alt="").products__image-img
+      .products__info
+        h1.products__title Вишневая девятка
+        .products__weight 1300 гр
+        p.products__description «ВИШНЕВАЯ ДЕВЯТКА» Ты до нее спокойно жил, Спокойно ел, спокойно спал! Сорбет на натуральном вишневом соке с кусочками вишни. Десерт сорбет вишневый с ароматом и кусочками вишни взбитый замороженный.
+        .products__box
+          .products__chose
+            .products__price 620 ₽
+            .products__count
+              +field-num({
+                val: '1',
+                attrs: {
+                  name: 'quantity',
+                  max: '10',
+                  min: '1',
+                  step: '1',
+                }
+              })
+          .products__button
+            +button({text: "В корзину", type: "submit"}).button--primary
+    .products__footer
+      .products__footer-head
+        .products__footer-title.is-active Характеристики
+        .products__footer-title Состав
+      .products__footer-body
+        .products__footer-item
+          .products__footer-specifications Белки (на 100 г)
+          .products__footer-info 3 г
+        .products__footer-item
+          .products__footer-specifications Срок годности
+          .products__footer-info при температуре хранения не выше минус 180 С — 18,0 мес.
+        .products__footer-item
+          .products__footer-specifications Изготовитель:
+          .products__footer-info АО «Белгородский хладокомбинат», Россия, 308013, Белгородская обл., г. Белгород, ул. Дзгоева, 1

@@ -1,0 +1,24 @@
+mixin stack-products-extend(props)
+  section.stack-products&attributes(attributes)
+    .stack-products-wrapper
+      .container
+        .stack-products__box
+          .stack-products__tabs.stack-products__tabs--runner(data-tabs='parent', data-delay='300')
+
+            .stack-products__controls(data-tabs='controls', data-adaptive-runner="track")
+              each stack in props
+                button.stack-products__control(type='button', data-tabs='control', data-adaptive-runner="checkpoint")!= stack.headline
+
+            .stack-products__content(data-tabs='content')
+              each content in props
+                .stack-products__element(data-tabs='element', data-slider-container="slider-stack-products")
+                  .swiper(data-stack-products-slider)
+                    .stack-products__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+                    .swiper-wrapper
+                      each item in content.items
+                        .swiper-slide
+                          +link-product(item)
+
+      span.stack-products__decoration.stack-products__decoration--2
+      span.stack-products__decoration.stack-products__decoration--5
+      span.stack-products__decoration.stack-products__decoration--6

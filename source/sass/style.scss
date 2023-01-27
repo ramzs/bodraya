@@ -16,6 +16,7 @@
 @import "global/utils";
 @import "global/container";
 @import "global/typography";
+@import "helps";
 
 // Components
 // ---------------------------------
@@ -59,6 +60,8 @@
 @import "blocks/modal-extend/added";
 @import "blocks/modal-extend/video";
 
+@import "blocks/headline";
+
 @import "blocks/page-1/main-banner";
 @import "blocks/page-1/popular-brand";
 @import "blocks/page-1/slider-popular-brands";
@@ -74,9 +77,12 @@
 @import "blocks/page-2/link-product";
 @import "blocks/page-2/stack-products";
 @import "blocks/page-2/catalog-products";
+@import "blocks/page-2/section-catalog";
 
 @import "blocks/page-5/article-excursion";
 @import "blocks/page-5/excursion-page";
+
+@import "blocks/page-6/product-tabs";
 
 @import "blocks/page-10/section-documents";
 
@@ -88,12 +94,16 @@
 
 @import "blocks/page-13/section-contacts";
 
+@import "blocks/page-14/job-advantage";
+@import "blocks/page-14/manager-contacts";
+@import "blocks/page-14/job-form";
+@import "blocks/page-14/job-position";
+@import "blocks/page-14/section-vacancies";
+
 @import "blocks/service/service-nav";
 @import "blocks/service/page";
 
 @import "blocks/404/not-found";
-
-@import "blocks/product-tabs/product-tabs";
 
 @import "blocks/shop/page";
 @import "blocks/shop/empty-basket";
@@ -106,6 +116,9 @@
 @import "blocks/shop/order-registration";
 
 @import "blocks/politics/politics";
+@import "blocks/shareholder/shareholder";
+
+@import "blocks/history/history";
 
 // ---------------------------------
 

@@ -111,12 +111,8 @@
   ];
 
 mixin catalog-products(products)
-  section.catalog-products
+  section.catalog-products&attributes(attributes)
     .catalog-products__wrapper
-      span.catalog-products__decoration-header.catalog-products__decoration-header--one
-      span.catalog-products__decoration-header.catalog-products__decoration-header--two
-      span.catalog-products__decoration-header.catalog-products__decoration-header--three
-      span.catalog-products__decoration-footer
       .container
         .catalog-products__grid
           each product in products
@@ -125,3 +121,13 @@ mixin catalog-products(products)
 
         .catalog-products__actions
           button.catalog-products__action(aria-label="Показать еще")!= "Показать еще"
+
+      span.catalog-products__decoration.catalog-products__decoration--header.catalog-products__decoration--header-1
+      span.catalog-products__decoration.catalog-products__decoration--header.catalog-products__decoration--header-2
+      span.catalog-products__decoration.catalog-products__decoration--header.catalog-products__decoration--header-3
+      span.catalog-products__decoration.catalog-products__decoration--berry.catalog-products__decoration--berry-4
+      span.catalog-products__decoration.catalog-products__decoration--footer
+      span.catalog-products__decoration-wrapper
+        span.catalog-products__decoration.catalog-products__decoration--berry.catalog-products__decoration--berry-1
+        span.catalog-products__decoration.catalog-products__decoration--berry.catalog-products__decoration--berry-2
+        span.catalog-products__decoration.catalog-products__decoration--berry.catalog-products__decoration--berry-3

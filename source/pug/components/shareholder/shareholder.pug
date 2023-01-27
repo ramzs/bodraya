@@ -1,0 +1,29 @@
+section.page-info__nav
+  aside.section-documents__controls.page-info__controls(data-page-info-nav-container)
+    .swiper(data-page-info-nav-slider)
+      .swiper-wrapper
+        each link in cabinetNav
+          .swiper-slide.section-documents__slide
+            - const isActive = link.isActive ? 'is-active' : '';
+            button.section-documents__control(class=isActive, id=link.href)!=link.name
+      .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+section.page-info__section.shareholder__section
+  img(src="/img/page-info/decor.svg" alt="").page-info__decor
+  .container
+    h1.page-info__title Акционерам
+    p.page-info__text.page-info__text--light Структура органов управления АО «Белгородский Хладокомбинат»:
+    .shareholder__lists
+      p.page-info__text
+        b
+          | 1. Собрание акционеров
+          br
+          | 2. Совет директоров
+          br
+          | 3. Генеральный директор
+    p.page-info__text Высшим органом управления Обществом является Общее собрание акционеров. Основные полномочия по управлению Обществом передаются акционерами Совету директоров. Совет директоров для обеспечения оперативного управления Обществом избирает Генерального директора.
+    p.page-info__text Открытое общество обязано раскрывать информацию о своей деятельности.
+    p.page-info__text Периодичность раскрытия, состав и объем раскрываемой информации определяется в соответствии с законодательством Российской Федерации о ценных бумагах, устанавливающим случаи обязательного раскрытия (публикации и предоставления) информации.
+    p.page-info__text При опубликовании информации в сети Интернет акционерное общество обязано обеспечить свободный и необременительный доступ к такой информации, а также сообщать по требованию заинтересованных лиц адреса страниц, на которых осуществляется опубликование информации".
+    .shareholder__buttons
+      +button({text: "Банковские реквизиты", href: "#"}).button--white.button--reverse
+      +button({text: "Документы", href: "#"}).button--primary

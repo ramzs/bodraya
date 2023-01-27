@@ -1,0 +1,17 @@
+.headline {
+  margin: 0;
+  display: inline-block;
+  font-weight: 700;
+  font-size: vc(24);
+  line-height: 1.15;
+  @include stroke(4, $color-default-white);
+
+  @include tablet {
+    font-size: vc(40);
+  }
+
+  @include desktop {
+    font-size: vc(56);
+    @include stroke(11, $color-default-white);
+  }
+}

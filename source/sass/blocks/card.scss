@@ -53,7 +53,19 @@ $btn-cn: $color-pumpkin;
 
     @include desktop {
       height: vc(700);
-      padding-bottom: 152%;
+      // padding-bottom: 152%;
+    }
+  }
+
+  &--big::before {
+    height: vc(260);
+
+    @include tablet {
+      height: vc(380);
+    }
+
+    @include desktop {
+      height: vc(740);
     }
   }
 
@@ -97,7 +109,7 @@ $btn-cn: $color-pumpkin;
     line-height: 1.2;
 
     @include tablet {
-      padding: 0 vc(25) vc(15);
+      padding: 0 vc(15) vc(15);
       font-size: vc(18);
     }
 
@@ -108,7 +120,7 @@ $btn-cn: $color-pumpkin;
   }
 
   &__body {
-    height: vc(40);
+    min-height: vc(40);
     padding: 0 vc(10) vc(5);
     font-weight: 500;
     font-size: vc(10);
@@ -117,13 +129,13 @@ $btn-cn: $color-pumpkin;
     overflow: hidden;
 
     @include tablet {
-      padding-right: vc(25);
-      padding-left: vc(25);
+      padding-right: vc(15);
+      padding-left: vc(15);
       font-size: vc(14);
     }
 
     @include desktop {
-      height: vc(65);
+      min-height: vc(65);
       padding: 0 vc(75) 0 vc(35);
       font-size: vc(18);
     }
@@ -134,11 +146,11 @@ $btn-cn: $color-pumpkin;
     padding: vc(5) vc(10) vc(10);
 
     @include tablet {
-      padding: vc(20) vc(20) vc(25);
+      padding: vc(20) vc(15) vc(25);
     }
 
     @include desktop {
-      padding: vc(35);
+      padding: vc(35) vc(20);
     }
   }
 
@@ -158,6 +170,47 @@ $btn-cn: $color-pumpkin;
     @include desktop {
       -webkit-line-clamp: 3;
     }
+
+    &--price {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: vc(10);
+      margin-top: vc(5);
+      font-weight: 300;
+      font-size: vc(10);
+      line-height: 1.4;
+
+      @include tablet {
+        margin-top: vc(15);
+        font-size: vc(12);
+      }
+
+      @include desktop {
+        margin-top: vc(30);
+        margin-right: vc(-40);
+        font-size: vc(16);
+      }
+    }
+
+    &--price b {
+      font-weight: 600;
+      font-size: vc(12);
+
+      @include tablet {
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        font-size: vc(28);
+      }
+    }
+  }
+
+  &__price {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   &__actions {
@@ -214,10 +267,10 @@ $btn-cn: $color-pumpkin;
       }
 
       @include desktop {
-        background-image: url(../img/decoration-buttons/card-is-active-lg.png);
+        background-image: url(../img/decoration-buttons/card-is-active-lg.png) !important;
 
         @include retina {
-          background-image: url(../img/decoration-buttons/card-is-active-lg@2x.png);
+          background-image: url(../img/decoration-buttons/card-is-active-lg@2x.png) !important;
         }
       }
     }

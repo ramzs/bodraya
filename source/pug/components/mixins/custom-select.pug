@@ -1,9 +1,19 @@
-mixin custom-select(options = {})
-  - const selectLabel = options.label ? options.label : false
-  - const selectPlaceholder = options.placeholder ? options.placeholder : false
-  - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций"
+mixin custom-select(options = {}, mods)
+  -
+    let allMods = '';
 
-  div&attributes(attributes)
+    if (typeof(mods) !== 'undefined' && mods) {
+      const  modsList = mods.split(',');
+
+      for (let i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' custom-select--' + modsList[i].trim();
+      }
+    }
+  - const selectLabel = options.label ? options.label : false;
+  - const selectPlaceholder = options.placeholder ? options.placeholder : false;
+  - const buttonAriaLabel = options.buttonAriaLabel ? options.buttonAriaLabel : "Выберите одну из опций";
+
+  div.custom-select(class=allMods)&attributes(attributes)
     if selectLabel
       span.custom-select__label=selectLabel
     if selectPlaceholder

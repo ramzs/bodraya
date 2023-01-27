@@ -16,10 +16,11 @@ import {initServiceNavSlider} from './modules/sliders/init-service-nav-slider';
 import {initVideo} from './modules/video/init-video';
 import {initDocumentsNavSlider} from './modules/sliders/init-documents-nav-slider';
 import {initArticleSliders} from './modules/sliders/init-article-slider';
-import { initSectionMapPins } from './modules/section-map-pins';
-import { initMainMap } from './modules/sliders/init-main-map-slider';
-import { initBestsellersSliders } from './modules/sliders/init-popular-brands-slider copy';
-import { initPageInfoNavSlider } from './modules/sliders/init-page-info-nav-sider';
+import {initSectionMapPins} from './modules/section-map-pins';
+import {initMainMap} from './modules/sliders/init-main-map-slider';
+import {initBestsellersSliders} from './modules/sliders/init-popular-brands-slider copy';
+import {initPageInfoNavSlider} from './modules/sliders/init-page-info-nav-sider';
+import { initCatalogNavSlider } from './modules/sliders/init-catalog-nav-slider';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -58,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initMainMap();
     initBestsellersSliders();
     initSectionMapPins();
+    initCatalogNavSlider();
 
     const adaptiveRunner = new AdaptiveRunner();
     adaptiveRunner.init();

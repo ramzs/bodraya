@@ -1,0 +1,56 @@
+section.page-info__nav
+  aside.section-documents__controls.page-info__controls(data-page-info-nav-container)
+    .swiper(data-page-info-nav-slider)
+      .swiper-wrapper
+        each link in cabinetNav
+          .swiper-slide.section-documents__slide
+            - const isActive = link.isActive ? 'is-active' : '';
+            button.section-documents__control(class=isActive, id=link.href)!=link.name
+      .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+section.page-info__section.shareholder__section
+  img(src="/img/page-info/decor.svg" alt="").page-info__decor
+  .container
+    h1.page-info__title Юридическая информация
+    .shareholder-2__row
+      .shareholder-2__col.shareholder-2__col--1
+        p.page-info__text #[b АО «Белгородский хладокомбинат»] 308017, г. Белгород, ул. Дзгоева, 1
+        p.page-info__text ИНН 3125008530
+        p.page-info__text  КПП 312301001
+        p.page-info__text
+          | ОГРН 1023101644390
+          br
+          | ОКАТО 14401000000
+          br
+          | ОКОНХ 71110
+          br
+          | ОКПО 01444041
+        p.page-info__text
+          b Воронежский Филиал ЗАО «ЮниКредитБанк» в г. Воронеж
+        p.page-info__text Кор/счет 301 018 101 000 000 00 709
+        p.page-info__text Бик 0 420 07 709
+        p.page-info__text Р/счет 40 702 810 300 303 964 969
+        p.page-info__text
+          b Тел/факс (4722) 21-73-26,21-36-44
+        p.page-info__text
+          b Генеральный директор — Бузиашвили Г.Д.
+      .shareholder-2__col.shareholder-2__col--2
+        p.page-info__text #[b ООО «ТД «Белгородский хладокомбинат»] 308017, г. Белгород, ул. Дзгоева, д.1, стр.В7, каб.202
+        p.page-info__text ИНН 3123084510
+        p.page-info__text КПП 312301001
+        p.page-info__text ОГРН 1023101645951
+        p.page-info__text
+          b АО "АЛЬФА-БАНК"
+        p.page-info__text р/сч 40702810602970000643
+        p.page-info__text кор/сч.  30101810200000000593
+        p.page-info__text БИК 044525593
+        p.page-info__text
+          b Директор - Топорков Д.А.
+        p.page-info__text
+          b Эл. почта toporkov@belhlado.ru
+
+
+
+
+
+
+

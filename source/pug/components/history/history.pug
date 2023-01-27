@@ -1,0 +1,61 @@
+section.page-info__nav
+  aside.section-documents__controls.page-info__controls(data-page-info-nav-container)
+    .swiper(data-page-info-nav-slider)
+      .swiper-wrapper
+        each link in cabinetNav
+          .swiper-slide.section-documents__slide
+            - const isActive = link.isActive ? 'is-active' : '';
+            button.section-documents__control(class=isActive, id=link.href)!=link.name
+      .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+section.history__section
+  .container
+    h1.history__headline История компании
+    +video('sQRmvMQeQW8', 'Мороженое Бодрая Корова').history__video
+    .history__timeline
+section.history__section.history__section--1
+  +picture("history", "decor-1-3", "png").history__decor.history__decor--3
+  .container
+    .history__row
+      .history__info
+        h2.history__title 1959
+        p.history__text В послевоенный период холодильники были роскошью. Правительством СССР было решено построить один большой холодильник для всего Белгорода.
+        p.history__text 29 июня был запущен в работу первый склад-охладитель, который вмещал в себя 3 218 тонн продуктов.
+      .history__image-box
+        +picture("history", "decor-1-1", "png").history__decor.history__decor--1
+        +picture("history", "decor-1-2", "png").history__decor.history__decor--2
+        +picture("history", "article-image-1", "jpg").history__image-box-img
+section.history__section.history__section--2
+  +picture("history", "bg-2-m", "png").history__bg.history__bg--1.for-mobile
+  +picture("history", "bg-2-t", "png").history__bg.history__bg--1.for-tablet
+  +picture("history", "bg-2", "png").history__bg.history__bg--1.for-desktop
+  +picture("history", "decor-2-3", "png").history__decor.history__decor--3
+  +picture("history", "decor-2-4", "png").history__decor.history__decor--4
+
+  .container
+    .history__row
+      .history__info
+        h2.history__title 1973
+        p.history__text В мае 1973 открывается фабрика по производству мороженого. Она выпускает до 12 тонн брикетов и стаканчиков за сутки.
+        p.history__text Белгородские газеты начинают писать о фабрике и её достижениях.
+      .history__image-box
+        +picture("history", "decor-2-1", "png").history__decor.history__decor--1
+        +picture("history", "article-image-2", "jpg").history__image-box-img
+    h3.history__subtitle Газетные архивы
+    .history__row
+      +picture("history", "decor-2-2", "png").history__decor.history__decor--2
+      .history__gazeta
+        .history__gazeta-item.history__gazeta-item--1
+          +picture("history", "gazeta-1", "png").history__image-box-img.history__gazeta-img.history__gazeta-img--1
+          .history__gazeta-footer.history__gazeta-footer--1
+            img(src="img/history/gazeta-bg-1.svg" alt="").history__gazeta-bg.history__gazeta-bg--1
+            p.history__gazeta-title Белгородская Правда 19.01.1973
+        .history__gazeta-item.history__gazeta-item--2
+          +picture("history", "gazeta-2", "png").history__image-box-img.history__gazeta-img.history__gazeta-img--2
+          .history__gazeta-footer.history__gazeta-footer--2
+            img(src="img/history/gazeta-bg-2.svg" alt="").history__gazeta-bg.history__gazeta-bg--2
+            p.history__gazeta-title Белгородская Правда 02.07.1972
+        .history__gazeta-item.history__gazeta-item--3
+          +picture("history", "gazeta-3", "png").history__image-box-img.history__gazeta-img.history__gazeta-img--3
+          .history__gazeta-footer.history__gazeta-footer--3
+            img(src="img/history/gazeta-bg-3.svg" alt="").history__gazeta-bg.history__gazeta-bg--3
+            p.history__gazeta-title Белгородская Правда 27.05.1973

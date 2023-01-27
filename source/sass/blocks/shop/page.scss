@@ -14,6 +14,7 @@
   }
 
   &__title {
+    position: relative;
     margin: 0;
     color: $color-arapawa;
     font-size: vc(24);
@@ -23,26 +24,23 @@
 
     &--bracket {
       &::after {
+        position: absolute;
         content: "";
-        display: inline-block;
-        margin-left: vc(10);
+        top: vc(-15);
+        right: vc(-7);
         width: vc(15);
-        height: vc(35);
+        height: vc(15);
         background-image: url(../img/svg/headline-bracket.svg);
         background-size: vc(18);
         background-repeat: no-repeat;
         background-position: center top;
 
         @include tablet {
-          margin-left: vc(5);
+          top: vc(-40);
+          right: vc(-30);
           width: vc(40);
-          height: vc(75);
+          height: vc(40);
           background-size: vc(40);
-        }
-
-        @include desktop {
-          margin-left: vc(15);
-          height: vc(70);
         }
       }
     }

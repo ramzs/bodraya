@@ -1,7 +1,6 @@
 const videos = document.querySelectorAll('.video');
 
 const setupVideo = (video) => {
-  console.log('>> setupVideo');
   let link = video.querySelector('.video__link');
   let media = video.querySelector('.video__media');
   let button = video.querySelector('.video__button');

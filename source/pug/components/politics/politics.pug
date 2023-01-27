@@ -1,42 +1,14 @@
--
-  const cabinetNav = [
-    {
-      name: "История компании",
-      href: "#",
-      isActive: false,
-    }, {
-      name: "Производство мороженого",
-      href: "#",
-      isActive: false,
-    }, {
-      name: "О молоке",
-      href: "#",
-      isActive: false,
-    }, {
-      name: "Награды, сертификаты, благодарности",
-      href: "#",
-      isActive: false,
-    }, {
-      name: "Политика и цели  в области качества",
-      href: "#",
-      isActive: true,
-    }, {
-      name: "Юридическая информация",
-      href: "#",
-      isActive: false,
-    }
-  ]
-
+section.page-info__nav
+  aside.section-documents__controls.page-info__controls(data-page-info-nav-container)
+    .swiper(data-page-info-nav-slider)
+      .swiper-wrapper
+        each link in cabinetNav
+          .swiper-slide.section-documents__slide
+            - const isActive = link.isActive ? 'is-active' : '';
+            button.section-documents__control(class=isActive, id=link.href)!=link.name
+      .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
 section.page-info__section
   .container
-    aside.section-documents__controls.page-info__controls(data-page-info-nav-container)
-      .swiper(data-page-info-nav-slider)
-        .swiper-wrapper
-          each link in cabinetNav
-            .swiper-slide.section-documents__slide
-              - const isActive = link.isActive ? 'is-active' : '';
-              button.section-documents__control(class=isActive, id=link.href)!=link.name
-        .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
     h1.page-info__title Политика и цели в области качества
     .page-info__text-box
       p.page-info__subtitle

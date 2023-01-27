@@ -1,0 +1,18 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Вакансии"; //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--blue";
+  - const hasHeader = true;
+  - const headerMods = "";
+  - const hasFooter = true;
+  - const footerMods = "";
+  - const currentUrl = "page-14.html"; //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +section-vacancies()
+
+block modals

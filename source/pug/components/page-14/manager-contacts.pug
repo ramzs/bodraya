@@ -1,0 +1,13 @@
+mixin manager-contacts()
+  aside.manager-contacts&attributes(attributes)
+    .manager-contacts__wrapper
+      .manager-contacts__box
+        .manager-contacts__content
+          h3.manager-contacts__headline!= "Департамент управления персоналом"
+          ul.manager-contacts__items
+            li.manager-contacts__item
+              a.manager-contacts__link(href="tel:84722217842")!= "Тел.: (4722) 21-78-42"
+            li.manager-contacts__item
+              a.manager-contacts__link(href="mailto:hr@belhlado.ru")!= "hr@belhlado.ru"
+        .manager-contacts__image
+          +picture("decoration", "manager-contacts", "png", 700, 430, "")

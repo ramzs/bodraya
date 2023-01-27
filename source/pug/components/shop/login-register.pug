@@ -25,7 +25,7 @@ section.shop-page__section
               inputType: "radio"
             })(data-validate-type="radio", data-message-base="Поле обязательно к заполнению")
             .login__row
-              +button({text: "Войти", type: "submit"}).button__primary.login__login-btn
+              +button({text: "Войти", type: "submit"}, "primary").login__login-btn
               a(href="#").login__registration-link Забыли пароль?
       .login__item
         p.shop-page__title.login__title Регистрация нового покупателя
@@ -62,5 +62,5 @@ section.shop-page__section
               iconName: "form-lock.svg"
             })(data-validate-type="password", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
             .login__password-generate
-              +button({text: "Сгенерировать пароль"}).button__white
-            +button({text: "Зарегистрировать меня", type: "submit"}).button__primary.login__registration
+              +button({text: "Сгенерировать пароль"}, "white")
+            +button({text: "Зарегистрировать меня", type: "submit"}, "primary").login__registration

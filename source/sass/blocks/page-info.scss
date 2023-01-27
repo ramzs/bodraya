@@ -1,12 +1,49 @@
 .page-info {
+  position: relative;
+  overflow: hidden;
+
   &__section {
     position: relative;
-    overflow: hidden;
+    z-index: 1;
+  }
+
+  &__decor {
+    position: absolute;
+    top: vc(0);
+    display: none;
+    z-index: -1;
+
+    @include tablet {
+      display: block;
+      right: vc(-200);
+      width: vc(412);
+      height: vc(431);
+    }
+
+    @include desktop {
+      right: vc(-302);
+      width: vc(730);
+      height: vc(763);
+    }
   }
 
   .section-documents {
     &__controls {
       margin: 0 0 vc(56);
+
+      .swiper {
+        padding: 0 vc(15);
+
+        @include tablet {
+          padding: 0 vc(50);
+        }
+
+        @include desktop {
+          max-width: vc(1600);
+          padding-right: vc(40);
+          padding-left: vc(40);
+        }
+      }
 
       @include tablet {
         margin: vc(35) 0 vc(68);
@@ -54,7 +91,7 @@
   }
 
   &__title {
-    font-family: $ff-myriad-pro;
+    font-family: $ff-geometria;
     font-weight: 700;
     font-size: vc(24);
     line-height: vc(29);

@@ -1,0 +1,27 @@
+.for-mobile {
+  @include tablet {
+    display: none;
+  }
+}
+
+.for-tablet {
+  @include max-tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.for-desktop {
+  @include max-desktop {
+    display: none;
+  }
+}
+
+.for-device {
+  @include desktop {
+    display: none;
+  }
+}

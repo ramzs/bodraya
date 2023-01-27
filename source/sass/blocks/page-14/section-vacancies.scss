@@ -1,0 +1,92 @@
+.section-vacancies {
+  &__headline {
+    margin: vc(40) 0 vc(20);
+
+    @include tablet {
+      margin-top: vc(55);
+      margin-bottom: vc(30);
+    }
+
+    @include desktop {
+      margin-top: vc(100);
+      margin-bottom: vc(40);
+    }
+  }
+
+  &__subtitle {
+    margin: vc(20) 0 vc(70);
+    display: block;
+    font-weight: 700;
+    font-size: vc(16);
+    line-height: 1.15;
+
+    @include tablet {
+      @include tablet {
+        margin-top: vc(30);
+        margin-bottom: vc(30);
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        margin-top: vc(40);
+        margin-bottom: vc(85);
+        font-size: vc(36);
+      }
+    }
+  }
+
+  &__content {
+    padding-top: vc(30);
+    background-image: url("../img/service/body-bg-mobile.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    overflow: hidden;
+
+    @include tablet {
+      padding-bottom: vc(120);
+      background-image: url("../img/service/body-bg-tablet.svg");
+    }
+
+    @include desktop {
+      padding-top: vc(100);
+      background-image: url("../img/service/body-bg.svg");
+    }
+  }
+
+  &__job-advantage {
+    margin: vc(40) 0 vc(50);
+
+    @include tablet {
+      margin: vc(55) 0 vc(150);
+    }
+
+    @include desktop {
+      margin: 0 0 vc(210);
+    }
+  }
+
+  &__manager-contacts {
+    margin: vc(50) 0 vc(90);
+
+    @include tablet {
+      margin: vc(150) 0 vc(135);
+    }
+
+    @include desktop {
+      margin: vc(210) 0 vc(170);
+    }
+  }
+
+  &__job-position {
+    margin: vc(90) 0 vc(40);
+
+    @include tablet {
+      margin: vc(135) 0 vc(80);
+    }
+
+    @include desktop {
+      margin: vc(170) 0 vc(150);
+    }
+  }
+}

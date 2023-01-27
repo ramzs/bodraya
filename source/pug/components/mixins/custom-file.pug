@@ -1,0 +1,9 @@
+mixin custom-file(options = {})
+  - const inputLabel = options.inputLabel ? options.inputLabel : false;
+  - const inputId = options.inputId ? options.inputId : false;
+  - const inputName = options.inputName ? options.inputName : false;
+
+  .custom-file&attributes(attributes)
+    label
+      span.custom-file__label!=inputLabel
+      input.visually-hidden(type="file", id=inputId, name=inputName, multiple)

@@ -1,0 +1,40 @@
+-
+  const NAV_CATALOG = [
+    {
+      name: "Ё-айс",
+      href: "#",
+      isActive: false,
+    },
+    {
+      name: "Другая продукция",
+      href: "#",
+      isActive: true,
+    },
+    {
+      name: "Сопутствующие товары",
+      href: "#",
+      isActive: false,
+    },
+  ];
+
+
+mixin section-catalog-extend()
+  section.section-catalog
+    .section-catalog__wrapper
+      .container
+        .section-catalog__header
+          h1.section-catalog__headline.headline!= "Интернет магазин"
+          a(href="#").section-catalog__basket
+        aside.section-catalog__controls(data-catalog-nav-container)
+          .swiper(data-catalog-nav-slider)
+            .swiper-wrapper
+              each link in NAV_CATALOG
+                .swiper-slide.section-catalog__slide
+                  - const isActive = link.isActive ? 'is-active' : '';
+                  button.section-catalog__control(class=isActive, id=link.href)!=link.name
+
+            .section-catalog__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+      +stack-products-extend(stackProductsData).section-catalog__stack-products
+      +catalog-products-extend(productsDataExtend).section-catalog__catalog-products
+      +product-tabs().section-catalog__product-tabs
+

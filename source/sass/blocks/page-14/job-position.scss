@@ -1,0 +1,249 @@
+.job-position {
+  &__count {
+    margin: vc(45) 0 vc(15);
+    display: block;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: 1.15;
+    color: $color-pumpkin;
+    text-align: center;
+    @include stroke(4, $color-default-white);
+
+    @include tablet {
+      margin: vc(65) 0 vc(20);
+      font-size: vc(30);
+    }
+
+    @include desktop {
+      margin: vc(120) 0 vc(80);
+      font-size: vc(36);
+    }
+  }
+
+  &__element {
+    position: relative;
+    margin: 0;
+    padding-right: vc(20);
+    padding-left: vc(20);
+    background: $color-pattens-blue-8;
+    border-radius: vc(30);
+    overflow: hidden;
+
+    @include tablet {
+      padding-right: vc(40);
+      padding-left: vc(40);
+    }
+
+    @include desktop {
+      padding-right: vc(80);
+      padding-left: vc(80);
+    }
+  }
+
+  &__element:not(:last-of-type) {
+    margin-bottom: vc(30);
+
+    @include tablet {
+      margin-bottom: vc(20);
+    }
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: 1.25;
+    font-family: $ff-geometria;
+
+    @include tablet {
+      font-size: vc(16);
+    }
+
+    b,
+    strong {
+      font-size: vc(16);
+
+      @include tablet {
+        font-size: vc(20);
+      }
+    }
+  }
+
+  &__headline {
+    margin: vc(30) 0 vc(20);
+    font-weight: 700;
+    font-size: vc(18);
+    font-family: $ff-geometria;
+    line-height: 1.15;
+
+    @include tablet {
+      margin-bottom: vc(25);
+      font-size: vc(24);
+    }
+  }
+
+  &__price {
+    margin: vc(20) 0 vc(80);
+    font-weight: 700;
+    font-size: vc(24);
+    font-family: $ff-geometria;
+    line-height: 1.15;
+
+    @include tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+    }
+
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--hide-on-mobile {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding-top: vc(30) 0;
+
+    @include tablet {
+      padding-bottom: vc(35);
+    }
+
+    @include desktop {
+      padding-bottom: vc(40);
+    }
+  }
+
+  &__content {
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: 1.25;
+    font-family: $ff-geometria;
+
+    @include tablet {
+      font-size: vc(16);
+    }
+
+    @include desktop {
+      font-size: vc(20);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: vc(30) 0 vc(20);
+      font-weight: 700;
+      font-size: vc(18);
+      line-height: 1.15;
+
+      @include desktop {
+        margin: vc(40) 0 vc(25);
+        font-size: vc(20);
+      }
+    }
+
+    & > * > *:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__content-wrapper {
+    display: block;
+    padding: 0 0 vc(80);
+
+    @include tablet {
+      padding: vc(25) 0 vc(125);
+      border-top: vc(1) solid #ffffff;
+    }
+
+    @include desktop {
+      padding: vc(40) 0;
+    }
+  }
+
+  &__job-form {
+    margin-top: vc(30);
+
+    @include tablet {
+      margin-top: vc(40);
+    }
+
+    @include desktop {
+      max-width: vc(770);
+      margin-top: vc(90);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: vc(30) vc(20);
+    display: inline-block;
+    padding-right: vc(25);
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: vc(20);
+    font-family: $ff-geometria;
+    color: inherit;
+    background-color: transparent;
+    background-image: url(../img/svg/job-position-down.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto vc(18);
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    transition: color $trans-300;
+
+    @include tablet {
+      right: 0;
+      left: inherit;
+      margin: vc(35) vc(40);
+      padding-right: vc(35);
+      font-size: vc(20);
+    }
+
+    @include desktop {
+      margin: vc(40) vc(80);
+    }
+
+    @include hover-focus {
+      color: $color-pumpkin;
+    }
+
+    &::before {
+      content: "Открыть";
+    }
+  }
+
+  .is-active > &__button {
+    background-image: url(../img/svg/job-position-up.svg);
+
+    &::before {
+      content: "Скрыть";
+    }
+  }
+
+  &__select {
+    margin: 0 auto;
+    max-width: vc(535);
+    width: 100%;
+  }
+}

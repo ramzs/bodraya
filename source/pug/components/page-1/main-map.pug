@@ -115,6 +115,6 @@ mixin main-map(props)
               .main-map__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
 
           .main-map__actions
-            +button({text: "Мы ищем дистрибьютеров", type: "submit"}).button--white.button--reverse.main-map__action
-            +button({text: "Посмотреть города", type: "submit"}).button--primary.main-map__action
+            +button({text: "Мы ищем дистрибьютеров", type: "submit"}, "white, reverse").main-map__action
+            +button({text: "Посмотреть города", type: "submit"}, "primary").main-map__action
           .main-map__tooltip.is-hide(style="")

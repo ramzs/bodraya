@@ -178,4 +178,158 @@
       margin: vc(20) 0 vc(40);
     }
   }
+
+  &__accordion {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    gap: vc(15);
+
+    &-element {
+      width: 100%;
+      padding: vc(25) vc(8);
+      background: $color-default-white;
+      border-radius: vc(15);
+
+      &.is-active {
+        .shop-cabinet__accordion-more {
+          img {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      @include tablet {
+        padding: vc(25) vc(15);
+      }
+
+      @include desktop {
+        border-radius: vc(30);
+        padding: vc(47) vc(50);
+      }
+    }
+
+    &-button {
+      background: none;
+      border: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: $ff-geometria;
+      font-weight: 500;
+      font-size: vc(16);
+      line-height: vc(20);
+      color: $color-arapawa;
+      cursor: pointer;
+      justify-content: space-between;
+
+      span {
+        text-align: left;
+      }
+
+      @include tablet {
+        flex-direction: row;
+        font-size: vc(18);
+        line-height: vc(23);
+      }
+
+      @include desktop {
+        font-size: vc(25);
+        line-height: vc(31);
+      }
+    }
+
+    &-status {
+      margin-top: vc(10);
+      font-family: $ff-geometria;
+      font-weight: 500;
+      font-size: vc(16);
+      line-height: vc(20);
+      color: $color-arapawa;
+
+      @include desktop {
+        margin-top: vc(22);
+        font-size: vc(20);
+        line-height: vc(25);
+      }
+    }
+
+    &-tovar {
+      margin-bottom: vc(30);
+      font-family: $ff-geometria;
+      font-weight: 700;
+      font-size: vc(20);
+      line-height: vc(25);
+      color: $color-arapawa;
+
+      @include desktop {
+        margin-bottom: vc(36);
+        font-size: vc(30);
+        line-height: vc(38);
+      }
+    }
+
+    &-more {
+      display: flex;
+      align-items: center;
+      align-self: flex-end;
+      gap: vc(13);
+
+      img {
+        width: vc(28);
+        height: vc(28);
+        transition: transform $trans-default;
+      }
+    }
+
+    &-summary {
+      .summary {
+        &__head {
+          grid-template: 1fr / vc(123) vc(156) vc(87) vc(122) 1fr 1fr;
+
+          @include desktop {
+            grid-template: 1fr / vc(523) vc(321) vc(269) 1fr 1fr;
+          }
+        }
+
+        &__product {
+          grid-template-columns: vc(70) vc(99) 1fr;
+
+          @include tablet {
+            grid-template-columns: vc(72) vc(98) vc(132) vc(108) vc(114);
+          }
+
+          @include desktop {
+            grid-template-columns: vc(109) vc(335) vc(321) vc(300) vc(260);
+          }
+        }
+
+        &__product-count,
+        &__product-price,
+        &__product-sum {
+          @include tablet {
+            justify-self: center;
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      margin-top: vc(30);
+
+      @include desktop {
+        margin-top: vc(70);
+      }
+    }
+
+    @include tablet {
+      gap: vc(20);
+    }
+
+    @include desktop {
+      gap: vc(32);
+    }
+  }
 }

@@ -1,0 +1,12 @@
+mixin section-vacancies()
+  section.section-vacancies&attributes(attributes)
+    .section-vacancies__wrapper
+      .section-vacancies__header
+        .container
+          h1.section-vacancies__headline.headline!= "Вакансии"
+          p.section-vacancies__subtitle!= "Давайте делать вкусное вместе!"
+      .section-vacancies__content
+        .container
+          +job-advantage().section-vacancies__job-advantage
+          +manager-contacts().section-vacancies__manager-contacts
+          +job-position().section-vacancies__job-position

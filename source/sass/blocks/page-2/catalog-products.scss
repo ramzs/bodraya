@@ -42,7 +42,7 @@
     @include desktop {
       padding-right: calc(vc(75) / 2);
       padding-left: calc(vc(75) / 2);
-      padding-bottom: vc(130);
+      padding-bottom: vc(90);
     }
   }
 
@@ -53,9 +53,7 @@
   &__wrapper {
     position: relative;
     margin-top: vc(25);
-    padding-bottom: vc(65);
-    margin-bottom: vc(-65);
-    background-color: $color-pattens-blue-2;
+    background-color: $color-alice-blue-1;
 
     @include tablet {
       margin-top: vc(70);
@@ -64,6 +62,17 @@
     @include desktop {
       margin-top: vc(135);
     }
+  }
+
+  &__decoration-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
   }
 
   &__actions {
@@ -159,84 +168,218 @@
   * 3. Декоративные элементы
   */
 
-  &__decoration-header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding-bottom: 100%;
-    user-select: none;
-    pointer-events: none;
-  }
-
-  &__decoration-header--one {
-    top: vc(-25);
-    z-index: 0;
-    background-color: $color-solitude;
-    background-image: linear-gradient(
-      180deg,
-      #ddedff 0%,
-      rgba(238, 246, 255, 0) 25%
-    );
-    clip-path: url(#svgClipCatalogDecorationHeaderLayer1Lg);
-
-    @include tablet {
-      top: vc(-70);
+  &__decoration {
+    &--header {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding-bottom: 100%;
+      user-select: none;
+      pointer-events: none;
     }
 
-    @include desktop {
-      top: vc(-135);
-    }
-  }
+    &--header-1 {
+      top: vc(-25);
+      z-index: 0;
+      background-color: $color-solitude;
+      background-image: linear-gradient(
+        180deg,
+        #ddedff 0%,
+        rgba(238, 246, 255, 0) 25%
+      );
+      clip-path: url(#svgClipCatalogDecorationHeaderLayer1Lg);
 
-  &__decoration-header--two {
-    top: vc(-10);
-    z-index: 1;
-    backdrop-filter: blur(10);
-    background-color: rgba($color: $color-pattens-blue-2, $alpha: 0.7);
-    clip-path: url(#svgClipCatalogDecorationHeaderLayer2Lg);
+      @include tablet {
+        top: vc(-70);
+      }
 
-    @include tablet {
-      top: vc(-55);
-    }
-
-    @include desktop {
-      top: vc(-120);
-    }
-  }
-
-  &__decoration-header--three {
-    top: vc(20);
-    z-index: 2;
-    background-color: $color-pattens-blue-2;
-    clip-path: url(#svgClipCatalogDecorationHeaderLayer3Lg);
-
-    @include tablet {
-      top: vc(-35);
+      @include desktop {
+        top: vc(-135);
+      }
     }
 
-    @include desktop {
-      top: vc(-100);
+    &--header-2 {
+      top: vc(-10);
+      z-index: 1;
+      backdrop-filter: blur(10);
+      background-color: rgba($color: $color-pattens-blue-2, $alpha: 0.7);
+      clip-path: url(#svgClipCatalogDecorationHeaderLayer2Lg);
+
+      @include tablet {
+        top: vc(-55);
+      }
+
+      @include desktop {
+        top: vc(-120);
+      }
     }
-  }
 
-  &__decoration-footer {
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 3;
-    display: block;
-    height: vc(800);
-    background-image: url("../img/decoration/catalog-decoration-footer.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
-    user-select: none;
-    pointer-events: none;
+    &--header-3 {
+      top: vc(20);
+      z-index: 2;
+      background-color: $color-pattens-blue-2;
+      background: linear-gradient($color-pattens-blue-2, $color-alice-blue-1);
+      clip-path: url(#svgClipCatalogDecorationHeaderLayer3Lg);
 
-    @mixin retina {
-      background-image: url("../img/decoration/catalog-decoration-footer@2x.png");
+      @include tablet {
+        top: vc(-35);
+      }
+
+      @include desktop {
+        top: vc(-100);
+      }
+    }
+
+    &--footer {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      display: block;
+      height: vc(800);
+      background-image: url("../img/decoration/catalog-decoration-footer.png");
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+      user-select: none;
+      pointer-events: none;
+
+      @mixin retina {
+        background-image: url("../img/decoration/catalog-decoration-footer@2x.png");
+      }
+    }
+
+    &--berry {
+      position: absolute;
+      z-index: 4;
+      display: none;
+      width: vc(220);
+      height: vc(220);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &--berry-1 {
+      bottom: vc(700);
+      left: vc(-80);
+      background-image: url(../img/decoration/catalog-parallax-6.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-6@2x.png);
+      }
+
+      @include desktop {
+        bottom: vc(1545);
+        left: vc(70);
+      }
+    }
+
+    &--berry-2 {
+      right: vc(-110);
+      bottom: vc(740);
+      background-image: url(../img/decoration/catalog-parallax-7.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-7@2x.png);
+      }
+
+      @include desktop {
+        right: vc(-80);
+        bottom: vc(1440);
+      }
+    }
+
+    &--berry-3 {
+      right: vc(-75);
+      bottom: vc(90);
+      background-image: url(../img/decoration/catalog-parallax-8.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-8@2x.png);
+      }
+
+      @include desktop {
+        right: vc(85);
+        bottom: vc(315);
+      }
+    }
+
+    &--berry-4 {
+      top: vc(-125);
+      right: vc(100);
+      z-index: -1;
+      width: vc(220);
+      height: vc(220);
+      background-image: url(../img/decoration/catalog-parallax-5.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-5@2x.png);
+      }
+
+      @include desktop {
+      }
+    }
+
+    &--berry-5 {
+      top: vc(75);
+      right: vc(-30);
+
+      background-image: url(../img/decoration/catalog-parallax-9.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-9@2x.png);
+      }
+
+      @include desktop {
+        top: vc(125);
+        right: vc(-20);
+        width: vc(330);
+        height: vc(330);
+      }
+    }
+
+    &--berry-6 {
+      top: vc(595);
+      left: vc(-50);
+
+      background-image: url(../img/decoration/catalog-parallax-10.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-10@2x.png);
+      }
+
+      @include desktop {
+        top: vc(1595);
+        left: vc(-30);
+        width: vc(330);
+        height: vc(330);
+      }
+    }
+
+    &--berry-7 {
+      bottom: vc(-45);
+      right: vc(-230);
+      width: vc(440);
+      height: vc(440);
+      background-image: url(../img/decoration/catalog-parallax-11.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-11@2x.png);
+      }
+
+      @include desktop {
+        bottom: vc(-145);
+        right: vc(-330);
+        width: vc(730);
+        height: vc(730);
+      }
     }
   }
 }

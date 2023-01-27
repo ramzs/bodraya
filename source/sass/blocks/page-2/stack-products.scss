@@ -15,6 +15,11 @@
 
   &__wrapper {
     position: relative;
+  }
+
+  &__box {
+    position: relative;
+    z-index: 10;
     background-color: $color-alice-blue-1;
     border-radius: vc(30);
     box-shadow: 0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
@@ -25,7 +30,7 @@
     }
   }
 
-  &__wrapper::before {
+  &__box::before {
     content: "";
     position: absolute;
     top: 0;
@@ -46,7 +51,7 @@
     }
   }
 
-  &__wrapper::after {
+  &__box::after {
     content: "";
     position: absolute;
     top: 0;
@@ -70,21 +75,6 @@
     @include desktop {
       box-shadow: inset 0 0 0 vc(11) $color-default-white,
         0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
-    }
-  }
-
-  &__header {
-    padding-top: 0;
-    padding-bottom: vc(35);
-
-    @include tablet {
-      padding-top: vc(15);
-      padding-bottom: vc(95);
-    }
-
-    @include desktop {
-      padding-top: vc(65);
-      padding-bottom: vc(110);
     }
   }
 
@@ -279,6 +269,164 @@
         padding-right: calc(vc(65) / 2);
         padding-left: calc(vc(65) / 2);
         padding-bottom: vc(45);
+      }
+    }
+  }
+
+  &__decoration {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--1 {
+      bottom: vc(-150);
+      left: vc(-130);
+      z-index: 5;
+      width: vc(265);
+      height: vc(265);
+      background-image: url(../img/decoration/catalog-parallax-1.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-1@2x.png);
+      }
+
+      @include tablet {
+        bottom: vc(-220);
+        left: vc(-170);
+        width: vc(400);
+        height: vc(400);
+      }
+
+      @include desktop {
+        bottom: vc(-650);
+        left: vc(-380);
+        width: vc(910);
+        height: vc(910);
+      }
+    }
+
+    &--2 {
+      top: vc(-95);
+      right: vc(-40);
+      width: vc(165);
+      height: vc(165);
+      background-image: url(../img/decoration/catalog-parallax-2.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-2@2x.png);
+      }
+
+      @include tablet {
+        top: vc(-135);
+        right: vc(-100);
+        width: vc(270);
+        height: vc(270);
+      }
+
+      @include desktop {
+        top: vc(-155);
+        right: vc(70);
+      }
+    }
+
+    &--3 {
+      right: vc(90);
+      top: vc(-45);
+      width: vc(155);
+      height: vc(155);
+      background-image: url(../img/decoration/catalog-parallax-3.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-3@2x.png);
+      }
+
+      @include tablet {
+        top: vc(-115);
+        right: vc(235);
+        width: vc(295);
+        height: vc(295);
+      }
+
+      @include desktop {
+        right: vc(490);
+        top: vc(-85);
+      }
+    }
+
+    &--4 {
+      right: vc(-50);
+      bottom: vc(-135);
+      z-index: 5;
+      width: vc(145);
+      height: vc(145);
+      background-image: url(../img/decoration/catalog-parallax-4.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-4@2x.png);
+      }
+
+      @include desktop {
+        right: vc(210);
+        bottom: vc(-345);
+        width: vc(220);
+        height: vc(220);
+      }
+    }
+
+    &--5 {
+      right: vc(-75);
+      bottom: vc(-115);
+      z-index: 5;
+      width: vc(145);
+      height: vc(145);
+      background-image: url(../img/decoration/catalog-parallax-9.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-9@2x.png);
+      }
+
+      @include tablet {
+        right: vc(-35);
+        bottom: vc(-155);
+      }
+
+      @include desktop {
+        right: vc(-140);
+        bottom: vc(-445);
+        width: vc(330);
+        height: vc(330);
+      }
+    }
+
+    &--6 {
+      left: vc(-100);
+      bottom: vc(-195);
+      z-index: 5;
+      width: vc(245);
+      height: vc(245);
+      background-image: url(../img/decoration/catalog-parallax-12.png);
+
+      @include retina {
+        background-image: url(../img/decoration/catalog-parallax-12@2x.png);
+      }
+
+      @include tablet {
+        left: vc(-200);
+        bottom: vc(-295);
+        width: vc(445);
+        height: vc(445);
+      }
+
+      @include desktop {
+        left: vc(-290);
+        bottom: vc(-540);
+        width: vc(730);
+        height: vc(730);
       }
     }
   }

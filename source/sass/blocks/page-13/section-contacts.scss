@@ -1,24 +1,15 @@
 .section-contacts {
   &__headline {
     margin: vc(40) 0 vc(65);
-    font-weight: 700;
-    font-size: vc(24);
-    line-height: 1.2;
-    font-family: $ff-geometria;
-    color: $color-arapawa;
-
-    @include stroke(4, $color-default-white);
 
     @include tablet {
       margin-top: vc(55);
       margin-bottom: vc(70);
-      font-size: vc(40);
     }
 
     @include desktop {
       margin-top: vc(100);
       margin-bottom: vc(125);
-      font-size: vc(56);
     }
   }
 

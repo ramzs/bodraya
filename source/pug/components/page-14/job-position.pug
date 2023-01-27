@@ -1,0 +1,107 @@
+mixin job-position()
+  .job-position&attributes(attributes)
+    +custom-select({
+      optionsList: [
+        {text: "Москва", value: "id-1"},
+        {text: "Казань", value: "id-2"},
+        {text: "Нижний Новгород", value: "id-3"},
+        {text: "Москва", value: "id-4"},
+        {text: "Казань", value: "id-5"},
+        {text: "Нижний Новгород", value: "id-6"},
+      ],
+      placeholder: "Город",
+    }, 'box').job-position__select("data-select", data-name="some-city", data-id="id-city")
+    .job-position__count!= "78 вакансий"
+    .job-position__accordion(data-accordion="parent", data-single)
+      article.job-position__element.is-active(data-accordion="element")
+        .job-position__header
+          h3.job-position__headline
+            span!= "Менеджер в отдел закупок"
+            span.job-position__price.job-position__price--hide-on-mobile!= "от 50 000 ₽"
+          ul.job-position__items
+            li.job-position__item!= "опыт: <b>1-3 года</b>"
+            li.job-position__item!= "город: <b>Воронеж</b>"
+            li.job-position__item!= "направление: <b>Управление</b>"
+          p.job-position__price.job-position__price--mobile!= "от 50 000 ₽"
+        button.job-position__button(type="button", data-accordion="button")
+        .job-position__content(data-accordion="content")
+          .job-position__content-wrapper
+            h4!= "Обязанности"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              li!= "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            h4!= "Требования"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            h4!= "Мы предлагаем"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            +job-form().job-position__job-form
+
+      article.job-position__element(data-accordion="element")
+        .job-position__header
+          h3.job-position__headline
+            span!= "Менеджер в отдел закупок"
+            span.job-position__price.job-position__price--hide-on-mobile!= "от 50 000 ₽"
+          ul.job-position__items
+            li.job-position__item!= "опыт: <b>1-3 года</b>"
+            li.job-position__item!= "город: <b>Воронеж</b>"
+            li.job-position__item!= "направление: <b>Управление</b>"
+          p.job-position__price.job-position__price--mobile!= "от 50 000 ₽"
+        button.job-position__button(type="button", data-accordion="button")
+        .job-position__content(data-accordion="content")
+          .job-position__content-wrapper
+            h4!= "Обязанности"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              li!= "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            h4!= "Требования"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            h4!= "Мы предлагаем"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            +job-form().job-position__job-form
+
+      article.job-position__element(data-accordion="element")
+        .job-position__header
+          h3.job-position__headline
+            span!= "Менеджер в отдел закупок"
+            span.job-position__price.job-position__price--hide-on-mobile!= "от 50 000 ₽"
+          ul.job-position__items
+            li.job-position__item!= "опыт: <b>1-3 года</b>"
+            li.job-position__item!= "город: <b>Воронеж</b>"
+            li.job-position__item!= "направление: <b>Управление</b>"
+          p.job-position__price.job-position__price--mobile!= "от 50 000 ₽"
+        button.job-position__button(type="button", data-accordion="button")
+        .job-position__content(data-accordion="content")
+          .job-position__content-wrapper
+            h4!= "Обязанности"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+              li!= "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            h4!= "Требования"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            h4!= "Мы предлагаем"
+            ul
+              li!= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              li!= "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              li!= "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            +job-form().job-position__job-form

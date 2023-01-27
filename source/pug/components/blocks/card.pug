@@ -61,11 +61,11 @@ mixin card(data, mods)
       if (copy !== 'undefined' && copy)
         p.card__copy!= copy
       if (data.price !== 'undefined' && data.price)
-        .card__band
+        .card__copy.card__copy--price
           p.card__price
             span!= 'Цена:'
-            span!= price
-          p.card__weight!= weight
+            b!= price
+          b.card__weight!= weight
     footer.card__footer
       .card__actions
         a.card__action(href="#", aria-label="Подробнее")!= "Подробнее"

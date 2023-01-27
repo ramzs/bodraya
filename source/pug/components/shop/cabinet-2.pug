@@ -1,0 +1,51 @@
+-
+  const cabinetNav = [
+    {
+      name: "Личные данные",
+      href: "#",
+      isActive: false,
+    }, {
+      name: "История заказов",
+      href: "#",
+      isActive: true,
+    }, {
+      name: "Выйти",
+      href: "#",
+      isActive: false,
+    },
+  ]
+section.shop-page__section.shop-cabinet__section
+  .container
+    h1.shop-page__title.shop-cabinet__title Личный кабинет
+    aside.section-documents__controls(data-documents-nav-container)
+      .swiper(data-documents-nav-slider)
+        .swiper-wrapper
+          each link in cabinetNav
+            .swiper-slide.section-documents__slide
+              - const isActive = link.isActive ? 'is-active' : '';
+              button.section-documents__control(class=isActive, id=link.href)!=link.name
+        .section-documents__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+
+    .shop-cabinet__accordion(data-accordion="parent", data-single, data-close-inner)
+      .shop-cabinet__accordion-element(data-accordion="element")
+        button.shop-cabinet__accordion-button(type="button", data-accordion="button")
+          span Заказ №32 от 14.12.2021 на сумму 708 ₽
+          .shop-cabinet__accordion-more
+            span Подробнее
+            img(src="img/svg/arrow-down.svg")
+        .shop-cabinet__accordion-content(data-accordion="content")
+          .shop-cabinet__accordion-status Статус: оплачено
+          .shop-cabinet__accordion-wrapper
+            .shop-cabinet__accordion-tovar Товары в заказе
+            +shop-summary-history().shop-cabinet__accordion-summary
+      .shop-cabinet__accordion-element(data-accordion="element")
+        button.shop-cabinet__accordion-button(type="button", data-accordion="button")
+          span Заказ №32 от 14.12.2021 на сумму 708 ₽
+          .shop-cabinet__accordion-more
+            span Подробнее
+            img(src="img/svg/arrow-down.svg")
+        .shop-cabinet__accordion-content(data-accordion="content")
+          .shop-cabinet__accordion-status Статус: оплачено
+          .shop-cabinet__accordion-wrapper
+            .shop-cabinet__accordion-tovar Товары в заказе
+            +shop-summary-history().shop-cabinet__accordion-summary

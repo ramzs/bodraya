@@ -170,19 +170,20 @@ $color-navigation-cn: $color-pumpkin;
   $block-name: &; // #{$block-name}__element
 
   & {
-    cursor: pointer;
-    display: inline-block;
     position: relative;
-    outline: none;
-    border: none;
+    z-index: 1;
+    display: inline-block;
     padding: vc(15) vc(44) vc(15) vc(28);
-    line-height: 1;
     font-weight: 700;
     font-size: vc(16);
+    line-height: 1.35;
     text-align: center;
+    outline: none;
+    border: none;
     border-radius: 0 vc(6) vc(6) vc(6);
+    cursor: pointer;
+
     transition: color $trans-300, background-color $trans-300;
-    z-index: 1;
 
     @include desktop {
       padding: vc(15) vc(65) vc(22);
@@ -198,16 +199,19 @@ $color-navigation-cn: $color-pumpkin;
   }
 
   &::after {
-    top: vc(-6);
-    left: 0;
     content: "";
     position: absolute;
-    border-radius: vc(6) vc(6) 0 0;
-    width: 100%;
-    height: 50%;
+    top: vc(-6);
+    left: 0;
     z-index: -1;
     transform: rotateZ(2deg) skewX(2deg);
-    transition: background $trans-300;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 50%;
+    border-radius: vc(6) vc(6) 0 0;
+
+    transition: background-color $trans-300;
 
     @include desktop {
       top: vc(-12);
@@ -227,8 +231,7 @@ $color-navigation-cn: $color-pumpkin;
     }
   }
 
-  &--primary,
-  &__primary {
+  &--primary {
     background-color: $color-navigation-cn;
     color: $color-default-white;
 
@@ -241,8 +244,7 @@ $color-navigation-cn: $color-pumpkin;
     }
   }
 
-  &--white,
-  &__white {
+  &--white {
     background-color: $color-default-white;
     color: $color-navigation-cn;
 

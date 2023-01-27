@@ -1,0 +1,355 @@
+.products {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &__section {
+    padding: 0 0 vc(40);
+
+    @include desktop {
+      padding: vc(100) 0 vc(150);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__basket {
+    background: $color-default-white;
+    box-shadow: 0 vc(2) vc(16) vc(-2) rgba($color-arapawa, 0.1);
+    border-radius: 100%;
+    width: vc(50);
+    height: vc(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: vc(20);
+      height: vc(17);
+    }
+
+    @include desktop {
+      width: vc(87);
+      height: vc(87);
+
+      img {
+        width: vc(41);
+        height: vc(34);
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: vc(40);
+    gap: vc(40);
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      margin-top: vc(120);
+      gap: vc(80);
+    }
+  }
+
+  &__decor {
+    position: absolute;
+
+    &--1 {
+      display: none;
+
+      @include desktop {
+        width: vc(300);
+        left: vc(-110);
+        bottom: vc(-95);
+      }
+    }
+
+    &--2 {
+      top: 50%;
+      right: vc(-200);
+      width: vc(546);
+      height: vc(517);
+      z-index: -1;
+
+      @include desktop {
+        right: vc(-260);
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    background: $color-default-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: vc(30);
+    width: 100%;
+    height: vc(305);
+    flex-shrink: 0;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @include tablet {
+      width: vc(274);
+    }
+
+    @include desktop {
+      padding: vc(128) vc(82);
+      width: vc(770);
+      height: vc(824);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 vc(5);
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: vc(30);
+
+    @include stroke(4, $color-default-white);
+
+    @include desktop {
+      margin: 0 0 vc(10);
+      font-size: vc(40);
+      line-height: vc(50);
+
+      @include stroke(8, $color-default-white);
+    }
+  }
+
+  &__weight {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(18);
+    line-height: vc(23);
+
+    @include desktop {
+      font-size: vc(22);
+      line-height: vc(28);
+    }
+  }
+
+  &__description {
+    margin: vc(20) 0;
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(16);
+    line-height: vc(19);
+
+    @include desktop {
+      margin: vc(80) 0;
+      font-size: vc(20);
+      line-height: vc(38);
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: vc(40);
+
+    @include desktop {
+      flex-direction: row;
+      gap: vc(75);
+    }
+  }
+
+  &__chose {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: vc(20);
+
+    @include desktop {
+      gap: vc(60);
+    }
+  }
+
+  &__price {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 700;
+    font-size: vc(20);
+    line-height: vc(25);
+
+    @include desktop {
+      font-size: vc(34);
+      line-height: vc(42);
+    }
+  }
+
+  &__count {
+
+  }
+
+  &__button {
+    .button {
+      margin-top: vc(16);
+      width: vc(215);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: vc(-20);
+        transform: translateY(-50%);
+        display: block;
+        width: vc(90);
+        height: vc(120);
+        background-image: url(../img/decoration-buttons/excursion-icon.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        transition: transform $trans-300;
+
+        @include tablet {
+          right: vc(-25);
+        }
+      }
+
+      @include hover-focus {
+        color: rgba($color: $color-default-white, $alpha: 0.75);
+
+        &::before {
+          transform: translateY(-50%) scale(0.95);
+        }
+      }
+
+      @include tablet {
+        width: vc(224);
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: vc(40);
+    padding: vc(25) vc(15);
+    background: url(../img/products/bg.png);
+    background-color: rgba($color-alice-blue, 0.95);
+    background-blend-mode: saturation;
+    background-size: cover;
+    border: vc(5) solid $color-default-white;
+    border-radius: vc(30);
+
+    &-head {
+      font-family: $ff-geometria;
+      font-weight: 700;
+      font-size: vc(16);
+      line-height: vc(19);
+      color: $color-arapawa;
+      display: flex;
+      justify-content: space-between;
+      gap: vc(30);
+
+      @include tablet {
+        justify-content: initial;
+        font-size: vc(20);
+        line-height: vc(24);
+        gap: vc(203);
+      }
+
+      @include desktop {
+        font-size: vc(36);
+        line-height: vc(43);
+        gap: vc(128);
+      }
+    }
+
+    &-title {
+      &.is-active {
+        color: $color-pumpkin;
+      }
+
+      @include stroke(4, $color-default-white);
+
+      @include desktop {
+        @include stroke(8, $color-default-white);
+      }
+    }
+
+    &-body {
+
+    }
+
+    &-item {
+      display: flex;
+      padding: vc(10) 0;
+      font-family: $ff-geometria;
+      font-size: vc(14);
+      line-height: vc(19);
+      color: $color-arapawa;
+      border-bottom: vc(1) solid $color-default-white;
+      gap: vc(15);
+      justify-content: space-between;
+
+      @include tablet {
+        padding: vc(15) 0;
+        font-size: vc(16);
+        line-height: vc(22);
+        justify-content: initial;
+      }
+
+      @include desktop {
+        padding: vc(32) 0;
+        font-size: vc(22);
+        line-height: vc(30);
+      }
+    }
+
+    &-specifications {
+      font-weight: 500;
+
+      @include tablet {
+        flex-shrink: 0;
+        width: vc(280);
+      }
+
+      @include desktop {
+        width: vc(630);
+      }
+    }
+
+    &-info {
+      font-weight: 700;
+      text-align: right;
+
+      @include tablet {
+        text-align: left;
+      }
+    }
+
+    @include tablet {
+      margin-top: vc(80);
+      padding: vc(60) vc(40);
+    }
+
+    @include desktop {
+      margin-top: vc(130);
+      padding: vc(70) vc(60);
+    }
+  }
+}

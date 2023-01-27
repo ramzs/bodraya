@@ -1,0 +1,515 @@
+.history {
+  $p: &;
+
+  position: relative;
+  overflow: hidden;
+
+  &__headline {
+    position: relative;
+    margin-bottom: vc(30);
+    font-family: $ff-myriad-pro;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: vc(29);
+    color: $color-arapawa;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: vc(10);
+      width: vc(15);
+      height: vc(35);
+      background-image: url(../img/svg/headline-bracket.svg);
+      background-size: vc(18);
+      background-repeat: no-repeat;
+      background-position: center top;
+
+      @include tablet {
+        margin-left: vc(5);
+        width: vc(40);
+        height: vc(75);
+        background-size: vc(40);
+      }
+
+      @include desktop {
+        margin-left: vc(15);
+        height: vc(70);
+      }
+    }
+
+    @include stroke(5, $color-default-white);
+
+    @include tablet {
+      margin-bottom: vc(50);
+      font-size: vc(40);
+      line-height: vc(48);
+
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      margin-bottom: vc(80);
+      font-size: vc(70);
+      line-height: vc(84);
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: vc(175);
+
+    @include tablet {
+      height: vc(390);
+    }
+
+    @include desktop {
+      height: vc(568);
+    }
+  }
+
+  &__timeline {
+    margin: vc(30) 0 vc(40);
+    height: vc(134);
+    background: $color-pattens-blue-7;
+    border: vc(8) solid $color-default-white;
+    border-radius: vc(20);
+
+    @include tablet {
+      margin: vc(80) 0;
+      height: vc(160);
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image-box {
+    position: relative;
+
+    &-img {
+      border: vc(4) solid $color-default-white;
+      border-radius: vc(18);
+      width: 100%;
+
+      @include tablet {
+        border: vc(8) solid $color-default-white;
+        border-radius: vc(42);
+      }
+    }
+  }
+
+  &__title {
+    color: $color-pumpkin;
+    font-family: $ff-myriad-pro;
+    font-weight: 700;
+    font-size: vc(40);
+    line-height: vc(48);
+    margin: 0 0 vc(20);
+
+    @include stroke(11, $color-default-white);
+
+    @include tablet {
+      font-size: vc(100);
+      line-height: vc(120);
+    }
+
+    @include desktop {
+      margin: 0 0 vc(25);
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    font-family: $ff-myriad-pro;
+    color: $color-arapawa;
+    font-weight: 700;
+    font-size: vc(24);
+    line-height: vc(29);
+    text-align: center;
+    margin: 0 auto;
+
+    @include stroke(5, $color-default-white);
+
+    @include tablet {
+      font-size: vc(40);
+      line-height: vc(48);
+
+      @include stroke(11, $color-default-white);
+    }
+
+    @include desktop {
+      font-size: vc(70);
+      line-height: vc(84);
+      margin: vc(226) auto vc(65);
+    }
+  }
+
+  &__text {
+    color: $color-arapawa;
+    font-family: $ff-geometria;
+    font-weight: 500;
+    font-size: vc(14);
+    line-height: vc(18);
+    margin: 0 0 vc(15);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      font-size: vc(16);
+      line-height: vc(20);
+    }
+
+    @include desktop {
+      font-size: vc(18);
+      line-height: vc(23);
+      margin: 0 0 vc(25);
+    }
+  }
+
+  &__gazeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1;
+      flex-shrink: 0;
+
+      &--1 {
+        width: vc(221);
+
+        @include desktop {
+          width: vc(522);
+        }
+      }
+
+      &--2 {
+        width: vc(163);
+
+        @include desktop {
+          width: vc(385);
+        }
+      }
+
+      &--3 {
+        width: vc(222);
+
+        @include desktop {
+          width: vc(525);
+        }
+      }
+    }
+
+    &-img {
+      height: vc(194);
+
+      @include desktop {
+        height: vc(460);
+      }
+    }
+
+    &-title {
+      font-family: $ff-geometria;
+      font-weight: 700;
+      font-size: vc(12);
+      line-height: vc(15);
+      text-align: center;
+      color: $color-default-white;
+      margin: 0 auto;
+      width: vc(120);
+
+      @include desktop {
+        font-size: vc(22);
+        line-height: vc(28);
+        width: vc(443);
+      }
+    }
+
+    &-footer {
+      width: 100%;
+      position: relative;
+      z-index: -1;
+      margin: vc(8) 0 vc(19) 0;
+
+      @include desktop {
+        margin: vc(21) 0 vc(44) 0;
+      }
+
+      &--2 {
+        .history__gazeta-title {
+          position: relative;
+          left: vc(-11);
+
+          @include desktop {
+            left: vc(-29);
+          }
+        }
+      }
+    }
+
+    &-bg {
+      position: absolute;
+      width: 100%;
+      max-width: none;
+      z-index: -1;
+
+      &--1 {
+        top: vc(-24);
+        left: vc(12);
+        width: vc(191);
+
+        @include desktop {
+          top: vc(-58 - 21);
+          left: vc(30);
+          width: vc(453);
+        }
+      }
+
+      &--2 {
+        top: vc(-19);
+        left: vc(-11);
+        width: vc(182);
+
+        @include desktop {
+          top: vc(-47 - 21);
+          left: vc(-29);
+          width: vc(431);
+        }
+      }
+
+      &--3 {
+        top: vc(-17);
+        left: vc(5);
+        width: vc(209);
+
+        @include desktop {
+          top: vc(-40 - 21);
+          left: vc(13);
+          width: vc(495);
+        }
+      }
+    }
+  }
+
+  &__decor,
+  &__bg {
+    position: absolute;
+  }
+
+  &__section {
+    position: relative;
+
+    &--1 {
+      margin-bottom: vc(-228);
+      padding-bottom: vc(72 - 10);
+      z-index: 1;
+
+      @include tablet {
+        margin-bottom: vc(-531);
+        padding-bottom: vc(161 - 48);
+      }
+
+      @include desktop {
+        margin-bottom: 0;
+        padding-bottom: vc(114);
+      }
+
+
+      #{$p}__info {
+        margin-bottom: vc(10);
+        width: vc(244);
+
+        @include tablet {
+          margin-bottom: vc(48);
+          width: vc(312);
+        }
+
+        @include desktop {
+          width: vc(560);
+        }
+      }
+
+      #{$p}__image-box {
+        width: vc(290);
+
+        @include tablet {
+          width: vc(644);
+        }
+
+        @include desktop {
+          width: vc(547);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          left: vc(-23);
+          bottom: vc(-32);
+          width: vc(85);
+          height: vc(70);
+
+          @include tablet {
+            left: vc(-50);
+            bottom: vc(-71);
+            width: vc(190);
+            height: vc(154);
+          }
+
+          @include desktop {
+            left: vc(-66);
+            bottom: vc(-77);
+          }
+        }
+
+        &--2 {
+          right: vc(-24);
+          top: vc(22);
+          width: vc(41);
+          height: vc(40);
+
+          @include tablet {
+            right: vc(-52);
+            top: vc(50);
+            width: vc(93);
+            height: vc(89);
+          }
+
+          @include desktop {
+            top: vc(81);
+            right: vc(-128);
+          }
+        }
+
+        &--3 {
+          width: vc(219);
+          height: vc(203);
+          bottom: vc(349);
+          right: vc(-128);
+
+          @include tablet {
+            bottom: auto;
+            top: vc(16);
+            right: vc(-174);
+            width: vc(519);
+            height: vc(481);
+          }
+
+          @include desktop {
+            left: vc(588);
+            top: auto;
+            right: auto;
+            bottom: vc(-306);
+          }
+        }
+      }
+    }
+
+    &--2 {
+      padding: vc(230) 0 0 0;
+
+      @include tablet {
+        padding: vc(441) 0 0 0;
+      }
+
+      @include desktop {
+        padding: vc(302) 0 0 0;
+      }
+
+      #{$p}__info {
+        margin-bottom: vc(38);
+
+        @include tablet {
+          margin-bottom: 0;
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          left: vc(-57);
+          bottom: vc(-90);
+          width: vc(222);
+          height: vc(227);
+        }
+
+
+        &--2 {
+          display: none;
+
+          @include tablet {
+            display: block;
+            top: vc(-72);
+            right: vc(-91);
+            width: vc(232);
+            height: vc(212);
+          }
+
+          @include desktop {
+            top: vc(-149);
+            right: vc(-167);
+            width: vc(468);
+            height: vc(427);
+          }
+        }
+
+        &--3 {
+          top: vc(543);
+          right: vc(-76);
+          width: vc(175);
+          height: vc(274);
+        }
+
+        &--4 {
+          top: vc(-67);
+          left: 0;
+          width: vc(105);
+          height: vc(332);
+
+          @include tablet {
+            width: vc(250);
+            height: vc(792);
+          }
+
+          @include desktop {
+            width: vc(357);
+            height: vc(1119);
+          }
+        }
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

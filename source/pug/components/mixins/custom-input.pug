@@ -18,4 +18,4 @@ mixin custom-input(options = {})
       if iconName
         img(src=`img/form/${iconName}` alt="").form__icon
       if inputButton
-        +button({text: inputButton, type: "submit"}).button__primary
+        +button({text: inputButton, type: "submit"}, "primary")

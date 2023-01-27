@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--blue"
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "shareholder.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  include ../components/data
+  main.shareholder.page-info
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    include  ../components/shareholder/shareholder
+
+block modals
