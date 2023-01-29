@@ -73,3 +73,8 @@
     @content;
   }
 }
+
+@mixin size($width, $height) {
+  width: vc($width);
+  height: vc($height);
+}

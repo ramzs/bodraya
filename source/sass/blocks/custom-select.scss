@@ -3,16 +3,21 @@
 
   & {
     position: relative;
-    width: 300px;
+    width: vc(300);
     padding: 0;
     margin: 0;
+    font-weight: 400;
+    font-size: vc(18);
+    line-height: 1.2;
+    color: $color-arapawa;
   }
 
   &__label {
     position: absolute;
     top: 50%;
-    left: vc(10);
+    left: 0;
     transform: translateY(-50%);
+    color: rgba($color-arapawa, 0.7);
     transition: transform 0.3s ease, opacity 0.3s ease;
     pointer-events: none;
   }
@@ -20,17 +25,18 @@
   &__placeholder {
     position: absolute;
     top: 50%;
-    left: vc(10);
+    left: 0;
     transform: translateY(-50%);
+    color: rgba($color-arapawa, 0.7);
     transition: transform 0.3s ease, opacity 0.3s ease;
     pointer-events: none;
   }
 
   select {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+    width: vc(1);
+    height: vc(1);
+    margin: vc(-1);
     padding: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -47,19 +53,11 @@
     min-height: vc(60);
     padding: vc(18) vc(20);
     background-color: rgba(255, 255, 255, 0);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border: vc(2) solid transparent;
+    border-radius: vc(5);
     outline: none;
     cursor: pointer;
     transition: border 0.3s ease;
-
-    &:hover {
-      border: 2px solid rgba(0, 0, 0, 0.5);
-    }
-
-    &:focus {
-      border: 2px solid rgba(0, 0, 0, 0.8);
-    }
 
     &:disabled {
       pointer-events: none;
@@ -69,55 +67,66 @@
 
   &__list {
     position: absolute;
-    bottom: 0;
+    bottom: vc(-10);
     z-index: 1;
     width: 100%;
-    max-height: vc(100);
+    max-height: vc(120);
     margin: 0;
-    padding: 0;
+    padding: vc(10) 0;
     overflow-y: auto;
-
     list-style: none;
-
     background-color: #ffffff;
-    border: 2px solid #000000;
+    border-radius: vc(12);
+    border: vc(2) solid transparent;
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
-
+    box-shadow: 0 vc(4) vc(10) rgba($color-arapawa, 0.04);
     transition: visibility 0.3s ease, opacity 0.3s ease;
+
+    &::-webkit-scrollbar {
+      height: 90%;
+      width: vc(4);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba($color-pumpkin, 0.2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 vc(4) rgba($color-pumpkin, 0.8);
+    }
   }
 
   &__item {
-    padding: 5px;
-
+    padding: vc(10) vc(10) vc(10) vc(35);
     outline: none;
     cursor: pointer;
 
     transition: background-color 0.3s ease;
 
     &[aria-selected="true"] {
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: rgba($color-pumpkin, 0.2);
 
       @media (hover: hover) {
         &:hover:not(.focus-visible) {
-          background-color: rgba(0, 0, 0, 0.2);
+          background-color: rgba($color-pumpkin, 0.2);
         }
       }
 
       &.focus-visible:focus {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba($color-pumpkin, 0.2);
       }
     }
 
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba($color-pumpkin, 0.4);
       }
     }
 
     &.focus-visible:focus {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba($color-pumpkin, 0.4);
     }
   }
 
@@ -126,18 +135,16 @@
   }
 
   &__text {
-    font-size: vc(20);
+    font-size: vc(18);
     line-height: 1.2;
     flex-shrink: 0;
     width: 80%;
+    color: inherit;
     overflow: hidden;
-
     text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
-
     opacity: 0;
-
     transition: opacity 0.3s ease 0.1s;
 
     br {
@@ -205,11 +212,11 @@
     }
 
     .custom-select__button {
-      border: 2px solid #ff1553;
+      border: vc(2) solid #ff1553;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border: vc(2) solid rgba(#ff1553, 0.5);
       }
     }
   }
@@ -245,6 +252,7 @@
     position: absolute;
     right: 0;
     bottom: vc(-5);
+    display: none;
 
     &--invalid {
       color: #ff0000;
@@ -267,12 +275,65 @@
     #{$block-name}__list,
     #{$block-name}__button {
       border: vc(2) solid #ffffff;
-      border-radius: vc(15);
       background-color: $color-alice-blue-2;
     }
 
     #{$block-name}__item {
       padding: vc(10) vc(20);
+    }
+
+    #{$block-name}__icon {
+      right: vc(30);
+      width: vc(20);
+      height: vc(20);
+      background-color: transparent;
+      clip-path: none;
+      background-image: url(../img/svg/custom-select-box.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--round {
+    max-width: 100%;
+    width: 100%;
+
+    #{$block-name}__button {
+      width: 100%;
+      min-height: vc(70);
+      padding: vc(20) vc(45) vc(20) vc(35);
+      background-color: $color-default-white;
+      border-radius: vc(52);
+      box-shadow: 0 vc(4) vc(10) rgba($color-arapawa, 0.04);
+    }
+
+    #{$block-name}__placeholder {
+      padding: vc(20) vc(45) vc(20) vc(35);
+    }
+
+    #{$block-name}__icon {
+      position: absolute;
+      top: 50%;
+      right: vc(12);
+      transform: translateY(-50%);
+      width: vc(48);
+      height: vc(48);
+      // margin-left: auto;
+      // background-color: #000000;
+      // transition: transform 0.3s ease;
+      background-color: transparent;
+      clip-path: none;
+      background-image: url(../img/svg/custom-select-round.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &.is-open {
+      .custom-select__icon {
+        transform: translateY(-50%) rotate(180deg);
+      }
     }
   }
 }

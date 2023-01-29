@@ -30,13 +30,20 @@
 
   &__controls {
     display: flex;
-    gap: vc(20);
+    flex-direction: column;
+    gap: 0;
+
+    @include tablet {
+      flex-direction: row;
+      gap: vc(20);
+    }
   }
 
   &__control {
     width: 100%;
     border: none;
-    padding: vc(15) vc(25);
+    padding: vc(15) vc(25) vc(30);
+    margin-bottom: vc(-15);
     border-radius: vc(15) vc(15) 0 0;
     font-weight: 500;
     font-size: vc(14);
@@ -50,6 +57,11 @@
 
     &.is-active {
       background: $color-pattens-blue-5;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+      padding: vc(15) vc(25);
     }
 
     @include desktop {

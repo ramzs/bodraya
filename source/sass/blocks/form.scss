@@ -9,15 +9,17 @@
       input,
       textarea {
         width: 100%;
+        min-height: vc(70);
+        padding: vc(20) vc(45) vc(20) vc(35);
+        font-weight: 400;
         font-size: vc(18);
+        line-height: 1.2;
         color: $color-arapawa;
         background: $color-default-white;
-        padding: vc(22) vc(45) vc(22) vc(20);
-        box-shadow: 0 vc(4) vc(10) rgba($color-arapawa, 0.04);
-        border-width: vc(2);
-        border: vc(2) solid rgba($color-default-white, 0);
-        outline: none;
         border-radius: vc(52);
+        border: vc(2) solid transparent;
+        box-shadow: 0 vc(4) vc(10) rgba($color-arapawa, 0.04);
+        outline: none;
 
         &::placeholder {
           color: rgba($color-arapawa, 0.7);

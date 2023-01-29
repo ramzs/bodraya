@@ -67,6 +67,7 @@
       display: none;
 
       @include desktop {
+        display: block;
         width: vc(300);
         left: vc(-110);
         bottom: vc(-95);

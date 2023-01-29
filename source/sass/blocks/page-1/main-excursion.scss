@@ -68,6 +68,23 @@
     }
   }
 
+  &__action {
+    padding-right: vc(20);
+    padding-left: vc(15);
+    max-width: vc(160);
+
+    @include tablet {
+      padding-right: vc(40);
+      padding-left: vc(35);
+      max-width: vc(225);
+    }
+
+    @include desktop {
+      padding-right: vc(35);
+      padding-left: vc(25);
+    }
+  }
+
   &__grid {
     display: grid;
     gap: vc(45);

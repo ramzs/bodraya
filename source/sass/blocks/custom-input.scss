@@ -3,23 +3,13 @@
   position: relative;
 
   display: flex;
-  width: 530px;
+  width: vc(530);
   padding: 14px 0 28px;
-
-  @media screen and (max-width: 767) {
-    padding: 4px 0 48px;
-    width: 100%;
-  }
 
   label {
     display: flex;
     align-items: center;
     width: 100%;
-
-    @media screen and (max-width: 767) {
-      align-items: flex-start;
-      flex-direction: column;
-    }
 
     input,
     textarea {
@@ -35,11 +25,6 @@
 
       transition: border 0.3s ease;
 
-      @media screen and (max-width: 767) {
-        max-width: unset;
-        width: 100%;
-      }
-
       &:hover {
         border: 2px solid rgba(#000000, 0.5);
       }
@@ -51,9 +36,6 @@
   }
 
   &__label {
-    @media screen and (max-width: 767) {
-      margin: 0 0 18px 0;
-    }
   }
 
   &__error {
@@ -66,10 +48,6 @@
     opacity: 0;
 
     transition: opacity 0.3s ease;
-
-    @media screen and (max-width: 767) {
-      bottom: 20px;
-    }
   }
 
   &.is-invalid {

@@ -37,13 +37,13 @@ mixin main-contact-us()
             })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
         .main-contact-us__row.main-contact-us__row--wide
           .main-contact-us__col
-            .main-contact-us__actions-wrapper
+            .main-contact-us__textarea-decoration
               +custom-textarea({
                 inputPlaceholder: "Напишите сообщение...",
                 inputName: "user-info"
-              })(data-validate-type="text")
+              })(data-validate-type="text").main-contact-us__textarea
               .main-contact-us__actions
-                +button({text: "Отправить", type: "submit"}).button--primary.main-contact-us__action
+                +button({text: "Отправить", type: "submit", icon: true}, 'primary, ice-cream-cone').main-contact-us__action
         .main-contact-us__row.main-contact-us__row--wide
           .main-contact-us__col
-            p.main-contact-us__copy!= "Нажимая кнопку «Отправить» вы соглашаетесь с политикой конфиденциальности"
+            p.main-contact-us__copy!= "Нажимая кнопку «Отправить» вы соглашаетесь с <a href='#'>политикой конфиденциальности</a>"
