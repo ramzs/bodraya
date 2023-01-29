@@ -2,12 +2,14 @@
   &__input,
   &__message {
     label {
+      max-width: 100%;
       width: 100%;
       position: relative;
       display: inline-flex;
 
       input,
       textarea {
+        max-width: 100%;
         width: 100%;
         min-height: vc(70);
         padding: vc(20) vc(45) vc(20) vc(35);
@@ -15,6 +17,9 @@
         font-size: vc(18);
         line-height: 1.2;
         color: $color-arapawa;
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         background: $color-default-white;
         border-radius: vc(52);
         border: vc(2) solid transparent;
@@ -26,11 +31,11 @@
         }
 
         @include tablet {
-          padding: vc(22) vc(50) vc(22) vc(25);
+          padding: vc(20) vc(50) vc(20) vc(25);
         }
 
         @include desktop {
-          padding: vc(22) vc(61) vc(22) vc(36);
+          padding: vc(20) vc(60) vc(20) vc(35);
         }
       }
     }
@@ -128,9 +133,9 @@
 
     input {
       position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
+      width: vc(1);
+      height: vc(1);
+      margin: vc(-1);
       clip: rect(0 0 0 0);
     }
 

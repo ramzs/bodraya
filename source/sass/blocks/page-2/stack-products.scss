@@ -207,7 +207,7 @@
   }
 
   &__swiper-scrollbar {
-    margin-bottom: 25px;
+    margin-bottom: vc(25);
 
     @include tablet {
       display: none;
@@ -252,6 +252,13 @@
       @include tablet {
         display: flex;
         flex-wrap: wrap;
+        margin-right: vc(-10);
+        margin-left: vc(-10);
+      }
+
+      @include desktop {
+        margin-right: vc(vc(-65) / 2);
+        margin-left: vc(vc(-65) / 2);
       }
     }
 

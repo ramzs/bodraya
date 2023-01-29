@@ -1,0 +1,56 @@
+-
+  const NAV_AWARDS = [
+    {
+      name: "История компании",
+      href: "#",
+      isActive: true,
+    },
+    {
+      name: "Производство мороженого",
+      href: "#",
+      isActive: false,
+    },
+    {
+      name: "О молоке",
+      href: "#",
+      isActive: false,
+    },
+    {
+      name: "Награды, сертификаты, благодарности",
+      href: "#",
+      isActive: false,
+    },
+    {
+      name: "Политика и цели в области качества",
+      href: "#",
+      isActive: true,
+    },
+    {
+      name: "Юридическая информация",
+      href: "#",
+      isActive: false,
+    },
+  ];
+
+mixin section-awards(currentUrl)
+  section.section-awards
+    .section-awards__wrapper(data-awards="data/awards.json")
+      .container
+        aside.section-awards__controls
+          .section-awards__controls(data-page-info-nav-container)
+            .swiper(data-page-info-nav-slider)
+              .swiper-wrapper
+                each link in NAV_AWARDS
+                  .swiper-slide.section-awards__slide
+                    - const isActive = link.isActive ? 'is-active' : '';
+                    button.section-awards__control(class=isActive, id=link.href)!=link.name
+              .section-awards__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
+
+        h1.section-awards__headline.headline!= "Награды, сертификаты, благодарности"
+        .section-awards__round-wrapper
+          .section-awards__round-inner
+            #awards-slider
+        .section-awards__swiper-wrapper(data-slider-container)
+          .swiper(data-awards-slider)
+            .swiper-wrapper
+              .swiper-slide.section-awards__slide

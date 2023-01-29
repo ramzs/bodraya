@@ -62,6 +62,8 @@
     "node": ">=16.15.1"
   },
   "dependencies": {
-    "fslightbox": "^3.3.2-2"
+    "fslightbox": "^3.3.2-2",
+    "nouislider": "^15.6.1",
+    "parallax-js": "^3.1.0"
   }
 }

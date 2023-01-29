@@ -4,6 +4,7 @@
 @import "vendor/normalize";
 // Swiper 7.4.1
 @import "vendor/swiper";
+@import "vendor/nouislider";
 
 // Global
 // ---------------------------------
@@ -47,6 +48,7 @@
 @import "blocks/card";
 @import "blocks/field-num";
 @import "blocks/form";
+@import "blocks/custom-file";
 @import "blocks/video";
 
 @import "blocks/link-download";
@@ -79,9 +81,12 @@
 @import "blocks/page-2/catalog-products";
 @import "blocks/page-2/section-catalog";
 
+@import "blocks/page-4/section-awards";
+
 @import "blocks/page-5/article-excursion";
 @import "blocks/page-5/excursion-page";
 
+@import "blocks/page-6/product-form";
 @import "blocks/page-6/product-tabs";
 
 @import "blocks/page-10/section-documents";

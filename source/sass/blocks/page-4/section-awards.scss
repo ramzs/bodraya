@@ -1,0 +1,257 @@
+.section-awards {
+  &__controls {
+    margin-top: vc(50);
+    margin-bottom: 0;
+  }
+
+  &__headline {
+    margin-top: vc(55);
+    margin-bottom: vc(20);
+
+    @include desktop {
+      margin-top: vc(120);
+      margin-bottom: vc(105);
+    }
+  }
+
+  &__round-wrapper {
+    margin-top: vc(25);
+    margin-bottom: vc(25);
+    overflow-y: auto;
+
+    @include desktop {
+      margin: 0;
+      overflow: inherit;
+    }
+
+    &::-webkit-scrollbar {
+      height: vc(8);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba($color-maya-blue, 0.2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 vc(4) rgba($color-maya-blue, 0.8);
+    }
+  }
+
+  &__round-inner {
+    width: 1200px;
+    padding: vc(40) vc(15);
+
+    @include desktop {
+      padding: vc(70) 0;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__swiper-wrapper {
+    margin: vc(25) 0 vc(60);
+
+    @include desktop {
+      margin-top: vc(20);
+      margin-bottom: vc(150);
+    }
+  }
+
+  &__control {
+    display: inline-block;
+    padding: vc(20);
+    min-width: vc(120);
+    width: auto;
+    font-weight: 500;
+    font-size: vc(14);
+    font-family: $ff-geometria;
+    line-height: 1.4;
+    text-align: center;
+    color: $color-arapawa;
+    background-color: $color-pattens-blue-4;
+    border: none;
+    border-radius: vc(15);
+    cursor: pointer;
+    transition: color $trans-300, background-color $trans-300;
+
+    @include tablet {
+      padding: vc(25) vc(20);
+      font-size: vc(20);
+      line-height: 1;
+    }
+
+    @include desktop {
+      padding: vc(35) vc(30);
+    }
+
+    &:not(.is-active) {
+      @include hover-focus {
+        color: $color-default-white;
+        background-color: $color-pumpkin;
+      }
+    }
+
+    &.is-active {
+      color: $color-default-white;
+      background-color: $color-pumpkin;
+      user-select: none;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &__controls &__swiper-scrollbar {
+    margin-top: vc(20);
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__controls .swiper {
+    .swiper-slide {
+      margin-right: vc(20);
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &__controls .swiper:not(.swiper-initialized) {
+    .swiper-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: vc(20);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    padding-bottom: 141.42857142857144%;
+    overflow: hidden;
+    border-radius: vc(12);
+
+    @include tablet {
+      border-radius: vc(30);
+    }
+
+    @include desktop {
+      border-radius: vc(40);
+    }
+  }
+
+  &__image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__image-name {
+    display: block;
+    margin: vc(10) 0 0;
+    font-weight: 700;
+    font-size: vc(16);
+    line-height: 1.25;
+    font-family: $ff-geometria;
+    text-align: center;
+
+    @include tablet {
+      margin-top: vc(30);
+      font-size: vc(18);
+    }
+  }
+
+  .noUi-target.noUi-horizontal {
+    display: flex;
+  }
+
+  .noUi-target.noUi-horizontal > .noUi-base {
+    order: 1;
+  }
+
+  .noUi-target.noUi-horizontal > .noUi-pips.noUi-pips-horizontal {
+    order: 0;
+  }
+
+  // .noUi-target {
+  //   display: flex;
+  //   flex-direction: column-reverse;
+  // }
+
+  .noUi-horizontal {
+    height: vc(8);
+  }
+
+  .noUi-horizontal .noUi-handle {
+    width: vc(28);
+    height: vc(28);
+    right: calc(vc(-28) / 2);
+    top: vc(-12);
+    border-radius: 50%;
+    border: vc(2) solid $color-default-white;
+    background-color: $color-maya-blue;
+    outline: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .noUi-connect {
+    background-color: $color-maya-blue;
+  }
+
+  .noUi-value {
+    font-weight: 700;
+    font-size: vc(12);
+    font-family: $ff-geometria;
+    color: $color-arapawa;
+  }
+
+  .noUi-marker-large,
+  .noUi-marker-sub {
+    background: none;
+  }
+
+  .noUi-pips-horizontal {
+    top: vc(-70);
+    height: vc(70);
+    padding: vc(25) 0;
+  }
+
+  &__swiper-wrapper .swiper {
+    .swiper-wrapper {
+      margin-right: calc(vc(-10) / 2);
+      margin-left: calc(vc(-10) / 2);
+
+      @include tablet {
+        margin-right: calc(vc(-20) / 2);
+        margin-left: calc(vc(-20) / 2);
+      }
+
+      @include desktop {
+        margin-right: calc(vc(-40) / 2);
+        margin-left: calc(vc(-40) / 2);
+      }
+    }
+
+    .swiper-slide {
+      padding-right: calc(vc(10) / 2);
+      padding-left: calc(vc(10) / 2);
+
+      @include tablet {
+        padding-right: calc(vc(20) / 2);
+        padding-left: calc(vc(20) / 2);
+      }
+
+      @include desktop {
+        padding-right: calc(vc(40) / 2);
+        padding-left: calc(vc(40) / 2);
+      }
+    }
+  }
+}

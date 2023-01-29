@@ -18,9 +18,10 @@ import {initDocumentsNavSlider} from './modules/sliders/init-documents-nav-slide
 import {initArticleSliders} from './modules/sliders/init-article-slider';
 import {initSectionMapPins} from './modules/section-map-pins';
 import {initMainMap} from './modules/sliders/init-main-map-slider';
-import {initBestsellersSliders} from './modules/sliders/init-popular-brands-slider copy';
+import {initBestsellersSliders} from './modules/sliders/init-bestsellers-slider';
 import {initPageInfoNavSlider} from './modules/sliders/init-page-info-nav-sider';
 import { initCatalogNavSlider } from './modules/sliders/init-catalog-nav-slider';
+import { initAwardsSlider } from './modules/sliders/init-awards-slider';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -60,6 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initBestsellersSliders();
     initSectionMapPins();
     initCatalogNavSlider();
+    initAwardsSlider();
 
     const adaptiveRunner = new AdaptiveRunner();
     adaptiveRunner.init();

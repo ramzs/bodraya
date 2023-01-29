@@ -318,11 +318,6 @@ $color-navigation-cn: $color-pumpkin;
     background-size: contain;
     background-position: center;
 
-    // @include tablet {
-    //   width: vc(85);
-    //   height: vc(85);
-    // }
-
     @include desktop {
       right: vc(-72);
       width: vc(100);

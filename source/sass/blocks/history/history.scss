@@ -515,10 +515,12 @@
 
       #{$p}__image-box {
         @include tablet {
+          @include size(312, 307);
           margin-right: vc(20);
         }
 
         @include desktop {
+          @include size(385, 379);
           margin-right: vc(60);
           margin-left: auto;
         }
@@ -530,6 +532,7 @@
           bottom: vc(-90);
           width: vc(222);
           height: vc(227);
+          max-width: none;
 
           @include tablet {
             left: vc(-73);
@@ -1127,12 +1130,14 @@
         @include tablet {
           top: vc(-107);
           left: vc(-38);
+
           @include size(374, 363);
         }
 
         @include desktop {
           top: vc(-315);
           left: vc(-201);
+
           @include size(999, 970);
         }
       }
@@ -1153,16 +1158,19 @@
           left: 0;
           bottom: 0;
           z-index: 3;
+
           @include size(85, 90);
 
           @include tablet {
             left: vc(-68);
+
             @include size(217, 228);
           }
 
           @include desktop {
             left: vc(-266);
             bottom: vc(-174);
+
             @include size(688, 723);
           }
         }
@@ -1171,6 +1179,7 @@
           right: 0;
           bottom: 0;
           z-index: 3;
+
           @include size(78, 85);
 
           @include tablet {
@@ -1180,6 +1189,7 @@
           @include desktop {
             right: vc(-42);
             bottom: vc(-105);
+
             @include size(627, 684);
           }
         }
@@ -1242,6 +1252,7 @@
         @include tablet {
           width: vc(307);
         }
+
         @include desktop {
           width: vc(403);
           margin-right: vc(303);
@@ -1258,12 +1269,14 @@
         @include tablet {
           left: vc(-89);
           bottom: vc(-164);
+
           @include size(517, 494);
         }
 
         @include desktop {
           left: vc(-344);
           bottom: vc(-533);
+
           @include size(1333, 1275);
         }
       }
@@ -1278,12 +1291,14 @@
           @include tablet {
             bottom: vc(129);
             right: vc(136);
+
             @include size(322, 291);
           }
 
           @include desktop {
             bottom: vc(334);
             right: vc(354);
+
             @include size(828, 748);
           }
         }
@@ -1295,12 +1310,14 @@
             display: block;
             right: vc(-168);
             bottom: vc(-44);
+
             @include size(299, 272);
           }
 
           @include desktop {
             right: vc(-387);
             bottom: vc(-37);
+
             @include size(959, 873);
           }
         }
@@ -1312,12 +1329,14 @@
             display: block;
             right: vc(12);
             bottom: vc(13);
+
             @include size(46, 216);
           }
 
           @include desktop {
             right: vc(182);
             bottom: vc(143);
+
             @include size(147, 693);
           }
         }
@@ -1338,6 +1357,7 @@
           @include desktop {
             top: vc(112);
             right: vc(226);
+
             @include size(322, 323);
           }
         }
@@ -1400,6 +1420,7 @@
 
       #{$p}__image-box {
         z-index: 1;
+
         &-img {
           border-color: $color-pattens-blue-7;
           z-index: 2;
@@ -1417,8 +1438,10 @@
 
         @include tablet {
           top: vc(53);
+
           @include size(312, 213);
         }
+
         @include desktop {
           @include size(699, 478);
         }
@@ -1430,23 +1453,28 @@
           top: vc(-125);
           max-width: none;
           z-index: -1;
+
           @include size(589, 481);
 
           @include desktop {
             left: vc(-361);
             top: vc(-315);
+
             @include size(1425, 1165);
           }
         }
+
         &--2 {
           left: vc(-15);
           bottom: vc(-4);
+
           @include size(160, 136);
           z-index: 3;
 
           @include tablet {
             left: vc(-65);
             bottom: vc(-41);
+
             @include size(251, 214);
             z-index: 0;
           }
@@ -1454,6 +1482,7 @@
           @include desktop {
             left: vc(-129);
             bottom: vc(-23);
+
             @include size(713, 609);
           }
         }
@@ -1462,6 +1491,417 @@
           width: 100%;
           left: 0;
           bottom: 0;
+        }
+      }
+    }
+
+    &--9 {
+      z-index: 1;
+      padding: vc(34) 0 vc(207);
+
+      @include tablet {
+        padding: vc(0) 0 vc(116);
+      }
+
+      @include desktop {
+        padding: vc(107) 0 vc(264);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        flex-direction: column-reverse;
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__title {
+        font-size: vc(28);
+        line-height: vc(34);
+        margin-bottom: vc(9);
+
+        @include stroke(4, $color-default-white);
+        z-index: 1;
+
+        @include desktop {
+          margin-bottom: vc(20);
+          font-size: vc(70);
+          line-height: vc(84);
+          @include stroke(11, $color-default-white);
+        }
+      }
+
+      #{$p}__text {
+        font-weight: 700;
+        font-size: vc(16);
+        line-height: vc(20);
+        color: $color-default-white;
+        z-index: 1;
+
+        @include desktop {
+          font-size: vc(40);
+          line-height: vc(50);
+        }
+      }
+
+      #{$p}__info {
+        width: vc(159);
+        margin: 0 auto;
+
+        @include tablet {
+          margin-left: vc(100);
+          padding-top: vc(50);
+        }
+
+        @include desktop {
+          margin-left: vc(222);
+          padding-top: vc(140);
+          width: vc(400);
+        }
+      }
+
+      #{$p}__image-box {
+        @include size(290, 271);
+        margin-bottom: vc(57);
+
+        &-img {
+          position: relative;
+          z-index: 1;
+        }
+
+        @include tablet {
+          @include size(305, 287);
+          margin: vc(-3) 0 0 vc(13);
+        }
+
+        @include desktop {
+          @include size(803, 747);
+          margin: vc(60) 0 0 vc(-27);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          max-width: none;
+          right: vc(-204);
+          bottom: vc(-193);
+          @include size(593, 490);
+
+          @include tablet {
+            right: vc(-149);
+          }
+
+          @include desktop {
+            right: vc(-440);
+            bottom: vc(-480);
+            @include size(1504, 1273);
+          }
+        }
+
+        &--2 {
+          max-width: none;
+          top: vc(-121);
+          left: vc(-128);
+          @include size(386, 388);
+          z-index: 0;
+
+          @include tablet {
+            top: vc(-71);
+          }
+
+          @include desktop {
+            top: vc(-161);
+            left: vc(-328);
+            @include size(963, 969);
+          }
+        }
+
+        &--3 {
+          max-width: none;
+          bottom: vc(-180);
+          @include size(167, 168);
+
+          @include tablet {
+            bottom: vc(-30);
+          }
+
+          @include desktop {
+            bottom: vc(10);
+            @include size(420, 420);
+          }
+        }
+        &--4 {
+          right: vc(-30);
+          bottom: vc(3);
+          @include size(49, 49);
+          z-index: 0;
+
+          @include desktop {
+            right: vc(-80);
+            @include size(134, 134);
+          }
+        }
+
+        &--5 {
+          right: vc(-31);
+          bottom: vc(-24);
+          @include size(64, 64);
+          z-index: 2;
+
+          @include desktop {
+            right: vc(-81);
+            bottom: vc(-72);
+            @include size(175, 175);
+          }
+        }
+      }
+    }
+
+    &--10 {
+      padding: vc(60) 0 vc(337);
+
+      @include tablet {
+        padding: vc(64) 0 vc(15);
+      }
+
+      @include desktop {
+        padding: vc(255) 0 vc(469);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+
+          @include tablet {
+            top: vc(-60);
+          }
+
+          @include desktop {
+            top: vc(-170);
+          }
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__image-box {
+        position: absolute;
+        left: vc(-57);
+        bottom: vc(-425);
+        @include size(374, 412);
+
+        @include tablet {
+          left: vc(-109);
+          bottom: vc(-154);
+          @include size(527, 580);
+        }
+
+        @include desktop {
+          left: vc(-216);
+          bottom: vc(-778);
+          @include size(1101, 1211);
+        }
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(15);
+
+        @include tablet {
+          margin-bottom: vc(20);
+          font-size: vc(100);
+          line-height: vc(120);
+        }
+
+        @include desktop {
+          font-size: vc(70);
+          line-height: vc(84);
+        }
+      }
+
+      #{$p}__info {
+        @include tablet {
+          width: vc(312);
+        }
+
+        @include desktop {
+          margin-right: vc(70);
+          width: vc(651);
+        }
+      }
+
+      #{$p}__text {
+        &--lead {
+          font-size: vc(16);
+          line-height: vc(20);
+
+          @include tablet {
+            font-size: vc(18);
+            line-height: vc(23);
+          }
+
+          @include desktop {
+            font-size: vc(24);
+            line-height: vc(30);
+          }
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          display: none;
+
+          @include tablet {
+            display: block;
+            top: vc(-60);
+            right: vc(-97);
+            @include size(287, 278);
+          }
+          @include desktop {
+            top: vc(321);
+            right: vc(15);
+            @include size(619, 599);
+          }
+        }
+      }
+    }
+
+    &--11 {
+      padding: vc(46) 0 vc(98);
+      z-index: 1;
+
+      @include tablet {
+        padding: vc(76) 0 vc(60);
+      }
+
+      @include desktop {
+        padding: vc(256) 0 vc(60);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__info {
+        margin-bottom: vc(43);
+
+        @include tablet {
+          width: vc(321);
+        }
+
+        @include desktop {
+          margin: vc(60) 0 0 vc(187);
+          width: vc(497);
+        }
+      }
+
+      #{$p}__image-box {
+        margin: 0 auto;
+        @include size(176, 248);
+        z-index: 1;
+
+        &-img {
+          border-width: vc(4);
+          border-radius: vc(19);
+          z-index: 1;
+
+          @include tablet {
+            border-width: vc(4);
+          }
+
+          @include desktop {
+            border-radius: vc(41);
+            border-width: vc(8);
+          }
+        }
+
+        @include tablet {
+          margin-top: vc(-10);
+          margin-left: vc(43);
+          @include size(155, 218);
+        }
+
+        @include desktop {
+          margin-left: auto;
+          margin-right: vc(180);
+          @include size(355, 472);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          max-width: none;
+          top: vc(-66);
+          left: vc(-67);
+          @include size(402, 388);
+          z-index: -1;
+
+          @include tablet {
+            top: vc(-56);
+            left: vc(-57);
+            @include size(353, 340);
+          }
+
+          @include desktop {
+            top: vc(-126);
+            left: vc(-117);
+            @include size(764, 736);
+          }
+        }
+
+        &--2 {
+          display: none;
+
+          @include desktop {
+            bottom: vc(17);
+            left: vc(172);
+            display: block;
+            @include size(224, 251);
+          }
+        }
+
+        &--3 {
+          right: vc(-130);
+          top: vc(240);
+          z-index: 2;
+          @include size(180, 140);
+
+          @include tablet {
+            right: vc(12);
+            top: vc(84);
+            @include size(140, 109);
+          }
+
+          @include desktop {
+            right: vc(46);
+            top: vc(284);
+            @include size(300, 234);
+          }
         }
       }
     }
