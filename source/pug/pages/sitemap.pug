@@ -215,6 +215,8 @@ block main
           a(href="#", data-open-modal="modal-trade")!= "Департамент оптовых продаж и дистрибуции"
         li
           a(href="#", data-open-modal="modal-added")!= "Товар успешно добавлен в корзину"
+        li
+          a(href="#", data-open-modal="modal-product")!= "«Бодрая корова» Холодный шоколад"
 
 block modals
   +modal("modal--distributors")(data-modal="modal-distributors")
@@ -227,3 +229,5 @@ block modals
     +modal-trade()
   +modal("modal--added")(data-modal="modal-added")
     +modal-added()
+  +modal("modal--product")(data-modal="modal-product")
+    +modal-product()

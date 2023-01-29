@@ -79,7 +79,11 @@ const enableSwiper = (slider) => {
 };
 
 const initAwardsSlider = () => {
-  if (dataAwardsEl.hasAttribute('data-awards') && slider && sliderRound) {
+  if (!dataAwardsEl) {
+    return;
+  }
+
+  if (dataAwardsEl.hasAttribute('data-awards')) {
     const url = dataAwardsEl.getAttribute('data-awards');
 
     fetch(url)

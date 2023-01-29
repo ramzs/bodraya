@@ -1,0 +1,73 @@
+mixin modal-product()
+  .modal__inner(data-slider-container)
+    +btn-prev({text: "Сюда"})(data-btn-prev).btn-navigation--big
+    +btn-next({text: "Туда"})(data-btn-next).btn-navigation--big
+    span.modal__decoration
+    .modal__grid
+      .modal__col
+        .modal__swiper
+          .swiper(data-modal-product-slider)
+            .swiper-wrapper
+              .swiper-slide
+                .modal__image-wrapper
+                  +picture("slides", "product-modal", "png", 570, 570, "")
+              .swiper-slide
+                .modal__image-wrapper
+                  +picture("slides", "product-modal", "png", 570, 570, "")
+              .swiper-slide
+                .modal__image-wrapper
+                  +picture("slides", "product-modal", "png", 570, 570, "")
+              .swiper-slide
+                .modal__image-wrapper
+                  +picture("slides", "product-modal", "png", 570, 570, "")
+
+        .modal__swiper.modal__swiper--thumb
+          .swiper(data-modal-product-pagination)
+            .swiper-wrapper
+                .swiper-slide
+                  .modal__image-wrapper
+                    +picture("slides", "product-modal", "png", 570, 570, "")
+                .swiper-slide
+                  .modal__image-wrapper
+                    +picture("slides", "product-modal", "png", 570, 570, "")
+                .swiper-slide
+                  .modal__image-wrapper
+                    +picture("slides", "product-modal", "png", 570, 570, "")
+                .swiper-slide
+                  .modal__image-wrapper
+                    +picture("slides", "product-modal", "png", 570, 570, "")
+
+      .modal__col
+        .modal__desc
+          h3= "«Бодрая корова» Холодный&nbsp;шоколад"
+          ul
+            li!= "Бренд: <b>Бодрая Корова</b>"
+            li!= "Форма: <b>брикет</b>"
+            li!= "Вид смеси: <b>сливочное</b>"
+          p!= "Классический пломбир и сливочный крем — изысканное наслаждение! Нежнейшая консистенция мороженого в сочетании с гладкой структурой крема подарят вам несколько минут чистого удовольствия!"
+          ul
+            li!= "Массовая доля жира 12%"
+          ul
+            li!= "<b>Пищевая ценность в 100 г продукта</b>"
+            li!= "Белки — 4,0 г"
+            li!= "Жиры — 12,0 г"
+            li!= "Углеводы — 28,0 г"
+          ul
+            li!= "<b>Энергетическая ценность</b> в 100 г продукта:"
+            li!= "<b>990/240 кДж/ккал</b>"
+          ul
+            li!= "<b>Срок годности</b> при температуре хранения не выше минус 18 С — 15,0 месяцев"
+          ul
+            li!= "Вес - 75 грамм"
+
+
+
+
+
+
+
+
+
+
+
+

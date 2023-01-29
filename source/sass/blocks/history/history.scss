@@ -1518,6 +1518,7 @@
 
       #{$p}__row {
         flex-direction: column-reverse;
+
         @include tablet {
           flex-direction: row-reverse;
         }
@@ -1535,6 +1536,7 @@
           margin-bottom: vc(20);
           font-size: vc(70);
           line-height: vc(84);
+
           @include stroke(11, $color-default-white);
         }
       }
@@ -1593,6 +1595,7 @@
           max-width: none;
           right: vc(-204);
           bottom: vc(-193);
+
           @include size(593, 490);
 
           @include tablet {
@@ -1602,6 +1605,7 @@
           @include desktop {
             right: vc(-440);
             bottom: vc(-480);
+
             @include size(1504, 1273);
           }
         }
@@ -1610,6 +1614,7 @@
           max-width: none;
           top: vc(-121);
           left: vc(-128);
+
           @include size(386, 388);
           z-index: 0;
 
@@ -1620,6 +1625,7 @@
           @include desktop {
             top: vc(-161);
             left: vc(-328);
+
             @include size(963, 969);
           }
         }
@@ -1627,6 +1633,7 @@
         &--3 {
           max-width: none;
           bottom: vc(-180);
+
           @include size(167, 168);
 
           @include tablet {
@@ -1635,17 +1642,21 @@
 
           @include desktop {
             bottom: vc(10);
+
             @include size(420, 420);
           }
         }
+
         &--4 {
           right: vc(-30);
           bottom: vc(3);
+
           @include size(49, 49);
           z-index: 0;
 
           @include desktop {
             right: vc(-80);
+
             @include size(134, 134);
           }
         }
@@ -1653,12 +1664,14 @@
         &--5 {
           right: vc(-31);
           bottom: vc(-24);
+
           @include size(64, 64);
           z-index: 2;
 
           @include desktop {
             right: vc(-81);
             bottom: vc(-72);
+
             @include size(175, 175);
           }
         }
@@ -1703,17 +1716,20 @@
         position: absolute;
         left: vc(-57);
         bottom: vc(-425);
+
         @include size(374, 412);
 
         @include tablet {
           left: vc(-109);
           bottom: vc(-154);
+
           @include size(527, 580);
         }
 
         @include desktop {
           left: vc(-216);
           bottom: vc(-778);
+
           @include size(1101, 1211);
         }
       }
@@ -1769,11 +1785,14 @@
             display: block;
             top: vc(-60);
             right: vc(-97);
+
             @include size(287, 278);
           }
+
           @include desktop {
             top: vc(321);
             right: vc(15);
+
             @include size(619, 599);
           }
         }
@@ -1822,6 +1841,7 @@
 
       #{$p}__image-box {
         margin: 0 auto;
+
         @include size(176, 248);
         z-index: 1;
 
@@ -1843,12 +1863,14 @@
         @include tablet {
           margin-top: vc(-10);
           margin-left: vc(43);
+
           @include size(155, 218);
         }
 
         @include desktop {
           margin-left: auto;
           margin-right: vc(180);
+
           @include size(355, 472);
         }
       }
@@ -1858,18 +1880,21 @@
           max-width: none;
           top: vc(-66);
           left: vc(-67);
+
           @include size(402, 388);
           z-index: -1;
 
           @include tablet {
             top: vc(-56);
             left: vc(-57);
+
             @include size(353, 340);
           }
 
           @include desktop {
             top: vc(-126);
             left: vc(-117);
+
             @include size(764, 736);
           }
         }
@@ -1881,6 +1906,7 @@
             bottom: vc(17);
             left: vc(172);
             display: block;
+
             @include size(224, 251);
           }
         }
@@ -1889,17 +1915,20 @@
           right: vc(-130);
           top: vc(240);
           z-index: 2;
+
           @include size(180, 140);
 
           @include tablet {
             right: vc(12);
             top: vc(84);
+
             @include size(140, 109);
           }
 
           @include desktop {
             right: vc(46);
             top: vc(284);
+
             @include size(300, 234);
           }
         }
