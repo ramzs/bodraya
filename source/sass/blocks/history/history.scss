@@ -2599,6 +2599,10 @@
           @include tablet {
             top: vc(-110);
           }
+
+          @include desktop {
+            top: vc(-450);
+          }
         }
       }
 
