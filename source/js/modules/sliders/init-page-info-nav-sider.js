@@ -10,7 +10,6 @@ const enableSlider = (slider) => {
     if (mediaPoint.matches) {
       mySwiper && mySwiper.destroy();
     } else {
-      console.log('init');
       mySwiper = new Swiper(slider, {
         allowTouchMove: true,
         watchOverflow: true,

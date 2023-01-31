@@ -3,24 +3,26 @@ import { initModals } from './modules/modals/init-modals';
 import { Form } from './modules/form-validate/form';
 import { CustomSelect } from './modules/select/custom-select';
 import initFieldNum from './modules/field-num/field-num';
-import { initPopularBrandsSliders } from './modules/sliders/init-popular-brands-slider';
-import { initMainBannerSlider } from './modules/sliders/init-main-banner-slider';
-import { initMenu } from './modules/header/init-menu';
-import { initAccordions } from './modules/accordion/init-accordion';
-import { initTabs } from './modules/tabs/init-tabs';
-import { AdaptiveRunner } from './modules/adaptive-runner';
-import { gallery } from './modules/gallery/gallery.js';
-import { initStackProductsSlider } from './modules/sliders/init-stack-products-slider';
-import { initSubLinksSlider } from './modules/sliders/init-sub-links-slider';
-import { initServiceNavSlider } from './modules/sliders/init-service-nav-slider';
-import { initVideo } from './modules/video/init-video';
-import { initDocumentsNavSlider } from './modules/sliders/init-documents-nav-slider';
-import { initArticleSliders } from './modules/sliders/init-article-slider';
-import { initSectionMapPins } from './modules/section-map-pins';
-import { initMainMap } from './modules/sliders/init-main-map-slider';
-import { initBestsellersSliders } from './modules/sliders/init-popular-brands-slider copy';
-import { initPageInfoNavSlider } from './modules/sliders/init-page-info-nav-sider';
+import {initPopularBrandsSliders} from './modules/sliders/init-popular-brands-slider';
+import {initMainBannerSlider} from './modules/sliders/init-main-banner-slider';
+import {initMenu} from './modules/header/init-menu';
+import {initAccordions} from './modules/accordion/init-accordion';
+import {initTabs} from './modules/tabs/init-tabs';
+import {AdaptiveRunner} from './modules/adaptive-runner';
+import {gallery} from './modules/gallery/gallery.js';
+import {initStackProductsSlider} from './modules/sliders/init-stack-products-slider';
+import {initSubLinksSlider} from './modules/sliders/init-sub-links-slider';
+import {initServiceNavSlider} from './modules/sliders/init-service-nav-slider';
+import {initVideo} from './modules/video/init-video';
+import {initDocumentsNavSlider} from './modules/sliders/init-documents-nav-slider';
+import {initArticleSliders} from './modules/sliders/init-article-slider';
+import {initSectionMapPins} from './modules/section-map-pins';
+import {initMainMap} from './modules/sliders/init-main-map-slider';
+import {initBestsellersSliders} from './modules/sliders/init-bestsellers-slider';
+import {initPageInfoNavSlider} from './modules/sliders/init-page-info-nav-sider';
 import { initCatalogNavSlider } from './modules/sliders/init-catalog-nav-slider';
+import { initAwardsSlider } from './modules/sliders/init-awards-slider';
+import { initModalProductSlider } from './modules/sliders/init-modal-product-slider';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -60,6 +62,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initBestsellersSliders();
     initSectionMapPins();
     initCatalogNavSlider();
+    initAwardsSlider();
+    initModalProductSlider();
 
     const adaptiveRunner = new AdaptiveRunner();
     adaptiveRunner.init();

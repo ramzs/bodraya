@@ -21,11 +21,26 @@
     }
   }
 
+  &__inner {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 0;
+    padding: 0;
+    gap: vc(20);
+    max-width: 100%;
+    width: 100%;
+
+    @include desktop {
+      max-width: vc(770);
+    }
+  }
   &__row {
     display: grid;
     margin: 0;
     padding: 0;
     gap: vc(20);
+    max-width: 100%;
+    width: 100%;
 
     @include tablet {
       grid-template-columns: repeat(2, calc((100% - vc(20)) / 2));
@@ -63,6 +78,11 @@
 
     @include desktop {
       background-image: url(../img/svg/main-contact-us-textarea-lg.svg);
+      background-size: 100%;
+    }
+
+    @include desktop {
+      background-image: url(../img/svg/main-contact-us-textarea-lg-wide.svg);
     }
   }
 
@@ -70,6 +90,14 @@
     min-height: vc(270);
     border-radius: vc(5);
     clip-path: url(#svgClipTextarea1sm);
+    box-shadow: none;
+
+    &::placeholder {
+      max-width: 100%;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
     @include tablet {
       min-height: vc(145);
@@ -156,6 +184,24 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
+
+      @include desktop {
+        top: vc(-8);
+      }
+    }
+  }
+
+  &__action--show-mobile {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__action--show-desktop {
+    display: none;
+
+    @include desktop {
+      display: inline-flex;
     }
   }
 
@@ -174,6 +220,15 @@
     @include desktop {
       font-size: vc(14);
       text-align: right;
+    }
+  }
+
+  &__copy a {
+    transition: color $trans-300;
+    text-decoration: underline;
+
+    @include hover-focus {
+      color: $color-pumpkin;
     }
   }
 }

@@ -1,0 +1,39 @@
+.custom-file {
+  max-width: 100%;
+  width: 100%;
+
+  &__label {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    min-height: vc(70);
+    padding: vc(20) vc(45) vc(20) vc(35);
+    font-weight: 400;
+    font-size: vc(18);
+    line-height: 1.4;
+    color: rgba($color-arapawa, 0.7);
+    text-align: left;
+    background: $color-default-white;
+    background-image: url(../img/svg/form-file.svg);
+    background-repeat: no-repeat;
+    background-size: vc(24) auto;
+    background-position: right vc(15) center;
+    border-radius: vc(52);
+    border: vc(2) solid transparent;
+    box-shadow: 0 vc(4) vc(10) rgba($color-arapawa, 0.04);
+    outline: none;
+    cursor: pointer;
+
+    @include tablet {
+      padding: vc(20) vc(30) vc(20) vc(65);
+      background-position: left vc(30) center;
+    }
+
+    @include desktop {
+      padding: vc(20) vc(35) vc(20) vc(90);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background-position: left vc(35) center;
+    }
+  }
+}

@@ -3,94 +3,72 @@
   position: relative;
 
   display: flex;
-  width: 530px;
-  padding: 14px 0 28px;
-
-  @media screen and (max-width: 767) {
-    padding: 4px 0 48px;
-    width: 100%;
-  }
+  width: vc(530);
+  padding: vc(14) 0 vc(28);
 
   label {
     display: flex;
     align-items: center;
     width: 100%;
 
-    @media screen and (max-width: 767) {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
     input,
     textarea {
       flex-grow: 1;
-      max-width: 300px;
-      min-height: 48px;
+      max-width: vc(300);
+      min-height: vc(48);
       margin-left: auto;
-      padding: 10px;
+      padding: vc(10);
 
-      border: 2px solid rgba(#000000, 0.2);
-      border-radius: 5px;
+      border: vc(2) solid rgba(#000000, 0.2);
+      border-radius: vc(5);
       outline: none;
 
       transition: border 0.3s ease;
 
-      @media screen and (max-width: 767) {
-        max-width: unset;
-        width: 100%;
-      }
-
       &:hover {
-        border: 2px solid rgba(#000000, 0.5);
+        border: vc(2) solid rgba(#000000, 0.5);
       }
 
       &:focus {
-        border: 2px solid rgba(#000000, 0.8);
+        border: vc(2) solid rgba(#000000, 0.8);
       }
     }
   }
 
   &__label {
-    @media screen and (max-width: 767) {
-      margin: 0 0 18px 0;
-    }
   }
 
   &__error {
     position: absolute;
     right: 0;
-    bottom: 35px;
+    bottom: vc(35);
 
     color: #ff1553;
 
     opacity: 0;
 
     transition: opacity 0.3s ease;
-
-    @media screen and (max-width: 767) {
-      bottom: 20px;
-    }
   }
 
   &.is-invalid {
     input,
     textarea {
-      border: 2px solid #ff1553;
+      border: vc(2) solid #ff1553;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
+        border: vc(2) solid rgba(#ff1553, 0.5);
       }
     }
   }
 
   &.is-valid {
     input {
-      border: 2px solid #22b259;
+      border: vc(2) solid #22b259;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba(#22b259, 0.5);
+        border: vc(2) solid rgba(#22b259, 0.5);
       }
     }
   }
@@ -98,7 +76,7 @@
   .input-message {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: vc(-5);
 
     &--invalid {
       color: #ff0000;

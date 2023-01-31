@@ -145,6 +145,8 @@
 
   &__copy a {
     transition: color $trans-300;
+    text-decoration: underline;
+
 
     @include hover-focus {
       color: $color-pumpkin;
@@ -183,6 +185,7 @@
       background-repeat: no-repeat;
       background-position: top center;
       background-size: 100% auto;
+
     }
 
     @include desktop {
@@ -193,6 +196,7 @@
   &__textarea.form__message textarea {
     min-height: vc(270);
     border-radius: vc(5);
+
     clip-path: url(#svgClipTextarea1sm);
     box-shadow: none;
 
@@ -227,6 +231,7 @@
     width: 100%;
     border-radius: vc(12);
     border-top-left-radius: 0;
+
 
     @include tablet {
       max-width: vc(210);

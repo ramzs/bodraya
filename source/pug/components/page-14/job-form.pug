@@ -12,10 +12,11 @@ mixin job-form()
             })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
           .job-form__col
             +custom-input({
-              inputPlaceholder: "Имя*",
+              inputPlaceholder: "Имя *",
               inputName: "user-name-2",
               iconName: "form-user.svg",
             })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+        .job-form__row
           .job-form__col
             +custom-input({
               inputType: "tel",
@@ -31,11 +32,12 @@ mixin job-form()
               iconName: "form-mail.svg",
             })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
         .job-form__row.job-form__row--wide
-          +custom-file({
-            inputId: "file",
-            inputLabel: "Перетащите или прикрепите резюме (doc, pdf, rtf, docs)",
-            inputName: "user-file",
-          })
+          .job-form__col
+            +custom-file({
+              inputId: "file",
+              inputLabel: "Перетащите или прикрепите резюме (doc, pdf, rtf, docs)",
+              inputName: "user-file",
+            })
         .job-form__row.job-form__row--wide
           .job-form__col
             .job-form__textarea-decoration
@@ -44,5 +46,6 @@ mixin job-form()
                 inputName: "user-info"
               })(data-validate-type="text").job-form__textarea
               .job-form__actions
-                +button({text: "Хочу здесь работать", type: "submit"}, 'primary').job-form__action
+                +button({text: "Отправить", type: "submit"}, 'primary').job-form__action.job-form__action--show-mobile
+                +button({text: "Хочу здесь работать", type: "submit"}, 'primary').job-form__action.job-form__action--show-desktop
       .job-form__copy!= "Нажимая на кнопку «Хочу здесь работать» вы соглашаетесь с <a href='#'>политикой конфиденциальности</a> компании"

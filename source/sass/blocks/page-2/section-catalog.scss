@@ -182,12 +182,12 @@
     }
   }
 
-  &__slide {
+  &__controls &__slide {
     width: auto;
     padding-right: vc(20);
   }
 
-  &__swiper-scrollbar {
+  &__controls &__swiper-scrollbar {
     margin-top: vc(20);
 
     @include tablet {
@@ -195,15 +195,17 @@
     }
   }
 
-  .swiper:not(.swiper-initialized) {
-    .swiper-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: vc(20);
-    }
+  &__controls {
+    .swiper:not(.swiper-initialized) {
+      .swiper-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: vc(20);
+      }
 
-    .swiper-slide {
-      padding: 0;
+      .swiper-slide {
+        padding: 0;
+      }
     }
   }
 }

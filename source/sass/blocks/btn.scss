@@ -175,7 +175,7 @@ $color-navigation-cn: $color-pumpkin;
     display: inline-block;
     padding: vc(15) vc(44) vc(15) vc(28);
     font-weight: 700;
-    font-size: vc(16);
+    font-size: vc(14);
     line-height: 1.35;
     text-align: center;
     outline: none;
@@ -185,9 +185,13 @@ $color-navigation-cn: $color-pumpkin;
 
     transition: color $trans-300, background-color $trans-300;
 
+    @include tablet {
+      font-size: vc(16);
+    }
+
     @include desktop {
-      padding: vc(15) vc(65) vc(22);
-      font-size: vc(20);
+      padding: vc(15) vc(65) vc(20);
+      font-size: vc(18);
       border-radius: 0 vc(12) vc(12) vc(12);
     }
 
@@ -301,6 +305,23 @@ $color-navigation-cn: $color-pumpkin;
     @include desktop {
       width: vc(100);
       height: vc(100);
+    }
+  }
+
+  &--peace > &__icon {
+    right: vc(-50);
+    display: block;
+    width: vc(70);
+    height: vc(100);
+    background-image: url(../img/decoration-buttons/peace.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @include desktop {
+      right: vc(-72);
+      width: vc(100);
+      height: vc(155);
     }
   }
 }

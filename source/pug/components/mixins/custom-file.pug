@@ -3,7 +3,7 @@ mixin custom-file(options = {})
   - const inputId = options.inputId ? options.inputId : false;
   - const inputName = options.inputName ? options.inputName : false;
 
-  .custom-file&attributes(attributes)
+  .custom-file.form__input&attributes(attributes)
     label
-      span.custom-file__label!=inputLabel
       input.visually-hidden(type="file", id=inputId, name=inputName, multiple)
+      span.custom-file__label!=inputLabel

@@ -3,6 +3,15 @@
 
   position: relative;
   overflow: hidden;
+  margin-bottom: vc(-28);
+
+  @include tablet {
+    margin-bottom: vc(-42);
+  }
+
+  @include desktop {
+    margin-bottom: vc(-60);
+  }
 
   &__headline {
     position: relative;
@@ -106,9 +115,19 @@
       border-radius: vc(18);
       width: 100%;
 
+      &--border-none {
+        border: none;
+        border-radius: 0;
+      }
+
       @include tablet {
         border: vc(8) solid $color-default-white;
         border-radius: vc(42);
+
+        &--border-none {
+          border: none;
+          border-radius: 0;
+        }
       }
     }
   }
@@ -126,10 +145,20 @@
     @include tablet {
       font-size: vc(100);
       line-height: vc(120);
+
+      &--2 {
+        font-size: vc(40);
+        line-height: vc(48);
+      }
     }
 
     @include desktop {
       margin: 0 0 vc(25);
+
+      &--2 {
+        font-size: vc(70);
+        line-height: vc(84);
+      }
     }
   }
 
@@ -141,11 +170,12 @@
     font-size: vc(24);
     line-height: vc(29);
     text-align: center;
-    margin: 0 auto;
+    margin: vc(64) auto 0;
 
     @include stroke(5, $color-default-white);
 
     @include tablet {
+      margin: vc(100) auto vc(30);
       font-size: vc(40);
       line-height: vc(48);
 
@@ -153,9 +183,9 @@
     }
 
     @include desktop {
+      margin: vc(226) auto vc(65);
       font-size: vc(70);
       line-height: vc(84);
-      margin: vc(226) auto vc(65);
     }
   }
 
@@ -171,15 +201,36 @@
       margin-bottom: 0;
     }
 
+    span {
+      font-weight: 700;
+      color: $color-pumpkin;
+    }
+
+    &--lead {
+      font-weight: 700;
+      font-size: vc(14);
+      line-height: vc(18);
+    }
+
     @include tablet {
       font-size: vc(16);
       line-height: vc(20);
+
+      &--lead {
+        font-size: vc(18);
+        line-height: vc(23);
+      }
     }
 
     @include desktop {
       font-size: vc(18);
       line-height: vc(23);
       margin: 0 0 vc(25);
+
+      &--lead {
+        font-size: vc(24);
+        line-height: vc(30);
+      }
     }
   }
 
@@ -189,9 +240,11 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: vc(18);
 
     @include tablet {
       flex-direction: row;
+      margin-bottom: vc(100);
     }
 
     &-item {
@@ -229,9 +282,18 @@
 
     &-img {
       height: vc(194);
+      border-radius: vc(17);
+      border-width: vc(3);
+
+      @include tablet {
+        border-radius: vc(17);
+        border-width: vc(3);
+      }
 
       @include desktop {
         height: vc(460);
+        border-radius: vc(41);
+        border-width: vc(8);
       }
     }
 
@@ -265,7 +327,6 @@
       &--2 {
         .history__gazeta-title {
           position: relative;
-          left: vc(-11);
 
           @include desktop {
             left: vc(-29);
@@ -435,18 +496,42 @@
       padding: vc(230) 0 0 0;
 
       @include tablet {
-        padding: vc(441) 0 0 0;
+        padding: vc(485) 0 0 0;
       }
 
       @include desktop {
         padding: vc(302) 0 0 0;
       }
 
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
       #{$p}__info {
         margin-bottom: vc(38);
 
         @include tablet {
+          max-width: vc(312);
           margin-bottom: 0;
+        }
+
+        @include desktop {
+          max-width: vc(406);
+        }
+      }
+
+      #{$p}__image-box {
+        @include tablet {
+          @include size(312, 307);
+          margin-right: vc(20);
+        }
+
+        @include desktop {
+          @include size(385, 379);
+          margin-right: vc(60);
+          margin-left: auto;
         }
       }
 
@@ -456,6 +541,21 @@
           bottom: vc(-90);
           width: vc(222);
           height: vc(227);
+          max-width: none;
+
+          @include tablet {
+            left: vc(-73);
+            bottom: vc(-153);
+            width: vc(300);
+            height: vc(307);
+          }
+
+          @include desktop {
+            left: vc(-424);
+            bottom: vc(-267);
+            width: vc(571);
+            height: vc(585);
+          }
         }
 
 
@@ -483,6 +583,14 @@
           right: vc(-76);
           width: vc(175);
           height: vc(274);
+
+          @include tablet {
+            top: vc(397);
+            right: vc(-219);
+            width: vc(385);
+            height: vc(602);
+            z-index: 1;
+          }
         }
 
         &--4 {
@@ -492,6 +600,7 @@
           height: vc(332);
 
           @include tablet {
+            top: vc(83);
             width: vc(250);
             height: vc(792);
           }
@@ -508,6 +617,2047 @@
           left: 0;
           top: 0;
           width: 100%;
+        }
+      }
+    }
+
+    &--3 {
+      padding: vc(50) 0 vc(109);
+
+      @include tablet {
+        padding: vc(64) 0 vc(118);
+      }
+
+      @include desktop {
+        padding: vc(208) 0 vc(251);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__info {
+        margin-bottom: vc(33);
+
+        @include tablet {
+          max-width: vc(312);
+          margin-bottom: 0;
+        }
+
+        @include desktop {
+          max-width: vc(406);
+        }
+      }
+
+      #{$p}__image-box {
+        @include tablet {
+          margin-right: vc(20);
+          width: vc(312);
+          height: vc(307);
+        }
+
+        @include desktop {
+          margin-right: vc(55);
+          margin-left: auto;
+          width: vc(385);
+          height: vc(379);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          bottom: vc(14);
+          left: vc(-68);
+          z-index: 1;
+
+          @include size(258, 255);
+
+          @include tablet {
+            top: vc(73);
+            bottom: auto;
+            left: vc(-257);
+
+            @include size(477, 472);
+          }
+
+          @include desktop {
+            top: vc(35);
+            bottom: auto;
+            left: vc(-153);
+
+            @include size(1000, 991);
+          }
+        }
+
+        &--2 {
+          display: none;
+
+          @include tablet {
+            display: block;
+            top: vc(93);
+            right: vc(-93);
+
+            @include size(191, 222);
+          }
+
+          @include desktop {
+            top: vc(394);
+            right: vc(-141);
+
+            @include size(363, 422);
+          }
+        }
+      }
+    }
+
+    &--4 {
+      padding: vc(74) 0 vc(27);
+
+      @include tablet {
+        padding: vc(92) 0 vc(46);
+      }
+
+      @include desktop {
+        padding: vc(243) 0 vc(162);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__info {
+        margin-bottom: vc(30);
+
+        @include tablet {
+          max-width: vc(312);
+          margin-bottom: 0;
+        }
+
+        @include desktop {
+          max-width: vc(363);
+        }
+      }
+
+      #{$p}__image-box {
+        @include size(290, 368);
+
+        @include tablet {
+          @include size(312, 394);
+        }
+
+        @include desktop {
+          @include size(880, 744);
+        }
+
+        &-img {
+          position: absolute;
+          object-fit: cover;
+          border-width: vc(2);
+          border-radius: vc(14);
+
+          @include desktop {
+            border-width: vc(8);
+            border-radius: vc(41);
+          }
+
+          &--1 {
+            top: 0;
+            right: 0;
+
+            @include size(265, 246);
+
+            @include tablet {
+              @include size(285, 264);
+            }
+
+            @include desktop {
+              @include size(676, 456);
+            }
+          }
+
+          &--2 {
+            bottom: 0;
+            left: 0;
+
+            @include size(186, 188);
+
+            @include tablet {
+              @include size(201, 201);
+            }
+
+            @include desktop {
+              @include size(542, 365);
+            }
+          }
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          @include size(157, 157);
+          right: vc(25);
+          bottom: vc(66);
+          z-index: 1;
+
+          @include tablet {
+            right: vc(27);
+            bottom: vc(70);
+
+            @include size(169, 169);
+          }
+
+          @include desktop {
+            right: vc(96);
+            bottom: vc(29);
+
+            @include size(355, 355);
+          }
+        }
+
+        &--2 {
+          right: vc(-42);
+          bottom: vc(-68);
+          z-index: 2;
+
+          @include size(201, 201);
+
+          @include tablet {
+            right: auto;
+            left: vc(0);
+            bottom: vc(-124);
+
+            @include size(346, 346);
+          }
+
+          @include desktop {
+            right: auto;
+            left: vc(-71);
+            bottom: vc(-293);
+
+            @include size(908, 908);
+          }
+        }
+
+        &--3 {
+          top: vc(17);
+          right: vc(-26);
+
+          @include size(119, 125);
+
+          @include tablet {
+            top: auto;
+            bottom: vc(5);
+            right: vc(-26);
+
+            @include size(146, 154);
+          }
+
+
+          @include desktop {
+            top: auto;
+            bottom: vc(-53);
+            right: vc(-24);
+
+            @include size(331, 347);
+          }
+        }
+
+        &--4 {
+          bottom: vc(-38);
+          right: vc(58);
+
+          @include size(71, 60);
+          z-index: 3;
+
+          @include tablet {
+            bottom: vc(-55);
+            left: vc(250);
+            right: auto;
+
+            @include size(131, 111);
+          }
+
+          @include desktop {
+            bottom: vc(-196);
+            left: vc(442);
+            right: auto;
+
+            @include size(297, 253);
+          }
+        }
+
+        &--5 {
+          right: vc(-51);
+          bottom: vc(-31);
+
+          @include size(103, 116);
+          z-index: 1;
+
+          @include tablet {
+            right: auto;
+            left: vc(-78);
+            bottom: vc(-87);
+
+            @include size(193, 217);
+          }
+
+          @include desktop {
+            right: auto;
+            left: vc(-54);
+            bottom: vc(-168);
+
+            @include size(208, 233);
+          }
+        }
+      }
+    }
+
+    &--5 {
+      padding: vc(68) 0 vc(247);
+
+      @include tablet {
+        padding: vc(169) 0 vc(111);
+      }
+
+      @include desktop {
+        padding: vc(233) 0 vc(561);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 2;
+        }
+      }
+
+      #{$p}__row {
+        z-index: 3;
+      }
+
+      #{$p}__info {
+        @include tablet {
+          max-width: vc(312);
+        }
+
+        @include desktop {
+          max-width: vc(364);
+        }
+      }
+
+      #{$p}__image-box {
+        position: absolute;
+        top: vc(68);
+        left: vc(-15);
+
+        @include size(320, 309);
+
+        @include tablet {
+          top: vc(-74);
+          right: vc(-50);
+          left: auto;
+
+          @include size(428, 413);
+        }
+
+        @include desktop {
+          right: vc(-150);
+          top: vc(-199);
+
+          @include size(1053, 1012);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          display: none;
+
+          @include desktop {
+            display: block;
+            right: vc(-73);
+            bottom: vc(-87);
+            z-index: -1;
+          }
+        }
+
+        &--2 {
+          left: vc(-153);
+          bottom: vc(-105);
+          z-index: 4;
+
+          @include size(318, 252);
+
+          @include tablet {
+            left: vc(-138);
+            bottom: vc(-232);
+
+            @include size(464, 369);
+          }
+
+          @include desktop {
+            left: vc(-640);
+            top: vc(261);
+
+            @include size(1474, 1172);
+          }
+        }
+
+        &--3 {
+          bottom: vc(6);
+          right: vc(42);
+          z-index: 4;
+
+          @include size(48, 47);
+
+          @include tablet {
+            bottom: vc(-34);
+            right: vc(94);
+
+            @include size(84, 83);
+          }
+
+          @include desktop {
+            bottom: vc(-80);
+            right: vc(178);
+
+            @include size(196, 193);
+          }
+        }
+
+        &--4 {
+          bottom: vc(117);
+          right: vc(17);
+          z-index: 4;
+
+          @include size(27, 27);
+
+          @include tablet {
+            bottom: vc(159);
+            right: vc(50);
+
+            @include size(33, 33);
+          }
+
+          @include desktop {
+            bottom: vc(313);
+            right: vc(27);
+
+            @include size(109, 109);
+          }
+        }
+      }
+    }
+
+    &--6 {
+      padding: vc(99) 0 vc(250);
+
+      @include tablet {
+        padding: vc(274) 0 vc(152);
+      }
+
+      @include desktop {
+        padding: vc(534) 0 vc(586);
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 3;
+        }
+      }
+
+      #{$p}__info {
+        z-index: 4;
+
+        @include tablet {
+          width: vc(307);
+        }
+
+        @include desktop {
+          width: vc(444);
+          margin-right: vc(190);
+        }
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(10);
+
+        @include stroke(5, $color-default-white);
+
+        @include tablet {
+          @include stroke(11, $color-default-white);
+        }
+
+        @include desktop {
+          margin-bottom: vc(35);
+        }
+      }
+
+      #{$p}__text {
+        @include desktop {
+          max-width: vc(368);
+        }
+      }
+
+      #{$p}__image-box {
+        position: absolute;
+        top: vc(52);
+        left: vc(-10);
+        z-index: 4;
+
+        @include size(300, 290);
+
+        @include tablet {
+          top: vc(-107);
+          left: vc(-38);
+
+          @include size(374, 363);
+        }
+
+        @include desktop {
+          top: vc(-315);
+          left: vc(-201);
+
+          @include size(999, 970);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          z-index: 4;
+
+          @include desktop {
+            bottom: vc(-35);
+          }
+        }
+
+        &--2 {
+          left: 0;
+          bottom: 0;
+          z-index: 3;
+
+          @include size(85, 90);
+
+          @include tablet {
+            left: vc(-68);
+
+            @include size(217, 228);
+          }
+
+          @include desktop {
+            left: vc(-266);
+            bottom: vc(-174);
+
+            @include size(688, 723);
+          }
+        }
+
+        &--3 {
+          right: 0;
+          bottom: 0;
+          z-index: 3;
+
+          @include size(78, 85);
+
+          @include tablet {
+            @include size(197, 215);
+          }
+
+          @include desktop {
+            right: vc(-42);
+            bottom: vc(-105);
+
+            @include size(627, 684);
+          }
+        }
+      }
+    }
+
+    &--7 {
+      padding: vc(32) 0 vc(361);
+
+      @include tablet {
+        padding: vc(106) 0 vc(144);
+      }
+
+      @include desktop {
+        padding: vc(382) 0 vc(572);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(15);
+
+        @include tablet {
+          margin-bottom: vc(20);
+        }
+
+        @include desktop {
+          margin-bottom: vc(24);
+        }
+      }
+
+      #{$p}__text {
+        margin-bottom: vc(15);
+
+        &:last-child {
+          margin-top: vc(0);
+        }
+
+        @include desktop {
+          &:last-child {
+            margin-top: vc(35);
+          }
+        }
+      }
+
+      #{$p}__info {
+        @include tablet {
+          width: vc(307);
+        }
+
+        @include desktop {
+          width: vc(403);
+          margin-right: vc(303);
+        }
+      }
+
+      #{$p}__image-box {
+        position: absolute;
+        left: vc(-39);
+        bottom: vc(-347);
+
+        @include size(421, 402);
+
+        @include tablet {
+          left: vc(-89);
+          bottom: vc(-164);
+
+          @include size(517, 494);
+        }
+
+        @include desktop {
+          left: vc(-344);
+          bottom: vc(-533);
+
+          @include size(1333, 1275);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          bottom: vc(103);
+          right: vc(109);
+
+          @include size(262, 237);
+
+          @include tablet {
+            bottom: vc(129);
+            right: vc(136);
+
+            @include size(322, 291);
+          }
+
+          @include desktop {
+            bottom: vc(334);
+            right: vc(354);
+
+            @include size(828, 748);
+          }
+        }
+
+        &--2 {
+          display: none;
+
+          @include tablet {
+            display: block;
+            right: vc(-168);
+            bottom: vc(-44);
+
+            @include size(299, 272);
+          }
+
+          @include desktop {
+            right: vc(-387);
+            bottom: vc(-37);
+
+            @include size(959, 873);
+          }
+        }
+
+        &--3 {
+          display: none;
+
+          @include tablet {
+            display: block;
+            right: vc(12);
+            bottom: vc(13);
+
+            @include size(46, 216);
+          }
+
+          @include desktop {
+            right: vc(182);
+            bottom: vc(143);
+
+            @include size(147, 693);
+          }
+        }
+
+        &--4 {
+          top: vc(-10);
+          right: vc(-40);
+
+          @include size(118, 118);
+
+          @include tablet {
+            top: vc(-2);
+            right: vc(-4);
+
+            @include size(141, 141);
+          }
+
+          @include desktop {
+            top: vc(112);
+            right: vc(226);
+
+            @include size(322, 323);
+          }
+        }
+      }
+    }
+
+    &--8 {
+      padding: vc(12) 0 vc(107);
+
+      @include tablet {
+        padding: vc(80) 0 vc(157);
+      }
+
+      @include desktop {
+        padding: vc(126) 0 vc(498);
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(15);
+
+        @include tablet {
+          margin-bottom: vc(20);
+        }
+
+        @include desktop {
+          margin-bottom: vc(25);
+        }
+      }
+
+      #{$p}__text {
+        margin-bottom: vc(15);
+
+        @include desktop {
+          margin-bottom: vc(25);
+          max-width: vc(433);
+
+          &--lead {
+            max-width: vc(758);
+          }
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__info {
+        z-index: 2;
+
+        @include tablet {
+          max-width: vc(312);
+        }
+
+        @include desktop {
+          max-width: vc(758);
+        }
+      }
+
+      #{$p}__image-box {
+        z-index: 1;
+
+        &-img {
+          border-color: $color-pattens-blue-7;
+          z-index: 2;
+
+          @include tablet {
+            border-width: vc(3);
+            border-radius: vc(17);
+          }
+
+          @include desktop {
+            border-width: vc(8);
+            border-radius: vc(40);
+          }
+        }
+
+        @include tablet {
+          top: vc(53);
+
+          @include size(312, 213);
+        }
+
+        @include desktop {
+          @include size(699, 478);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          left: vc(-151);
+          top: vc(-125);
+          max-width: none;
+          z-index: -1;
+
+          @include size(589, 481);
+
+          @include desktop {
+            left: vc(-361);
+            top: vc(-315);
+
+            @include size(1425, 1165);
+          }
+        }
+
+        &--2 {
+          left: vc(-15);
+          bottom: vc(-4);
+
+          @include size(160, 136);
+          z-index: 3;
+
+          @include tablet {
+            left: vc(-65);
+            bottom: vc(-41);
+
+            @include size(251, 214);
+            z-index: 0;
+          }
+
+          @include desktop {
+            left: vc(-129);
+            bottom: vc(-23);
+
+            @include size(713, 609);
+          }
+        }
+
+        &--3 {
+          width: 100%;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    &--9 {
+      z-index: 1;
+      padding: vc(34) 0 vc(207);
+
+      @include tablet {
+        padding: vc(0) 0 vc(116);
+      }
+
+      @include desktop {
+        padding: vc(107) 0 vc(264);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        flex-direction: column-reverse;
+
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__title {
+        font-size: vc(28);
+        line-height: vc(34);
+        margin-bottom: vc(9);
+
+        @include stroke(4, $color-default-white);
+        z-index: 1;
+
+        @include desktop {
+          margin-bottom: vc(20);
+          font-size: vc(70);
+          line-height: vc(84);
+
+          @include stroke(11, $color-default-white);
+        }
+      }
+
+      #{$p}__text {
+        font-weight: 700;
+        font-size: vc(16);
+        line-height: vc(20);
+        color: $color-default-white;
+        z-index: 1;
+
+        @include desktop {
+          font-size: vc(40);
+          line-height: vc(50);
+        }
+      }
+
+      #{$p}__info {
+        width: vc(159);
+        margin: 0 auto;
+
+        @include tablet {
+          margin-left: vc(100);
+          padding-top: vc(50);
+        }
+
+        @include desktop {
+          margin-left: vc(222);
+          padding-top: vc(140);
+          width: vc(400);
+        }
+      }
+
+      #{$p}__image-box {
+        @include size(290, 271);
+        margin-bottom: vc(57);
+
+        &-img {
+          position: relative;
+          z-index: 1;
+        }
+
+        @include tablet {
+          @include size(305, 287);
+          margin: vc(-3) 0 0 vc(13);
+        }
+
+        @include desktop {
+          @include size(803, 747);
+          margin: vc(60) 0 0 vc(-27);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          max-width: none;
+          right: vc(-204);
+          bottom: vc(-193);
+
+          @include size(593, 490);
+
+          @include tablet {
+            right: vc(-149);
+          }
+
+          @include desktop {
+            right: vc(-440);
+            bottom: vc(-480);
+
+            @include size(1504, 1273);
+          }
+        }
+
+        &--2 {
+          max-width: none;
+          top: vc(-121);
+          left: vc(-128);
+
+          @include size(386, 388);
+          z-index: 0;
+
+          @include tablet {
+            top: vc(-71);
+          }
+
+          @include desktop {
+            top: vc(-161);
+            left: vc(-328);
+
+            @include size(963, 969);
+          }
+        }
+
+        &--3 {
+          max-width: none;
+          bottom: vc(-180);
+
+          @include size(167, 168);
+
+          @include tablet {
+            bottom: vc(-30);
+          }
+
+          @include desktop {
+            bottom: vc(10);
+
+            @include size(420, 420);
+          }
+        }
+
+        &--4 {
+          right: vc(-30);
+          bottom: vc(3);
+
+          @include size(49, 49);
+          z-index: 0;
+
+          @include desktop {
+            right: vc(-80);
+
+            @include size(134, 134);
+          }
+        }
+
+        &--5 {
+          right: vc(-31);
+          bottom: vc(-24);
+
+          @include size(64, 64);
+          z-index: 2;
+
+          @include desktop {
+            right: vc(-81);
+            bottom: vc(-72);
+
+            @include size(175, 175);
+          }
+        }
+      }
+    }
+
+    &--10 {
+      padding: vc(60) 0 vc(337);
+
+      @include tablet {
+        padding: vc(64) 0 vc(15);
+      }
+
+      @include desktop {
+        padding: vc(255) 0 vc(469);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+
+          @include tablet {
+            top: vc(-60);
+          }
+
+          @include desktop {
+            top: vc(-170);
+          }
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__image-box {
+        position: absolute;
+        left: vc(-57);
+        bottom: vc(-425);
+
+        @include size(374, 412);
+
+        @include tablet {
+          left: vc(-109);
+          bottom: vc(-154);
+
+          @include size(527, 580);
+        }
+
+        @include desktop {
+          left: vc(-216);
+          bottom: vc(-778);
+
+          @include size(1101, 1211);
+        }
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(15);
+
+        @include tablet {
+          margin-bottom: vc(20);
+          font-size: vc(100);
+          line-height: vc(120);
+        }
+
+        @include desktop {
+          font-size: vc(70);
+          line-height: vc(84);
+        }
+      }
+
+      #{$p}__info {
+        @include tablet {
+          width: vc(312);
+        }
+
+        @include desktop {
+          margin-right: vc(70);
+          width: vc(651);
+        }
+      }
+
+      #{$p}__text {
+        &--lead {
+          font-size: vc(16);
+          line-height: vc(20);
+
+          @include tablet {
+            font-size: vc(18);
+            line-height: vc(23);
+          }
+
+          @include desktop {
+            font-size: vc(24);
+            line-height: vc(30);
+          }
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          display: none;
+
+          @include tablet {
+            display: block;
+            top: vc(-60);
+            right: vc(-97);
+
+            @include size(287, 278);
+          }
+
+          @include desktop {
+            top: vc(321);
+            right: vc(15);
+
+            @include size(619, 599);
+          }
+        }
+      }
+    }
+
+    &--11 {
+      padding: vc(46) 0 vc(98);
+      z-index: 1;
+
+      @include tablet {
+        padding: vc(76) 0 vc(60);
+      }
+
+      @include desktop {
+        padding: vc(256) 0 vc(60);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__info {
+        margin-bottom: vc(43);
+
+        @include tablet {
+          width: vc(321);
+        }
+
+        @include desktop {
+          margin: vc(60) 0 0 vc(187);
+          width: vc(497);
+        }
+      }
+
+      #{$p}__image-box {
+        margin: 0 auto;
+
+        @include size(176, 248);
+        z-index: 1;
+
+        &-img {
+          border-width: vc(4);
+          border-radius: vc(19);
+          z-index: 1;
+
+          @include tablet {
+            border-width: vc(4);
+          }
+
+          @include desktop {
+            border-radius: vc(41);
+            border-width: vc(8);
+          }
+        }
+
+        @include tablet {
+          margin-top: vc(-10);
+          margin-left: vc(43);
+
+          @include size(155, 218);
+        }
+
+        @include desktop {
+          margin-left: auto;
+          margin-right: vc(180);
+
+          @include size(355, 472);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          max-width: none;
+          top: vc(-66);
+          left: vc(-67);
+
+          @include size(402, 388);
+          z-index: -1;
+
+          @include tablet {
+            top: vc(-56);
+            left: vc(-57);
+
+            @include size(353, 340);
+          }
+
+          @include desktop {
+            top: vc(-126);
+            left: vc(-117);
+
+            @include size(764, 736);
+          }
+        }
+
+        &--2 {
+          display: none;
+
+          @include desktop {
+            bottom: vc(17);
+            left: vc(172);
+            display: block;
+
+            @include size(224, 251);
+          }
+        }
+
+        &--3 {
+          right: vc(-130);
+          top: vc(240);
+          z-index: 2;
+
+          @include size(180, 140);
+
+          @include tablet {
+            right: vc(12);
+            top: vc(84);
+
+            @include size(140, 109);
+          }
+
+          @include desktop {
+            right: vc(46);
+            top: vc(284);
+
+            @include size(300, 234);
+          }
+        }
+      }
+    }
+
+    &--12 {
+      padding: vc(30) 0 vc(15);
+
+      @include tablet {
+        padding: vc(62) 0 vc(75);
+      }
+
+      @include desktop {
+        padding: vc(304) 0 vc(113);
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(15);
+
+        @include tablet {
+          margin-bottom: vc(20);
+        }
+
+        @include desktop {
+          margin-bottom: vc(35);
+        }
+      }
+
+      #{$p}__text {
+        @include tablet {
+          font-size: vc(18);
+          line-height: vc(23);
+        }
+
+        @include desktop {
+          width: vc(480);
+        }
+
+        &--lead {
+          font-size: vc(16);
+          line-height: vc(20);
+
+          @include tablet {
+            font-size: vc(18);
+            line-height: vc(23);
+          }
+
+          @include desktop {
+            width: vc(588);
+            font-size: vc(24);
+            line-height: vc(30);
+          }
+        }
+      }
+
+      #{$p}__info {
+        @include tablet {
+          width: vc(313);
+        }
+
+        @include desktop {
+          left: vc(-134);
+          width: vc(588);
+        }
+      }
+
+      #{$p}__image-box {
+        margin: vc(21) 0 0 vc(-6);
+
+        @include size(330, 116);
+
+        img {
+          max-width: none;
+        }
+
+        @include tablet {
+          position: absolute;
+          top: vc(-35);
+          left: vc(-825);
+          margin: 0;
+
+          @include size(1190, 409);
+        }
+
+        @include desktop {
+          top: vc(-49);
+          left: vc(-728);
+
+          @include size(1490, 513);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          left: vc(9);
+          bottom: vc(-44);
+
+          @include size(39, 39);
+
+          @include tablet {
+            left: vc(26);
+            bottom: vc(-56);
+
+            @include size(91, 90);
+          }
+
+          @include desktop {
+            left: vc(-34);
+            bottom: vc(-246);
+
+            @include size(234, 236);
+          }
+        }
+
+        &--2 {
+          right: vc(-32);
+          bottom: vc(-38);
+
+          @include size(93, 93);
+
+          @include tablet {
+            right: vc(-84);
+            bottom: vc(-28);
+
+            @include size(216, 219);
+          }
+
+          @include desktop {
+            right: vc(-104);
+            bottom: vc(-169);
+
+            @include size(561, 565);
+          }
+        }
+      }
+    }
+
+    &--13 {
+      padding: vc(90) 0 vc(50);
+
+      @include tablet {
+        padding: vc(130) 0 vc(20);
+      }
+
+      @include desktop {
+        padding: vc(398) 0 0;
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__info {
+        @include tablet {
+          width: vc(312);
+        }
+
+        @include desktop {
+          left: vc(187);
+          width: vc(480);
+        }
+      }
+
+      #{$p}__title {
+        margin-bottom: vc(15);
+
+        @include tablet {
+          margin-bottom: vc(20);
+        }
+
+        @include desktop {
+          margin-bottom: vc(35);
+        }
+      }
+
+      #{$p}__image-box {
+        margin: vc(19) 0 0 vc(-19);
+
+        @include size(332, 273);
+
+        img {
+          max-width: none;
+        }
+
+        @include tablet {
+          margin: vc(-41) vc(-24) 0 0;
+
+          @include size(364, 300);
+        }
+
+        @include desktop {
+          margin: vc(-129) vc(46) 0 0;
+
+          @include size(718, 592);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          top: vc(59);
+          right: vc(110);
+
+          @include size(80, 78);
+
+          @include tablet {
+            top: vc(93);
+            right: vc(341);
+          }
+
+          @include desktop {
+            top: vc(386);
+            right: auto;
+            left: vc(613);
+
+            @include size(145, 141);
+          }
+        }
+
+        &--2 {
+          right: 0;
+          bottom: vc(17);
+
+          @include size(72, 66);
+
+          @include tablet {
+            right: auto;
+            left: vc(170);
+            bottom: vc(-3);
+          }
+
+          @include desktop {
+            left: vc(240);
+            bottom: vc(72);
+
+            @include size(131, 120);
+          }
+        }
+      }
+    }
+
+    &--14 {
+      padding: vc(66) 0 vc(63);
+
+      @include tablet {
+        padding: vc(64) 0 vc(50);
+      }
+
+      @include desktop {
+        padding: vc(308) 0 vc(140);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+
+          @include tablet {
+            top: vc(-40);
+          }
+
+          @include desktop {
+            top: vc(37);
+          }
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__info {
+        margin-bottom: vc(50);
+
+        @include tablet {
+          margin-bottom: 0;
+        }
+
+        @include desktop {
+          left: vc(97);
+          max-width: vc(512);
+        }
+      }
+
+      #{$p}__image-box {
+        img {
+          border-radius: vc(16);
+          border-width: vc(3);
+          border-color: $color-pattens-blue-7;
+
+          @include desktop {
+            border-width: vc(8);
+            border-radius: vc(40);
+          }
+        }
+
+        @include desktop {
+          top: vc(-40);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          top: vc(251);
+          right: vc(-17);
+
+          @include size(133, 133);
+
+          @include tablet {
+            top: vc(-28);
+            right: vc(19);
+          }
+
+          @include desktop {
+            top: vc(12);
+            right: vc(129);
+
+            @include size(334, 334);
+          }
+        }
+
+        &--2 {
+          display: none;
+
+          @include desktop {
+            display: block;
+            bottom: vc(-59);
+
+            @include size(254, 387);
+          }
+        }
+      }
+    }
+
+    &--15 {
+      padding: vc(50) 0 vc(36);
+
+      @include tablet {
+        padding: vc(119) 0 vc(42);
+      }
+
+      @include desktop {
+        padding: vc(213) 0 vc(184);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        }
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+          gap: vc(20);
+        }
+      }
+
+      #{$p}__info {
+        @include tablet {
+          top: vc(-27);
+        }
+
+        @include desktop {
+          margin-left: vc(80);
+        }
+      }
+
+      #{$p}__image-box {
+        margin-top: vc(20);
+
+        @include tablet {
+          margin-top: 0;
+          flex-shrink: 0;
+
+          @include size(310, 319);
+        }
+
+        @include desktop {
+          margin: vc(-80) 0 0 vc(-140);
+
+          @include size(987, 699);
+          z-index: 4;
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          top: vc(32);
+          right: vc(-42);
+
+          @include size(163, 139);
+
+          @include tablet {
+            right: vc(-3);
+          }
+
+          @include desktop {
+            top: vc(28);
+            right: vc(77);
+
+            @include size(433, 370);
+          }
+        }
+
+        &--2 {
+          bottom: vc(29);
+          left: vc(23);
+
+          @include size(76, 47);
+
+          @include tablet {
+            bottom: vc(68);
+
+            @include size(131, 82);
+          }
+
+          @include desktop {
+            bottom: vc(88);
+            left: vc(-7);
+
+            @include size(359, 225);
+            z-index: 2;
+          }
+        }
+
+        &--3 {
+          width: 100%;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+
+        &--4 {
+          bottom: vc(3);
+          right: vc(-22);
+
+          @include size(117, 77);
+          z-index: 0;
+
+          @include tablet {
+            bottom: vc(27);
+            right: vc(-2);
+
+            @include size(157, 103);
+          }
+
+          @include desktop {
+            bottom: vc(-106);
+            right: vc(-42);
+
+            @include size(675, 443);
+          }
+        }
+      }
+    }
+
+    &--16 {
+      padding: vc(44) 0 vc(32);
+
+      @include tablet {
+        padding: vc(33) 0 vc(22);
+      }
+
+      @include desktop {
+        padding: vc(256) 0 vc(242);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+
+      #{$p}__row {
+        z-index: 2;
+
+        @include tablet {
+          flex-direction: row;
+        }
+      }
+
+      #{$p}__image-box {
+        margin-top: vc(46);
+
+        img {
+          border-radius: vc(16);
+          border-width: vc(3);
+          border-color: $color-pattens-blue-7;
+
+          @include desktop {
+            border-width: vc(8);
+            border-radius: vc(40);
+          }
+        }
+
+        @include tablet {
+          margin: 0;
+          flex-shrink: 0;
+
+          @include size(312, 214);
+        }
+
+        @include desktop {
+          top: vc(-130);
+          margin: 0 vc(40) 0 vc(43);
+
+          @include size(699, 478);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          z-index: 2;
+          right: vc(12);
+          top: vc(24);
+
+          @include size(68, 85);
+
+          @include tablet {
+            right: vc(383);
+            top: vc(-26);
+
+            @include size(90, 111);
+          }
+
+          @include desktop {
+            right: vc(1113);
+            top: vc(81);
+
+            @include size(199, 245);
+          }
+        }
+      }
+    }
+
+    &--17 {
+      padding: vc(37) 0 0;
+
+      @include tablet {
+        padding: vc(117) 0 vc(64);
+      }
+
+      @include desktop {
+        padding: vc(64) 0 vc(231);
+      }
+
+      #{$p}__row {
+        @include tablet {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$p}__image-box {
+        @include tablet {
+          flex-shrink: 0;
+          margin: vc(-64) 0 0 vc(-40);
+
+          @include size(362, 272);
+        }
+
+        @include desktop {
+          margin: vc(-224) vc(90) 0 vc(-160);
+
+          @include size(1017, 768);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          top: vc(-106);
+          right: vc(-92);
+
+          @include size(182, 120);
+
+          @include tablet {
+            top: vc(-146);
+            right: vc(-121);
+
+            @include size(288, 190);
+          }
+
+          @include desktop {
+            top: vc(-466);
+            right: vc(-161);
+
+            @include size(622, 411);
+          }
+        }
+
+        &--2 {
+          bottom: vc(-56);
+          left: vc(-92);
+
+          @include size(182, 120);
+
+          @include tablet {
+            bottom: vc(-146);
+            left: vc(-121);
+
+            @include size(288, 190);
+          }
+
+          @include desktop {
+            bottom: vc(4);
+            left: vc(-171);
+
+            @include size(622, 411);
+          }
+        }
+      }
+    }
+
+    &--18 {
+      padding: vc(54) 0 vc(370);
+
+      @include tablet {
+        padding: vc(43) 0 vc(404);
+      }
+
+      @include desktop {
+        padding: vc(26) 0 vc(1034);
+      }
+
+      #{$p}__bg {
+        &--1 {
+          left: 0;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+
+          @include tablet {
+            top: vc(-110);
+          }
+
+          @include desktop {
+            top: vc(-450);
+          }
+        }
+      }
+
+      #{$p}__text {
+        font-weight: 700;
+        color: $color-pumpkin;
+      }
+
+      #{$p}__row {
+        z-index: 1;
+      }
+
+      #{$p}__image-box {
+        position: absolute;
+        top: vc(68);
+        right: vc(-31);
+
+        @include size(252, 231);
+
+        @include tablet {
+          top: vc(-135);
+          right: vc(-27);
+
+          @include size(406, 373);
+        }
+
+        @include desktop {
+          top: vc(-445);
+          right: vc(-167);
+
+          @include size(1350, 1242);
+        }
+      }
+
+      #{$p}__decor {
+        &--1 {
+          left: vc(-33);
+          bottom: vc(30);
+
+          @include size(246, 273);
+          z-index: 2;
+
+          @include tablet {
+            left: vc(124);
+            bottom: vc(50);
+
+            @include size(396, 440);
+          }
+
+          @include desktop {
+            left: vc(104);
+            bottom: vc(90);
+
+            @include size(876, 974);
+          }
         }
       }
     }
