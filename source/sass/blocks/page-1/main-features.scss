@@ -101,6 +101,7 @@
 
     @include desktop {
       font-size: vc(22);
+      padding: vc(15) vc(45) vc(40);
     }
   }
 
@@ -119,19 +120,19 @@
     filter: drop-shadow(0 vc(3) vc(7) rgba(34, 73, 109, 0.1));
   }
 
-  &__icon--cold ~ &__article-count::before {
+  &__icon--cold~&__article-count::before {
     background-image: url(../img/decoration/main-cold.svg);
   }
 
-  &__icon--truck ~ &__article-count::before {
+  &__icon--truck~&__article-count::before {
     background-image: url(../img/decoration/main-truck.svg);
   }
 
-  &__icon--snowflake ~ &__article-count::before {
+  &__icon--snowflake~&__article-count::before {
     background-image: url(../img/decoration/main-snowflake.svg);
   }
 
-  &__icon--pallets ~ &__article-count::before {
+  &__icon--pallets~&__article-count::before {
     background-image: url(../img/decoration/main-pallets.svg);
   }
 
@@ -145,8 +146,7 @@
     background-position: center;
     background-size: auto 100%;
 
-    @include tablet {
-    }
+    @include tablet {}
 
     @include desktop {
       margin-bottom: vc(25);
@@ -214,20 +214,16 @@
     display: block;
     padding-bottom: 100vw;
     clip-path: url(#svgClipMainIntro);
-    background: linear-gradient(
-      180deg,
-      #7bbaff 0%,
-      #7bbaff 35%,
-      rgba(75, 161, 255, 0) 101.73%
-    );
+    background: linear-gradient(180deg,
+        #7bbaff 0%,
+        #7bbaff 35%,
+        rgba(75, 161, 255, 0) 101.73%);
     filter: drop-shadow(0 vc(6) vc(12) rgba(40, 46, 102, 0.08));
 
     @include desktop {
-      background: linear-gradient(
-        180deg,
-        #7bbaff 0%,
-        rgba(75, 161, 255, 0) 101.73%
-      );
+      background: linear-gradient(180deg,
+          #7bbaff 0%,
+          rgba(75, 161, 255, 0) 101.73%);
     }
   }
 

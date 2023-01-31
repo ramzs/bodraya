@@ -157,7 +157,7 @@
       }
     }
 
-    & > * > *:first-child {
+    &>*>*:first-child {
       margin-top: 0;
     }
   }
@@ -233,7 +233,7 @@
     }
   }
 
-  .is-active > &__button {
+  .is-active>&__button {
     background-image: url(../img/svg/job-position-up.svg);
 
     &::before {

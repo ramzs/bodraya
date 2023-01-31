@@ -250,7 +250,7 @@
 mixin main-banner-image(props)
   aside.main-banner-image
     - const { path, format, image, altText} = props.baseImage;
-    .main-banner-image__inner
+    a(href="#").main-banner-image__inner
       +picture(...props.backgroundImage).main-banner-image__background-image
       picture
         source(srcset="img/" + path + "/" + "lg-" + image + ".webp" + ", " + "img/" + path + "/" + "lg-" + image + "@2x.webp" + " 2x", media="(min-width: 1023px)", type='image/webp')
@@ -267,7 +267,7 @@ mixin main-banner(props)
     .main-banner__animeel
     .main-banner__wrapper
       .main-banner__layer-background
-        .swiper(data-main-banner-slider, data-delay="750", data-speed="10000")
+        .swiper(data-main-banner-slider, data-delay="500", data-speed="6000")
           .parallax-bg(style="background-image:url(img/slides/parallax-bg.svg)", data-swiper-parallax="-35%")
           .swiper-wrapper
             each slide in props.slides

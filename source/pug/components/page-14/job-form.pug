@@ -3,37 +3,46 @@ mixin job-form()
     .job-form__wrapper
       p.job-form__headline!= "Откликнуться на вакансию"
       form(method="post").form.job-form__inner
-        +custom-input({
-          inputPlaceholder: "Фамилия *",
-          inputName: "user-name-1",
-          iconName: "form-user.svg",
-        })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
-        +custom-input({
-          inputPlaceholder: "Имя*",
-          inputName: "user-name-2",
-          iconName: "form-user.svg",
-        })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
-        +custom-input({
-          inputType: "tel",
-          inputPlaceholder: "Телефон *",
-          inputName: "user-phone",
-          iconName: "form-phone.svg"
-        })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
-        +custom-input({
-          inputType: "email",
-          inputPlaceholder: "Электронная почта *",
-          inputName: "user-email",
-          iconName: "form-mail.svg",
-        })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
-        +custom-file({
-          inputId: "file",
-          inputLabel: "Перетащите или прикрепите резюме (doc, pdf, rtf, docs)",
-          inputName: "user-file",
-        })
-        +custom-textarea({
-          inputPlaceholder: "Или добавьте ссылку на hh.ru или superjob.ru",
-          inputName: "user-info"
-        })(data-validate-type="text")
-        .job-form__actions
-          +button({text: "Хочу здесь работать", type: "submit", icon: true}, 'primary').job-form__action
-      .job-form__copy!= "Нажимая на кнопку «Стать дистрибьютором», вы соглашаетесь с политикой <a href='#'>конфиденциальности компании</a>"
+        .job-form__row
+          .job-form__col
+            +custom-input({
+              inputPlaceholder: "Фамилия *",
+              inputName: "user-name-1",
+              iconName: "form-user.svg",
+            })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+          .job-form__col
+            +custom-input({
+              inputPlaceholder: "Имя*",
+              inputName: "user-name-2",
+              iconName: "form-user.svg",
+            })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+          .job-form__col
+            +custom-input({
+              inputType: "tel",
+              inputPlaceholder: "Телефон *",
+              inputName: "user-phone",
+              iconName: "form-phone.svg"
+            })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+          .job-form__col
+            +custom-input({
+              inputType: "email",
+              inputPlaceholder: "Электронная почта *",
+              inputName: "user-email",
+              iconName: "form-mail.svg",
+            })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+        .job-form__row.job-form__row--wide
+          +custom-file({
+            inputId: "file",
+            inputLabel: "Перетащите или прикрепите резюме (doc, pdf, rtf, docs)",
+            inputName: "user-file",
+          })
+        .job-form__row.job-form__row--wide
+          .job-form__col
+            .job-form__textarea-decoration
+              +custom-textarea({
+                inputPlaceholder: "Или добавьте ссылку на hh.ru или superjob.ru",
+                inputName: "user-info"
+              })(data-validate-type="text").job-form__textarea
+              .job-form__actions
+                +button({text: "Хочу здесь работать", type: "submit"}, 'primary').job-form__action
+      .job-form__copy!= "Нажимая на кнопку «Хочу здесь работать» вы соглашаетесь с <a href='#'>политикой конфиденциальности</a> компании"

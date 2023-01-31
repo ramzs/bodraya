@@ -1,0 +1,52 @@
+mixin product-form()
+  .product-form(data-form-validate, data-callback="base")&attributes(attributes)
+    .product-form__wrapper
+      form(method="post").form.product-form__inner
+        .product-form__row.product-form__row--wrapper
+          .product-form__col.product-form__col--left
+            .product-form__row
+              .product-form__col
+                +custom-input({
+                  inputPlaceholder: "Фамилия *",
+                  inputName: "user-name-1",
+                  iconName: "form-user.svg",
+                })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+              .product-form__col
+                +custom-input({
+                  inputPlaceholder: "Имя *",
+                  inputName: "user-name-2",
+                  iconName: "form-user.svg",
+                })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+            .product-form__row
+              .product-form__col
+                +custom-input({
+                  inputType: "tel",
+                  inputPlaceholder: "Телефон *",
+                  inputName: "user-phone",
+                  iconName: "form-phone.svg"
+                })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+              .product-form__col
+                +custom-input({
+                  inputType: "email",
+                  inputPlaceholder: "Электронная почта *",
+                  inputName: "user-email",
+                  iconName: "form-mail.svg",
+                })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+            .product-form__row.product-form__row--wide
+              .product-form__col
+                +custom-file({
+                  inputId: "file",
+                  inputLabel: "Прикрепите или перетащите файл",
+                  inputName: "user-file",
+                })
+          .product-form__col.product-form__col--right
+            .product-form__row.product-form__row--wide
+              .product-form__col
+                .product-form__textarea-decoration
+                  +custom-textarea({
+                    inputPlaceholder: "Напишите сообщение...",
+                    inputName: "user-info"
+                  })(data-validate-type="text").product-form__textarea
+                  .product-form__actions
+                    +button({text: "Отправить", type: "submit"}, 'primary').product-form__action
+        .product-form__copy!= "Нажимая кнопку «Отправить» вы соглашаетесь с <a href='#'>конфиденциальности компании</a>"

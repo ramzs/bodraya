@@ -36,7 +36,7 @@
     }
   }
 
-  &__layer-background > .swiper {
+  &__layer-background>.swiper {
     position: absolute;
     top: 0;
     left: 0;
@@ -163,7 +163,7 @@
     }
   }
 
-  &__wrapper > .container {
+  &__wrapper>.container {
     @include desktop {
       display: flex;
       align-items: flex-end;
@@ -244,13 +244,13 @@
     }
   }
 
-  &__headline > span {
+  &__headline>span {
     position: relative;
     display: inline-block;
     color: $color-pumpkin;
   }
 
-  &__headline > span::after {
+  &__headline>span::after {
     content: "";
     position: absolute;
     top: calc(50% + 0.65em);
@@ -348,7 +348,7 @@
     opacity: 0;
   }
 
-  &__slide.is-active > * {
+  &__slide.is-active>* {
     transform-origin: center bottom;
     transform: scale(1.25);
     box-shadow: 0 vc(7) vc(14) vc(-3) rgba(43, 69, 94, 0.09);
@@ -357,15 +357,15 @@
     cursor: default;
   }
 
-  &__slide.swiper-slide-prev.is-active > * {
+  &__slide.swiper-slide-prev.is-active>* {
     transform-origin: right vc(-10) bottom;
   }
 
-  &__slide.swiper-slide-next.is-active > * {
+  &__slide.swiper-slide-next.is-active>* {
     transform-origin: left vc(-10) bottom;
   }
 
-  &__slide:not(.is-active) > * {
+  &__slide:not(.is-active)>* {
     @include hover-focus {
       transform: translateY(vc(-7));
 
@@ -469,6 +469,7 @@
 
   &__inner {
     position: relative;
+    display: block;
     padding-bottom: 100%;
   }
 

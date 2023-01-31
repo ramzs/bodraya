@@ -1,5 +1,8 @@
 .main-map {
+  position: relative;
+
   &__wrapper {
+    padding-bottom: vc(5);
     margin-bottom: vc(60);
 
     @include tablet {
@@ -8,6 +11,7 @@
 
     @include desktop {
       margin-bottom: vc(175);
+      overflow: hidden;
     }
   }
 
@@ -16,6 +20,7 @@
   }
 
   &__headline {
+    display: block;
     margin: vc(40) 0 vc(30);
     font-weight: 700;
     font-size: vc(24);
@@ -36,7 +41,7 @@
       margin-top: vc(200);
       margin-bottom: vc(50);
       font-size: vc(58);
-      text-align: left;
+      text-align: center;
     }
   }
 
@@ -44,15 +49,30 @@
     display: block;
     max-width: 100%;
     width: 100%;
+    z-index: 2;
     padding: vc(15) vc(50);
     color: $color-arapawa;
-    background-color: $color-alice-blue-2;
+    background-color: rgba($color-alice-blue-2, .9);
     border: vc(1) solid #ffffff;
     border-radius: vc(15);
+    backdrop-filter: blur(4.5px);
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: vc(15);
+      right: vc(10);
+      width: 36px;
+      height: 24px;
+      background-image: url(../img/svg/headline-bracket.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
 
     @include tablet {
       position: absolute;
-      top: vc(115);
+      top: vc(130);
       right: vc(20);
       max-width: vc(140);
       padding: vc(15) vc(10);
@@ -60,7 +80,7 @@
     }
 
     @include desktop {
-      right: vc(35);
+      right: vc(55);
       padding: vc(35) vc(40);
       max-width: vc(240);
       border-width: vc(3);
@@ -87,14 +107,15 @@
     }
 
     @include desktop {
-      margin-top: vc(180);
+      margin-left: vc(60);
+      margin-top: vc(135);
       padding: vc(55) vc(65);
       font-size: vc(33);
       border-width: vc(3);
       border-radius: vc(30);
     }
 
-    & > p {
+    &>p {
       margin: 0;
     }
   }
@@ -128,6 +149,12 @@
 
     @include desktop {
       font-size: vc(20);
+    }
+  }
+
+  &__item {
+    +.main-map__item {
+      margin-top: 5px;
     }
   }
 
@@ -174,11 +201,15 @@
   }
 
   &__map-box {
+
+
     @include tablet {
       margin-top: vc(-50);
     }
+
     @include desktop {
-      margin-top: vc(-100);
+      margin-top: vc(-190);
+      width: calc(1750*var(--width-multiplier));
     }
   }
 
@@ -229,6 +260,17 @@
     padding-right: vc(10);
     padding-left: vc(10);
     font-size: vc(14);
+    will-change: transform;
+    transition: transform $trans-300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+
+      &.button--white {
+        color: $color-pumpkin;
+      }
+    }
   }
 
   &__swiper-scrollbar {
@@ -236,6 +278,70 @@
 
     @include desktop {
       display: none;
+    }
+  }
+
+  &__spoiler {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin-top: vc(60);
+    transition: visibility $trans-300, opacity $trans-300;
+
+    &.is-open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__spoiler-wrap {
+    width: 100%;
+    padding: vc(15);
+    background-color: rgba($color-alice-blue-2, .9);
+    border: vc(1) solid #ffffff;
+    border-radius: vc(15);
+    backdrop-filter: blur(5px);
+
+    @include desktop {
+      padding: vc(30) vc(50) vc(25);
+    }
+  }
+
+  &__regions-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    column-count: 2;
+    column-gap: 20px;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: column;
+      grid-template-rows: repeat(12, 1fr);
+      grid-column-gap: 20px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+    }
+  }
+
+  &__regions-item {
+    margin-bottom: vc(5);
+    font-size: 14px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    &.is-active {
+      font-weight: 600;
     }
   }
 }

@@ -1,0 +1,252 @@
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &--product {
+    #{$block-name}__decoration {
+      position: absolute;
+      top: vc(-40);
+      left: vc(-20);
+      display: block;
+      width: vc(65);
+      height: vc(65);
+      background-image: url(../img/decoration/modal-product.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include retina {
+        background-image: url(../img/decoration/modal-product@2x.png);
+      }
+
+      @include tablet {
+        top: vc(-80);
+        left: vc(-50);
+        width: vc(145);
+        height: vc(145);
+      }
+
+      @include desktop {
+        top: vc(-105);
+        left: vc(-105);
+        width: vc(250);
+        height: vc(250);
+      }
+    }
+
+    #{$block-name}__content {
+      max-width: vc(1520);
+      padding: vc(55) vc(20) vc(30);
+      text-align: left;
+      border: vc(4) solid $color-default-white;
+      background-repeat: no-repeat;
+      background-size: vc(225) auto;
+      background-position: bottom right;
+      border-radius: vc(30);
+
+      @include tablet {
+        padding: vc(55) vc(75) vc(40);
+      }
+
+      @include desktop {
+        padding: vc(70) vc(150) vc(80);
+        background-image: url(../img/decoration/modal-product-bg.svg);
+      }
+    }
+
+    #{$block-name}__inner {
+      position: relative;
+    }
+
+    #{$block-name}__grid {
+      display: grid;
+      grid-template-columns: 100%;
+      gap: vc(30);
+
+      @include tablet {
+        gap: vc(40);
+      }
+
+      @include desktop {
+        grid-template-columns: vc(575) calc(100% - vc(575) - vc(55));
+        gap: vc(55);
+      }
+    }
+
+    #{$block-name}__close-btn {
+      top: vc(14);
+      right: vc(14);
+
+      @include tablet {
+        top: vc(28);
+        right: vc(28);
+      }
+
+      @include desktop {
+        top: vc(20);
+        right: vc(20);
+      }
+    }
+
+    #{$block-name}__desc {
+      font-weight: 300;
+      font-size: vc(14);
+      line-height: 1.35;
+      font-family: $ff-geometria;
+
+      @include tablet {
+        font-size: vc(16);
+      }
+
+      @include desktop {
+        font-size: vc(18);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 vc(5);
+        font-weight: 700;
+        font-size: vc(16);
+        line-height: 1.3;
+
+        @include tablet {
+          margin-bottom: vc(25);
+          font-size: vc(25);
+        }
+
+        @include desktop {
+          margin-bottom: vc(35);
+          font-size: vc(32);
+        }
+      }
+
+      p {
+        font-weight: 500;
+        margin: vc(15) 0;
+
+        @include desktop {
+          margin: vc(35) 0 vc(70);
+        }
+      }
+
+      ul {
+        margin: vc(20) 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      ul:last-of-type {
+        margin-bottom: 0;
+      }
+
+      b,
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    #{$block-name}__swiper--thumb {
+      margin-top: vc(5);
+
+      padding-right: vc(35);
+      padding-left: vc(35);
+
+      @include tablet {
+        margin-top: vc(15);
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @include desktop {
+        margin-top: vc(20);
+      }
+
+      .swiper {
+        margin-right: vc(-5);
+        margin-left: vc(-5);
+
+        @include tablet {
+          margin-right: calc(vc(-15) / 2);
+          margin-left: calc(vc(-15) / 2);
+        }
+      }
+
+      .swiper-slide {
+        padding-right: vc(5);
+        padding-left: vc(5);
+
+        @include tablet {
+          padding-right: calc(vc(15) / 2);
+          padding-left: calc(vc(15) / 2);
+        }
+      }
+
+      .is-active {
+        opacity: 0.55;
+      }
+    }
+
+    #{$block-name}__image-wrapper {
+      position: relative;
+      padding-bottom: 100%;
+      background-color: $color-default-white;
+      border-radius: vc(10);
+
+      @include tablet {
+        border-radius: vc(25);
+      }
+
+      @include desktop {
+        border-radius: vc(30);
+      }
+    }
+
+    #{$block-name}__image-wrapper img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
+  }
+
+  .btn-navigation {
+    position: absolute;
+    top: vc(260);
+
+    @include desktop {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .btn-navigation--prev {
+    left: 0;
+
+    @include tablet {
+      left: vc(-55);
+    }
+
+    @include desktop {
+      left: vc(-95);
+    }
+  }
+
+  .btn-navigation--next {
+    right: 0;
+
+    @include tablet {
+      right: vc(-55);
+    }
+
+    @include desktop {
+      right: vc(-95);
+    }
+  }
+}

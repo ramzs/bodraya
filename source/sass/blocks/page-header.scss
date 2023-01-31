@@ -116,8 +116,9 @@
     background-size: 100% 100%;
     border: none;
     cursor: pointer;
+    will-change: transform;
 
-    transition: color $trans-300;
+    transition: color $trans-300, transform $trans-300;
 
     @include tablet {
       min-width: vc(180);
@@ -136,7 +137,8 @@
     }
 
     @include hover-focus {
-      color: rgba($color: $color-default-white, $alpha: 0.75);
+      color: $color-default-white;
+      transform: scale(1.1);
     }
   }
 
@@ -226,7 +228,7 @@
     transform: rotate(6.5deg);
   }
 
-  &__menu-toggle > &__toggle-title {
+  &__menu-toggle>&__toggle-title {
     position: absolute;
     top: 50%;
     left: 0;

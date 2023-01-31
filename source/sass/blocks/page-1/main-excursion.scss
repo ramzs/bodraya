@@ -26,7 +26,7 @@
     }
   }
 
-  &__content > p {
+  &__content>p {
     margin: 0;
     color: $color-arapawa;
     font-size: vc(16);
@@ -37,11 +37,15 @@
     }
   }
 
-  &__content > p:not(:last-of-type) {
+  &__content>p:not(:last-of-type) {
     margin-bottom: vc(15);
 
     @include tablet {
       margin-bottom: vc(20);
+    }
+
+    @include desktop {
+      padding-right: vc(110);
     }
   }
 
@@ -63,8 +67,47 @@
     }
 
     @include desktop {
-      margin-top: vc(50);
+      margin-top: vc(68);
       text-align: left;
+    }
+  }
+
+  &__action {
+    border-bottom-right-radius: vc(15);
+
+    @include desktop {
+      border-bottom-right-radius: vc(30);
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+
+      .button__icon {
+        transform: translateY(-55%) scale(.9);
+      }
+    }
+
+    .button__icon {
+      right: vc(-83);
+      width: vc(130);
+      height: vc(130);
+      background-image: url(../img/decoration-buttons/excursion-btn.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      will-change: transform;
+
+      @include tablet {
+        right: vc(-90);
+        width: vc(140);
+        height: vc(140);
+      }
+
+      @include desktop {
+        right: vc(-110);
+        width: vc(180);
+        height: vc(180);
+      }
     }
   }
 
@@ -73,7 +116,8 @@
     gap: vc(45);
 
     @include desktop {
-      grid-template-columns: repeat(2, calc((100% - vc(45)) / 2));
+      // grid-template-columns: repeat(2, calc((100% - vc(45)) / 2));
+      grid-template-columns: repeat(2, calc((100% + vc(65))/2));
     }
   }
 
@@ -103,7 +147,7 @@
     max-width: vc(185);
 
     @include tablet {
-      transform: translateY(vc(35));
+      transform: translateY(vc(12));
       max-width: vc(280);
     }
 

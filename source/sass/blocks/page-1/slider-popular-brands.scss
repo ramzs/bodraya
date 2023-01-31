@@ -1,4 +1,5 @@
 .slider-popular-brands {
+  position: relative;
   $block-name: &; // #{$block-name}__element
 
   &__wrapper {

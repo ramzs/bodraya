@@ -1,4 +1,37 @@
 .main-intro {
+  position: relative;
+
+  &__decoration {
+    position: absolute;
+
+    &-icon-1 {
+      top: vc(25);
+      left: 0;
+      width: 107px;
+      height: 114px;
+      background: url(../img/decoration/main-intro-decoration-1.png) center no-repeat;
+      background-size: contain;
+    }
+
+    &-icon-2 {
+      top: vc(-75);
+      right: 0;
+      width: 108px;
+      height: 155px;
+      background: url(../img/decoration/main-intro-decoration-2.png) center no-repeat;
+      background-size: contain;
+    }
+
+    &-icon-3 {
+      bottom: vc(120);
+      left: vc(25);
+      width: 65px;
+      height: 69px;
+      background: url(../img/decoration/main-intro-decoration-3.png) center no-repeat;
+      background-size: contain;
+    }
+  }
+
   &__grid {
     @include desktop {
       display: grid;

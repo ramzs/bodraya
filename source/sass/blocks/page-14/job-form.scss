@@ -21,6 +21,144 @@
     }
   }
 
+  &__row {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    gap: vc(20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, calc((100% - vc(20)) / 2));
+      column-gap: vc(20);
+      row-gap: vc(25);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(2, calc((100% - vc(30)) / 2));
+      column-gap: vc(30);
+      row-gap: vc(20);
+    }
+  }
+
+  &__row--wide {
+    @include tablet {
+      grid-template-columns: auto;
+    }
+
+    @include desktop {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__textarea-decoration {
+    position: relative;
+
+    @include tablet {
+      background-color: transparent;
+      background-image: url(../img/svg/main-contact-us-textarea-md.svg);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100% auto;
+    }
+
+    @include desktop {
+      background-image: url(../img/svg/main-contact-us-textarea-lg.svg);
+    }
+  }
+
+  &__textarea.form__message textarea {
+    min-height: vc(270);
+    border-radius: vc(5);
+    clip-path: url(#svgClipTextarea1sm);
+
+    @include tablet {
+      min-height: vc(145);
+      height: vc(145);
+      max-width: calc(100% - vc(230));
+      padding-right: vc(10);
+      clip-path: none;
+      background-color: transparent;
+    }
+  }
+
+  &__actions {
+    margin-top: vc(10);
+    padding: 0 vc(30);
+    text-align: center;
+
+    @include tablet {
+      padding: 0;
+      margin-top: vc(-55);
+      text-align: right;
+    }
+
+    @include desktop {
+      margin-top: vc(-55);
+    }
+  }
+
+  &__action {
+    max-width: 100%;
+    width: 100%;
+    border-radius: vc(12);
+    border-top-left-radius: 0;
+
+    @include tablet {
+      max-width: vc(210);
+    }
+
+    @include desktop {
+      padding-top: vc(10);
+      padding-left: vc(10);
+      padding-right: vc(10);
+      padding-bottom: vc(20);
+      font-size: vc(18);
+    }
+
+    &::after {
+      top: vc(-10);
+      transform: rotateZ(4deg) skewX(2deg);
+      border-radius: vc(12) vc(12) 0 0;
+    }
+  }
+
+  .custom-file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 69px;
+    margin: 20px 0;
+    padding-left: 84px;
+    overflow: hidden;
+    border-radius: 52px;
+    background: #FFFFFF;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: vc(36);
+      width: 24px;
+      height: 26px;
+      transform: translateY(-50%);
+      background: url(../img/form/upload.svg) center no-repeat;
+      background-size: contain;
+    }
+
+    label {
+      width: 100%;
+    }
+
+    &__label {
+      display: block;
+      font-size: 18px;
+      color: rgba(#22496D, .7);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
   &__copy {
     margin: vc(20) 0 0;
     font-size: vc(14);

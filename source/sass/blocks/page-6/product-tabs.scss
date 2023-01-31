@@ -30,13 +30,20 @@
 
   &__controls {
     display: flex;
-    gap: vc(20);
+    flex-direction: column;
+    gap: 0;
+
+    @include tablet {
+      flex-direction: row;
+      gap: vc(20);
+    }
   }
 
   &__control {
     width: 100%;
     border: none;
-    padding: vc(15) vc(25);
+    padding: vc(15) vc(25) vc(30);
+    margin-bottom: vc(-15);
     border-radius: vc(15) vc(15) 0 0;
     font-weight: 500;
     font-size: vc(14);
@@ -50,6 +57,11 @@
 
     &.is-active {
       background: $color-pattens-blue-5;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+      padding: vc(15) vc(25);
     }
 
     @include desktop {
@@ -287,6 +299,11 @@
     &--take {
       height: vc(662);
     }
+  }
+
+  &__product-form {
+    max-width: 100%;
+    width: 100%;
   }
 
   &__icons {
@@ -605,7 +622,12 @@
     &-info {
       flex: 0 0 auto;
       width: 100%;
-      max-width: vc(694);
+      max-width: 100%;
+      width: 100%;
+
+      @include tablet {
+        max-width: calc(50% - vc(20));
+      }
 
       #{$p}__text {
         font-size: vc(14);
@@ -645,10 +667,6 @@
           font-size: vc(18);
           line-height: vc(23);
         }
-      }
-
-      @include tablet {
-        width: calc(50% - vc(20));
       }
     }
 
@@ -730,6 +748,16 @@
     @include desktop {
       padding: vc(34);
       gap: vc(75);
+    }
+  }
+
+  &__product-form {
+    margin-top: vc(40);
+    margin-bottom: vc(20);
+
+    @include desktop {
+      margin-top: vc(80);
+      margin-bottom: 0;
     }
   }
 }

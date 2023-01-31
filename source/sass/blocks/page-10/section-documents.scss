@@ -177,7 +177,8 @@
     display: inline-block;
     padding: vc(20);
     min-width: vc(120);
-    width: auto;
+    width: 100%;
+    height: 100%;
     font-weight: 500;
     font-size: vc(14);
     font-family: $ff-geometria;
@@ -191,7 +192,7 @@
     transition: color $trans-300, background-color $trans-300;
 
     @include tablet {
-      padding: vc(25) vc(20);
+      padding: vc(25) vc(10);
       font-size: vc(20);
       line-height: 1;
     }
@@ -233,11 +234,55 @@
     .swiper-wrapper {
       display: flex;
       flex-wrap: wrap;
-      gap: vc(20);
+      width: auto;
+      margin: 0 -10px;
+      // display: grid;
+      // grid-template-columns: repeat(4, auto);
+      // gap: vc(20);
     }
 
     .swiper-slide {
+      height: auto;
       padding: 0;
+
+      @include tablet {
+        width: calc((100% / 3) - 20px);
+        margin: 0 10px 20px;
+
+        &:nth-child(5) {
+          width: calc((100% / 3) - 20px);
+        }
+
+        &:nth-child(6) {
+          width: calc((100% / 3) - 20px);
+        }
+
+        &:nth-child(7) {
+          width: calc(50% - 20px);
+        }
+
+        &:nth-child(8) {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @include desktop {
+        width: calc(25% - 20px);
+        margin: 0 10px 20px;
+
+        &:nth-child(5) {
+          width: calc(28% - 20px);
+        }
+
+        &:nth-child(6),
+        &:nth-child(7) {
+          width: calc(23% - 20px);
+        }
+
+        &:nth-child(8) {
+          width: calc(26% - 20px);
+        }
+      }
     }
   }
 }

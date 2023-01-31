@@ -30,6 +30,17 @@
       align-items: center;
       justify-content: center;
       font-size: vc(14);
+      will-change: transform;
+      transition: transform $trans-300;
+
+      @include hover-focus {
+        color: $color-default-white;
+        transform: scale(1.1);
+
+        &.button--white {
+          color: $color-pumpkin;
+        }
+      }
 
       @include tablet {
         white-space: nowrap;

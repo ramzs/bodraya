@@ -129,39 +129,6 @@
     }
   }
 
-  &__actions {
-    margin-top: vc(-20);
-    padding: 0 vc(30);
-    text-align: center;
-
-    @include tablet {
-      padding: 0;
-      margin-top: vc(-45);
-      text-align: right;
-    }
-
-    @include desktop {
-      margin-top: vc(-55);
-    }
-  }
-
-  &__action {
-    max-width: 100%;
-    width: 100%;
-
-    @include tablet {
-      max-width: vc(215);
-    }
-  }
-
-  textarea {
-    min-height: vc(250);
-
-    @include tablet {
-      min-height: vc(145);
-    }
-  }
-
   &__copy {
     margin: 0;
     font-size: vc(14);
@@ -173,6 +140,14 @@
     @include desktop {
       margin-top: vc(-10);
       text-align: right;
+    }
+  }
+
+  &__copy a {
+    transition: color $trans-300;
+
+    @include hover-focus {
+      color: $color-pumpkin;
     }
   }
 
@@ -190,6 +165,8 @@
       background-repeat: no-repeat;
       background-position: right center;
       background-size: contain;
+      user-select: none;
+      pointer-events: none;
 
       @include retina {
         background-image: url(../img/decoration/main-contact-us@2x.png);
@@ -197,34 +174,106 @@
     }
   }
 
-  .custom-select {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    width: 100%;
+  &__textarea-decoration {
+    position: relative;
 
-    &__button {
-      min-height: vc(68);
-      background-color: $color-default-white;
-      border-radius: vc(52);
-      border: none;
+    @include tablet {
+      background-color: transparent;
+      background-image: url(../img/svg/main-contact-us-textarea-md.svg);
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100% auto;
     }
 
-    &__placeholder {
-      transform: translateY(-50%);
-      padding: vc(22) vc(20);
-      color: $color-arapawa;
-      opacity: 0.7;
-    }
-
-    &__icon {
-      display: block;
-      width: vc(46);
-      height: vc(46);
-      margin-right: vc(12);
-      border-radius: 50%;
-      background: #f5f5f5;
-      clip-path: none;
+    @include desktop {
+      background-image: url(../img/svg/main-contact-us-textarea-lg.svg);
     }
   }
+
+  &__textarea.form__message textarea {
+    min-height: vc(270);
+    border-radius: vc(5);
+    clip-path: url(#svgClipTextarea1sm);
+    box-shadow: none;
+
+    @include tablet {
+      min-height: vc(145);
+      height: vc(145);
+      max-width: calc(100% - vc(230));
+      padding-right: vc(10);
+      clip-path: none;
+      background-color: transparent;
+    }
+  }
+
+  &__actions {
+    margin-top: vc(10);
+    padding: 0 vc(30);
+    text-align: center;
+
+    @include tablet {
+      padding: 0;
+      margin-top: vc(-55);
+      text-align: right;
+    }
+
+    @include desktop {
+      margin-top: vc(-55);
+    }
+  }
+
+  &__action {
+    max-width: 100%;
+    width: 100%;
+    border-radius: vc(12);
+    border-top-left-radius: 0;
+
+    @include tablet {
+      max-width: vc(210);
+    }
+
+    @include desktop {
+      padding-top: vc(10);
+      padding-left: vc(35);
+      padding-bottom: vc(20);
+      font-size: vc(18);
+    }
+
+    &::after {
+      top: vc(-10);
+      transform: rotateZ(4deg) skewX(2deg);
+      border-radius: vc(12) vc(12) 0 0;
+    }
+  }
+
+  // .custom-select {
+  //   margin: 0;
+  //   padding: 0;
+  //   max-width: 100%;
+  //   width: 100%;
+
+  //   &__button {
+  //     min-height: vc(68);
+  //     background-color: $color-default-white;
+  //     border-radius: vc(52);
+  //     border: none;
+  //   }
+
+  //   &__placeholder {
+  //     transform: translateY(-50%);
+  //     padding: vc(22) vc(20);
+  //     color: $color-arapawa;
+  //     opacity: 0.7;
+  //   }
+
+  //   &__icon {
+  //     display: block;
+  //     width: vc(46);
+  //     height: vc(46);
+  //     margin-right: vc(12);
+  //     border-radius: 50%;
+  //     background: #f5f5f5;
+  //     clip-path: none;
+  //   }
+  // }
 }
