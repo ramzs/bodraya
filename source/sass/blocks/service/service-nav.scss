@@ -23,7 +23,7 @@
     // gap: vc(10);
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 20px;
+    grid-gap: vc(20);
   }
 
   &__swiper-scrollbar {
