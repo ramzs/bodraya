@@ -41,7 +41,7 @@
       background-image: url(../img/decoration/four-contacts.svg);
     }
 
-    > span {
+    >span {
       position: relative;
     }
   }
@@ -83,7 +83,8 @@
     background-size: vc(15) auto;
 
     @include hover-focus {
-      color: $color-pumpkin;
+      color: $color-blue;
+      background-image: url(../img/decoration/pin-contacts-blue.svg);
     }
   }
 
@@ -107,7 +108,7 @@
     }
   }
 
-  &__articles > &__article {
+  &__articles>&__article {
     display: grid;
     gap: vc(60);
 

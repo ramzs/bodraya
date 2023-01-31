@@ -101,8 +101,7 @@
     font-family: $ff-myriad-pro;
     text-align: center;
 
-    @include tablet {
-    }
+    @include tablet {}
 
     @include desktop {
       padding: vc(65) vc(20) vc(45);
@@ -116,7 +115,7 @@
     transition: color $trans-300;
 
     @include hover-focus {
-      color: rgba($color: $color-default-white, $alpha: 0.75);
+      color: $color-default-white;
     }
   }
 

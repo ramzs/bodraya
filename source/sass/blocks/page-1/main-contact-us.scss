@@ -147,6 +147,7 @@
     transition: color $trans-300;
     text-decoration: underline;
 
+
     @include hover-focus {
       color: $color-pumpkin;
     }
@@ -183,7 +184,8 @@
       background-image: url(../img/svg/main-contact-us-textarea-md.svg);
       background-repeat: no-repeat;
       background-position: top center;
-      background-size: 100%;
+      background-size: 100% auto;
+
     }
 
     @include desktop {
@@ -194,7 +196,8 @@
   &__textarea.form__message textarea {
     min-height: vc(270);
     border-radius: vc(5);
-    clip-path: url(#svgClipTextareaSm);
+
+    clip-path: url(#svgClipTextarea1sm);
     box-shadow: none;
 
     @include tablet {
@@ -227,6 +230,8 @@
     max-width: 100%;
     width: 100%;
     border-radius: vc(12);
+    border-top-left-radius: 0;
+
 
     @include tablet {
       max-width: vc(210);
@@ -245,4 +250,35 @@
       border-radius: vc(12) vc(12) 0 0;
     }
   }
+
+  // .custom-select {
+  //   margin: 0;
+  //   padding: 0;
+  //   max-width: 100%;
+  //   width: 100%;
+
+  //   &__button {
+  //     min-height: vc(68);
+  //     background-color: $color-default-white;
+  //     border-radius: vc(52);
+  //     border: none;
+  //   }
+
+  //   &__placeholder {
+  //     transform: translateY(-50%);
+  //     padding: vc(22) vc(20);
+  //     color: $color-arapawa;
+  //     opacity: 0.7;
+  //   }
+
+  //   &__icon {
+  //     display: block;
+  //     width: vc(46);
+  //     height: vc(46);
+  //     margin-right: vc(12);
+  //     border-radius: 50%;
+  //     background: #f5f5f5;
+  //     clip-path: none;
+  //   }
+  // }
 }

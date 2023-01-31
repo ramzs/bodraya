@@ -34,7 +34,6 @@
       max-width: vc(770);
     }
   }
-
   &__row {
     display: grid;
     margin: 0;
@@ -74,6 +73,11 @@
       background-image: url(../img/svg/main-contact-us-textarea-md.svg);
       background-repeat: no-repeat;
       background-position: top center;
+      background-size: 100% auto;
+    }
+
+    @include desktop {
+      background-image: url(../img/svg/main-contact-us-textarea-lg.svg);
       background-size: 100%;
     }
 
@@ -85,7 +89,7 @@
   &__textarea.form__message textarea {
     min-height: vc(270);
     border-radius: vc(5);
-    clip-path: url(#svgClipTextareaSm);
+    clip-path: url(#svgClipTextarea1sm);
     box-shadow: none;
 
     &::placeholder {
@@ -117,7 +121,7 @@
     }
 
     @include desktop {
-      margin-top: vc(-60);
+      margin-top: vc(-55);
     }
   }
 
@@ -125,20 +129,61 @@
     max-width: 100%;
     width: 100%;
     border-radius: vc(12);
+    border-top-left-radius: 0;
 
     @include tablet {
       max-width: vc(210);
     }
 
     @include desktop {
-      padding-right: vc(10);
+      padding-top: vc(10);
       padding-left: vc(10);
+      padding-right: vc(10);
+      padding-bottom: vc(20);
+      font-size: vc(18);
     }
 
     &::after {
       top: vc(-10);
       transform: rotateZ(4deg) skewX(2deg);
       border-radius: vc(12) vc(12) 0 0;
+    }
+  }
+
+  .custom-file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 69px;
+    margin: 20px 0;
+    padding-left: 84px;
+    overflow: hidden;
+    border-radius: 52px;
+    background: #FFFFFF;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: vc(36);
+      width: 24px;
+      height: 26px;
+      transform: translateY(-50%);
+      background: url(../img/form/upload.svg) center no-repeat;
+      background-size: contain;
+    }
+
+    label {
+      width: 100%;
+    }
+
+    &__label {
+      display: block;
+      font-size: 18px;
+      color: rgba(#22496D, .7);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
 
       @include desktop {
         top: vc(-8);

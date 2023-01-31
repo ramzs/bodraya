@@ -9,9 +9,9 @@ mixin main-excursion()
             .main-excursion__picture.main-excursion__picture--2
               +picture("content/excursion", "excursion-2", "jpg", 337, 266, "Пломбир")
           .main-excursion__content
-            .main-excursion__headline.headline!= "Экскурсии на производство"
+            .main-excursion__headline.headline!= "Экскурсии <br>на производство"
             p!= "Очень многое пропустит тот, кто откажет себе в удовольствии побывать здесь. Каждый год с весны до осени посетители окунаются в атмосферу аппетитных ароматов и отличного настроения."
             p
               b!= "Не откладывайте путешествие по одной из достопримечательностей Белгородчины!"
             .main-excursion__actions
-              +button({text: "Узнать подробнее", icon: true}, 'primary, peace').main-excursion__action
+              +button({text: "Узнать подробнее", icon: true}).button--primary.main-excursion__action

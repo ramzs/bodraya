@@ -111,35 +111,35 @@
     }
   }
 
-  &__icon--1 ~ &__article-count::before {
+  &__icon--1~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-1.svg);
   }
 
-  &__icon--2 ~ &__article-count::before {
+  &__icon--2~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-2.svg);
   }
 
-  &__icon--3 ~ &__article-count::before {
+  &__icon--3~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-3.svg);
   }
 
-  &__icon--4 ~ &__article-count::before {
+  &__icon--4~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-4.svg);
   }
 
-  &__icon--5 ~ &__article-count::before {
+  &__icon--5~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-5.svg);
   }
 
-  &__icon--6 ~ &__article-count::before {
+  &__icon--6~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-6.svg);
   }
 
-  &__icon--7 ~ &__article-count::before {
+  &__icon--7~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-7.svg);
   }
 
-  &__icon--8 ~ &__article-count::before {
+  &__icon--8~&__article-count::before {
     background-image: url(../img/decoration/job-advantage-8.svg);
   }
 
@@ -169,54 +169,101 @@
       @include retina {
         background-image: url(../img/decoration/job-advantage-1@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-1.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--2 {
       background-image: url(../img/decoration/job-advantage-2.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-2@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-2.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--3 {
       background-image: url(../img/decoration/job-advantage-3.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-3@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-3.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--4 {
       background-image: url(../img/decoration/job-advantage-4.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-4@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-4.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--5 {
       background-image: url(../img/decoration/job-advantage-5.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-5@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-5.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--6 {
       background-image: url(../img/decoration/job-advantage-6.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-6@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-6.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--7 {
       background-image: url(../img/decoration/job-advantage-7.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-7@2x.png);
       }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-7.gif);
+        background-size: auto 96.5517241379%;
+      }
     }
+
     &--8 {
       background-image: url(../img/decoration/job-advantage-8.png);
 
       @include retina {
         background-image: url(../img/decoration/job-advantage-8@2x.png);
+      }
+
+      @include hover-focus {
+        background-image: url(../img/decoration/vacancy-8.gif);
+        background-size: auto 96.5517241379%;
       }
     }
   }

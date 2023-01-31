@@ -1,7 +1,7 @@
-import {iosVhFix} from './utils/ios-vh-fix';
-import {initModals} from './modules/modals/init-modals';
-import {Form} from './modules/form-validate/form';
-import {CustomSelect} from './modules/select/custom-select';
+import { iosVhFix } from './utils/ios-vh-fix';
+import { initModals } from './modules/modals/init-modals';
+import { Form } from './modules/form-validate/form';
+import { CustomSelect } from './modules/select/custom-select';
 import initFieldNum from './modules/field-num/field-num';
 import {initPopularBrandsSliders} from './modules/sliders/init-popular-brands-slider';
 import {initMainBannerSlider} from './modules/sliders/init-main-banner-slider';
@@ -67,6 +67,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const adaptiveRunner = new AdaptiveRunner();
     adaptiveRunner.init();
+
+    // Main page map regions list
+    const regionsHandleClick = (e) => {
+      const mapRegionsBtn = document.querySelector('[data-regions-btn]');
+      if (mapRegionsBtn) {
+        const mapRegions = document.querySelector('[data-regions]');
+
+        if (mapRegionsBtn || e.target !== mapRegionsBtn && !e.target.closest('[data-regions-btn]')) {
+          mapRegions.classList.remove('is-open');
+        } else {
+          mapRegions.classList.toggle('is-open');
+        }
+      }
+    };
+
+    window.addEventListener('click', regionsHandleClick);
+
   });
 });
 

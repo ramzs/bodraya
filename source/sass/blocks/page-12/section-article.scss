@@ -28,7 +28,7 @@
     font-size: vc(18);
     line-height: 1.2;
     font-family: $ff-geometria;
-    color: $color-arapawa;
+    color: rgba($color-arapawa, .5);
 
     @include tablet {
       margin: vc(30) 0 vc(60);
@@ -118,7 +118,7 @@
     }
   }
 
-  &__content .columns > .column {
+  &__content .columns>.column {
     max-width: 100%;
     width: 100%;
   }

@@ -164,6 +164,7 @@
 
   &.is-disabled {
     pointer-events: none;
+
     .custom-select__list {
       display: none;
     }

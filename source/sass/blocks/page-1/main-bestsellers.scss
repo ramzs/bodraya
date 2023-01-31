@@ -61,6 +61,7 @@
     bottom: 0;
     padding: vc(15);
     text-align: center;
+    z-index: 1;
 
     @include tablet {
       padding: vc(35);
@@ -68,13 +69,95 @@
     }
 
     @include desktop {
-      padding: vc(165) vc(240);
+      padding: vc(165) vc(130);
     }
   }
 
   &__action {
-    padding-right: vc(15);
+    padding-right: vc(35);
     padding-left: vc(15);
+    padding: vc(2) vc(30) vc(5) vc(12);
+    font-size: vc(14);
+    z-index: auto;
+
+    @include tablet {
+      padding: vc(12) vc(35) vc(12) vc(25);
+      font-size: vc(16);
+    }
+
+    @include desktop {
+      padding: vc(15) vc(65) vc(22) vc(65);
+    }
+
+    &:before {
+      display: none;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      background-image: url(../img/decoration-buttons/btn-bg.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      will-change: transform;
+      transition: transform $trans-300;
+
+      @include tablet {
+        display: block;
+        top: 35%;
+        left: 30%;
+        width: vc(200);
+        height: vc(200);
+      }
+
+      @include desktop {
+        display: block;
+        top: 50%;
+        left: 50%;
+        width: vc(534);
+        height: vc(418);
+      }
+    }
+
+    .button__icon {
+      top: 40%;
+      right: vc(-20);
+      transform: translateY(-50%);
+      width: vc(60);
+      height: vc(60);
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      background-image: url(../img/decoration-buttons/excursion-icon.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include tablet {
+        right: vc(-35);
+        width: vc(85);
+        height: vc(85);
+      }
+
+      @include desktop {
+        right: vc(-40);
+        width: vc(110);
+        height: vc(110);
+      }
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+
+      &:before {
+        transform: translate(-50%, -50%) scale(.9);
+      }
+
+      .button__icon {
+        transform: translateY(-50%);
+      }
+    }
   }
 
   &__swiper-wrapper {
