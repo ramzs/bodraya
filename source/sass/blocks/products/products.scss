@@ -18,28 +18,34 @@
   }
 
   &__basket {
-    background: $color-default-white;
-    box-shadow: 0 vc(2) vc(16) vc(-2) rgba($color-arapawa, 0.1);
-    border-radius: 100%;
+    display: block;
+    margin-left: auto;
     width: vc(50);
     height: vc(50);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: translateY(20%);
+    border-radius: 50%;
+    background-color: $color-default-white;
+    box-shadow: 0 vc(2) vc(16) vc(-2) rgba(34, 73, 109, 0.1);
+    overflow: hidden;
+    background-image: url(../img/svg/catalog-basket.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 
-    img {
-      width: vc(20);
-      height: vc(17);
+    transition: background-size $trans-300;
+
+    @include tablet {
+      width: vc(75);
+      height: vc(75);
     }
 
     @include desktop {
-      width: vc(87);
-      height: vc(87);
+      width: vc(90);
+      height: vc(90);
+    }
 
-      img {
-        width: vc(41);
-        height: vc(34);
-      }
+    @include hover-focus {
+      background-size: 110%;
     }
   }
 
@@ -82,6 +88,7 @@
       z-index: -1;
 
       @include desktop {
+        top: 39%;
         right: vc(-260);
       }
     }
@@ -202,9 +209,7 @@
     }
   }
 
-  &__count {
-
-  }
+  &__count {}
 
   &__button {
     .button {
@@ -281,7 +286,10 @@
     }
 
     &-title {
+      cursor: pointer;
+
       &.is-active {
+        cursor: auto;
         color: $color-pumpkin;
       }
 
@@ -292,9 +300,7 @@
       }
     }
 
-    &-body {
-
-    }
+    &-body {}
 
     &-item {
       display: flex;

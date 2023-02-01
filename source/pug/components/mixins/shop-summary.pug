@@ -7,9 +7,9 @@ mixin shop-summary()
       p.summary__text Сумма
     .summary__body
       .summary__product
-        .summary__product-image
+        a(href="#").summary__product-image
           +img("shop/basket", "product-1", "png")
-        p.summary__product-text.summary__text.summary__text--title Вишневая девятка
+        a(href="#").summary__product-text.summary__text.summary__text--title Вишневая девятка
         .summary__product-count
           +field-num({
             val: '1',
@@ -28,9 +28,9 @@ mixin shop-summary()
           button
             img(src="img/svg/close.svg")
       .summary__product
-        .summary__product-image
+        a(href="#").summary__product-image
           +img("shop/basket", "product-1", "png")
-        p.summary__product-text.summary__text.summary__text--title Вишневая девятка
+        a(href="#").summary__product-text.summary__text.summary__text--title Вишневая девятка
         .summary__product-count
           +field-num({
             val: '1',
@@ -60,9 +60,9 @@ mixin shop-summary-history()
       p.summary__text Сумма
     .summary__body
       .summary__product
-        .summary__product-image
+        a(href="#").summary__product-image
           +img("shop/basket", "product-1", "png")
-        p.summary__product-text.summary__text.summary__text--title Вишневая девятка
+        a(href="#").summary__product-text.summary__text.summary__text--title Вишневая девятка
         .summary__product-count
           p.summary__text 1 шт
         .summary__product-price
@@ -70,9 +70,9 @@ mixin shop-summary-history()
         .summary__product-sum
           p.summary__text.summary__text--bold 800 руб.
       .summary__product
-        .summary__product-image
+        a(href="#").summary__product-image
           +img("shop/basket", "product-1", "png")
-        p.summary__product-text.summary__text.summary__text--title Вишневая девятка
+        a(href="#").summary__product-text.summary__text.summary__text--title Вишневая девятка
         .summary__product-count
           p.summary__text 1 шт
         .summary__product-price

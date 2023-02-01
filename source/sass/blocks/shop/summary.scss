@@ -34,7 +34,7 @@
 
     @include desktop {
       padding: vc(25) vc(40);
-      grid-template: 1fr / vc(423) vc(321) vc(269) vc(326) 1fr;
+      grid-template: 1fr / vc(445) vc(321) vc(269) vc(326) 1fr;
       margin-bottom: vc(32);
     }
   }
@@ -275,7 +275,7 @@
     }
 
     @include desktop {
-      grid-template-columns: vc(109) vc(354) vc(321) vc(269) vc(326) 1fr;
+      grid-template-columns: vc(109) vc(378) vc(321) vc(269) vc(326) vc(37);
       grid-template-rows: 1fr;
       gap: 0;
     }
@@ -298,6 +298,7 @@
     @include desktop {
       justify-content: space-between;
       margin-top: vc(32);
+      margin-right: 0;
       width: vc(373);
     }
   }

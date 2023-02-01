@@ -59,9 +59,10 @@
 
   &__control {
     display: inline-block;
-    padding: vc(20);
+    padding: vc(10);
     min-width: vc(120);
-    width: auto;
+    width: 100%;
+    height: 100%;
     font-weight: 500;
     font-size: vc(14);
     font-family: $ff-geometria;
@@ -75,13 +76,13 @@
     transition: color $trans-300, background-color $trans-300;
 
     @include tablet {
-      padding: vc(25) vc(20);
+      padding: vc(16) vc(10);
       font-size: vc(20);
       line-height: 1;
     }
 
     @include desktop {
-      padding: vc(35) vc(30);
+      padding: vc(18) vc(20);
     }
 
     &:not(.is-active) {
@@ -110,16 +111,28 @@
 
   &__controls .swiper {
     .swiper-slide {
-      margin-right: vc(20);
+      // margin-right: vc(20);
       padding: 0;
-      width: auto;
+      width: 100%;
+      height: auto;
+      max-width: vc(220);
+      margin-right: 20px;
+
+      @include tablet {
+        max-width: vc(200);
+      }
+
+      @include desktop {
+        height: 100%;
+        max-width: none;
+      }
     }
   }
 
   &__controls .swiper:not(.swiper-initialized) {
     .swiper-wrapper {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
       gap: vc(20);
     }
   }
@@ -168,11 +181,11 @@
     display: flex;
   }
 
-  .noUi-target.noUi-horizontal > .noUi-base {
+  .noUi-target.noUi-horizontal>.noUi-base {
     order: 1;
   }
 
-  .noUi-target.noUi-horizontal > .noUi-pips.noUi-pips-horizontal {
+  .noUi-target.noUi-horizontal>.noUi-pips.noUi-pips-horizontal {
     order: 0;
   }
 

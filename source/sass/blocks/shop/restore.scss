@@ -21,6 +21,7 @@
     font-weight: 300;
     font-size: vc(16);
     line-height: vc(22);
+    color: $color-arapawa;
 
     b {
       font-weight: 500;
@@ -49,6 +50,9 @@
     display: flex;
     justify-content: flex-end;
     margin-top: vc(35);
+    will-change: transform;
+
+    transition: color $trans-300, transform $trans-300;
 
     .button {
       width: 100%;
@@ -60,6 +64,15 @@
 
     @include desktop {
       margin-top: vc(45);
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+
+      .button {
+        color: $color-default-white;
+      }
     }
   }
 }

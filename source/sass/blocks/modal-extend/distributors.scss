@@ -73,6 +73,14 @@
         margin-bottom: vc(180);
         gap: vc(48);
       }
+
+      &.modal__items__country {
+        .distributor__footer {
+          &:before {
+            background-color: rgba(255, 148, 71, 0.72);
+          }
+        }
+      }
     }
 
     #{$block-name}__items #{$block-name}__item {

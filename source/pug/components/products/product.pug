@@ -4,7 +4,7 @@ section.products__section
     .products__header
       p.shop-page__title.shop-page__title--bracket Интернет-магазин
       a(href="#").products__basket
-        img(src="img/svg/basket.svg" alt="")
+        //- img(src="img/svg/basket.svg" alt="")
     form.products__body
       .products__image
         img(src="img/products/decor-1.png" alt="").products__decor.products__decor--1.parallax
@@ -28,17 +28,43 @@ section.products__section
               })
           .products__button
             +button({text: "В корзину", type: "submit"}).button--primary
-    .products__footer
-      .products__footer-head
-        .products__footer-title.is-active Характеристики
-        .products__footer-title Состав
-      .products__footer-body
-        .products__footer-item
-          .products__footer-specifications Белки (на 100 г)
-          .products__footer-info 3 г
-        .products__footer-item
-          .products__footer-specifications Срок годности
-          .products__footer-info при температуре хранения не выше минус 180 С — 18,0 мес.
-        .products__footer-item
-          .products__footer-specifications Изготовитель:
-          .products__footer-info АО «Белгородский хладокомбинат», Россия, 308013, Белгородская обл., г. Белгород, ул. Дзгоева, 1
+    .products__footer(data-tabs='parent', data-delay='300')
+      .products__footer-head(data-tabs='controls')
+        .products__footer-title.is-active(data-tabs='control') Характеристики
+        .products__footer-title(data-tabs='control') Состав
+      .products__footer-body(data-tabs='content')
+        .products__footer-element(data-tabs='element')
+          .products__footer-item
+            .products__footer-specifications Белки (на 100 г)
+            .products__footer-info 3 г
+          .products__footer-item
+            .products__footer-specifications Жиры (на 100 г)
+            .products__footer-info 7 г
+          .products__footer-item
+            .products__footer-specifications Углеводы (на 100 г)
+            .products__footer-info 27 г
+          .products__footer-item
+            .products__footer-specifications в т.ч. сахарозы (на 100 г)
+            .products__footer-info 14 г
+          .products__footer-item
+            .products__footer-specifications Энергетическая ценность (на 100 г)
+            .products__footer-info  770/180 кДж/ккал.
+          .products__footer-item
+            .products__footer-specifications Срок годности
+            .products__footer-info при температуре хранения не выше минус 180 С — 18,0 мес.
+          .products__footer-item
+            .products__footer-specifications Изготовитель:
+            .products__footer-info АО «Белгородский хладокомбинат», Россия, 308013, Белгородская обл., г. Белгород, ул. Дзгоева, 1
+        .products__footer-element(data-tabs='element')
+          .products__footer-item
+            .products__footer-specifications Белки (на 100 г)
+            .products__footer-info 3 г
+          .products__footer-item
+            .products__footer-specifications Жиры (на 100 г)
+            .products__footer-info 7 г
+          .products__footer-item
+            .products__footer-specifications Углеводы (на 100 г)
+            .products__footer-info 27 г
+          .products__footer-item
+            .products__footer-specifications в т.ч. сахарозы (на 100 г)
+            .products__footer-info 14 г

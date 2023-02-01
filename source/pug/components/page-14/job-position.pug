@@ -13,7 +13,7 @@ mixin job-position()
     }, 'box').job-position__select("data-select", data-name="some-city", data-id="id-city")
     .job-position__count!= "78 вакансий"
     .job-position__accordion(data-accordion="parent", data-single)
-      article.job-position__element.is-active(data-accordion="element")
+      article.job-position__element(data-accordion="element")
         .job-position__header
           h3.job-position__headline
             span!= "Менеджер в отдел закупок"

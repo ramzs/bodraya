@@ -68,6 +68,13 @@
 
     .button {
       width: 100%;
+      will-change: transform;
+      transition: transform $trans-300;
+
+      @include hover-focus {
+        color: $color-pumpkin;
+        transform: scale(1.1);
+      }
 
       @include tablet {
         width: auto;
@@ -84,6 +91,9 @@
   }
 
   &__registration {
+    will-change: transform;
+    transition: transform $trans-300;
+
     &::before {
       content: "";
       position: absolute;
@@ -118,10 +128,21 @@
     @include desktop {
       width: 100%;
     }
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+    }
   }
 
   &__login-btn {
     width: vc(240);
+    transition: color $trans-300, transform $trans-300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+    }
 
     @include desktop {
       width: vc(370);

@@ -92,7 +92,7 @@ mixin modal-distributors()
           +distributor(city)
     p.modal__subtitle
       b!= "И странах:"
-    ul.modal__items
+    ul.modal__items.modal__items__country
       each country in countryItems
         li.modal__item
           +distributor(country)

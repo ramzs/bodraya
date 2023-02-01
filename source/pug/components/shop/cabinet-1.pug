@@ -52,11 +52,15 @@ section.shop-page__section.shop-cabinet__section
           })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
           .shop-cabinet__select
             p Предпочитаемый пункт выдачи
-            select(data-validate-type="select").form__select
-              option ул. Щорса 64
-              option ул. Щорса 64
-              option ул. Щорса 64
-              option ул. Щорса 64
+            +custom-select({
+              optionsList: [
+                {text: "ул. Щорса 64", value: "id-1"},
+                {text: "ул. Щорса 64", value: "id-2"},
+                {text: "ул. Щорса 64", value: "id-3"},
+                {text: "ул. Щорса 64", value: "id-4"},
+              ],
+              placeholder: "Выберите пункт выдачи",
+            }, 'round')("data-select", data-validate-type="select", data-name="some-name", data-id="id-example-2", data-message-base="Поле обязательно к заполнению").custom-select
           .shop-cabinet__buttons
-            +button({text: "Изменить пароль", type: "submit"}, "white, reverse")
-            +button({text: "Сохранить профиль", type: "submit"}, "primary")
+            +button({text: "Изменить пароль", type: "submit"}, "white, reverse").shop-cabinet__button
+            +button({text: "Сохранить профиль", type: "submit"}, "primary").shop-cabinet__button
