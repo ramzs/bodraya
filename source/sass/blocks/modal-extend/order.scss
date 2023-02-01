@@ -422,14 +422,92 @@
       }
     }
 
-    // #{$block-name}__time {
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   transform: translate(-50%, -50%);
-    //   background: #E1F0FF;
-    //   border-radius: 30px;
-    // }
+    #{$block-name}__time {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: vc(495);
+      background: #E1F0FF;
+      border-radius: vc(30);
+      padding: vc(18) vc(20) vc(25);
+      box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+      transition: visibility $trans-300, opacity $trans-300;
+
+      &.is-open {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    #{$block-name}__time-close {
+      position: absolute;
+      top: vc(20);
+      left: vc(20);
+      font-size: vc(15);
+      font-weight: 300;
+      padding-left: vc(20);
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 53%;
+        transform: translateY(-50%);
+        width: vc(8);
+        height: vc(12);
+        background: url(../img/svg/back.svg) center no-repeat;
+        background-size: contain;
+      }
+    }
+
+    #{$block-name}__time-title {
+      margin-bottom: vc(30);
+      font-size: vc(18);
+      text-align: center;
+    }
+
+    #{$block-name}__time-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(vc(100), 1fr));
+      grid-column-gap: vc(16);
+      grid-row-gap: vc(12);
+      // grid-template-rows: repeat(2, 1fr);
+    }
+
+    #{$block-name}__time-item {
+      position: relative;
+      height: vc(54);
+    }
+
+    #{$block-name}__time-radio {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+
+      &:checked+#{$block-name}__time-count {
+        background: #C1E0FE
+      }
+    }
+
+    #{$block-name}__time-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      border-radius: vc(8);
+      background: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background $trans-150;
+    }
   }
 }
 
@@ -575,7 +653,7 @@ span.flatpickr-weekday {
     background: #C1E0FE;
 
     @include hover-focus {
-      color: $color-default-white;
+      color: $color-arapawa;
     }
   }
 
