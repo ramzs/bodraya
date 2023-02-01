@@ -152,6 +152,20 @@
     }
   }
 
+  &__button {
+    will-change: transform;
+    transition: color $trans-300, transform $trans-300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+
+      &.button--white {
+        color: $color-pumpkin;
+      }
+    }
+  }
+
   &__select {
     margin: vc(30) 0 vc(20);
 
@@ -213,6 +227,8 @@
 
     &-button {
       background: none;
+      padding-left: 0;
+      padding-right: 0;
       border: none;
       width: 100%;
       display: flex;
@@ -330,6 +346,20 @@
 
     @include desktop {
       gap: vc(32);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    margin-top: vc(40);
+
+    @include tablet {
+      margin-top: vc(70);
+    }
+
+    @include desktop {
+      margin-top: vc(150);
     }
   }
 }

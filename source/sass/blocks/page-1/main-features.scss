@@ -58,6 +58,16 @@
     }
   }
 
+  &__action {
+    will-change: transform;
+    transition: color $trans-300, transform $trans-300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+    }
+  }
+
   &__article {
     position: relative;
     z-index: 5;

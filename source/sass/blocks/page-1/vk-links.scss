@@ -1,5 +1,6 @@
 .vk-links {
   position: relative;
+
   &__headline {
     margin: 0 0 vc(40);
     font-weight: 700;
@@ -53,6 +54,16 @@
     @include desktop {
       margin: vc(80) 0 vc(175);
       text-align: left;
+    }
+  }
+
+  &__action {
+    will-change: transform;
+    transition: color $trans-300, transform $trans-300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
     }
   }
 
