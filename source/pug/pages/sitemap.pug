@@ -217,6 +217,8 @@ block main
           a(href="#", data-open-modal="modal-added")!= "Товар успешно добавлен в корзину"
         li
           a(href="#", data-open-modal="modal-product")!= "«Бодрая корова» Холодный шоколад"
+        li
+          a(href="#", data-open-modal="modal-order")!= "Заявка на экскурсию"
 
 block modals
   +modal("modal--distributors")(data-modal="modal-distributors")
@@ -231,3 +233,5 @@ block modals
     +modal-added()
   +modal("modal--product")(data-modal="modal-product")
     +modal-product()
+  +modal("modal--order")(data-modal="modal-order")
+    +modal-order()

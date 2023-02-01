@@ -12,6 +12,8 @@
       text-align: left;
       border: vc(4) solid $color-default-white;
       border-radius: vc(30);
+      background: #e8f5ff url(../img/stack-products-bg-2.jpg) center no-repeat;
+      background-size: cover;
 
       @include tablet {
         padding: vc(50) vc(65);
@@ -27,8 +29,8 @@
     }
 
     .modal__content {
-      background: #e8f5ff url(../img/stack-products-bg-2.jpg) center no-repeat;
-      background-size: cover;
+      //background: #e8f5ff url(../img/stack-products-bg-2.jpg) center no-repeat;
+      //background-size: cover;
 
       // &:before {
       //   content: '';

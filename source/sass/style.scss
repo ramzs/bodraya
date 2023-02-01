@@ -5,6 +5,7 @@
 // Swiper 7.4.1
 @import "vendor/swiper";
 @import "vendor/nouislider";
+@import "vendor/flatpickr";
 
 // Global
 // ---------------------------------
@@ -62,6 +63,7 @@
 @import "blocks/modal-extend/added";
 @import "blocks/modal-extend/video";
 @import "blocks/modal-extend/product";
+@import "blocks/modal-extend/order";
 
 @import "blocks/headline";
 

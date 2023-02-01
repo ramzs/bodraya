@@ -24,6 +24,7 @@ import {initCatalogNavSlider} from './modules/sliders/init-catalog-nav-slider';
 import {initAwardsSlider} from './modules/sliders/init-awards-slider';
 import {initModalProductSlider} from './modules/sliders/init-modal-product-slider';
 import {paralax} from "./modules/paralax.js";
+import {initFlatPicker} from './modal-order';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -65,6 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initCatalogNavSlider();
     initAwardsSlider();
     initModalProductSlider();
+    initFlatPicker();
     paralax();
 
     const adaptiveRunner = new AdaptiveRunner();

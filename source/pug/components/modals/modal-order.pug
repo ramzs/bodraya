@@ -1,0 +1,54 @@
+mixin modal-order()
+  .modal__decoration.modal__decoration-1
+  .modal__decoration.modal__decoration-2
+  .modal__decoration.modal__decoration-3
+  header.modal__header
+    h3.modal__headline!= "Оставьте заявку на экскурсию на фабрику мороженого"
+    p.modal__subtitle!= "Проведение экскурсии возможно только при сборе группы от 10 человек. <br>Все посещающие экскурсию оплачивают полную стоимость (в т.ч. сопровождающие) Льгот нет."
+  .modal__form(data-form-validate, data-callback="base")
+    form(method="post").modal__form-inner
+      .modal__form-col
+        +custom-input({
+          inputPlaceholder: "Имя*",
+          inputName: "user-name-1",
+          iconName: "form-user.svg",
+        })(data-validate-type="text", data-limitation="name", data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-required)
+        +custom-input({
+          inputType: "tel",
+          inputPlaceholder: "Телефон*",
+          inputName: "user-phone",
+          iconName: "form-phone.svg"
+        })(data-validate-type="phone", data-on-input-validate, data-message-base="Поле обязательно к заполнению", data-message-extra="Проверьте корректность заполнения поля", data-message-success="Поле заполнено верно", data-required)
+        +custom-input({
+          inputType: "email",
+          inputPlaceholder: "Электронная почта*",
+          inputName: "user-email",
+          iconName: "form-mail.svg",
+        })(data-validate-type="email", data-message-base="Поле обязательно к заполнению", data-required)
+        .modal__people
+          .modal__people-row
+            .modal__people-title!= "Кол-во людей*"
+            .modal__people-field
+              +field-num({
+                val: '7',
+                attrs: {
+                  name: 'quantity',
+                  max: '10',
+                  min: '1',
+                  step: '1',
+                }
+              })
+          .modal__people-text
+            p!= "*Необходимо указать общее количество взрослых и детей."
+            p!= "Внимание! Экскурсии проводятся для детей старше 6 лет."
+      .modal__form-col
+        .modal__date
+          .modal__date-title!= "Выберите дату"
+          #order-date
+            .modal__date-subtitle!= "Дата"
+        .modal__bottom
+          .modal__accept
+            input(type="checkbox", name="", class="modal__accept-checkbox", id="accept", required checked)
+            label(for="accept").modal__checkbox-label!= "Я ознакомлен(а) с <a href='#'>правилами посещения</a>"
+          .modal__actions
+            +button({text: "Оставить заявку", type: "submit", icon: true}, 'primary').modal__action

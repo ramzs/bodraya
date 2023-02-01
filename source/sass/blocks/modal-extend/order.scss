@@ -1,0 +1,585 @@
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &--order {
+    #{$block-name}__content {
+      position: relative;
+      max-width: vc(645);
+      padding: vc(55) vc(10) vc(75);
+      font-weight: 500;
+      font-size: vc(14);
+      line-height: 1.4;
+      font-family: $ff-geometria;
+      text-align: center;
+      border: vc(4) solid $color-default-white;
+      border-radius: vc(30);
+      background: #e8f5ff url(../img/stack-products-bg-2.jpg) center no-repeat;
+      background-size: cover;
+
+      @include tablet {
+        padding: vc(30) vc(40) vc(95);
+        border: vc(5) solid $color-default-white;
+      }
+
+      @include desktop {
+        min-height: vc(1000);
+        max-width: vc(1520);
+        padding: vc(90) vc(30) vc(120);
+        border-width: vc(10);
+      }
+    }
+
+    #{$block-name}__decoration {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      &-1 {
+        display: none;
+
+        @include desktop {
+          display: block;
+          top: vc(0);
+          right: vc(0);
+          width: vc(390);
+          height: vc(110);
+          background-image: url(../img/decoration/modal-decoration-2.svg);
+        }
+      }
+
+      &-2 {
+        top: vc(74);
+        right: vc(-35);
+        width: vc(76);
+        height: vc(98);
+        background-image: url(../img/decoration/modal-decoration-12.png);
+
+        @include tablet {
+          top: vc(35);
+          right: vc(-53);
+          width: vc(127);
+          height: vc(165);
+        }
+
+        @include desktop {
+          top: vc(320);
+          right: vc(-60);
+          width: vc(208);
+          height: vc(270);
+        }
+      }
+
+      &-3 {
+        bottom: vc(-38);
+        left: vc(-86);
+        width: vc(194);
+        height: vc(209);
+        background-image: url(../img/decoration/modal-decoration-11.svg);
+
+        @include tablet {
+          bottom: vc(-118);
+          left: vc(-115);
+          width: vc(407);
+          height: vc(437);
+        }
+
+        @include desktop {
+          bottom: vc(-225);
+          left: vc(-195);
+          width: vc(671);
+          height: vc(742);
+        }
+      }
+    }
+
+    #{$block-name}__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #{$block-name}__headline {
+      margin: 0 vc(-5) vc(20);
+      font-weight: 700;
+      font-size: vc(24);
+      line-height: 1.2;
+      font-family: $ff-geometria;
+      @include stroke(2, $color-default-white);
+
+      @include tablet {
+        margin: 0 0 vc(15);
+        font-size: vc(40);
+        @include stroke(5, $color-default-white);
+      }
+
+      @include desktop {
+        margin-bottom: vc(35);
+        font-size: vc(50);
+        @include stroke(6, $color-default-white);
+      }
+    }
+
+    #{$block-name}__subtitle {
+      max-width: vc(1024);
+      font-size: vc(14);
+      margin: 0 vc(-5) vc(20);
+
+      @include tablet {
+        font-size: vc(18);
+        margin: 0 0 vc(20);
+      }
+
+      @include desktop {
+        font-size: vc(20);
+        margin: 0 0 vc(55);
+      }
+    }
+
+    #{$block-name}__form-inner {
+      position: relative;
+      display: grid;
+      grid-row-gap: vc(20);
+      align-items: flex-start;
+      z-index: 2;
+
+      @include desktop {
+        grid-template-columns: vc(368) 1fr;
+        grid-column-gap: vc(30);
+        max-width: vc(895);
+        margin: 0 auto;
+      }
+    }
+
+    #{$block-name}__form-col {
+      display: grid;
+      grid-row-gap: vc(20);
+      align-items: flex-start;
+    }
+
+    #{$block-name}__people-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: vc(20);
+
+      @include desktop {
+        margin: vc(15) 0 vc(35);
+      }
+    }
+
+    #{$block-name}__people-title {
+      font-size: vc(16);
+
+      @include tablet {
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        font-size: vc(20);
+      }
+    }
+
+    #{$block-name}__people-field {
+      button {
+        display: none;
+      }
+
+      .field-num {
+        &__input-and-buttons {
+          width: auto;
+        }
+
+        &__input {
+          width: vc(46);
+          height: vc(46);
+          padding: 0;
+          font-size: vc(24);
+          font-style: italic;
+          font-weight: 500;
+          color: $color-pumpkin;
+          background: #FFFFFF;
+          border: vc(1) solid $color-pumpkin;
+          border-radius: vc(10);
+
+          @include focus {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    #{$block-name}__people-text {
+      font-size: vc(16);
+      text-align: left;
+
+      @include tablet {
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        font-size: vc(20);
+
+        p {
+          margin-bottom: vc(22);
+        }
+      }
+    }
+
+    #{$block-name}__date {
+      padding: vc(18) vc(12) vc(24);
+      background: #E1F0FF;
+      border-radius: vc(30);
+
+      @include tablet {
+        padding: vc(18) vc(50) vc(25);
+      }
+
+      @include desktop {
+        min-height: vc(450);
+        margin-bottom: vc(25);
+        padding: vc(18) vc(20) vc(25);
+      }
+    }
+
+    #{$block-name}__date-title {
+      margin-bottom: vc(14);
+      font-size: vc(18);
+      font-weight: 500;
+    }
+
+    #{$block-name}__date-subtitle {
+      position: absolute;
+      top: vc(5);
+      left: 0;
+      font-size: vc(14);
+
+      @include tablet {
+        font-size: vc(18);
+      }
+    }
+
+    #{$block-name}__bottom {
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      @include desktop {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    #{$block-name}__accept {
+      position: relative;
+      max-width: vc(215);
+      margin: 0 auto vc(40);
+      padding-right: vc(50);
+      text-align: left;
+
+      @include tablet {
+        max-width: none;
+        margin: 0 0 vc(65);
+      }
+
+      @include desktop {
+        margin: 0 vc(68) 0 0;
+        padding-right: vc(35);
+      }
+    }
+
+    #{$block-name}__accept-checkbox {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+
+      &:checked+.modal__checkbox-label {
+        &:after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    #{$block-name}__checkbox-label {
+
+      a {
+        font-size: inherit;
+        color: inherit;
+        text-decoration: underline;
+
+        @include hover-focus {
+          text-decoration: none;
+        }
+      }
+
+      @include tablet {
+        font-size: vc(16);
+      }
+
+      @include desktop {
+        font-size: vc(14);
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        cursor: pointer;
+      }
+
+      &:before {
+        top: vc(4);
+        right: 0;
+        width: vc(30);
+        height: vc(30);
+        background: #FFFFFF;
+        border: vc(1) solid $color-pumpkin;
+        border-radius: vc(7);
+
+        @include tablet {
+          top: vc(-3);
+        }
+      }
+
+      &:after {
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility $trans-150, opacity $trans-150;
+        top: vc(13);
+        right: vc(7);
+        width: vc(15);
+        height: vc(12);
+        background: url(../img/form/check.svg) center no-repeat;
+        background-size: contain;
+
+        @include tablet {
+          top: vc(6);
+        }
+      }
+
+    }
+
+    #{$block-name}__actions {
+      @include tablet {
+        margin-right: vc(100);
+      }
+
+      @include desktop {
+        margin-right: 0;
+      }
+    }
+
+    #{$block-name}__action {
+      padding: vc(6) vc(26) vc(12) vc(15);
+      border-bottom-right-radius: vc(15);
+
+      @include tablet {
+        padding: vc(15) vc(50) vc(24) vc(40);
+      }
+
+      @include desktop {
+        font-size: vc(18);
+        white-space: nowrap;
+        padding: vc(10) vc(42) vc(18) vc(30);
+        border-bottom-right-radius: vc(30);
+      }
+
+      @include hover-focus {
+        color: $color-default-white;
+
+        .button__icon {
+          transform: translateY(-55%) scale(.9);
+        }
+      }
+
+      .button__icon {
+        right: vc(-67);
+        width: vc(110);
+        height: vc(110);
+        background-image: url(../img/decoration-buttons/excursion-btn.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        will-change: transform;
+
+        @include tablet {
+          right: vc(-90);
+          width: vc(140);
+          height: vc(140);
+        }
+
+        @include desktop {
+          right: vc(-88);
+          width: vc(150);
+          height: vc(150);
+        }
+      }
+    }
+  }
+}
+
+.flatpickr-wrapper {
+  width: 100%;
+}
+
+.flatpickr-calendar {
+  width: 100%;
+  font-size: vc(16);
+  font-weight: 500;
+  max-height: none;
+  box-shadow: none;
+  background: none;
+}
+
+.flatpickr-months {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .flatpickr-prev-month,
+  .flatpickr-next-month {
+    position: relative;
+    height: auto;
+    padding: 0;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+
+  .flatpickr-month {
+    display: flex;
+    align-items: center;
+    flex: none;
+    height: auto;
+  }
+}
+
+.flatpickr-current-month {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  width: vc(95);
+  height: auto;
+  margin: 0;
+  padding: 0;
+
+  @include tablet {
+    width: vc(125);
+  }
+
+  span.cur-month {
+    margin: 0;
+    font-size: vc(14);
+    font-weight: 500;
+    color: $color-arapawa;
+
+    @include hover-focus {
+      background: none;
+    }
+
+    @include tablet {
+      font-size: vc(16);
+    }
+  }
+
+  .numInputWrapper {
+    display: none;
+  }
+}
+
+.flatpickr-rContainer {
+  width: 100%;
+}
+
+.flatpickr-weekdays {
+  height: vc(54);
+
+  .flatpickr-weekdaycontainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: vc(12);
+  }
+}
+
+span.flatpickr-weekday {
+  font-size: vc(14);
+  font-weight: 500;
+  color: $color-arapawa;
+
+  @include tablet {
+    font-size: vc(16);
+  }
+}
+
+.flatpickr-days {
+  width: 100%;
+}
+
+.dayContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: vc(6);
+  width: 100%;
+  min-width: auto;
+  max-width: none;
+
+  @include tablet {
+    grid-gap: vc(12);
+  }
+}
+
+.flatpickr-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: none;
+  width: auto;
+  // height: vc(27);
+  height: auto;
+  padding: vc(8) 0;
+  font-size: vc(14);
+  line-height: 1;
+  color: $color-arapawa;
+  font-weight: 500;
+  border: none;
+  background: #FFFFFF;
+  border-radius: vc(4);
+  transition: background $trans-150;
+
+  @include tablet {
+    height: vc(54);
+    font-size: vc(16);
+    border-radius: vc(8);
+  }
+
+  &.today {
+    color: $color-arapawa;
+    background: #C1E0FE;
+
+    @include hover-focus {
+      color: $color-arapawa;
+    }
+  }
+
+  &.selected {
+    color: $color-default-white;
+    background: $color-pumpkin;
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+
+  @include hover-focus {
+    color: $color-default-white;
+    background: $color-pumpkin;
+  }
+}
