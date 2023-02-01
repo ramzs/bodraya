@@ -25,3 +25,8 @@
     display: none;
   }
 }
+
+.parallax {
+  opacity: 0;
+  will-change: opacity, transform;
+}
