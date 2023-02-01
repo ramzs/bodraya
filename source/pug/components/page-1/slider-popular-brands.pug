@@ -43,9 +43,9 @@ mixin slider-popular-brands(data, mods)
     }
 
   aside.slider-popular-brands(class=allMods)&attributes(attributes)
-    .main-intro__decoration.main-intro__decoration-icon-1.parallax
-    .main-intro__decoration.main-intro__decoration-icon-2.parallax
-    .main-intro__decoration.main-intro__decoration-icon-3.parallax
+    .main-intro__decoration.main-intro__decoration-icon-1.parallax.parallax-mouse
+    .main-intro__decoration.main-intro__decoration-icon-2.parallax.parallax-mouse
+    .main-intro__decoration.main-intro__decoration-icon-3.parallax.parallax-mouse
     .container
       .slider-popular-brands__wrapper(data-slider-container="slider-popular-brands")
         +btn-prev({text: "Сюда"})(data-btn-prev).btn-navigation--big
