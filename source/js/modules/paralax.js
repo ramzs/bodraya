@@ -2,7 +2,7 @@ import Rellax from 'rellax';
 
 export const paralax = () => {
   const rellax = new Rellax('.parallax', {
-    speed: -1,
+    speed: 3,
     center: true,
     // wrapper: null,
     // round: true,

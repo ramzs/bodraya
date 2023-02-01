@@ -1,7 +1,6 @@
 .order {
   &__section {
     position: relative;
-    overflow: hidden;
     padding-bottom: vc(390);
 
     @include tablet {
