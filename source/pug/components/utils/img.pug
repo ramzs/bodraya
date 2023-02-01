@@ -1,2 +1,11 @@
 mixin img(path, image, format, width, height, altText)
-  img(src="img/" + path + "/" + image + "." + format, srcset= "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)&attributes(attributes)
+  img.js-lazy(
+    draggable="false",
+    data-sizes="auto",
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAQAAAAnOwc2AAAAD0lEQVR42mNkwAIYh7IgAAVVAAuInjI5AAAAAElFTkSuQmCC",
+    data-src="img/" + path + "/" + image + "." + format,
+    data-srcset="img/" + path + "/" + image + "@2x." + format + " 2x",
+    alt= altText,
+    width= width,
+    height= height,
+  )&attributes(attributes)

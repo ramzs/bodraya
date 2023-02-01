@@ -1,7 +1,8 @@
-import { iosVhFix } from './utils/ios-vh-fix';
-import { initModals } from './modules/modals/init-modals';
-import { Form } from './modules/form-validate/form';
-import { CustomSelect } from './modules/select/custom-select';
+import {iosVhFix} from './utils/ios-vh-fix';
+import {initModals} from './modules/modals/init-modals';
+import {Form} from './modules/form-validate/form';
+import {CustomSelect} from './modules/select/custom-select';
+import lazySizes from 'lazysizes';
 import initFieldNum from './modules/field-num/field-num';
 import {initPopularBrandsSliders} from './modules/sliders/init-popular-brands-slider';
 import {initMainBannerSlider} from './modules/sliders/init-main-banner-slider';
@@ -26,6 +27,9 @@ import {initModalProductSlider} from './modules/sliders/init-modal-product-slide
 import {paralax} from "./modules/paralax.js";
 // ---------------------------------
 
+// lazyload
+lazySizes.cfg.lazyClass = 'js-lazy';
+lazySizes.cfg.preloadAfterLoad = true;
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
@@ -36,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
   initPopularBrandsSliders();
+
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
