@@ -46,34 +46,34 @@ mixin modal-order()
           .modal__date-title!= "Выберите дату"
           #order-date
             .modal__date-subtitle!= "Дата"
-          //- .modal__time
-          //-   .modal__time-close
-          //-   .modal__time-title!= "Выберите время"
-          //-   .modal__time-items
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "10:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "12:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "14:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "16:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "10:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "12:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "14:00"
-          //-     label.modal__time-item
-          //-       input(type="radio", class="modal__time-radio", name="time")
-          //-       .modal__time-count!= "16:00"
+          .modal__time(data-time)
+            .modal__time-close(data-time-close)!= "Назад"
+            .modal__time-title!= "Выберите время"
+            .modal__time-items
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "10:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "12:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "14:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "16:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "10:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "12:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "14:00"
+              label.modal__time-item(data-time-count)
+                input(type="radio", class="modal__time-radio", name="time")
+                .modal__time-count!= "16:00"
         .modal__bottom
           .modal__accept
             input(type="checkbox", name="", class="modal__accept-checkbox", id="accept", required checked)
