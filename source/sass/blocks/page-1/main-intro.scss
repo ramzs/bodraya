@@ -6,26 +6,42 @@
 
     &-icon-1 {
       top: vc(25);
-      left: 0;
-      @include size(107, 114);
+      left: vc(-25);
+      @include size(66, 68);
       background: url(../img/decoration/main-intro-decoration-1.png) center no-repeat;
       background-size: contain;
+
+      @include tablet {
+        @include size(107, 114);
+      }
     }
 
     &-icon-2 {
-      top: vc(-75);
-      right: 0;
-      @include size(108, 155);
+      top: vc(-25);
+      right: vc(-30);
+      @include size(87, 91);
       background: url(../img/decoration/main-intro-decoration-2.png) center no-repeat;
       background-size: contain;
+
+      @include tablet {
+        top: vc(-75);
+        right: 0;
+        @include size(108, 155);
+      }
     }
 
     &-icon-3 {
-      bottom: vc(120);
-      left: vc(25);
-      @include size(65, 69);
+      bottom: vc(-9);
+      left: vc(-9);
+      @include size(56, 58);
       background: url(../img/decoration/main-intro-decoration-3.png) center no-repeat;
       background-size: contain;
+
+      @include tablet {
+        bottom: vc(120);
+        left: vc(25);
+        @include size(65, 69);
+      }
     }
   }
 

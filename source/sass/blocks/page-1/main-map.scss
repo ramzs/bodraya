@@ -52,13 +52,13 @@
     z-index: 2;
     padding: vc(15) vc(50);
     color: $color-arapawa;
-    background-color: rgba($color-alice-blue-2, .9);
+    background-color: rgba($color-alice-blue-2, 0.9);
     border: vc(1) solid #ffffff;
     border-radius: vc(15);
     backdrop-filter: blur(4.5px);
 
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       top: vc(15);
       right: vc(10);
@@ -114,7 +114,7 @@
       border-radius: vc(30);
     }
 
-    &>p {
+    & > p {
       margin: 0;
     }
   }
@@ -152,7 +152,7 @@
   }
 
   &__item {
-    +.main-map__item {
+    + .main-map__item {
       margin-top: vc(5);
     }
   }
@@ -200,15 +200,13 @@
   }
 
   &__map-box {
-
-
     @include tablet {
       margin-top: vc(-50);
     }
 
     @include desktop {
       margin-top: vc(-190);
-      width: calc(1750*var(--width-multiplier));
+      width: calc(1750 * var(--width-multiplier));
     }
   }
 
@@ -222,33 +220,13 @@
     transition: fill $trans-150;
 
     @include hover-focus {
-      fill: #FEC771;
+      fill: #fec771;
     }
   }
 
-  &__tooltip {
-    position: fixed;
-    z-index: 10;
-    display: block;
-    max-width: vc(200);
-    padding: vc(15);
-    font-weight: 500;
-    font-size: vc(18);
-    line-height: 1.2;
-    color: $color-arapawa;
-    border-radius: vc(10);
-    background-color: #ffffff;
-    user-select: none;
-    pointer-events: none;
-
-    &.is-hide,
-    &:not(.is-active) {
-      opacity: 0;
-    }
-
-    &.is-active {
-      opacity: 1;
-    }
+  &__map-svg path.focus-visible {
+    opacity: 0.7;
+    outline: none;
   }
 
   &__actions {
@@ -305,7 +283,7 @@
   &__spoiler-wrap {
     width: 100%;
     padding: vc(15);
-    background-color: rgba($color-alice-blue-2, .9);
+    background-color: rgba($color-alice-blue-2, 0.9);
     border: vc(1) solid #ffffff;
     border-radius: vc(15);
     backdrop-filter: blur(5px);
@@ -348,4 +326,24 @@
       font-weight: 600;
     }
   }
+}
+
+.tippy-box {
+  display: block;
+  max-width: vc(200);
+  padding: vc(15);
+  font-weight: 500;
+  font-size: vc(18);
+  line-height: 1.2;
+  color: $color-arapawa;
+  border-radius: vc(10);
+  background-color: $color-default-white;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 vc(4) vc(10) rgba(135, 195, 255, 0.8));
+}
+
+.tippy-arrow {
+  fill: $color-default-white !important;
+  color: $color-default-white !important;
 }

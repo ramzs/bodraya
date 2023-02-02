@@ -14,7 +14,7 @@
 
       @include tablet {
         max-width: vc(645);
-        padding: vc(168) vc(73) vc(168) vc(300);
+        padding: vc(120) vc(73) vc(120) vc(300);
         border-width: vc(8);
         border-radius: vc(40);
       }
@@ -66,11 +66,13 @@
 
       @include tablet {
         left: vc(17);
+        bottom: vc(-40);
         @include size(286, 371);
       }
 
       @include desktop {
         left: vc(20);
+        bottom: 0;
         @include size(319, 413);
       }
     }

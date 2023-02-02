@@ -1,3 +1,5 @@
+import tippy from 'tippy.js';
+
 const TERRITORY = [
   {
     id: 'RU-KRS',
@@ -143,37 +145,19 @@ const TERRITORY = [
 
 const TOOLTIP = document.querySelector('.main-map__tooltip');
 
-
-const showTooltip = (name, e) => {
-  let box = e.target.getBoundingClientRect();
-
-  TOOLTIP.classList.toggle('is-hide');
-  TOOLTIP.classList.toggle('is-active');
-
-  TOOLTIP.innerHTML = name;
-  TOOLTIP.style.top = `${box.y + box.height / 2}px`;
-  TOOLTIP.style.left = `${box.x + box.width / 2}px`;
-}
-
-const hideTooltip = () => {
-  TOOLTIP.classList.toggle('is-active');
-  TOOLTIP.classList.toggle('is-hide');
-}
-
 const setColor = (item) => {
   const ter = document.querySelector(`#${item.id}`);
 
   if (ter) {
+    tippy(`#${item.id}`, {
+      placement: 'auto',
+      content: item.name,
+      trigger: 'mouseenter focus',
+      animation: 'scale',
+      arrow: true,
+  })
     ter.classList.add('is-active');
     ter.setAttribute('name', item.name);
-
-    ter.addEventListener('mouseover', (e) => {
-      showTooltip(item.name, e);
-    });
-
-    ter.addEventListener('mouseout', (e) => {
-      hideTooltip();
-    });
   }
 
 }
