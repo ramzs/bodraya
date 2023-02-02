@@ -433,13 +433,19 @@
       max-width: vc(495);
       background: #E1F0FF;
       border-radius: vc(30);
-      padding: vc(18) vc(20) vc(25);
+      padding-left: vc(10);
+      padding-right: vc(10);
       box-shadow: 0 0 0 rgba(0, 0, 0, .1);
       transition: visibility $trans-300, opacity $trans-300;
+
+      @include tablet {
+        padding: vc(18) vc(20) vc(25);
+      }
 
       &.is-open {
         visibility: visible;
         opacity: 1;
+        z-index: 5;
       }
     }
 
@@ -447,10 +453,14 @@
       position: absolute;
       top: vc(20);
       left: vc(20);
-      font-size: vc(15);
+      font-size: vc(14);
       font-weight: 300;
       padding-left: vc(20);
       cursor: pointer;
+
+      @include tablet {
+        font-size: vc(15);
+      }
 
       &:before {
         content: '';
@@ -467,8 +477,13 @@
 
     #{$block-name}__time-title {
       margin-bottom: vc(30);
-      font-size: vc(18);
-      text-align: center;
+      font-size: vc(16);
+      text-align: right;
+
+      @include desktop {
+        font-size: vc(18);
+        text-align: center;
+      }
     }
 
     #{$block-name}__time-items {
@@ -504,9 +519,17 @@
       text-align: center;
       border-radius: vc(8);
       background: #fff;
-      font-size: 20px;
+      font-size: vc(16);
       cursor: pointer;
       transition: background $trans-150;
+
+      @include tablet {
+        font-size: vc(18);
+      }
+
+      @include desktop {
+        font-size: vc(20);
+      }
     }
   }
 }

@@ -121,6 +121,14 @@
     }
   }
 
+  &__button {
+    margin: 0 auto;
+
+    @include desktop {
+      margin: 0;
+    }
+  }
+
   &__decoration {
     position: absolute;
     z-index: 0;
