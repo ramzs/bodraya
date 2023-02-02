@@ -51,7 +51,37 @@
       .service-nav__links {
         visibility: visible;
         opacity: 1;
-        top: 0;
+        max-height: vc(185);
+        animation: slideDown 150ms linear 0s 1 normal forwards;
+
+
+        @include tablet {
+
+          @keyframes slideDown {
+            from {
+              max-height: 0;
+            }
+
+            to {
+              max-height: vc(148);
+            }
+          }
+
+        }
+
+        @include desktop {
+
+          @keyframes slideDown {
+            from {
+              max-height: 0;
+            }
+
+            to {
+              max-height: vc(185);
+            }
+          }
+
+        }
       }
     }
   }
@@ -74,11 +104,12 @@
     color: $color-arapawa;
     @include stroke(2, $color-default-white);
 
-    &.is-active+.service-nav__links {
-      visibility: visible;
-      opacity: 1;
-      top: 0;
-    }
+    // &.is-active+.service-nav__links {
+    //   visibility: visible;
+    //   opacity: 1;
+    //   top: 0;
+    //   position: relative;
+    // }
 
     @include tablet {
       min-height: vc(220);
@@ -191,14 +222,14 @@
   }
 
   &__link--small {
-    min-height: vc(120);
+    min-height: vc(138);
     height: auto;
     width: vc(170);
     padding: vc(40) vc(15);
     font-size: vc(12);
 
     @include tablet {
-      min-height: vc(120);
+      min-height: vc(148);
       height: auto;
       width: vc(170);
       padding: vc(25) vc(15);
@@ -322,8 +353,8 @@
     visibility: hidden;
     opacity: 0;
     position: relative;
-    top: -30px;
-    transition: top $trans-300, visibility $trans-300, opacity $trans-300;
+    max-height: 0;
+    transition: visibility $trans-150, opacity $trans-150;
     display: flex;
     gap: vc(30);
     margin-top: vc(-20);
