@@ -2,3 +2,7 @@ mixin modal-thanks()
   header.modal__header
     h3.modal__headline!= "Спасибо за заявку"
   p.modal__description!= "Сообщение успешно отправлено.<br/> Мы&nbsp;свяжемся с Вами в ближайшее время"
+  +img("decoration", "decor-z-1", "png").modal__decor.modal__decor--1
+  +img("decoration", "decor-z-2", "png").modal__decor.modal__decor--2.for-tablet
+  +img("decoration", "decor-z-2", "png").modal__decor.modal__decor--2.for-desktop
+  +img("decoration", "decor-z-2-m", "png").modal__decor.modal__decor--2.for-mobile

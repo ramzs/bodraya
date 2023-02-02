@@ -3,37 +3,22 @@
 
   &--thanks {
     #{$block-name}__content {
+      position: relative;
+      overflow: hidden;
       max-width: vc(645);
-      padding: vc(80) vc(25) vc(85);
+      padding: vc(80) vc(25) vc(107);
       text-align: center;
       border: vc(4) solid $color-default-white;
-      background-image: url("../img/modals/thanks-sm.png");
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: bottom;
-
-      @include retina {
-        background-image: url("../img/modals/thanks-sm@2x.png");
-
-        @include tablet {
-          background-image: url("../img/modals/thanks-md@2x.png");
-        }
-
-        @include desktop {
-          background-image: url("../img/modals/thanks-lg@2x.png");
-        }
-      }
+      z-index: 1;
 
       @include tablet {
         padding: vc(120) vc(55) vc(105);
-        background-image: url("../img/modals/thanks-md.png");
         border-radius: vc(30);
       }
 
       @include desktop {
         max-width: vc(790);
         padding: vc(110) vc(125) vc(135);
-        background-image: url("../img/modals/thanks-lg.png");
         border-width: vc(8);
       }
     }
@@ -84,6 +69,47 @@
 
       @include desktop {
         font-size: vc(25);
+      }
+    }
+
+    #{$block-name}__decor {
+      position: absolute;
+      max-width: none;
+      margin: 0;
+      z-index: -1;
+
+      &--1 {
+        right: vc(-172);
+        bottom: vc(-197);
+        @include size(411, 411);
+
+        @include tablet {
+          right: vc(-217);
+          bottom: vc(-322);
+          @include size(635, 635);
+        }
+
+        @include desktop {
+          right: vc(-209);
+          bottom: vc(-340);
+        }
+      }
+
+      &--2 {
+        left: vc(-71);
+        bottom: vc(-154);
+        @include size(208, 325);
+
+        @include tablet {
+          left: vc(-63);
+          bottom: vc(-103);
+          @include size(209, 407);
+        }
+
+        @include desktop {
+          left: vc(-30);
+          bottom: vc(-103);
+        }
       }
     }
   }

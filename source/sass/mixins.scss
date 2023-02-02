@@ -49,7 +49,7 @@
 // Mobile first
 
 @mixin devices {
-  @media (min-width: 320px) and (max-width: (743 * 1px)) {
+  @media (min-width: 567px) and (max-width: (743 * 1px)) {
     @content;
   }
 }
