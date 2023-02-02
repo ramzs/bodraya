@@ -47,12 +47,12 @@
       font-family: $ff-geometria;
 
       @include tablet {
-        margin-bottom: vc(50);
+        margin-bottom: vc(30);
         font-size: vc(16);
       }
 
       @include desktop {
-        margin-bottom: vc(100);
+        margin-bottom: vc(40);
         font-size: vc(30);
       }
     }
@@ -70,7 +70,7 @@
       }
 
       @include desktop {
-        margin-bottom: vc(180);
+        margin-bottom: vc(120);
         gap: vc(48);
       }
 
@@ -124,6 +124,8 @@
       max-width: 100%;
       width: 100%;
       text-align: center;
+      will-change: transform;
+      transition: color $trans-300, transform $trans-300;
 
       @include tablet {
         max-width: vc(315);
@@ -133,6 +135,11 @@
         max-width: 100%;
         padding: vc(15) vc(55) vc(22);
         font-size: vc(18);
+      }
+
+      @include hover-focus {
+        color: $color-default-white;
+        transform: scale(1.1);
       }
     }
 

@@ -28,7 +28,7 @@
     }
   }
 
-  &__grid > &__item {
+  &__grid>&__item {
     max-width: calc(100% / 2);
     width: 100%;
     padding-right: calc(vc(20) / 2);
@@ -108,8 +108,9 @@
     background-size: 100% 100%;
     border: none;
     cursor: pointer;
+    will-change: transform;
 
-    transition: color $trans-300;
+    transition: color $trans-300, transform $trans-300;
 
     @include tablet {
       max-width: vc(220);
@@ -127,7 +128,8 @@
     }
 
     @include hover-focus {
-      color: rgba($color: $color-default-white, $alpha: 0.75);
+      color: $color-default-white;
+      transform: scale(1.1);
 
       &::before {
         transform: translateY(-50%) scale(0.95);
@@ -182,11 +184,9 @@
       top: vc(-25);
       z-index: 0;
       background-color: $color-solitude;
-      background-image: linear-gradient(
-        180deg,
-        #ddedff 0%,
-        rgba(238, 246, 255, 0) 25%
-      );
+      background-image: linear-gradient(180deg,
+          #ddedff 0%,
+          rgba(238, 246, 255, 0) 25%);
       clip-path: url(#svgClipCatalogDecorationHeaderLayer1Lg);
 
       @include tablet {
@@ -322,8 +322,7 @@
         background-image: url(../img/decoration/catalog-parallax-5@2x.png);
       }
 
-      @include desktop {
-      }
+      @include desktop {}
     }
 
     &--berry-5 {
