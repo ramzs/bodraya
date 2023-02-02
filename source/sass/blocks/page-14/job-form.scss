@@ -90,14 +90,12 @@
   &__textarea.form__message textarea {
     min-height: vc(270);
     border-radius: vc(5);
-    clip-path: url(#svgClipTextarea1sm);
+    clip-path: url(#svgClipTextareaSm);
     box-shadow: none;
 
     &::placeholder {
       max-width: 100%;
       text-align: left;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
 
     @include tablet {

@@ -37,6 +37,11 @@
     }
   }
 
+  &__col {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__headline {
     margin: vc(100) 0 vc(35);
     font-weight: 700;
@@ -62,9 +67,9 @@
   &__download {
     display: inline-block;
     min-height: vc(20);
-    padding-left: vc(25);
+    padding-left: vc(40);
     font-weight: 700;
-    font-size: vc(24);
+    font-size: vc(14);
     background-image: url(../img/svg/main-download.svg);
     background-repeat: no-repeat;
     background-position: left center;
@@ -73,6 +78,7 @@
     transition: opacity $trans-300;
 
     @include tablet {
+      font-size: vc(24);
       padding-left: vc(45);
       min-height: vc(30);
     }
@@ -112,7 +118,7 @@
 
   &__quote-decoration {
     position: absolute;
-    top: vc(-64);
+    top: vc(-45);
     right: vc(-25);
     display: block;
     width: vc(128);

@@ -2,7 +2,10 @@
   &__wrapper {
     position: relative;
     overflow: hidden;
-    margin-bottom: vc(-65);
+
+    @include desktop {
+      margin-bottom: vc(-65);
+    }
   }
 
   &__headline {
