@@ -31,6 +31,8 @@
   &__button {
     margin: vc(40) auto 0;
     width: vc(202);
+    will-change: transform;
+    transition: color $trans-300, transform $trans-300;
 
     &::before {
       content: "";
@@ -46,6 +48,7 @@
       background-size: contain;
       background-position: center;
 
+      will-change: transform;
       transition: transform $trans-300;
 
       @include tablet {
@@ -58,10 +61,16 @@
         width: vc(100);
         height: vc(100);
       }
+
+      @include hover-focus {
+        color: $color-default-white;
+        transform: scale(1.1);
+      }
     }
 
     @include hover-focus {
-      color: rgba($color: $color-default-white, $alpha: 0.75);
+      color: $color-default-white;
+      transform: scale(1.1);
 
       &::before {
         transform: translateY(-50%) scale(0.95);

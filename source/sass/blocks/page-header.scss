@@ -117,7 +117,6 @@
     border: none;
     cursor: pointer;
     will-change: transform;
-
     transition: color $trans-300, transform $trans-300;
 
     @include tablet {

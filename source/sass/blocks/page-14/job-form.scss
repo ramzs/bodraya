@@ -34,6 +34,7 @@
       max-width: vc(770);
     }
   }
+
   &__row {
     display: grid;
     margin: 0;
@@ -130,6 +131,8 @@
     width: 100%;
     border-radius: vc(12);
     border-top-left-radius: 0;
+    will-change: transform;
+    transition: color $trans-300, transform $trans-300;
 
     @include tablet {
       max-width: vc(210);
@@ -147,6 +150,11 @@
       top: vc(-10);
       transform: rotateZ(4deg) skewX(2deg);
       border-radius: vc(12) vc(12) 0 0;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
     }
   }
 
