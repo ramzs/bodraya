@@ -48,6 +48,12 @@
 
 // Mobile first
 
+@mixin devices {
+  @media (min-width: 320px) and (max-width: (743 * 1px)) {
+    @content;
+  }
+}
+
 @mixin max-tablet {
   // change the values for the situation
   @media (max-width: (743 * 1px)) {

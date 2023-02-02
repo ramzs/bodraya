@@ -9,18 +9,18 @@
 
   &__inner {
     position: relative;
-    margin-top: vc(35);
-    margin-bottom: vc(65);
+    padding-top: vc(35);
+    padding-bottom: vc(65);
     background: linear-gradient(180deg, #7bbaff 0%, rgba(75, 161, 255, 0) 107.56%);
 
     @include tablet {
-      margin-top: vc(85);
-      margin-bottom: vc(100);
+      padding-top: vc(85);
+      padding-bottom: vc(100);
     }
 
     @include desktop {
-      margin-top: vc(240);
-      margin-bottom: vc(200);
+      padding-top: vc(240);
+      padding-bottom: vc(200);
       background: none;
     }
   }

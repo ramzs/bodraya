@@ -28,6 +28,10 @@
     gap: vc(30);
     list-style: none;
 
+    @include devices {
+      grid-template-columns: repeat(2, auto);
+    }
+
     @include tablet {
       grid-template-columns: repeat(2, auto);
       column-gap: vc(20);

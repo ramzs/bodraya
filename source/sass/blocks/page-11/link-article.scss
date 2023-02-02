@@ -21,6 +21,10 @@
     content: "";
     display: block;
     padding-bottom: 100%;
+
+    @include devices {
+      padding-bottom: calc(100% + vc(25));
+    }
   }
 
   &__wrapper::after {
@@ -35,6 +39,10 @@
     padding-bottom: 265%;
     border-radius: 50%;
     background-color: $color-pattens-blue-3;
+
+    @include devices {
+      top: calc(100% - vc(150));
+    }
 
     @include desktop {
       top: calc(100% - vc(140));
