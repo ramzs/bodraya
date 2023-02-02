@@ -3,40 +3,25 @@
 
   &--added {
     #{$block-name}__content {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
       max-width: vc(295);
-      padding: vc(54) vc(12) vc(54) vc(100);
+      padding: vc(54) vc(12) vc(54) vc(88);
       text-align: left;
       border: vc(4) solid $color-default-white;
-      background-image: url("../img/modals/added-sm.png");
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: bottom center;
       border-radius: vc(30);
-
-      @include retina {
-        background-image: url("../img/modals/added-sm@2x.png");
-
-        @include tablet {
-          background-image: url("../img/modals/added-md@2x.png");
-        }
-
-        @include retina {
-          background-image: url("../img/modals/added-lg@2x.png");
-        }
-      }
 
       @include tablet {
         max-width: vc(645);
-        padding: vc(168) vc(75) vc(168) vc(300);
+        padding: vc(168) vc(73) vc(168) vc(300);
         border-width: vc(8);
         border-radius: vc(40);
-        background-image: url("../img/modals/added-md.png");
       }
 
       @include desktop {
         max-width: vc(715);
-        padding: vc(135) vc(85) vc(187) vc(340);
-        background-image: url("../img/modals/added-lg.png");
+        padding: vc(187) vc(85) vc(187) vc(340);
       }
     }
 
@@ -67,7 +52,26 @@
       }
 
       @include desktop {
-        margin-bottom: vc(35);
+        //margin-bottom: vc(35);
+      }
+    }
+
+    #{$block-name}__decor {
+      margin: 0;
+      position: absolute;
+      left: vc(-23);
+      bottom: 0;
+
+      @include size(121, 158);
+
+      @include tablet {
+        left: vc(17);
+        @include size(286, 371);
+      }
+
+      @include desktop {
+        left: vc(20);
+        @include size(319, 413);
       }
     }
   }

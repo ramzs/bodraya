@@ -128,8 +128,7 @@
   &__action {
     max-width: 100%;
     width: 100%;
-    border-radius: vc(12);
-    border-top-left-radius: 0;
+    border-radius: 0 vc(12) vc(12) vc(12);
     will-change: transform;
     transition: color $trans-300, transform $trans-300;
 
@@ -147,10 +146,7 @@
     }
 
     @include desktop {
-      padding-top: vc(10);
-      padding-left: vc(10);
-      padding-right: vc(10);
-      padding-bottom: vc(20);
+      padding: vc(10) vc(10) vc(20);
       font-size: vc(18);
     }
 

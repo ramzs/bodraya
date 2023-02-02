@@ -100,6 +100,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     border-radius: vc(30);
     width: 100%;
     height: vc(305);
@@ -116,6 +117,7 @@
     }
 
     @include desktop {
+      overflow: initial;
       padding: vc(128) vc(82);
       width: vc(770);
       height: vc(824);
@@ -212,11 +214,13 @@
   &__count {}
 
   &__button {
+    margin: 0 auto;
+
     .button {
-      will-change: transform;
-      transition: color $trans-300, transform $trans-300;
       margin-top: vc(16);
       width: vc(215);
+      transition: transform $trans-300;
+      will-change: transform;
 
       &::before {
         content: "";
@@ -231,8 +235,8 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
-
         transition: transform $trans-300;
+        will-change: transform;
 
         @include tablet {
           right: vc(-25);
@@ -240,8 +244,8 @@
       }
 
       @include hover-focus {
-        color: $color-default-white;
         transform: scale(1.1);
+        color: rgba($color: $color-default-white, $alpha: 0.75);
 
         &::before {
           transform: translateY(-50%) scale(0.95);
@@ -251,6 +255,10 @@
       @include tablet {
         width: vc(224);
       }
+    }
+
+    @include tablet {
+      margin: 0;
     }
   }
 
