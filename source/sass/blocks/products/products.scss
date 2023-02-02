@@ -213,6 +213,8 @@
 
   &__button {
     .button {
+      will-change: transform;
+      transition: color $trans-300, transform $trans-300;
       margin-top: vc(16);
       width: vc(215);
 
@@ -238,7 +240,8 @@
       }
 
       @include hover-focus {
-        color: rgba($color: $color-default-white, $alpha: 0.75);
+        color: $color-default-white;
+        transform: scale(1.1);
 
         &::before {
           transform: translateY(-50%) scale(0.95);
