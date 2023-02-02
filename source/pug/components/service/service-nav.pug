@@ -86,6 +86,12 @@ mixin serviceLink(link, currentUrl)
   else
     a.service-nav__link(class=allMods, href=link.src)!= link.name
 
+    if(typeof(links) !== 'undefined' && links)
+      .service-nav__links
+        each link in links
+          +serviceLink(link, currentUrl)
+
+
 mixin serviceNav(links, currentUrl)
   .service-nav
     .service-nav__wrapper(data-service-nav-container)
