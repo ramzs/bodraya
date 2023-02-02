@@ -217,6 +217,8 @@
     margin: 0 auto;
 
     .button {
+      will-change: transform;
+      transition: color $trans-300, transform $trans-300;
       margin-top: vc(16);
       width: vc(215);
       transition: transform $trans-300;

@@ -287,7 +287,7 @@ $color-navigation-cn: $color-pumpkin;
     transform-origin: center;
   }
 
-  &--ice-cream-cone > &__icon {
+  &--ice-cream-cone>&__icon {
     display: block;
     width: vc(74);
     height: vc(74);
@@ -308,7 +308,7 @@ $color-navigation-cn: $color-pumpkin;
     }
   }
 
-  &--peace > &__icon {
+  &--peace>&__icon {
     right: vc(-50);
     display: block;
     width: vc(70);
