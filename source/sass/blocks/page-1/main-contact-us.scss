@@ -38,6 +38,8 @@
 
     @include desktop {
       padding: vc(85) vc(105) vc(50);
+
+
     }
   }
 
@@ -84,7 +86,7 @@
     }
 
     @include desktop {
-      box-shadow: inset 0 0 0 vc(11) $color-default-white,
+      box-shadow: inset 0 0 0 vc(6) $color-default-white,
         0 vc(15) vc(30) vc(-4) rgba(43, 69, 94, 0.06);
     }
   }
@@ -154,6 +156,7 @@
   }
 
   &__decoration {
+    display: none;
     @include desktop {
       position: absolute;
       top: calc(50% - vc(70));
@@ -163,16 +166,44 @@
       display: block;
       width: vc(715);
       height: vc(885);
-      background-image: url(../img/decoration/main-contact-us.png);
-      background-repeat: no-repeat;
-      background-position: right center;
-      background-size: contain;
       user-select: none;
       pointer-events: none;
+    }
+  }
 
-      @include retina {
-        background-image: url(../img/decoration/main-contact-us@2x.png);
-      }
+  &__decor {
+    position: absolute;
+
+    &--1 {
+      top: 0;
+      right: vc(35);
+      @include size(637, 728);
+    }
+    &--2 {
+      top: vc(413);
+      left: vc(150);
+      @include size(72, 187);
+    }
+    &--3 {
+      top: vc(155);
+      left: vc(-4);
+      @include size(87, 87);
+    }
+    &--4 {
+      top: vc(133);
+      right: vc(36);
+      @include size(129, 115);
+    }
+    &--5 {
+      top: vc(354);
+      right: vc(20);
+      @include size(120, 105);
+    }
+
+    &--6 {
+      bottom: vc(-5);
+      right: vc(11);
+      @include size(610, 570);
     }
   }
 
