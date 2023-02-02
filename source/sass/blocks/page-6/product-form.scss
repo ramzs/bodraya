@@ -119,7 +119,7 @@
     }
   }
 
-  &__row--wrapper > &__col {
+  &__row--wrapper>&__col {
     display: grid;
     gap: vc(20);
   }
@@ -188,6 +188,13 @@
     max-width: 100%;
     width: 100%;
     border-radius: vc(12);
+    will-change: transform;
+    transition: color $trans-300, transform $trans-300;
+
+    @include hover-focus {
+      color: $color-default-white;
+      transform: scale(1.1);
+    }
 
     @include tablet {
       max-width: vc(170);

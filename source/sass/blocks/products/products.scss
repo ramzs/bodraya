@@ -270,18 +270,21 @@
       display: flex;
       justify-content: space-between;
       gap: vc(30);
+      margin-bottom: vc(20);
 
       @include tablet {
         justify-content: initial;
         font-size: vc(20);
         line-height: vc(24);
         gap: vc(203);
+        margin-bottom: vc(30);
       }
 
       @include desktop {
         font-size: vc(36);
         line-height: vc(43);
         gap: vc(128);
+        margin-bottom: vc(40);
       }
     }
 
@@ -301,6 +304,10 @@
     }
 
     &-body {}
+
+    &-element {
+      width: 100%;
+    }
 
     &-item {
       display: flex;

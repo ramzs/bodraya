@@ -219,6 +219,11 @@
   &__map-svg path.is-active {
     fill: $color-pumpkin;
     cursor: pointer;
+    transition: fill $trans-150;
+
+    @include hover-focus {
+      fill: #FEC771;
+    }
   }
 
   &__tooltip {
