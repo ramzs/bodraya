@@ -52,6 +52,19 @@ section.shop-page__section.shop-order-registration__section
           })(data-validate-type="email", data-on-input-validate data-message-base="Поле обязательно к заполнению", data-required)
       .shop-order-registration__points
         p.shop-order-registration__lead Пункты выдачи
+        .shop-order-registration__accordion(data-accordion="parent", data-single, data-close-inner)
+          .shop-order-registration__accordion-element(data-accordion="element")
+            button.shop-order-registration__accordion-button(type="button", data-accordion="button") остановка Щорса, детская поликлинника №4
+            .shop-order-registration__accordion-content(data-accordion="content")
+              .shop-order-registration__accordion-wrapper
+                each item, key in poins
+                  +custom-toggle({
+                    inputLabel: item.address,
+                    inputName: "point",
+                    inputValue: `point-${key}`,
+                    inputChecked: false,
+                    inputType: "radio"
+                  })(data-validate-type="radio", data-message-base="Поле обязательно к заполнению")
         .shop-order-registration__points-row
           each item, key in poins
             +custom-toggle({
