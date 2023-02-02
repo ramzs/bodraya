@@ -64,6 +64,11 @@
       flex-wrap: wrap;
       list-style: none;
 
+      @include devices {
+        margin-bottom: vc(50);
+        gap: vc(20);
+      }
+
       @include tablet {
         margin-bottom: vc(50);
         gap: vc(20);
@@ -89,6 +94,11 @@
 
       &:not(:last-of-type) {
         margin-bottom: vc(15);
+      }
+
+      @include devices {
+        margin-bottom: 0;
+        max-width: calc((100% - vc(20)) / 2);
       }
 
       @include tablet {

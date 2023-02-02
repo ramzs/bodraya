@@ -140,4 +140,12 @@
       left: vc(-160);
     }
   }
+
+  &__button {
+    margin: 0 auto;
+
+    @include desktop {
+      margin: 0;
+    }
+  }
 }

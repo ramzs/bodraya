@@ -156,7 +156,7 @@
 
     @include tablet {
       min-height: vc(90);
-      padding: vc(15) vc(22);
+      padding: vc(15) vc(17);
       font-size: vc(20);
       line-height: 1;
     }
@@ -203,7 +203,7 @@
       .swiper-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: vc(20);
+        gap: vc(15);
       }
 
       .swiper-slide {

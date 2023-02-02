@@ -433,9 +433,10 @@
       max-width: vc(495);
       background: #E1F0FF;
       border-radius: vc(30);
-      padding: vc(18) vc(20) vc(25);
+      padding: vc(40) vc(20) vc(25);
       box-shadow: 0 0 0 rgba(0, 0, 0, .1);
       transition: visibility $trans-300, opacity $trans-300;
+      z-index: 10;
 
       &.is-open {
         visibility: visible;
