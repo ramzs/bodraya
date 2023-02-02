@@ -7,13 +7,19 @@
     font-family: $ff-geometria;
     color: $color-arapawa;
     text-align: center;
+    width: 100%;
     @include stroke(4, $color-default-white);
 
     @include tablet {
+      text-align: left;
       margin-top: vc(35);
       margin-bottom: vc(35);
       font-size: vc(40);
       @include stroke(11, $color-default-white);
+
+      br {
+        display: none;
+      }
     }
 
     @include desktop {
@@ -21,8 +27,10 @@
       padding-right: vc(90);
       font-size: vc(55);
       text-align: left;
-
       text-indent: vc(-90);
+      br {
+        display: block;
+      }
     }
   }
 

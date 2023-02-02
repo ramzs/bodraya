@@ -30,6 +30,8 @@
       align-items: center;
       justify-content: center;
       font-size: vc(14);
+      height: vc(49);
+      padding: vc(15) vc(28);
       will-change: transform;
       transition: transform $trans-300;
 
@@ -49,6 +51,7 @@
       }
 
       @include desktop {
+        padding: vc(15) vc(65) vc(20);
         font-size: vc(18);
         width: vc(305);
       }

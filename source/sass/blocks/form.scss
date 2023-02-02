@@ -9,7 +9,6 @@
 
       input,
       textarea {
-        max-width: 100%;
         width: 100%;
         min-height: vc(70);
         padding: vc(20) vc(45) vc(20) vc(35);
@@ -18,7 +17,7 @@
         line-height: 1.2;
         color: $color-arapawa;
         text-align: left;
-        white-space: nowrap;
+        //white-space: nowrap;
         text-overflow: ellipsis;
         background: $color-default-white;
         border-radius: vc(52);
@@ -27,6 +26,7 @@
         outline: none;
 
         &::placeholder {
+          white-space: normal;
           color: rgba($color-arapawa, 0.7);
         }
 
