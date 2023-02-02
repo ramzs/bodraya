@@ -47,6 +47,14 @@
     margin: vc(40) 0 vc(35);
     text-align: center;
 
+    .button {
+      padding: vc(10) vc(28) vc(15);
+
+      @include desktop {
+        padding: vc(15) vc(65) vc(20);
+      }
+    }
+
     @include tablet {
       margin: vc(55) 0 vc(90);
     }

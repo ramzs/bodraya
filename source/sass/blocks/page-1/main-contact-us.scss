@@ -246,6 +246,20 @@
     padding: 0 vc(30);
     text-align: center;
 
+    .button {
+      padding: vc(10) vc(28) vc(15);
+
+      @include devices {
+        &:after {
+          transform: rotateZ(2deg) skewX(2deg);
+        }
+      }
+
+      @include desktop {
+        padding: vc(15) vc(65) vc(20);
+      }
+    }
+
     @include tablet {
       padding: 0;
       margin-top: vc(-55);
