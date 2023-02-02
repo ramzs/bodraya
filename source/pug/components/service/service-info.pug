@@ -5,14 +5,15 @@ mixin service-info(key, data)
       h2.service__title!=data[key].title
       p.service__name!=data[key].name
       .contact
-        .contact__item
-          img(src="img/svg/icon-phone.svg").contact__icon
-          .contact__info
-            span.contact__text Телефон:
-            br
-            a(href="tel:+79103233285").contact__link!=data[key].phone1
-            br
-            a(href="tel:+74722217887").contact__link!=data[key].phone2
+        if data[key].phone1
+          .contact__item
+            img(src="img/svg/icon-phone.svg").contact__icon
+            .contact__info
+              span.contact__text Телефон:
+              br
+              a(href="tel:+79103233285").contact__link!=data[key].phone1
+              br
+              a(href="tel:+74722217887").contact__link!=data[key].phone2
         .contact__item
           img(src="img/svg/icon-mail.svg").contact__icon
           .contact__info
