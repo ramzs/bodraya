@@ -54,9 +54,7 @@
         max-height: vc(185);
         animation: slideDown 150ms linear 0s 1 normal forwards;
 
-
         @include tablet {
-
           @keyframes slideDown {
             from {
               max-height: 0;
@@ -66,11 +64,9 @@
               max-height: vc(148);
             }
           }
-
         }
 
         @include desktop {
-
           @keyframes slideDown {
             from {
               max-height: 0;
@@ -80,7 +76,6 @@
               max-height: vc(185);
             }
           }
-
         }
       }
     }
@@ -272,9 +267,10 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-size: contain;
+    background-size: 0 0;
     background-repeat: no-repeat;
     background-position: center;
+    transition: background-size $trans-600;
 
     @include tablet {
       width: 110%;
@@ -289,63 +285,75 @@
     }
   }
 
+  &__link:not(.is-active) {
+    @include hover-focus {
+      &::after {
+        background-size: contain;
+      }
+    }
+  }
+
   &__link.is-active::after {
+    background-size: contain;
+  }
+
+  &__link::after {
     background-image: url(../img/svg/service-active-tablet.svg);
   }
 
-  &__link--small.is-active::after {
+  &__link--small::after {
     background-image: url(../img/svg/service-active-small.svg);
   }
 
-  &__link--service-1.is-active::after {
+  &__link--service-1::after {
     @include desktop {
       background-image: url(../img/svg/service-active-desktop-1.svg);
     }
   }
 
-  &__link--service-2.is-active::after {
+  &__link--service-2::after {
     @include desktop {
       background-image: url(../img/svg/service-active-desktop-2.svg);
     }
   }
 
-  &__link--service-3.is-active::after {
+  &__link--service-3::after {
     @include desktop {
       background-image: url(../img/svg/service-active-desktop-3.svg);
     }
   }
 
-  &__link--service-4.is-active::after {
+  &__link--service-4::after {
     @include desktop {
       background-image: url(../img/svg/service-active-desktop-4.svg);
     }
   }
 
-  &__link--service-5.is-active::after {
+  &__link--service-5::after {
     @include desktop {
       background-image: url(../img/svg/service-active-desktop-5.svg);
     }
   }
 
-  &__link--lease-1.is-active::after {
+  &__link--lease-1::after {
     @include desktop {
       background-image: url(../img/svg/lease-active-desktop-1.svg);
     }
   }
 
-  &__link--lease-2.is-active::after {
+  &__link--lease-2::after {
     @include desktop {
       background-image: url(../img/svg/lease-active-desktop-2.svg);
     }
   }
 
-  &__link--lease-3.is-active::after {
+  &__link--lease-3::after {
     @include desktop {
       background-image: url(../img/svg/lease-active-desktop-3.svg);
     }
   }
 
-  &__link>span {
+  &__link > span {
     white-space: nowrap;
   }
 
