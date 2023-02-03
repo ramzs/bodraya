@@ -339,6 +339,8 @@
 
   &__link--service-5::after {
     @include desktop {
+      top: 43%;
+      width: 140%;
       background-image: url(../img/svg/service-active-desktop-5.svg);
     }
   }
@@ -358,6 +360,13 @@
   &__link--lease-3::after {
     @include desktop {
       background-image: url(../img/svg/lease-active-desktop-3.svg);
+    }
+  }
+
+  &__link--lease-4::after {
+    @include desktop {
+      top: 43%;
+      width: 140%;
     }
   }
 
