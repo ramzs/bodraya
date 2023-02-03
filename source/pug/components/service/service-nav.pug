@@ -85,7 +85,6 @@ mixin serviceLink(link, currentUrl)
           +serviceLink(link, currentUrl)
   else
     a.service-nav__link(class=allMods, href=link.src)!= link.name
-
     if(typeof(links) !== 'undefined' && links)
       .service-nav__links
         each link in links
@@ -99,5 +98,6 @@ mixin serviceNav(links, currentUrl)
         .service-nav__swiper-scrollbar.swiper-scrollbar.swiper-scrollbar--custom(data-scrollbar)
         .swiper-wrapper
           each link in links
-            .swiper-slide.service-nav__slide
+            - const activeState = currentUrl === link.src || currentUrl.indexOf(link.src) !== -1;
+            .swiper-slide.service-nav__slide(class= activeState ? "is-active": "")
               +serviceLink(link, currentUrl)

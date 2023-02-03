@@ -55,7 +55,8 @@
       max-width: none;
     }
 
-    &:hover {
+    &:hover,
+    &.is-active {
       .service-nav__links {
         visibility: visible;
         opacity: 1;
