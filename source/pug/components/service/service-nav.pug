@@ -36,7 +36,7 @@
     },
     {
       name: "Низкотемпературные склады",
-      src: "lease-2",
+      src: "lease-2-1.html",
       mods:  "lease-2",
       links: [
         {
@@ -67,15 +67,15 @@ mixin serviceLink(link, currentUrl)
   - const activeState = currentUrl === link.src || currentUrl.indexOf(link.src) !== -1;
   - const { mods, links} = link;
   -
-    // список модификаторов
+
     var allMods = '';
 
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' service-nav__link--' + modsList[i].trim();
+        for (var i = 0; i < modsList.length; i++) {
+          allMods = allMods + ' service-nav__link--' + modsList[i].trim();
+        }
       }
-    }
 
   if(activeState)
     .service-nav__link.is-active(class=allMods)!= link.name
@@ -86,6 +86,12 @@ mixin serviceLink(link, currentUrl)
   else
     a.service-nav__link(class=allMods, href=link.src)!= link.name
 
+    if(typeof(links) !== 'undefined' && links)
+      .service-nav__links
+        each link in links
+          +serviceLink(link, currentUrl)
+
+
 mixin serviceNav(links, currentUrl)
   .service-nav
     .service-nav__wrapper(data-service-nav-container)
@@ -95,4 +101,3 @@ mixin serviceNav(links, currentUrl)
           each link in links
             .swiper-slide.service-nav__slide
               +serviceLink(link, currentUrl)
-

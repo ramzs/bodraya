@@ -1,6 +1,14 @@
 .service-nav {
   $block-name: &; // #{$block-name}__element
 
+  @include tablet {
+    padding-top: vc(40);
+  }
+
+  @include desktop {
+    padding-top: 0;
+  }
+
   .swiper {
     margin-right: vc(-15);
     margin-left: vc(-15);
@@ -54,9 +62,7 @@
         max-height: vc(185);
         animation: slideDown 150ms linear 0s 1 normal forwards;
 
-
         @include tablet {
-
           @keyframes slideDown {
             from {
               max-height: 0;
@@ -66,11 +72,9 @@
               max-height: vc(148);
             }
           }
-
         }
 
         @include desktop {
-
           @keyframes slideDown {
             from {
               max-height: 0;
@@ -80,7 +84,6 @@
               max-height: vc(185);
             }
           }
-
         }
       }
 
@@ -479,6 +482,13 @@
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
       }
+    }
+  }
+
+  &__link--lease-4::after {
+    @include desktop {
+      top: 43%;
+      width: 140%;
     }
   }
 

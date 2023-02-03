@@ -260,6 +260,10 @@
       }
     }
 
+    @include devices {
+      padding: 0 vc(45);
+    }
+
     @include tablet {
       padding: 0;
       margin-top: vc(-55);
