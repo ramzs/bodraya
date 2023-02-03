@@ -83,6 +83,21 @@
 
         }
       }
+
+      .service-nav__link--service-1,
+      .service-nav__link--service-2,
+      .service-nav__link--service-3,
+      .service-nav__link--service-4,
+      .service-nav__link--service-5,
+      .service-nav__link--lease-1,
+      .service-nav__link--lease-2,
+      .service-nav__link--lease-3 {
+        &::after {
+          visibility: visible;
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
     }
   }
 
@@ -244,6 +259,14 @@
       font-size: vc(18);
       line-height: 1.5;
     }
+
+    &:hover {
+      &::after {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
   }
 
   &__link--small::before {
@@ -305,19 +328,19 @@
         transform: translate(-50%, -50%) scale(1);
       }
 
-      &::after {
-        background-image: url(../img/svg/service-active-tablet.svg);
-      }
+      // &::after {
+      //   background-image: url(../img/svg/service-active-tablet.svg);
+      // }
     }
 
     @include hover-focus {
       z-index: 2;
 
-      &:after {
-        visibility: visible;
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
+      // &:after {
+      //   visibility: visible;
+      //   opacity: 1;
+      //   transform: translate(-50%, -50%) scale(1);
+      // }
     }
   }
 
@@ -332,97 +355,129 @@
   }
 
   &__link--service-1 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/service-active-desktop-1.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/service-active-desktop-1.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--service-2 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/service-active-desktop-2.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/service-active-desktop-2.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--service-3 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/service-active-desktop-3.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/service-active-desktop-3.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--service-4 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/service-active-desktop-4.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/service-active-desktop-4.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--service-5 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/service-active-desktop-5.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/service-active-desktop-5.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--lease-1 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/lease-active-desktop-1.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/lease-active-desktop-1.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--lease-2 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/lease-active-desktop-2.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/lease-active-desktop-2.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
 
   &__link--lease-3 {
+    &::after {
+      @include desktop {
+        background-image: url(../img/svg/lease-active-desktop-3.svg);
+      }
+    }
 
-    &.is-active,
-    &:hover {
+    &.is-active {
       &::after {
-        @include desktop {
-          background-image: url(../img/svg/lease-active-desktop-3.svg);
-        }
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
       }
     }
   }
