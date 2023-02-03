@@ -252,8 +252,11 @@
           border-width: vc(1) vc(2) vc(2) vc(2);
         }
 
-        .shop-order-registration__accordion-button:before {
-          transform: translateY(-50%) rotate(180deg);
+        .shop-order-registration__accordion-button {
+          border-radius: vc(15) vc(15) 0 0;
+          &:before {
+            transform: translateY(-50%) rotate(0deg);
+          }
         }
       }
     }
@@ -263,7 +266,7 @@
       border-width: vc(2) vc(2) vc(1) vc(2);
       border-style: solid;
       border-color: $color-default-white;
-      border-radius: vc(15) vc(15) 0 0;
+      border-radius: vc(15) ;
       background-color: $color-alice-blue-5;
       overflow: hidden;
       width: 100%;
@@ -275,6 +278,7 @@
       font-size: vc(16);
       line-height: vc(20);
       color: $color-arapawa;
+      transition: border-radius $trans-default;
 
       &:before {
         position: absolute;
@@ -286,12 +290,12 @@
         background-size: contain;
         background-repeat: no-repeat;
         transition: transform $trans-default;
-        transform: translateY(-50%);
+        transform: translateY(-50%) rotate(180deg);
       }
     }
 
     &-content {
-      border-width: vc(1) vc(2) 0 vc(2);
+      border-width: 0;
       border-style: solid;
       border-color: $color-default-white;
       background-color: $color-alice-blue-5;
